@@ -1,1 +1,1 @@
-# ArtworkOntology
+# Artwork Object Ontology
