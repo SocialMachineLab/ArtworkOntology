@@ -11,37 +11,29 @@
   xmlns:dct="http://purl.org/dc/terms/"
   xmlns:lcc-cr="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
   xmlns:arto="http://w3id.org/arto#"
-  xmlns:terms="http://purl.org/dc/terms/"
   xmlns:vann="http://purl.org/vocab/vann/"
   xmlns:rdf-star="http://www.w3.org/2019/rdf-star#">
 
-
+<!-- 
   <owl:Ontology rdf:about="http://w3id.org/arto">
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema" />
-  </owl:Ontology>
+  </owl:Ontology> -->
 
-  <owl:Ontology
-    rdf:about="https://w3id.org/artwork#">
-    <owl:versionIRI rdf:resource="https://w3id.org/artwork/v0.1" />
-    <ns:attributionURL rdf:resource="https://w3id.org/artwork" />
-    <terms:description xml:lang="en">The Artwork
-      Ontology Model aims to represent and describe artworks, their creators, and the relationships
-      between them. It provides a structured vocabulary for capturing information about various
-      types
-      of artworks, such as paintings, sculptures, digital art, and more. The ontology is designed to
-      be flexible and extensible, allowing users to incorporate new artwork types and attributes as
-      needed. It facilitates the integration and exchange of artwork data across different systems
-      and
-      applications, enabling better organization, discovery, and analysis of artwork information.</terms:description>
 
-    <terms:license
-      rdf:resource="https://github.com/yourusername/artwork-ontology-model/blob/master/LICENSE" />
-    <terms:rights xml:lang="en">Copyright © 2023 Your Name</terms:rights>
-    <terms:title xml:lang="en">Artwork Ontology Model</terms:title>
-    <vann:preferredNamespacePrefix>aom</vann:preferredNamespacePrefix>
-    <rdfs:label xml:lang="en">Artwork Ontology Model</rdfs:label>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
-  </owl:Ontology>
+  <owl:Ontology rdf:about="https://w3id.org/arto">
+        <owl:versionIRI rdf:resource="https://w3id.org/hdgi/v0.1"/>
+        <ns:attributionURL rdf:resource="https://w3id.org/hdgi"/>
+        <dct:description xml:lang="en">The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.</dct:description>
+        <dct:issued>2024-04-10</dct:issued>
+        <dct:license rdf:resource="https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"/>
+        <dct:rights xml:lang="en">Copyright © 2024 Can Yang</dct:rights>
+        <dct:title xml:lang="en">Artwork Object Ontology</dct:title>
+        <vann:preferredNamespacePrefix>arto</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>https://w3id.org/arto#</vann:preferredNamespacePrefix>
+        <rdfs:label xml:lang="en">Artwork Object Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
   <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
