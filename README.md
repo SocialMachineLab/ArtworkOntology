@@ -11,16 +11,17 @@ The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for desc
 - Evaluation: The ontology has been validated using the OntOlogy Pitfall Scanner (OOPS!) and refined through interviews with art experts.
 - Integration with Large Language Models (LLMs): ARTO can be integrated with LLMs to enable automated artwork captioning.
 
+
 ## Models
 
-###Artwork Descriptive Model
+### Artwork Descriptive Model
 
 The Artwork Descriptive Model is designed to encapsulate the representation of the content of artworks. It focuses on detailed content representation including visual elements, scenes, and emotional undertones that are conveyed through the artwork. This model aims to provide a framework that allows users to visually reconstruct the artwork in their mind’s eye, fostering a deep, intuitive understanding.
 
 ![The Artwork Descriptive Model](images/adm.png)
 
 
-###Artwork Contextual Model
+### Artwork Contextual Model
 
 The Artwork Contextual Model complements the descriptive aspects by incorporating contextual information about the artwork. This model includes metadata, historical context, and related events, enriching the viewer’s appreciation and understanding of the artwork beyond its physical appearance.
 
@@ -51,12 +52,14 @@ We welcome contributions to enhance and expand the Artwork Object Ontology. If y
 
 5. Submit a pull request detailing your changes and their benefits.
 
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
+
 ## Contact
 
-For any questions, suggestions, or collaborations, feel free to reach out to Can Yang(can.yang@anu.edu.au)
+For any questions, suggestions, or collaborations, feel free to reach out to Can Yang (can.yang@anu.edu.au)
 
 We appreciate your interest and feedback!
