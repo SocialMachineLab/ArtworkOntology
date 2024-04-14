@@ -1,6 +1,6 @@
 <https://w3id.org/arto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/arto> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/hdgi/v0.1> .
-<https://w3id.org/arto> <http://creativecommons.org/ns#attributionURL> <https://w3id.org/hdgi> .
+<https://w3id.org/arto> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/arto/v0.1> .
+<https://w3id.org/arto> <http://creativecommons.org/ns#attributionURL> <https://w3id.org/arto> .
 <https://w3id.org/arto> <http://purl.org/dc/terms/description> "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en .
 <https://w3id.org/arto> <http://purl.org/dc/terms/issued> "2024-04-10" .
 <https://w3id.org/arto> <http://purl.org/dc/terms/license> <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> .

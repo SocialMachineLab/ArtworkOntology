@@ -21,8 +21,8 @@
 
 
   <owl:Ontology rdf:about="https://w3id.org/arto">
-        <owl:versionIRI rdf:resource="https://w3id.org/hdgi/v0.1"/>
-        <ns:attributionURL rdf:resource="https://w3id.org/hdgi"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/arto/v0.1"/>
+        <ns:attributionURL rdf:resource="https://w3id.org/arto"/>
         <dct:description xml:lang="en">The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.</dct:description>
         <dct:issued>2024-04-10</dct:issued>
         <dct:license rdf:resource="https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"/>
