@@ -17,16 +17,10 @@
   xmlns:dce="http://purl.org/dc/elements/1.1/"
   >
 
-<!-- 
-  <owl:Ontology rdf:about="http://w3id.org/arto">
-    <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema" />
-  </owl:Ontology> -->
-
-
   <owl:Ontology rdf:about="https://w3id.org/arto">
         <owl:versionIRI rdf:resource="https://w3id.org/arto/v0.1"/>
         <ns:attributionURL rdf:resource="https://w3id.org/arto"/>
-        <dct:description xml:lang="en">The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.</dct:description>
+        <dce:description xml:lang="en">The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.</dce:description>
         <dct:issued>2024-04-10</dct:issued>
         <dct:license rdf:resource="https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"/>
         <dct:rights xml:lang="en">Copyright © 2024 Can Yang</dct:rights>
@@ -861,5 +855,5 @@
       street, building etc. </rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
   </owl:DatatypeProperty>
-  
+
 </rdf:RDF>
