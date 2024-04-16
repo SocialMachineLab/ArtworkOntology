@@ -12,7 +12,10 @@
   xmlns:lcc-cr="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
   xmlns:arto="http://w3id.org/arto#"
   xmlns:vann="http://purl.org/vocab/vann/"
-  xmlns:rdf-star="http://www.w3.org/2019/rdf-star#">
+  xmlns:rdf-star="http://www.w3.org/2019/rdf-star#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dce="http://purl.org/dc/elements/1.1/"
+  >
 
 <!-- 
   <owl:Ontology rdf:about="http://w3id.org/arto">
@@ -28,10 +31,13 @@
         <dct:license rdf:resource="https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"/>
         <dct:rights xml:lang="en">Copyright © 2024 Can Yang</dct:rights>
         <dct:title xml:lang="en">Artwork Object Ontology</dct:title>
+        <dct:creator xml:lang="en">Can Yang</dct:creator>
+        <dct:creator xml:lang="en">Bernardo Pereira Nunes</dct:creator>
+        <dct:creator xml:lang="en">Sergio Rodriguez Mendez</dct:creator>
         <vann:preferredNamespacePrefix>arto</vann:preferredNamespacePrefix>
         <vann:preferredNamespacePrefix>https://w3id.org/arto#</vann:preferredNamespacePrefix>
         <rdfs:label xml:lang="en">Artwork Object Ontology</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
     </owl:Ontology>
     
   <!--

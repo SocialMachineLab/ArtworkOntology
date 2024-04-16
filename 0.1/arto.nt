@@ -9,7 +9,7 @@
 <https://w3id.org/arto> <http://purl.org/vocab/vann/preferredNamespacePrefix> "arto" .
 <https://w3id.org/arto> <http://purl.org/vocab/vann/preferredNamespacePrefix> "https://w3id.org/arto#" .
 <https://w3id.org/arto> <http://www.w3.org/2000/01/rdf-schema#label> "Artwork Object Ontology"@en .
-<https://w3id.org/arto> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/arto> <http://www.w3.org/2002/07/owl#versionInfo> "0.1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 <http://w3id.org/arto#Artwork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#label> "Artwork" .
 <http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#comment> "A created object or piece of art that is intended to be aesthetically pleasing or\n      convey a message." .

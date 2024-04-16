@@ -19,7 +19,7 @@
   dc:title "Artwork Object Ontology"@en ;
   ns0:preferredNamespacePrefix "arto", "https://w3id.org/arto#" ;
   rdfs:label "Artwork Object Ontology"@en ;
-  owl:versionInfo 1.0 .
+  owl:versionInfo 0.1 .
 
 <http://w3id.org/arto#Artwork>
   a owl:Class ;
