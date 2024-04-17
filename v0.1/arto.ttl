@@ -1,625 +1,750 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <https://w3id.org/arto#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix ns0: <http://purl.org/vocab/vann/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dc11: <http://purl.org/dc/elements/1.1/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix dbo: <https://dbpedia.org/ontology/> .
+@prefix dbp: <https://dbpedia.org/property/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix arto: <http://w3id.org/arto#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@base <https://w3id.org/arto> .
 
-<https://w3id.org/arto>
-  a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/arto/v0.1> ;
-  cc:attributionURL <https://w3id.org/arto> ;
-  dc:description "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en ;
-  dc:issued "2024-04-10" ;
-  dc:license <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> ;
-  dc:rights "Copyright © 2024 Can Yang"@en ;
-  dc:title "Artwork Object Ontology"@en ;
-  ns0:preferredNamespacePrefix "arto", "https://w3id.org/arto#" ;
-  rdfs:label "Artwork Object Ontology"@en ;
-  owl:versionInfo 0.1 .
+<https://w3id.org/arto> rdf:type owl:Ontology ;
+                         owl:versionIRI <https://w3id.org/arto/v0.1> ;
+                         cc:attributionURL <https://w3id.org/arto> ;
+                         dc:issued "2024-04-10" ;
+                         dc:license <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> ;
+                         dc:rights "Copyright © 2024 Can Yang"@en ;
+                         dc:title "Artwork Object Ontology"@en ;
+                         vann:preferredNamespacePrefix "arto" ;
+                         rdfs:label "Artwork Object Ontology (ARTO)"@en ;
+                         owl:versionInfo "0.1"^^xsd:string .
 
-<http://w3id.org/arto#Artwork>
-  a owl:Class ;
-  rdfs:label "Artwork" ;
-  rdfs:comment """A created object or piece of art that is intended to be aesthetically pleasing or
-      convey a message.""" .
+#################################################################
+#    Annotation properties
+#################################################################
 
-<http://w3id.org/arto#Painting>
-  a owl:Class ;
-  rdfs:label "Painting" ;
-  rdfs:subClassOf <http://w3id.org/arto#Artwork> ;
-  rdfs:comment """A created object or piece of art that is intended to be aesthetically pleasing or
-      convey a message.""" .
+###  http://creativecommons.org/ns#attributionURL
+cc:attributionURL rdf:type owl:AnnotationProperty .
 
-<http://w3id.org/arto#Series>
-  a owl:Class ;
-  rdfs:label "Series" ;
-  rdfs:comment "A set of artworks." .
 
-<http://w3id.org/arto#Artist>
-  a owl:Class ;
-  rdfs:label "Artist" ;
-  rdfs:comment "The person or group who create or contribute the artwork." ;
-  rdfs:subClassOf foaf:Person .
+###  http://purl.org/dc/terms/issued
+dc:issued rdf:type owl:AnnotationProperty .
 
-<http://w3id.org/arto#Sponsor>
-  a owl:Class ;
-  rdfs:label "Sponsor" ;
-  rdfs:comment "The person or group who sponsor the artwork." ;
-  rdfs:subClassOf foaf:Person .
 
-<http://w3id.org/arto#Character>
-  a owl:Class ;
-  rdfs:label "Character" ;
-  rdfs:comment "The person or group appeared in the artwork." ;
-  rdfs:subClassOf foaf:Person .
+###  http://purl.org/dc/terms/license
+dc:license rdf:type owl:AnnotationProperty .
 
-dc:Location
-  a owl:Class ;
-  rdfs:label "Location" ;
-  rdfs:comment "The Location." .
 
-<https://www.w3.org/TR/owl-time/#time:TemporalEntity>
-  a owl:Class ;
-  rdfs:label "Time" ;
-  rdfs:comment "A temporal interval or instant." .
+###  http://purl.org/dc/terms/rights
+dc:rights rdf:type owl:AnnotationProperty .
 
-<https://www.w3.org/TR/owl-time/#time:Instant>
-  a owl:Class ;
-  rdfs:label "Instant" ;
-  rdfs:comment "A temporal entity with zero extent or duration" ;
-  rdfs:subClassOf <https://www.w3.org/TR/owl-time/#time:TemporalEntity> .
 
-<https://www.w3.org/TR/owl-time/#time:Interval>
-  a owl:Class ;
-  rdfs:label "Interval" ;
-  rdfs:comment "A temporal entity with an extent or duration" ;
-  rdfs:subClassOf <https://www.w3.org/TR/owl-time/#time:TemporalEntity> .
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:AnnotationProperty .
 
-<http://purl.org/NET/c4dm/event.owl#Event>
-  a owl:Class ;
-  rdfs:label "Event" ;
-  rdfs:comment """
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/NET/c4dm/event.owl#agent
+event:agent rdf:type owl:ObjectProperty ;
+            rdfs:domain event:Event ;
+            rdfs:range foaf:Agent ;
+            rdfs:comment "Relates an artwork or event to a agent associated with it." ;
+            rdfs:label "agent" .
+
+
+###  http://purl.org/NET/c4dm/event.owl#time
+event:time rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( event:Event
+                                       dc:Location
+                                     )
+                       ] ;
+           rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+           rdfs:comment "Relates the event to the date. Could be a time interval or a time point" ;
+           rdfs:label "hasTime" .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc11:creator rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( arto:Artwork
+                                         arto:Series
+                                       )
+                         ] ;
+             rdfs:range arto:Artist ;
+             rdfs:comment "Relates an artwork to the artist(s) who created or contributed to it." ;
+             rdfs:label "creator" .
+
+
+###  http://purl.org/dc/terms/contributor
+dc:contributor rdf:type owl:ObjectProperty ;
+               rdfs:domain arto:Artwork ;
+               rdfs:range foaf:Person ;
+               rdfs:comment "The Contributor of the Artwork." ;
+               rdfs:label "contributor" .
+
+
+###  http://purl.org/dc/terms/created
+dc:created rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Artwork ;
+           rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+           rdfs:comment "Relates an artwork to its creation date." ;
+           rdfs:label "created" .
+
+
+###  http://purl.org/dc/terms/isPartOf
+dc:isPartOf rdf:type owl:ObjectProperty ;
+            rdfs:domain arto:Artwork ;
+            rdfs:range arto:Series ;
+            rdfs:comment "Relates an artwork to the serie of the artwork." ;
+            rdfs:label "isPartOf" .
+
+
+###  http://w3id.org/arto#containsElements
+arto:containsElements rdf:type owl:ObjectProperty ;
+                      rdfs:domain arto:Object ;
+                      rdfs:range arto:Element ;
+                      rdfs:comment "The objects contains elements." ;
+                      rdfs:label "containsElements" .
+
+
+###  http://w3id.org/arto#containsObjects
+arto:containsObjects rdf:type owl:ObjectProperty ;
+                     rdfs:domain arto:Scene ;
+                     rdfs:range arto:Object ;
+                     rdfs:comment "The Scene contains Objects." ;
+                     rdfs:label "containsObjects" .
+
+
+###  http://w3id.org/arto#containsScenes
+arto:containsScenes rdf:type owl:ObjectProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( arto:Artwork
+                                                arto:Scene
+                                              )
+                                ] ;
+                    rdfs:range arto:Scene ;
+                    rdfs:comment "The Artwork and Scene could contains Scenes." ;
+                    rdfs:label "containsObjects" .
+
+
+###  http://w3id.org/arto#express
+arto:express rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( arto:Element
+                                         arto:Object
+                                         arto:Scene
+                                       )
+                         ] ;
+             rdfs:range arto:Connotation ;
+             rdfs:comment "The connotation expressed in the Scenes or the Objects or Elements in the artwork." ;
+             rdfs:label "express" .
+
+
+###  http://w3id.org/arto#hasConnotation
+arto:hasConnotation rdf:type owl:ObjectProperty ;
+                    rdfs:domain arto:Artwork ;
+                    rdfs:range arto:Connotation ;
+                    rdfs:comment "Relate artwork and the connotations." ;
+                    rdfs:label "hasConnotation" .
+
+
+###  http://w3id.org/arto#hasEvent
+arto:hasEvent rdf:type owl:ObjectProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range event:Event ;
+              rdfs:comment "Relates an artwork to an event happened to this artwork." ;
+              rdfs:label "hasEvent" .
+
+
+###  http://w3id.org/arto#hasMetric
+arto:hasMetric rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( arto:Connotation
+                                           arto:Element
+                                           arto:Object
+                                           arto:Scene
+                                         )
+                           ] ;
+               rdfs:range arto:Metric ;
+               rdfs:comment "The metric of the connotation, scene, Object or the element in the artwork." ;
+               rdfs:label "hasMetric" .
+
+
+###  http://w3id.org/arto#relatedTo
+arto:relatedTo rdf:type owl:ObjectProperty ;
+               rdfs:domain arto:Object ;
+               rdfs:range arto:Object ;
+               rdfs:comment "The Objects could related to Objects." ;
+               rdfs:label "relatedTo" .
+
+
+###  http://w3id.org/arto#relatedToEvent
+arto:relatedToEvent rdf:type owl:ObjectProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( arto:Artwork
+                                                arto:Connotation
+                                              )
+                                ] ;
+                    rdfs:range event:Event ;
+                    rdfs:comment "Relates an artwork to an event included in the artwork." ;
+                    rdfs:label "relatedToEvent" .
+
+
+###  http://w3id.org/arto#relatedToScene
+arto:relatedToScene rdf:type owl:ObjectProperty ;
+                    rdfs:domain arto:Object ;
+                    rdfs:range arto:Scene ;
+                    rdfs:comment "The Scenes that objects related." ;
+                    rdfs:label "relatedToSecne" .
+
+
+###  http://www.europeana.eu/schemas/edm/currentLocation
+edm:currentLocation rdf:type owl:ObjectProperty ;
+                    rdfs:domain arto:Artwork ;
+                    rdfs:range dc:Location ;
+                    rdfs:comment "Relates an artwork to its current physical location." ;
+                    rdfs:label "currentLocation" .
+
+
+###  http://www.europeana.eu/schemas/edm/happenedAt
+edm:happenedAt rdf:type owl:ObjectProperty ;
+               rdfs:domain event:Event ;
+               rdfs:range dc:Location ;
+               rdfs:comment "Relates the event or provenance to the location where it happened." ;
+               rdfs:label "hasLocation" .
+
+
+###  http://xmlns.com/foaf/0.1/knows
+foaf:knows rdf:type owl:ObjectProperty ;
+           rdfs:domain foaf:Person ;
+           rdfs:range foaf:Person ;
+           rdfs:comment "The person knows persons." ;
+           rdfs:label "knows" .
+
+
+###  https://dbpedia.org/ontology/residence
+dbo:residence rdf:type owl:ObjectProperty ;
+              rdfs:domain foaf:Person ;
+              rdfs:range dc:Location ;
+              rdfs:comment "Relates a person to the location they lived in." ;
+              rdfs:label "residence" .
+
+
+###  https://www.geonames.org/ontology#locatedIn
+gn:locatedIn rdf:type owl:ObjectProperty ;
+             rdfs:domain foaf:Organization ;
+             rdfs:range dc:Location ;
+             rdfs:comment "Indicates the location where an organization is situated." ,
+                          """It . available options are: country, state, city, district,
+      street, building etc. """ ;
+             rdfs:label "locatedIn" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/format
+dc11:format rdf:type owl:DatatypeProperty ;
+            rdfs:domain arto:Artwork ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The F gormat of the Artwork." ;
+            rdfs:label "format" .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc11:title rdf:type owl:DatatypeProperty ;
+           rdfs:domain arto:Artwork ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Relates an artwork to its title." ;
+           rdfs:label "title" .
+
+
+###  http://purl.org/dc/terms/description
+dc:description rdf:type owl:DatatypeProperty ;
+               rdfs:domain arto:Artwork ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Relates an artwork to its description." ;
+               rdfs:label "description" .
+
+
+###  http://purl.org/dc/terms/locationType
+dc:locationType rdf:type owl:DatatypeProperty ;
+                rdfs:domain dc:Location ;
+                rdfs:range xsd:string ;
+                rdfs:comment """The type of the location. available options are: country, state, city, district,
+      street, building etc. """ ;
+                rdfs:label "locationType" .
+
+
+###  http://purl.org/dc/terms/medium
+dc:medium rdf:type owl:DatatypeProperty ;
+          rdfs:domain arto:Artwork ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Relates an artwork to the medium(s) used in creating it." ;
+          rdfs:label "medium" .
+
+
+###  http://semanticweb.cs.vu.nl/2009/11/sem/eventType
+sem:eventType rdf:type owl:DatatypeProperty ;
+              rdfs:domain event:Event ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The type of the event" ;
+              rdfs:label "eventType" .
+
+
+###  http://w3id.org/arto#HSVValue
+arto:HSVValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Color ;
+              rdfs:range xsd:int ;
+              rdfs:comment "The HSVValue of the Color." ;
+              rdfs:label "HSVValue" .
+
+
+###  http://w3id.org/arto#RGBValue
+arto:RGBValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Color ;
+              rdfs:range xsd:int ;
+              rdfs:comment "The RGBValue of the Color." ;
+              rdfs:label "RGBValue" .
+
+
+###  http://w3id.org/arto#compositionType
+arto:compositionType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain arto:Composition ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "The type of the composition." ;
+                     rdfs:label "compositionType" .
+
+
+###  http://w3id.org/arto#coordinates
+arto:coordinates rdf:type owl:DatatypeProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( arto:Object
+                                             arto:Scene
+                                           )
+                             ] ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "The coordinates of the Scene or the Object in the artwork." ;
+                 rdfs:label "coordinates" .
+
+
+###  http://w3id.org/arto#direction
+arto:direction rdf:type owl:DatatypeProperty ;
+               rdfs:domain arto:Line ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The direction of the line." ;
+               rdfs:label "direction" .
+
+
+###  http://w3id.org/arto#emotionType
+arto:emotionType rdf:type owl:DatatypeProperty ;
+                 rdfs:domain arto:Emotion ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Point out the emotion type." ;
+                 rdfs:label "emotionType" .
+
+
+###  http://w3id.org/arto#hasState
+arto:hasState rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Object ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The state of the Object." ;
+              rdfs:label "hasState" .
+
+
+###  http://w3id.org/arto#length
+arto:length rdf:type owl:DatatypeProperty ;
+            rdfs:domain arto:Line ;
+            rdfs:range xsd:float ;
+            rdfs:comment "The length of the line." ;
+            rdfs:label "length" .
+
+
+###  http://w3id.org/arto#lineType
+arto:lineType rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Line ;
+              rdfs:range xsd:float ;
+              rdfs:comment "The type of the line." ;
+              rdfs:label "lineType" .
+
+
+###  http://w3id.org/arto#material
+arto:material rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Object ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The material of the Object." ;
+              rdfs:label "material" .
+
+
+###  http://w3id.org/arto#size
+arto:size rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( arto:Object
+                                      arto:Scene
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The size of the Scene or the Object in the artwork." ;
+          rdfs:label "size" .
+
+
+###  http://w3id.org/arto#source
+arto:source rdf:type owl:DatatypeProperty ;
+            rdfs:domain arto:Meaning ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Relates the source of the meaning in artworks." ;
+            rdfs:label "source" .
+
+
+###  http://w3id.org/arto#spaceType
+arto:spaceType rdf:type owl:DatatypeProperty ;
+               rdfs:domain arto:Space ;
+               rdfs:range xsd:float ;
+               rdfs:comment "The type of the space." ;
+               rdfs:label "spaceType" .
+
+
+###  http://w3id.org/arto#timeType
+arto:timeType rdf:type owl:DatatypeProperty ;
+              rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The type of the time entity." ;
+              rdfs:label "timeType" .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height
+ebucore:height rdf:type owl:DatatypeProperty ;
+               rdfs:domain arto:Artwork ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Relates an artwork to its physical height." ;
+               rdfs:label "height" .
+
+
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width
+ebucore:width rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( arto:Artwork
+                                          arto:Line
+                                        )
+                          ] ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Relates an artwork to its physical width." ;
+              rdfs:label "width" .
+
+
+###  http://www.europeana.eu/schemas/edm/isShownBy
+edm:isShownBy rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string ;
+              rdfs:comment """An unambiguous URI reference to the digital object on the provider's web site in
+      the best available resolution/quality. """ ;
+              rdfs:label "imageResource" .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+geo:lat rdf:type owl:DatatypeProperty ;
+        rdfs:domain dc:Location ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
+        rdfs:label "latitude" .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+geo:long rdf:type owl:DatatypeProperty ;
+         rdfs:domain dc:Location ;
+         rdfs:range xsd:string ;
+         rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
+         rdfs:label "longitude" .
+
+
+###  https://dbpedia.org/ontology/nationality
+dbo:nationality rdf:type owl:DatatypeProperty ;
+                rdfs:domain foaf:Person ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Relates an person to the Nationality." ;
+                rdfs:label "nationality" .
+
+
+###  https://dbpedia.org/property/style
+dbp:style rdf:type owl:DatatypeProperty ;
+          rdfs:domain arto:Artwork ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Relates an artwork to its artistic style or movement." ;
+          rdfs:label "style" .
+
+
+###  https://schema.org/genre
+sdo:genre rdf:type owl:DatatypeProperty ;
+          rdfs:domain arto:Artwork ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Relates an artwork to its genre." ;
+          rdfs:label "genre" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/NET/c4dm/event.owl#Event
+event:Event rdf:type owl:Class ;
+            rdfs:comment """
       An arbitrary classification of a space/time region, by a
       cognitive agent. An event may have actively participating agents,
-      passive factors, products, and a location in space/time.""" .
+      passive factors, products, and a location in space/time.""" ;
+            rdfs:label "Event" .
 
-foaf:Agent
-  a owl:Class ;
-  rdfs:label "Agent" ;
-  rdfs:comment """Represents an Agent.This class comprises people, either individually or in groups,
-      who have the potential to perform intentional actions for which they can be held responsible.""" .
 
-foaf:Organization
-  a owl:Class ;
-  rdfs:label "Organization" ;
-  rdfs:comment """The Organization class represents a kind of Agent corresponding to instititutions
-      such as galleries, museums etc.""" ;
-  rdfs:subClassOf foaf:Agent ;
-  owl:disjointWith foaf:Person .
+###  http://purl.org/dc/terms/Location
+dc:Location rdf:type owl:Class ;
+            rdfs:comment "The Location." ;
+            rdfs:label "Location" .
 
-foaf:Person
-  a owl:Class ;
-  rdfs:label "Person" ;
-  rdfs:comment "Represents a person associated with an artwork." ;
-  rdfs:subClassOf foaf:Agent .
 
-<http://w3id.org/arto#Element>
-  a owl:Class ;
-  rdfs:label "Element" ;
-  rdfs:comment "Represents the visual element associated with an artwork." .
+###  http://w3id.org/arto#Artist
+arto:Artist rdf:type owl:Class ;
+            rdfs:subClassOf foaf:Person ;
+            rdfs:comment "The person or group who create or contribute the artwork." ;
+            rdfs:label "Artist" .
 
-<http://w3id.org/arto#Color>
-  a owl:Class ;
-  rdfs:label "Color" ;
-  rdfs:comment "Represents the color used in an artwork." ;
-  rdfs:subClassOf <http://w3id.org/arto#Element> .
 
-<http://w3id.org/arto#Line>
-  a owl:Class ;
-  rdfs:label "Line" ;
-  rdfs:comment "Represents the line used in an artwork." ;
-  rdfs:subClassOf <http://w3id.org/arto#Element> .
+###  http://w3id.org/arto#Artwork
+arto:Artwork rdf:type owl:Class ;
+             rdfs:comment """A created object or piece of art that is intended to be aesthetically pleasing or
+      convey a message.""" ;
+             rdfs:label "Artwork" .
 
-<http://w3id.org/arto#Space>
-  a owl:Class ;
-  rdfs:label "Space" ;
-  rdfs:comment "Represents the space used in an artwork." ;
-  rdfs:subClassOf <http://w3id.org/arto#Element> .
 
-<http://w3id.org/arto#Composition>
-  a owl:Class ;
-  rdfs:label "Composition" ;
-  rdfs:comment "Represents the composition used in an artwork." ;
-  rdfs:subClassOf <http://w3id.org/arto#Element> .
-
-<http://w3id.org/arto#Object>
-  a owl:Class ;
-  rdfs:label "Object" ;
-  rdfs:comment "Represents the physical or conceptual object within an artwork." .
-
-<http://w3id.org/arto#Scene>
-  a owl:Class ;
-  rdfs:label "Scene" ;
-  rdfs:comment """A scene can be viewed as a portion of the artwork composed of a group of objects
-      that convey a specific meaning or sentiment.""" .
-
-<http://w3id.org/arto#Connotation>
-  a owl:Class ;
-  rdfs:label "Cnnotation" ;
-  rdfs:comment """Represents the interpretations of artwork, includeing themes, meanings, and
-      emotions conveyed by an artwork.""" .
-
-<http://w3id.org/arto#Meaning>
-  a owl:Class ;
-  rdfs:label "Meaning" ;
-  rdfs:comment """Represents the underlying message, symbolism, or significance conveyed by an
-      artwork.""" ;
-  rdfs:subClassOf <http://w3id.org/arto#Connotation> .
-
-<http://w3id.org/arto#Emotion>
-  a owl:Class ;
-  rdfs:label "Emotion" ;
-  rdfs:comment """Represents the emotional response or affective state evoked by an artwork in the
-      artist or viewers, such as joy, sadness, anger, or fear.""" ;
-  rdfs:subClassOf <http://w3id.org/arto#Connotation> .
-
-<http://w3id.org/arto#Theme>
-  a owl:Class ;
-  rdfs:label "Theme" ;
-  rdfs:comment """Represents a central idea, subject, or concept explored in an artwork, which can
-      be explicit or implicit, and may reflect broader cultural, social, or political issues.""" ;
-  rdfs:subClassOf <http://w3id.org/arto#Connotation> .
-
-<http://w3id.org/arto#Metric>
-  a owl:Class ;
-  rdfs:label "Metric" ;
-  rdfs:comment """Represents a quantifiable measurement or characteristic of an artwork,
-      encompassing statistical information about basic elements such as color statistics, emotion
-      intensity, balance of composition, and other visual elements, to facilitate structural
-      analysis
-      and comparison of artworks.""" .
-
-<http://w3id.org/arto#MainColor>
-  a owl:Class ;
-  rdfs:label "MainColor" ;
-  rdfs:comment """Represents the dominant or most prominent color in an artwork, which can be
-      determined through visual analysis or color quantization techniques.""" ;
-  rdfs:subClassOf <http://w3id.org/arto#Metric> .
-
-<http://w3id.org/arto#ColorHistogram>
-  a owl:Class ;
-  rdfs:label "ColorHistogram" ;
-  rdfs:comment """Represents the distribution of colors in an artwork, typically expressed as a
-      histogram or a quantitative representation of the frequency or proportion of each color
-      present in
-      the artwork.""" ;
-  rdfs:subClassOf <http://w3id.org/arto#Metric> .
-
-<http://w3id.org/arto#Relevance>
-  a owl:Class ;
-  rdfs:label "Relevance" ;
-  rdfs:comment """Represents the degree to which a particular element or aspect of an artwork is
-      related to its overall theme or meaning.""" ;
-  rdfs:subClassOf <http://w3id.org/arto#Metric> .
-
-<http://w3id.org/arto#EmotionIntensity>
-  a owl:Class ;
-  rdfs:label "EmotionIntensity" ;
-  rdfs:comment "Represents the strength or degree of emotional response evoked by an artwork." ;
-  rdfs:subClassOf <http://w3id.org/arto#Metric> .
-
-<http://w3id.org/arto#BalanceOfComposition>
-  a owl:Class ;
-  rdfs:label "BalanceOfComposition" ;
-  rdfs:comment """Represents the degree of visual equilibrium or harmony in the arrangement of
+###  http://w3id.org/arto#BalanceOfComposition
+arto:BalanceOfComposition rdf:type owl:Class ;
+                          rdfs:subClassOf arto:Metric ;
+                          rdfs:comment """Represents the degree of visual equilibrium or harmony in the arrangement of
       elements within an artwork, considering factors such as symmetry, asymmetry, and distribution
       of
       visual elements.""" ;
-  rdfs:subClassOf <http://w3id.org/arto#Metric> .
+                          rdfs:label "BalanceOfComposition" .
 
-<https://motools.sourceforge.net/event/event.html#time>
-  a owl:ObjectProperty ;
-  rdfs:label "hasTime" ;
-  rdfs:comment "Relates the event to the date. Could be a time interval or a time point" ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://purl.org/NET/c4dm/event.owl#Event>
-     dc:Location
-   )
-  ] ;
-  rdfs:range <https://www.w3.org/TR/owl-time/#time:TemporalEntity> .
 
-<http://www.europeana.eu/schemas/edm/happenedAt>
-  a owl:ObjectProperty ;
-  rdfs:label "hasLocation" ;
-  rdfs:comment "Relates the event or provenance to the location where it happened." ;
-  rdfs:domain <http://purl.org/NET/c4dm/event.owl#Event> ;
-  rdfs:range dc:Location .
+###  http://w3id.org/arto#Character
+arto:Character rdf:type owl:Class ;
+               rdfs:subClassOf foaf:Person ;
+               rdfs:comment "The person or group appeared in the artwork." ;
+               rdfs:label "Character" .
 
-<https://dbpedia.org/ontology/residence>
-  a owl:ObjectProperty ;
-  rdfs:label "residence" ;
-  rdfs:comment "Relates a person to the location they lived in." ;
-  rdfs:domain foaf:Person ;
-  rdfs:range dc:Location .
 
-dc:created
-  a owl:ObjectProperty ;
-  rdfs:label "created" ;
-  rdfs:comment "Relates an artwork to its creation date." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range <https://www.w3.org/TR/owl-time/#time:TemporalEntity> .
+###  http://w3id.org/arto#Color
+arto:Color rdf:type owl:Class ;
+           rdfs:subClassOf arto:Element ;
+           rdfs:comment "Represents the color used in an artwork." ;
+           rdfs:label "Color" .
 
-<https://www.geonames.org/ontology#locatedIn>
-  a owl:ObjectProperty ;
-  rdfs:label "locatedIn" ;
-  rdfs:comment """It . available options are: country, state, city, district,
-      street, building etc. """, "Indicates the location where an organization is situated." ;
-  rdfs:domain foaf:Organization ;
-  rdfs:range dc:Location .
 
-dc:isPartOf
-  a owl:ObjectProperty ;
-  rdfs:label "isPartOf" ;
-  rdfs:comment "Relates an artwork to the serie of the artwork." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range <http://w3id.org/arto#Series> .
+###  http://w3id.org/arto#ColorHistogram
+arto:ColorHistogram rdf:type owl:Class ;
+                    rdfs:subClassOf arto:Metric ;
+                    rdfs:comment """Represents the distribution of colors in an artwork, typically expressed as a
+      histogram or a quantitative representation of the frequency or proportion of each color
+      present in
+      the artwork.""" ;
+                    rdfs:label "ColorHistogram" .
 
-<http://www.europeana.eu/schemas/edm/currentLocation>
-  a owl:ObjectProperty ;
-  rdfs:label "currentLocation" ;
-  rdfs:comment "Relates an artwork to its current physical location." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range dc:Location .
 
-<http://w3id.org/arto#relatedToEvent>
-  a owl:ObjectProperty ;
-  rdfs:label "relatedToEvent" ;
-  rdfs:comment "Relates an artwork to an event included in the artwork." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Artwork>
-     <http://w3id.org/arto#Connotation>
-   )
-  ] ;
-  rdfs:range <http://purl.org/NET/c4dm/event.owl#Event> .
+###  http://w3id.org/arto#Composition
+arto:Composition rdf:type owl:Class ;
+                 rdfs:subClassOf arto:Element ;
+                 rdfs:comment "Represents the composition used in an artwork." ;
+                 rdfs:label "Composition" .
 
-<http://w3id.org/arto#hasEvent>
-  a owl:ObjectProperty ;
-  rdfs:label "hasEvent" ;
-  rdfs:comment "Relates an artwork to an event happened to this artwork." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range <http://purl.org/NET/c4dm/event.owl#Event> .
 
-dc11:creator
-  a owl:ObjectProperty ;
-  rdfs:label "creator" ;
-  rdfs:comment "Relates an artwork to the artist(s) who created or contributed to it." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Artwork>
-     <http://w3id.org/arto#Series>
-   )
-  ] ;
-  rdfs:range <http://w3id.org/arto#Artist> .
+###  http://w3id.org/arto#Connotation
+arto:Connotation rdf:type owl:Class ;
+                 rdfs:comment """Represents the interpretations of artwork, includeing themes, meanings, and
+      emotions conveyed by an artwork.""" ;
+                 rdfs:label "Cnnotation" .
 
-<http://purl.org/NET/c4dm/event.owl#agent>
-  a owl:ObjectProperty ;
-  rdfs:label "agent" ;
-  rdfs:comment "Relates an artwork or event to a agent associated with it." ;
-  rdfs:domain <http://purl.org/NET/c4dm/event.owl#Event> ;
-  rdfs:range foaf:Agent .
 
-dc:contributor
-  a owl:ObjectProperty ;
-  rdfs:label "contributor" ;
-  rdfs:comment "The Contributor of the Artwork." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range foaf:Person .
+###  http://w3id.org/arto#Element
+arto:Element rdf:type owl:Class ;
+             rdfs:comment "Represents the visual element associated with an artwork." ;
+             rdfs:label "Element" .
 
-foaf:knows
-  a owl:ObjectProperty ;
-  rdfs:label "knows" ;
-  rdfs:comment "The person knows persons." ;
-  rdfs:domain foaf:Person ;
-  rdfs:range foaf:Person .
 
-<http://w3id.org/arto#relatedTo>
-  a owl:ObjectProperty ;
-  rdfs:label "relatedTo" ;
-  rdfs:comment "The Objects could related to Objects." ;
-  rdfs:domain <http://w3id.org/arto#Object> ;
-  rdfs:range <http://w3id.org/arto#Object> .
+###  http://w3id.org/arto#Emotion
+arto:Emotion rdf:type owl:Class ;
+             rdfs:subClassOf arto:Connotation ;
+             rdfs:comment """Represents the emotional response or affective state evoked by an artwork in the
+      artist or viewers, such as joy, sadness, anger, or fear.""" ;
+             rdfs:label "Emotion" .
 
-<http://w3id.org/arto#containsElements>
-  a owl:ObjectProperty ;
-  rdfs:label "containsElements" ;
-  rdfs:comment "The objects contains elements." ;
-  rdfs:domain <http://w3id.org/arto#Object> ;
-  rdfs:range <http://w3id.org/arto#Element> .
 
-<http://w3id.org/arto#containsObjects>
-  a owl:ObjectProperty ;
-  rdfs:label "containsObjects" ;
-  rdfs:comment "The Scene contains Objects." ;
-  rdfs:domain <http://w3id.org/arto#Scene> ;
-  rdfs:range <http://w3id.org/arto#Object> .
+###  http://w3id.org/arto#EmotionIntensity
+arto:EmotionIntensity rdf:type owl:Class ;
+                      rdfs:subClassOf arto:Metric ;
+                      rdfs:comment "Represents the strength or degree of emotional response evoked by an artwork." ;
+                      rdfs:label "EmotionIntensity" .
 
-<http://w3id.org/arto#relatedToScene>
-  a owl:ObjectProperty ;
-  rdfs:label "relatedToSecne" ;
-  rdfs:comment "The Scenes that objects related." ;
-  rdfs:range <http://w3id.org/arto#Scene> ;
-  rdfs:domain <http://w3id.org/arto#Object> .
 
-<http://w3id.org/arto#hasConnotation>
-  a owl:ObjectProperty ;
-  rdfs:label "hasConnotation" ;
-  rdfs:comment "Relate artwork and the connotations." ;
-  rdfs:range <http://w3id.org/arto#Connotation> ;
-  rdfs:domain <http://w3id.org/arto#Artwork> .
+###  http://w3id.org/arto#Line
+arto:Line rdf:type owl:Class ;
+          rdfs:subClassOf arto:Element ;
+          rdfs:comment "Represents the line used in an artwork." ;
+          rdfs:label "Line" .
 
-<http://w3id.org/arto#containsScenes>
-  a owl:ObjectProperty ;
-  rdfs:label "containsObjects" ;
-  rdfs:comment "The Artwork and Scene could contains Scenes." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Artwork>
-     <http://w3id.org/arto#Scene>
-   )
-  ] ;
-  rdfs:range <http://w3id.org/arto#Scene> .
 
-<http://w3id.org/arto#hasMetric>
-  a owl:ObjectProperty ;
-  rdfs:label "hasMetric" ;
-  rdfs:comment "The metric of the connotation, scene, Object or the element in the artwork." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Connotation>
-     <http://w3id.org/arto#Element>
-     <http://w3id.org/arto#Scene>
-     <http://w3id.org/arto#Object>
-   )
-  ] ;
-  rdfs:range <http://w3id.org/arto#Metric> .
+###  http://w3id.org/arto#MainColor
+arto:MainColor rdf:type owl:Class ;
+               rdfs:subClassOf arto:Metric ;
+               rdfs:comment """Represents the dominant or most prominent color in an artwork, which can be
+      determined through visual analysis or color quantization techniques.""" ;
+               rdfs:label "MainColor" .
 
-<http://w3id.org/arto#express>
-  a owl:ObjectProperty ;
-  rdfs:label "express" ;
-  rdfs:comment "The connotation expressed in the Scenes or the Objects or Elements in the artwork." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Element>
-     <http://w3id.org/arto#Scene>
-     <http://w3id.org/arto#Object>
-   )
-  ] ;
-  rdfs:range <http://w3id.org/arto#Connotation> .
 
-<http://w3id.org/arto#source>
-  a owl:DatatypeProperty ;
-  rdfs:label "source" ;
-  rdfs:comment "Relates the source of the meaning in artworks." ;
-  rdfs:domain <http://w3id.org/arto#Meaning> ;
-  rdfs:range xsd:string .
+###  http://w3id.org/arto#Meaning
+arto:Meaning rdf:type owl:Class ;
+             rdfs:subClassOf arto:Connotation ;
+             rdfs:comment """Represents the underlying message, symbolism, or significance conveyed by an
+      artwork.""" ;
+             rdfs:label "Meaning" .
 
-<http://w3id.org/arto#emotionType>
-  a owl:DatatypeProperty ;
-  rdfs:label "emotionType" ;
-  rdfs:comment "Point out the emotion type." ;
-  rdfs:domain <http://w3id.org/arto#Emotion> ;
-  rdfs:range xsd:string .
 
-<http://w3id.org/arto#coordinates>
-  a owl:DatatypeProperty ;
-  rdfs:label "coordinates" ;
-  rdfs:comment "The coordinates of the Scene or the Object in the artwork." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Scene>
-     <http://w3id.org/arto#Object>
-   )
-  ] ;
-  rdfs:range xsd:string .
+###  http://w3id.org/arto#Metric
+arto:Metric rdf:type owl:Class ;
+            rdfs:comment """Represents a quantifiable measurement or characteristic of an artwork,
+      encompassing statistical information about basic elements such as color statistics, emotion
+      intensity, balance of composition, and other visual elements, to facilitate structural
+      analysis
+      and comparison of artworks.""" ;
+            rdfs:label "Metric" .
 
-<http://w3id.org/arto#size>
-  a owl:DatatypeProperty ;
-  rdfs:label "size" ;
-  rdfs:comment "The size of the Scene or the Object in the artwork." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Scene>
-     <http://w3id.org/arto#Object>
-   )
-  ] ;
-  rdfs:range xsd:string .
 
-<http://w3id.org/arto#material>
-  a owl:DatatypeProperty ;
-  rdfs:label "material" ;
-  rdfs:comment "The material of the Object." ;
-  rdfs:domain <http://w3id.org/arto#Object> ;
-  rdfs:range xsd:string .
+###  http://w3id.org/arto#Object
+arto:Object rdf:type owl:Class ;
+            rdfs:comment "Represents the physical or conceptual object within an artwork." ;
+            rdfs:label "Object" .
 
-<http://w3id.org/arto#hasState>
-  a owl:DatatypeProperty ;
-  rdfs:label "hasState" ;
-  rdfs:comment "The state of the Object." ;
-  rdfs:domain <http://w3id.org/arto#Object> ;
-  rdfs:range xsd:string .
 
-<http://w3id.org/arto#RGBValue>
-  a owl:DatatypeProperty ;
-  rdfs:label "RGBValue" ;
-  rdfs:comment "The RGBValue of the Color." ;
-  rdfs:domain <http://w3id.org/arto#Color> ;
-  rdfs:range xsd:int .
+###  http://w3id.org/arto#Painting
+arto:Painting rdf:type owl:Class ;
+              rdfs:subClassOf arto:Artwork ;
+              rdfs:comment """A created object or piece of art that is intended to be aesthetically pleasing or
+      convey a message.""" ;
+              rdfs:label "Painting" .
 
-<http://w3id.org/arto#HSVValue>
-  a owl:DatatypeProperty ;
-  rdfs:label "HSVValue" ;
-  rdfs:comment "The HSVValue of the Color." ;
-  rdfs:domain <http://w3id.org/arto#Color> ;
-  rdfs:range xsd:int .
 
-<http://w3id.org/arto#length>
-  a owl:DatatypeProperty ;
-  rdfs:label "length" ;
-  rdfs:comment "The length of the line." ;
-  rdfs:domain <http://w3id.org/arto#Line> ;
-  rdfs:range xsd:float .
+###  http://w3id.org/arto#Relevance
+arto:Relevance rdf:type owl:Class ;
+               rdfs:subClassOf arto:Metric ;
+               rdfs:comment """Represents the degree to which a particular element or aspect of an artwork is
+      related to its overall theme or meaning.""" ;
+               rdfs:label "Relevance" .
 
-<http://w3id.org/arto#lineType>
-  a owl:DatatypeProperty ;
-  rdfs:label "lineType" ;
-  rdfs:comment "The type of the line." ;
-  rdfs:domain <http://w3id.org/arto#Line> ;
-  rdfs:range xsd:float .
 
-<http://w3id.org/arto#direction>
-  a owl:DatatypeProperty ;
-  rdfs:label "direction" ;
-  rdfs:comment "The direction of the line." ;
-  rdfs:domain <http://w3id.org/arto#Line> ;
-  rdfs:range xsd:string .
+###  http://w3id.org/arto#Scene
+arto:Scene rdf:type owl:Class ;
+           rdfs:comment """A scene can be viewed as a portion of the artwork composed of a group of objects
+      that convey a specific meaning or sentiment.""" ;
+           rdfs:label "Scene" .
 
-<http://w3id.org/arto#spaceType>
-  a owl:DatatypeProperty ;
-  rdfs:label "spaceType" ;
-  rdfs:comment "The type of the space." ;
-  rdfs:domain <http://w3id.org/arto#Space> ;
-  rdfs:range xsd:float .
 
-<http://w3id.org/arto#compositionType>
-  a owl:DatatypeProperty ;
-  rdfs:label "compositionType" ;
-  rdfs:comment "The type of the composition." ;
-  rdfs:domain <http://w3id.org/arto#Composition> ;
-  rdfs:range xsd:float .
+###  http://w3id.org/arto#Series
+arto:Series rdf:type owl:Class ;
+            rdfs:comment "A set of artworks." ;
+            rdfs:label "Series" .
 
-<http://www.europeana.eu/schemas/edm/isShownBy>
-  a owl:DatatypeProperty ;
-  rdfs:label "imageResource" ;
-  rdfs:comment """An unambiguous URI reference to the digital object on the provider's web site in
-      the best available resolution/quality. """ ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
 
-dc:description
-  a owl:DatatypeProperty ;
-  rdfs:label "description" ;
-  rdfs:comment "Relates an artwork to its description." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
+###  http://w3id.org/arto#Space
+arto:Space rdf:type owl:Class ;
+           rdfs:subClassOf arto:Element ;
+           rdfs:comment "Represents the space used in an artwork." ;
+           rdfs:label "Space" .
 
-dc11:title
-  a owl:DatatypeProperty ;
-  rdfs:label "title" ;
-  rdfs:comment "Relates an artwork to its title." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
 
-<https://dbpedia.org/property/style>
-  a owl:DatatypeProperty ;
-  rdfs:label "style" ;
-  rdfs:comment "Relates an artwork to its artistic style or movement." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
+###  http://w3id.org/arto#Sponsor
+arto:Sponsor rdf:type owl:Class ;
+             rdfs:subClassOf foaf:Person ;
+             rdfs:comment "The person or group who sponsor the artwork." ;
+             rdfs:label "Sponsor" .
 
-<https://schema.org/genre>
-  a owl:DatatypeProperty ;
-  rdfs:label "genre" ;
-  rdfs:comment "Relates an artwork to its genre." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
 
-<http://w3id.org/arto#timeType>
-  a owl:DatatypeProperty ;
-  rdfs:label "timeType" ;
-  rdfs:comment "The type of the time entity." ;
-  rdfs:domain <https://www.w3.org/TR/owl-time/#time:TemporalEntity> ;
-  rdfs:range xsd:string .
+###  http://w3id.org/arto#Theme
+arto:Theme rdf:type owl:Class ;
+           rdfs:subClassOf arto:Connotation ;
+           rdfs:comment """Represents a central idea, subject, or concept explored in an artwork, which can
+      be explicit or implicit, and may reflect broader cultural, social, or political issues.""" ;
+           rdfs:label "Theme" .
 
-dc:medium
-  a owl:DatatypeProperty ;
-  rdfs:label "medium" ;
-  rdfs:comment "Relates an artwork to the medium(s) used in creating it." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
 
-<https://semanticweb.cs.vu.nl/2009/11/sem/semdoc.html#sem:eventType>
-  a owl:DatatypeProperty ;
-  rdfs:label "eventType" ;
-  rdfs:comment " the type of the event" ;
-  rdfs:domain <http://purl.org/NET/c4dm/event.owl#Event> ;
-  rdfs:range xsd:string .
+###  http://www.w3.org/2006/time#Instant
+<http://www.w3.org/2006/time#Instant> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+                                      rdfs:comment "A temporal entity with zero extent or duration" ;
+                                      rdfs:label "Instant" .
 
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height>
-  a owl:DatatypeProperty ;
-  rdfs:label "height" ;
-  rdfs:comment "Relates an artwork to its physical height." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
 
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width>
-  a owl:DatatypeProperty ;
-  rdfs:label "width" ;
-  rdfs:comment "Relates an artwork to its physical width." ;
-  rdfs:domain [
-    a owl:Class ;
-    owl:unionOf (
-     <http://w3id.org/arto#Artwork>
-     <http://w3id.org/arto#Line>
-   )
-  ] ;
-  rdfs:range xsd:string .
+###  http://www.w3.org/2006/time#Interval
+<http://www.w3.org/2006/time#Interval> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+                                       rdfs:comment "A temporal entity with an extent or duration" ;
+                                       rdfs:label "Interval" .
 
-<https://dbpedia.org/ontology/nationality>
-  a owl:DatatypeProperty ;
-  rdfs:label "nationality" ;
-  rdfs:comment "Relates an person to the Nationality." ;
-  rdfs:domain foaf:Person ;
-  rdfs:range xsd:string .
 
-dc11:format
-  a owl:DatatypeProperty ;
-  rdfs:label "format" ;
-  rdfs:comment "The F gormat of the Artwork." ;
-  rdfs:domain <http://w3id.org/arto#Artwork> ;
-  rdfs:range xsd:string .
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class ;
+                                             rdfs:comment "A temporal interval or instant." ;
+                                             rdfs:label "Time" .
 
-geo:long
-  a owl:DatatypeProperty ;
-  rdfs:domain dc:Location ;
-  rdfs:label "longitude" ;
-  rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
-  rdfs:range xsd:string .
 
-geo:lat
-  a owl:DatatypeProperty ;
-  rdfs:domain dc:Location ;
-  rdfs:label "latitude" ;
-  rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
-  rdfs:range xsd:string .
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class ;
+           rdfs:comment """Represents an Agent.This class comprises people, either individually or in groups,
+      who have the potential to perform intentional actions for which they can be held responsible.""" ;
+           rdfs:label "Agent" .
 
-dc:locationType
-  a owl:DatatypeProperty ;
-  rdfs:domain dc:Location ;
-  rdfs:label "locationType" ;
-  rdfs:comment """The type of the location. available options are: country, state, city, district,
-      street, building etc. """ ;
-  rdfs:range xsd:string .
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf foaf:Agent ;
+                  owl:disjointWith foaf:Person ;
+                  rdfs:comment """The Organization class represents a kind of Agent corresponding to instititutions
+      such as galleries, museums etc.""" ;
+                  rdfs:label "Organization" .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:subClassOf foaf:Agent ;
+            rdfs:comment "Represents a person associated with an artwork." ;
+            rdfs:label "Person" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/arto
+<https://w3id.org/arto> rdf:type owl:NamedIndividual ;
+                        dc:description "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
