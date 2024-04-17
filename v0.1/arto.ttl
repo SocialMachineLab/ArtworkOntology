@@ -623,4 +623,3 @@ dc:locationType
   rdfs:comment """The type of the location. available options are: country, state, city, district,
       street, building etc. """ ;
   rdfs:range xsd:string .
-T
