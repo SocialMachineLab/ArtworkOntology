@@ -43,6 +43,11 @@ Figure shows the RDF format
 ![The Descriptive model of The Shepherdess](images/example_adm.png)
 
 
+## Interview
+
+Art experts verbally described some example artworks, labelling their own captions according to descriptive, contextual, and interpretive categories. The experts listed and ranked the aspects they considered most crucial when describing artworks, shared their approaches to describing art, and provided insights on depicting subjective elements like emotion and subject matter. They also outlined the most challenging elements to describe and their thoughts on verifying the accuracy of descriptions. Finally, after being introduced to the initial ontology design, the experts applied the new ontology to create captions for four artwork examples and assessed the comprehensiveness and structure of the generated content. Please check the detailed interview questionnaire and results in folder [interview](/interview) 
+
+
 ## Contributing
 
 We welcome contributions to enhance and expand the Artwork Object Ontology. If you'd like to contribute, please follow these steps:
