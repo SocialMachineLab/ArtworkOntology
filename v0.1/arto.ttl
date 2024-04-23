@@ -18,6 +18,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @base <https://w3id.org/arto> .
 
@@ -66,26 +67,26 @@ vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/NET/c4dm/event.owl#agent
 event:agent rdf:type owl:ObjectProperty ;
-            rdfs:domain event:Event ;
+            rdfs:domain arto:Event ;
             rdfs:range foaf:Agent ;
-            rdfs:comment "Relates an artwork or event to a agent associated with it." ;
+            rdfs:comment "Relates an event to a agent associated with it." ;
             rdfs:label "agent" .
 
 
 ###  http://purl.org/NET/c4dm/event.owl#time
-event:time rdf:type owl:ObjectProperty ;
+arto:hasTime rdf:type owl:ObjectProperty ;
            rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( event:Event
-                                       dc:Location
+                         owl:unionOf ( arto:Event
+                                       arto:Location
                                      )
                        ] ;
-           rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+           rdfs:range arto:Time ;
            rdfs:comment "Relates the event to the date. Could be a time interval or a time point" ;
            rdfs:label "hasTime" .
 
 
-###  http://purl.org/dc/elements/1.1/creator
-dc11:creator rdf:type owl:ObjectProperty ;
+###  http://purl.org/dc/terms/creator
+dc:creator rdf:type owl:ObjectProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( arto:Artwork
                                          arto:Series
@@ -107,7 +108,7 @@ dc:contributor rdf:type owl:ObjectProperty ;
 ###  http://purl.org/dc/terms/created
 dc:created rdf:type owl:ObjectProperty ;
            rdfs:domain arto:Artwork ;
-           rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+           rdfs:range arto:Time ;
            rdfs:comment "Relates an artwork to its creation date." ;
            rdfs:label "created" .
 
@@ -120,24 +121,24 @@ dc:isPartOf rdf:type owl:ObjectProperty ;
             rdfs:label "isPartOf" .
 
 
-###  http://w3id.org/arto#containsElements
-arto:containsElements rdf:type owl:ObjectProperty ;
+###  http://w3id.org/arto#containsElement
+arto:containsElement rdf:type owl:ObjectProperty ;
                       rdfs:domain arto:Object ;
                       rdfs:range arto:Element ;
                       rdfs:comment "The objects contains elements." ;
-                      rdfs:label "containsElements" .
+                      rdfs:label "containsElement" .
 
 
-###  http://w3id.org/arto#containsObjects
-arto:containsObjects rdf:type owl:ObjectProperty ;
+###  http://w3id.org/arto#containsObject
+arto:containsObject rdf:type owl:ObjectProperty ;
                      rdfs:domain arto:Scene ;
                      rdfs:range arto:Object ;
                      rdfs:comment "The Scene contains Objects." ;
-                     rdfs:label "containsObjects" .
+                     rdfs:label "containsObject" .
 
 
-###  http://w3id.org/arto#containsScenes
-arto:containsScenes rdf:type owl:ObjectProperty ;
+###  http://w3id.org/arto#containsScene
+arto:containsScene rdf:type owl:ObjectProperty ;
                     rdfs:domain [ rdf:type owl:Class ;
                                   owl:unionOf ( arto:Artwork
                                                 arto:Scene
@@ -145,7 +146,7 @@ arto:containsScenes rdf:type owl:ObjectProperty ;
                                 ] ;
                     rdfs:range arto:Scene ;
                     rdfs:comment "The Artwork and Scene could contains Scenes." ;
-                    rdfs:label "containsObjects" .
+                    rdfs:label "containsScene" .
 
 
 ###  http://w3id.org/arto#express
@@ -172,7 +173,7 @@ arto:hasConnotation rdf:type owl:ObjectProperty ;
 ###  http://w3id.org/arto#hasEvent
 arto:hasEvent rdf:type owl:ObjectProperty ;
               rdfs:domain arto:Artwork ;
-              rdfs:range event:Event ;
+              rdfs:range arto:Event ;
               rdfs:comment "Relates an artwork to an event happened to this artwork." ;
               rdfs:label "hasEvent" .
 
@@ -195,7 +196,7 @@ arto:hasMetric rdf:type owl:ObjectProperty ;
 arto:relatedTo rdf:type owl:ObjectProperty ;
                rdfs:domain arto:Object ;
                rdfs:range arto:Object ;
-               rdfs:comment "The Objects could related to Objects." ;
+               rdfs:comment "The Objects could related to Objects, such as behind, holds, and grazingIn, etc." ;
                rdfs:label "relatedTo" .
 
 
@@ -206,7 +207,7 @@ arto:relatedToEvent rdf:type owl:ObjectProperty ;
                                                 arto:Connotation
                                               )
                                 ] ;
-                    rdfs:range event:Event ;
+                    rdfs:range arto:Event ;
                     rdfs:comment "Relates an artwork to an event included in the artwork." ;
                     rdfs:label "relatedToEvent" .
 
@@ -222,16 +223,24 @@ arto:relatedToScene rdf:type owl:ObjectProperty ;
 ###  http://www.europeana.eu/schemas/edm/currentLocation
 edm:currentLocation rdf:type owl:ObjectProperty ;
                     rdfs:domain arto:Artwork ;
-                    rdfs:range dc:Location ;
+                    rdfs:range arto:Location ;
                     rdfs:comment "Relates an artwork to its current physical location." ;
                     rdfs:label "currentLocation" .
 
 
 ###  http://www.europeana.eu/schemas/edm/happenedAt
 edm:happenedAt rdf:type owl:ObjectProperty ;
-               rdfs:domain event:Event ;
-               rdfs:range dc:Location ;
+               rdfs:domain arto:Event ;
+               rdfs:range arto:Location ;
                rdfs:comment "Relates the event or provenance to the location where it happened." ;
+               rdfs:label "happenedAt" .
+
+
+###  http://w3id.org/arto#hasLocation
+arto:hasLocation rdf:type owl:ObjectProperty ;
+               rdfs:domain foaf:Organization ;
+               rdfs:range arto:Location ;
+               rdfs:comment "Relates the organization to its location." ;
                rdfs:label "hasLocation" .
 
 
@@ -246,35 +255,26 @@ foaf:knows rdf:type owl:ObjectProperty ;
 ###  https://dbpedia.org/ontology/residence
 dbo:residence rdf:type owl:ObjectProperty ;
               rdfs:domain foaf:Person ;
-              rdfs:range dc:Location ;
+              rdfs:range arto:Location ;
               rdfs:comment "Relates a person to the location they lived in." ;
               rdfs:label "residence" .
 
-
-###  https://www.geonames.org/ontology#locatedIn
-gn:locatedIn rdf:type owl:ObjectProperty ;
-             rdfs:domain foaf:Organization ;
-             rdfs:range dc:Location ;
-             rdfs:comment "Indicates the location where an organization is situated." ,
-                          """It . available options are: country, state, city, district,
-      street, building etc. """ ;
-             rdfs:label "locatedIn" .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://purl.org/dc/elements/1.1/format
-dc11:format rdf:type owl:DatatypeProperty ;
+###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions
+ebucore:dimensions rdf:type owl:DatatypeProperty ;
             rdfs:domain arto:Artwork ;
             rdfs:range xsd:string ;
-            rdfs:comment "The F gormat of the Artwork." ;
-            rdfs:label "format" .
+            rdfs:comment "The dimension of the Artwork." ;
+            rdfs:label "dimension" .
 
 
-###  http://purl.org/dc/elements/1.1/title
-dc11:title rdf:type owl:DatatypeProperty ;
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:DatatypeProperty ;
            rdfs:domain arto:Artwork ;
            rdfs:range xsd:string ;
            rdfs:comment "Relates an artwork to its title." ;
@@ -291,7 +291,7 @@ dc:description rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/dc/terms/locationType
 dc:locationType rdf:type owl:DatatypeProperty ;
-                rdfs:domain dc:Location ;
+                rdfs:domain arto:Location ;
                 rdfs:range xsd:string ;
                 rdfs:comment """The type of the location. available options are: country, state, city, district,
       street, building etc. """ ;
@@ -308,7 +308,7 @@ dc:medium rdf:type owl:DatatypeProperty ;
 
 ###  http://semanticweb.cs.vu.nl/2009/11/sem/eventType
 sem:eventType rdf:type owl:DatatypeProperty ;
-              rdfs:domain event:Event ;
+              rdfs:domain arto:Event ;
               rdfs:range xsd:string ;
               rdfs:comment "The type of the event" ;
               rdfs:label "eventType" .
@@ -366,12 +366,12 @@ arto:emotionType rdf:type owl:DatatypeProperty ;
                  rdfs:label "emotionType" .
 
 
-###  http://w3id.org/arto#hasState
-arto:hasState rdf:type owl:DatatypeProperty ;
+###  http://w3id.org/arto#state
+arto:state rdf:type owl:DatatypeProperty ;
               rdfs:domain arto:Object ;
               rdfs:range xsd:string ;
               rdfs:comment "The state of the Object." ;
-              rdfs:label "hasState" .
+              rdfs:label "state" .
 
 
 ###  http://w3id.org/arto#length
@@ -381,6 +381,21 @@ arto:length rdf:type owl:DatatypeProperty ;
             rdfs:comment "The length of the line." ;
             rdfs:label "length" .
 
+###  https://schema.org/startDate
+sdo:startDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain arto:Time ;
+            rdfs:range xsd:dataTime ;
+            rdfs:comment "The start date of a time entity." ;
+            rdfs:label "startDate" .
+
+
+###  https://schema.org/endDate
+sdo:endDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain arto:Time ;
+            rdfs:range xsd:dataTime ;
+            rdfs:comment "The end date of a time entity." ;
+            rdfs:label "endDate" .
+
 
 ###  http://w3id.org/arto#lineType
 arto:lineType rdf:type owl:DatatypeProperty ;
@@ -388,6 +403,15 @@ arto:lineType rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:float ;
               rdfs:comment "The type of the line." ;
               rdfs:label "lineType" .
+
+
+###  http://w3id.org/arto#originalTitle
+arto:originalTitle rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The original title of the artwork, potentially in its original language." ;
+              rdfs:label "originalTitle" .
+
 
 
 ###  http://w3id.org/arto#material
@@ -460,24 +484,15 @@ edm:isShownBy rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:string ;
               rdfs:comment """An unambiguous URI reference to the digital object on the provider's web site in
       the best available resolution/quality. """ ;
-              rdfs:label "imageResource" .
+              rdfs:label "isShownBy" .
 
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
-geo:lat rdf:type owl:DatatypeProperty ;
-        rdfs:domain dc:Location ;
-        rdfs:range xsd:string ;
-        rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
-        rdfs:label "latitude" .
-
-
-###  http://www.w3.org/2003/01/geo/wgs84_pos#long
-geo:long rdf:type owl:DatatypeProperty ;
-         rdfs:domain dc:Location ;
-         rdfs:range xsd:string ;
-         rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
-         rdfs:label "longitude" .
-
+geo:asWKT rdf:type owl:DatatypeProperty ;
+        rdfs:domain arto:Location ;
+        rdfs:range geo:wktLiteral ;
+        rdfs:comment "Representing a geographical point using WKT format" ;
+        rdfs:label "asWKT" .
 
 ###  https://dbpedia.org/ontology/nationality
 dbo:nationality rdf:type owl:DatatypeProperty ;
@@ -508,17 +523,19 @@ sdo:genre rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  http://purl.org/NET/c4dm/event.owl#Event
-event:Event rdf:type owl:Class ;
+arto:Event rdf:type owl:Class ;
             rdfs:comment """
       An arbitrary classification of a space/time region, by a
       cognitive agent. An event may have actively participating agents,
       passive factors, products, and a location in space/time.""" ;
+            rdfs:subClassOf event:Event ;
             rdfs:label "Event" .
 
 
 ###  http://purl.org/dc/terms/Location
-dc:Location rdf:type owl:Class ;
+arto:Location rdf:type owl:Class ;
             rdfs:comment "The Location." ;
+            rdfs:subClassOf dc:Location ;
             rdfs:label "Location" .
 
 
@@ -695,24 +712,11 @@ arto:Theme rdf:type owl:Class ;
            rdfs:label "Theme" .
 
 
-###  http://www.w3.org/2006/time#Instant
-<http://www.w3.org/2006/time#Instant> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
-                                      rdfs:comment "A temporal entity with zero extent or duration" ;
-                                      rdfs:label "Instant" .
-
-
-###  http://www.w3.org/2006/time#Interval
-<http://www.w3.org/2006/time#Interval> rdf:type owl:Class ;
-                                       rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
-                                       rdfs:comment "A temporal entity with an extent or duration" ;
-                                       rdfs:label "Interval" .
-
-
-###  http://www.w3.org/2006/time#TemporalEntity
-<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class ;
-                                             rdfs:comment "A temporal interval or instant." ;
-                                             rdfs:label "Time" .
+###  http://w3id.org/arto#Time
+arto:Time rdf:type owl:Class ;
+          rdfs:comment "A temporal interval or instant." ;
+          owl:equivalentClass <http://www.w3.org/2006/time#TemporalEntity> ;
+          rdfs:label "Time" .
 
 
 ###  http://xmlns.com/foaf/0.1/Agent
