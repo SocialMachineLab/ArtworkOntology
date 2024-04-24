@@ -9,7 +9,7 @@ The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for desc
 - Artwork Contextual Model: Captures background information such as artwork metadata, historical framework, and related events.
 - Data-driven approach: The ontology is built based on existing available data and incorporates concepts from established cultural heritage ontologies like CIDOC-CRM and EDM.
 - Evaluation: The ontology has been validated using the OntOlogy Pitfall Scanner (OOPS!) and refined through interviews with art experts.
-- Integration with Large Language Models (LLMs): Knowledge graphs based on ARTO can be integrated (provide context to prompt engineering tasks) with LLMs to enable automated artwork captioning.
+- Integration with Large Language Models (LLMs): Knowledge graphs based on ARTO can be integrated with LLMs by providing context to prompt engineering tasks, enabling automated artwork captioning.
 
 
 ## Models
