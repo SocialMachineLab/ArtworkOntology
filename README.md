@@ -34,11 +34,9 @@ To demonstrate the application of the ARTO models, consider the artwork “[The 
 
 ### Contextual Model of The Shepherdess using RDF-star
 ![The contextual model of The Shepherdess using RDF-Star](images/example_rdfstar.png)
-Figure shows the RDF-star format
 
-### Contextual model of The Shepherdess using RDF
+### Contextual Model of The Shepherdess using RDF
 ![The contextual model of The Shepherdess using RDF](images/example_rdf.png)
-Figure shows the RDF format
 
 ### Descriptive Model of The Shepherdess
 ![The Descriptive model of The Shepherdess](images/example_adm.png)
