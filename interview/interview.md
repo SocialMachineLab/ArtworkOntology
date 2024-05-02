@@ -18,7 +18,7 @@ This document presents an analysis of interviews conducted with art experts to v
 
 ## Participant Information
 
-The participants in this research will consist of individuals who are over 18 years old and have art backgrounds. The expected number of participants is 20.
+There are 10 participants who are over 18 years old and have art backgrounds. 
 
 ## Interview Questions
 
@@ -33,4 +33,4 @@ The following key questions will be asked during the interviews to clarify the e
 
 ## Interview Results Summary
 
-The interviews with art experts provide valuable insights into the process of creating captions for artworks. The findings reveal that experts consider various aspects of artwork captioning, such as the artist's background, the artwork's context, visual content, and interpretations. The importance and order of these aspects vary among experts. Most agree that subjectivity in interpretations is hard to avoid and could be minimized through understanding the artist's intentions and context. Challenges in caption creation include maintaining a professional perspective, comprehending the artist's true intentions, and knowing relevant background facts. Our ontology was generally well-received, with a focus on including rich backgrounds and visual content. For a more detailed analysis of the interview results, please refer to the file [Interview statistic](/interview/interview%20statistics.xlsx).
+The interviews with art experts provide valuable insights into the process of creating captions for artworks. The findings reveal that experts consider various aspects of artwork captioning, such as the artist's background, the artwork's context, visual content, and interpretations. The importance and order of these aspects vary among experts. Most agree that subjectivity in interpretations is hard to avoid and could be minimized through understanding the artist's intentions and context. Challenges in caption creation include maintaining a professional perspective, comprehending the artist's true intentions, and knowing relevant background facts. Our ontology was generally well-received, with a focus on including rich backgrounds and visual content. For a more detailed analysis of the interview results, please refer to the file [Interview results](/interview/interview%20results.xlsx).
