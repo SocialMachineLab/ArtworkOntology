@@ -14,20 +14,20 @@ We aimed to identify and normalize these diverse time representations to achieve
 We collected data from the following sources:
 
 
-| Data Source | Number of Artworks | Has Schema? | Number of Attributes | Copyright |
-|-------------|--------------------|-------------|-----------------------|-----------|
-| [Europeana](https://www.europeana.eu/en) | 2,594,696 | Yes | 17 | Fully Public |
-| [Wikiart](https://www.wikiart.org/) | 172,397 | No | 17 | Partially Public |
-| [Artic](https://www.artic.edu/) | 93,836 | No | 9 | Partially Public |
-| [American art](https://americanart.si.edu/) | 39,388 | No | 13 | Partially Public |
-| [Louvre](https://www.louvre.fr/en) | 512,613 | No | 9 | Public Metadata |
-| [Nation Museum](https://collection.nationalmuseum.se) | 82,463 | No | 6 | Partially Public |
-| [NGA.gov](https://www.nga.gov/) | 139,723 | No | 26 | Fully Public |
-| [MET museum](https://www.metmuseum.org) | 218,930 | No | 12 | Partially Public |
-| [Brooklyn Museum](https://www.brooklynmuseum.org/) | 67,529 | No | 13 | Partially Public |
-| [Getty](https://www.getty.edu) | 86,848 | Yes | 10 | Partially Public |
-| [British Museum](https://www.britishmuseum.org) | 2,123,229 | No | 16 | Partially Public |
-| [Art bank](https://www.artbank.gov.au/) | 10,727 | No | 9 | For research and study |
+| Data Source | Number of Artworks | Has Schema? | Number of Attributes | Copyright |   Attributes |
+|-------------|--------------------|-------------|-----------------------|-----------|----------|
+| [Europeana](https://www.europeana.eu/en) | 2,594,696 | Yes | 17 | Fully Public |title, creator, Publisher, subject,Type of item,Aggregator,Creation date,Places,Identifier, description,Language,Year,Providing country,Collection name,Is part of,Identifier,image,Format|
+| [Wikiart](https://www.wikiart.org/) | 172,397 | No | 17 | Partially Public |title,year,width,height,artistName,image,description,Style,Genre,Media,Location,Original Title,Series,Period,wikipediadescription,Theme,provenance｜
+| [Artic](https://www.artic.edu/) | 93,836 | No | 9 | Partially Public |  creator, description, exhibition history, provenance, title, place, medium,dimension,date|
+| [American art](https://americanart.si.edu/) | 39,388 | No | 13 | Partially Public |title, artist,date,location,dimension,copyright,credit,mediums,classification,highlight,keywords,Object Number,Linked Open Data|
+| [Louvre](https://www.louvre.fr/en) | 512,613 | No | 9 | Public Metadata |title, creator, date,description,collection,history,dimension,material,location|
+| [Nation Museum](https://collection.nationalmuseum.se) | 82,463 | No | 6 | Partially Public |title,creator,description,Material,dimension,Exhibited|
+| [NGA.gov](https://www.nga.gov/) | 139,723 | No | 26 | Fully Public |objectid,accessioned,accessionnum,locationid,title,displaydate,beginyear,endyear,visualbrowsertimespan,medium,dimensions,inscription,markings,attributioninverted,attribution,provenancetext,classification,subclassification,visualbrowserclassification,parentid,isvirtual,departmentabbr,portfolio,series,volume,watermarks|
+| [MET museum](https://www.metmuseum.org) | 218,930 | No | 12 | Partially Public |artist, date, current location,description, provenance,title, period, culture, medium, classification|
+| [Brooklyn Museum](https://www.brooklynmuseum.org/) | 67,529 | No | 13 | Partially Public |title, artist,medium,dimension, collection,location,caption,image,date,DESCRIPTION,period,SIGNATURE,MARKINGS|
+| [Getty](https://www.getty.edu) | 86,848 | Yes | 10 | Partially Public |id,primary_name,date_created,culture,creator,Medium,dimension,Mark,classification,object type|
+| [British Museum](https://www.britishmuseum.org) | 2,123,229 | No | 16 | Partially Public |title,artist,object type,description,cultures,date,material,location,subject,Acquisition date,Department,Technique,School,Production place,comments|
+| [Art bank](https://www.artbank.gov.au/) | 10,727 | No | 9 | For research and study | image, title, artist, date, material, medium, size, price, description|
 
 
 
@@ -87,17 +87,52 @@ for i in urls:
 ```
 
 
+## Data Preprocessing
 
 
+1. Understand data scale, format, and summarize data types, missing values, and other basic information for each field
+
+    - Use Python's Pandas library to read the data file and understand basic information such as the attribtues and the type of attributes.
+
+
+2. Handle missing values by deleting or filling (e.g., with mean or mode)
+
+    - For fields with a high proportion of missing values (e.g., >50%), consider dropping the field as it may not have much reference value
+
+
+3. Identify and handle outliers, such as values with incorrect format or outside a reasonable range
+
+    - For numeric fields, use df.describe() to view statistics such as minimum, maximum, mean, and quantiles to determine if there are outliers outside the normal range
+
+
+4. Standardize names and values to ensure data consistency
+
+    - Check attribute names and convert them to lowercase, remove spaces, and ensure consistent naming style
+
+    - Standardize values in categorical fields, such as converting to lowercase and removing leading/trailing whitespace
+
+
+    - Map different representations of the same meaning, such as mapping both 'creation date' and 'production date' to 'creation date'
 
 ## Data Analysis
 
 
+- Analyze the distribution of key fields (e.g., artist nationality, art genre, creation year)
+
+- For categorical fields, use df['field'].value_counts() to view the frequency distribution of each value
+- For numeric fields, use df['field'].hist() to plot a histogram and observe the data distribution
 
 
 
 
-## Data Preprocessing
+
+
+
+
+
+
+
+
 
 
 
