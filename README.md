@@ -282,8 +282,3 @@ By leveraging ARTO/ONTO/KB for prompt creation and validation, the caption gener
 This project is licensed under the [MIT License](LICENSE).
 
 
-## Contact
-
-For any questions, suggestions, or collaborations, feel free to reach out to Can Yang (can.yang [at] anu.edu.au).
-
-We appreciate your interest and feedback!
