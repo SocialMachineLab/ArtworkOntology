@@ -4,7 +4,6 @@
 <https://w3id.org/arto> <http://creativecommons.org/ns#attributionURL> <https://w3id.org/arto> .
 <https://w3id.org/arto> <http://purl.org/dc/terms/issued> "2024-04-10" .
 <https://w3id.org/arto> <http://purl.org/dc/terms/license> <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> .
-<https://w3id.org/arto> <http://purl.org/dc/terms/rights> "Copyright \u00A9 2024 Can Yang"@en .
 <https://w3id.org/arto> <http://purl.org/dc/terms/title> "Artwork Object Ontology"@en .
 <https://w3id.org/arto> <http://purl.org/vocab/vann/preferredNamespacePrefix> "arto" .
 <https://w3id.org/arto> <http://www.w3.org/2000/01/rdf-schema#label> "Artwork Object Ontology (ARTO)"@en .

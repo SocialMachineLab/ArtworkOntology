@@ -12,7 +12,7 @@
     <cc:attributionURL rdf:resource="https://w3id.org/arto"/>
     <dc:issued>2024-04-10</dc:issued>
     <dc:license rdf:resource="https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"/>
-    <dc:rights xml:lang="en">Copyright © 2024 Can Yang</dc:rights>
+    
     <dc:title xml:lang="en">Artwork Object Ontology</dc:title>
     <ns0:preferredNamespacePrefix>arto</ns0:preferredNamespacePrefix>
     <rdfs:label xml:lang="en">Artwork Object Ontology (ARTO)</rdfs:label>

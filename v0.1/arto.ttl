@@ -27,7 +27,6 @@
                          cc:attributionURL <https://w3id.org/arto> ;
                          dc:issued "2024-04-10" ;
                          dc:license <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> ;
-                         dc:rights "Copyright © 2024 Can Yang"@en ;
                          dc:title "Artwork Object Ontology"@en ;
                          vann:preferredNamespacePrefix "arto" ;
                          rdfs:label "Artwork Object Ontology (ARTO)"@en ;
