@@ -14,7 +14,7 @@
   {
     "@id": "_:b10",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      { "@id": "http://w3id.org/arto#Element" }
+      { "@id": "http://w3id.org/arto#VisualElement" }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [{ "@id": "_:b11" }]
   },
@@ -49,7 +49,7 @@
   {
     "@id": "_:b15",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      { "@id": "http://w3id.org/arto#Element" }
+      { "@id": "http://w3id.org/arto#VisualElement" }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [{ "@id": "_:b16" }]
   },
@@ -107,14 +107,14 @@
   {
     "@id": "_:b22",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      { "@id": "http://w3id.org/arto#Object" }
+      { "@id": "http://xmlns.com/foaf/0.1/Organization" }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [{ "@id": "_:b23" }]
   },
   {
     "@id": "_:b23",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      { "@id": "http://w3id.org/arto#Scene" }
+      { "@id": "http://w3id.org/arto#Event" }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
       { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" }
@@ -149,14 +149,14 @@
   {
     "@id": "_:b28",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      { "@id": "http://w3id.org/arto#Artwork" }
+      { "@id": "http://w3id.org/arto#Object" }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [{ "@id": "_:b29" }]
   },
   {
     "@id": "_:b29",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      { "@id": "http://w3id.org/arto#Line" }
+      { "@id": "http://w3id.org/arto#Scene" }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
       { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" }
@@ -166,6 +166,27 @@
     "@id": "_:b3",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2002/07/owl#unionOf": [{ "@id": "_:b4" }]
+  },
+  {
+    "@id": "_:b30",
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
+    "http://www.w3.org/2002/07/owl#unionOf": [{ "@id": "_:b31" }]
+  },
+  {
+    "@id": "_:b31",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      { "@id": "http://w3id.org/arto#Artwork" }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [{ "@id": "_:b32" }]
+  },
+  {
+    "@id": "_:b32",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      { "@id": "http://w3id.org/arto#Line" }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" }
+    ]
   },
   {
     "@id": "_:b4",
@@ -224,7 +245,9 @@
       { "@id": "http://xmlns.com/foaf/0.1/Agent" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates an event to a agent associated with it." }
+      {
+        "@value": "Relates an event to an agent (person or organization) associated with it.\r\n            Example:\r\n            - An acquisition event by a museum: :acquisition_2023 event:agent :metropolitan_museum"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "agent" }]
   },
@@ -236,10 +259,13 @@
       { "@id": "http://w3id.org/arto#Artwork" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://xmlns.com/foaf/0.1/Person" }
+      { "@id": "http://xmlns.com/foaf/0.1/Agent" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The Contributor of the Artwork." }
+      { "@value": "The Contributor of the Artwork." },
+      {
+        "@value": "Identifies contributors to an artwork who assisted in its creation or development. This may include studio assistants, technical advisors, collaborative participants or others.\r\n\r\n                Examples:\r\n                - Studio assistant: :sistine_chapel dc:contributor :workshop_assistant_giovanni\r\n                - Technical advisor: :digital_installation dc:contributor :software_engineer_smith\r\n                - Collaborative input: :performance_piece dc:contributor :sound_designer_jones"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "contributor" }]
   },
@@ -253,7 +279,10 @@
       { "@id": "http://w3id.org/arto#Time" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates an artwork to its creation date." }
+      { "@value": "Relates an artwork to its creation date." },
+      {
+        "@value": "Specifies the creation date or period of an artwork, which can be a specific date, year, or time range during which the work was produced.\r\n            Examples:\r\n            - Specific date: :mona_lisa dc:created :1503\r\n            - Period range: :david_sculpture dc:created :1501_1504\r\n            - Approximate date: :cave_painting dc:created :paleolithic_period"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "created" }]
   },
@@ -266,7 +295,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Relates an artwork to the artist(s) who created or contributed to it."
+        "@value": "Relates an artwork or series to its primary creator(s). This property identifies the artist(s) who conceptualized and executed the work.\r\n              Examples:\r\n              - Single artist: :starry_night dc:creator :vincent_van_gogh\r\n              - Multiple artists: :fountain dc:creator :marcel_duchamp, :alfred_stieglitz\r\n              - Art series: :water_lilies_series dc:creator :claude_monet"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "creator" }]
@@ -285,6 +314,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "description" }]
   },
+  { "@id": "http://purl.org/dc/terms/hasPart" },
   {
     "@id": "http://purl.org/dc/terms/isPartOf",
     "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
@@ -295,7 +325,9 @@
       { "@id": "http://w3id.org/arto#Series" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates an artwork to the serie of the artwork." }
+      {
+        "@value": "Identifies an artwork as being part of a larger series or collection.\r\n\r\n              Examples:\r\n              - :water_lily_1919 dc:isPartOf :water_lilies_series\r\n              - :sunflower_painting_1 dc:isPartOf :sunflowers_series"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "isPartOf" }]
   },
@@ -306,22 +338,6 @@
   {
     "@id": "http://purl.org/dc/terms/license",
     "@type": ["http://www.w3.org/2002/07/owl#AnnotationProperty"]
-  },
-  {
-    "@id": "http://purl.org/dc/terms/locationType",
-    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      { "@id": "http://w3id.org/arto#Location" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://www.w3.org/2001/XMLSchema#string" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The type of the location. available options are: country, state, city, district,\r\n      street, building etc. "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "locationType" }]
   },
   {
     "@id": "http://purl.org/dc/terms/medium",
@@ -377,6 +393,41 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "eventType" }]
   },
   {
+    "@id": "http://w3id.org/arto",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      { "@id": "http://w3id.org/arto/v0.1" }
+    ],
+    "http://creativecommons.org/ns#attributionURL": [
+      { "@id": "http呢://w3id.org/arto" }
+    ],
+    "http://purl.org/dc/terms/issued": [{ "@value": "2024-04-10" }],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      { "@value": "Artwork Object Ontology", "@language": "en" }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      { "@value": "arto" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      { "@value": "Artwork Object Ontology (ARTO)", "@language": "en" }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [{ "@value": "0.1" }],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
     "@id": "http://w3id.org/arto#Artist",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -392,10 +443,16 @@
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "A created object or piece of art that is intended to be aesthetically pleasing or\r\n      convey a message."
+        "@value": "A created object or piece of art that is intended to be aesthetically pleasing or\r\n                convey a message.\r\n                "
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Artwork" }]
+    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Artwork" }],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      { "@id": "http://www.cidoc-crm.org/cidoc-crm/E22_Human_Made_Object" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      { "@id": "https://schema.org/CreativeWork" }
+    ]
   },
   {
     "@id": "http://w3id.org/arto#BalanceOfComposition",
@@ -419,7 +476,9 @@
       { "@id": "http://xmlns.com/foaf/0.1/Person" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The person or group appeared in the artwork." }
+      {
+        "@value": "Represents persons, figures, or beings depicted within an artwork."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Character" }]
   },
@@ -427,10 +486,13 @@
     "@id": "http://w3id.org/arto#Color",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      { "@id": "http://w3id.org/arto#Element" }
+      { "@id": "http://w3id.org/arto#VisualElement" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#closeMatch": [
+      { "@id": "https://schema.org/Color" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Represents the color used in an artwork." }
+      { "@value": "The use of color in the artwork." }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Color" }]
   },
@@ -453,10 +515,10 @@
     "@id": "http://w3id.org/arto#Composition",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      { "@id": "http://w3id.org/arto#Element" }
+      { "@id": "http://w3id.org/arto#VisualElement" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Represents the composition used in an artwork." }
+      { "@value": "The arrangement and organization of visual elements." }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Composition" }]
   },
@@ -465,18 +527,13 @@
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Represents the interpretations of artwork, includeing themes, meanings, and\r\n      emotions conveyed by an artwork."
+        "@value": "Represents the implied meanings of artwork, includeing themes, symbolic meanings, and\r\n      emotions conveyed by an artwork."
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Cnnotation" }]
-  },
-  {
-    "@id": "http://w3id.org/arto#Element",
-    "@type": ["http://www.w3.org/2002/07/owl#Class"],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Represents the visual element associated with an artwork." }
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      { "@id": "http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object" }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Element" }]
+    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Cnnotation" }]
   },
   {
     "@id": "http://w3id.org/arto#Emotion",
@@ -515,7 +572,11 @@
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      { "@id": "http://purl.org/NET/c4dm/event.owl#Event" }
+      { "@id": "http://purl.org/NET/c4dm/event.owl#Event" },
+      { "@id": "https://schema.org/Event" }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      { "@id": "http://www.cidoc-crm.org/cidoc-crm/E5_Event" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Event" }]
   },
@@ -526,10 +587,12 @@
       { "@id": "http://w3id.org/arto#Color" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://www.w3.org/2001/XMLSchema#int" }
+      { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The HSVValue of the Color." }
+      {
+        "@value": "HSV color value in format 'H,S,V' where H is the hue and the range is 0-360, S is the saturation and the range is 0-100, and V is the value and the range is 0-100"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "HSVValue" }]
   },
@@ -537,10 +600,12 @@
     "@id": "http://w3id.org/arto#Line",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      { "@id": "http://w3id.org/arto#Element" }
+      { "@id": "http://w3id.org/arto#VisualElement" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Represents the line used in an artwork." }
+      {
+        "@value": "Represents linear elements in artwork, including their characteristics and functions:\r\n            - Types of lines (straight, curved, implied)\r\n            - Line qualities (thick, thin, broken, continuous)\r\n            - Directional lines\r\n            - Contour lines\r\n            - Gestural lines\r\n            - Structural lines"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Line" }]
   },
@@ -548,10 +613,16 @@
     "@id": "http://w3id.org/arto#Location",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The Location." }
+      {
+        "@value": "Represents a physical or virtual space associated with an artwork."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       { "@id": "http://purl.org/dc/terms/Location" }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      { "@id": "http://www.cidoc-crm.org/cidoc-crm/E53_Place" },
+      { "@id": "https://schema.org/Place" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Location" }]
   },
@@ -609,7 +680,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "A created object or piece of art that is intended to be aesthetically pleasing or\r\n      convey a message."
+        "@value": "A specific type of artwork created using paint or similar media. "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Painting" }]
@@ -621,10 +692,12 @@
       { "@id": "http://w3id.org/arto#Color" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://www.w3.org/2001/XMLSchema#int" }
+      { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The RGBValue of the Color." }
+      {
+        "@value": "RGB color value in format 'R,G,B' where R,G,B are integers 0-255"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "RGBValue" }]
   },
@@ -636,7 +709,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Represents the degree to which a particular element or aspect of an artwork is\r\n      related to its overall theme or meaning."
+        "@value": "Measures and describes the significance or importance of elements within an artwork, including:\r\n                  - Thematic relevance\r\n                  - Visual importance\r\n                  - Symbolic significance\r\n                  - Narrative relevance\r\n                  - Historical relevance\r\n                  - Compositional importance"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Relevance" }]
@@ -646,7 +719,7 @@
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "A scene can be viewed as a portion of the artwork composed of a group of objects\r\n      that convey a specific meaning or sentiment."
+        "@value": "Represents a distinct portion or area of an artwork that forms a coherent visual or narrative unit. "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Scene" }]
@@ -655,18 +728,28 @@
     "@id": "http://w3id.org/arto#Series",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "A set of artworks." }
+      {
+        "@value": "A collection of related artworks that share common characteristics, themes, or purposes, including:\r\n                - Thematic series\r\n                - Chronological series\r\n                - Technique-based series\r\n                - Subject-based series\r\n                - Experimental series\r\n                - Documentary series"
+      }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Series" }]
+    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Series" }],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      { "@id": "http://www.cidoc-crm.org/cidoc-crm/E78_Collection" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      { "@id": "https://schema.org/CreativeWorkSeries" }
+    ]
   },
   {
     "@id": "http://w3id.org/arto#Space",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      { "@id": "http://w3id.org/arto#Element" }
+      { "@id": "http://w3id.org/arto#VisualElement" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Represents the space used in an artwork." }
+      {
+        "@value": "Represents the spatial elements and relationships within an artwork."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Space" }]
   },
@@ -698,12 +781,27 @@
     "@id": "http://w3id.org/arto#Time",
     "@type": ["http://www.w3.org/2002/07/owl#Class"],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "A temporal interval or instant." }
+      {
+        "@value": "Represents temporal aspects related to artwork, including:\r\n            - Creation periods\r\n            - Historical periods\r\n            - Exhibition periods\r\n            - Conservation periods\r\n            - Depicted time periods\r\n            - Time-based elements\r\n\r\n            Examples:\r\n            - :renaissance_period rdf:type arto:Time ;\r\n                arto:startDate \"1400\" ;\r\n                arto:endDate \"1600\" ;\r\n                arto:culturalPeriod \"European_Renaissance\"\r\n            "
+      }
     ],
     "http://www.w3.org/2002/07/owl#equivalentClass": [
       { "@id": "http://www.w3.org/2006/time#TemporalEntity" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Time" }]
+  },
+  {
+    "@id": "http://w3id.org/arto#VisualElement",
+    "@type": ["http://www.w3.org/2002/07/owl#Class"],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      { "@id": "http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Element" }]
   },
   {
     "@id": "http://w3id.org/arto#compositionType",
@@ -712,10 +810,12 @@
       { "@id": "http://w3id.org/arto#Composition" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://www.w3.org/2001/XMLSchema#float" }
+      { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The type of the composition." }
+      {
+        "@value": "The type of the composition.  This includes:\r\n                        - Basic composition types (triangular, circular, linear)\r\n                        - Dynamic vs. static arrangements\r\n                        - Symmetrical vs. asymmetrical balance\r\n                        - Grid-based structures\r\n                        - Rule of thirds applications\r\n                        - Golden ratio compositions\r\n                        - Hierarchical arrangements"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       { "@value": "compositionType" }
@@ -728,10 +828,15 @@
       { "@id": "http://w3id.org/arto#Object" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://w3id.org/arto#Element" }
+      { "@id": "http://w3id.org/arto#VisualElement" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The objects contains elements." }
+      {
+        "@value": "Specifies the visual elements (such as color, line, composition) contained within an object in the artwork.\r\n\r\n                      Examples:\r\n                      - Color elements: :sky_object arto:containsElement :blue_gradient_color\r\n                      - Line elements: :mountain_object arto:containsElement :diagonal_line\r\n                      - Compositional elements: :tree_object arto:containsElement :vertical_composition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      { "@id": "http://purl.org/dc/terms/hasPart" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       { "@value": "containsElement" }
@@ -747,7 +852,12 @@
       { "@id": "http://w3id.org/arto#Object" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The Scene contains Objects." }
+      {
+        "@value": "Indicates specific objects that are present within a scene of an artwork.\r\n\r\n                      Examples:\r\n                      - Landscape scene: :garden_scene arto:containsObject :fountain, :bench, :flowers\r\n                      - Portrait scene: :interior_scene arto:containsObject :chair, :table, :book\r\n                      - Still life scene: :table_scene arto:containsObject :fruit_bowl, :wine_glass, :cloth"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      { "@id": "http://purl.org/dc/terms/hasPart" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       { "@value": "containsObject" }
@@ -761,7 +871,12 @@
       { "@id": "http://w3id.org/arto#Scene" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The Artwork and Scene could contains Scenes." }
+      {
+        "@value": "Identifies distinct scenes within an artwork or within another scene, allowing for hierarchical scene composition.\r\n                      Examples:\r\n                      - Nested scenes: :market_scene arto:containsScene :vendor_scene, :customer_scene\r\n                      - Background scenes: :landscape_painting arto:containsScene :mountain_scene, :valley_scene"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      { "@id": "http://purl.org/dc/terms/hasPart" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       { "@value": "containsScene" }
@@ -770,7 +885,7 @@
   {
     "@id": "http://w3id.org/arto#coordinates",
     "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b21" }],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b24" }],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
@@ -778,6 +893,27 @@
       { "@value": "The coordinates of the Scene or the Object in the artwork." }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "coordinates" }]
+  },
+  {
+    "@id": "http://w3id.org/arto#currentLocation",
+    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      { "@id": "http://w3id.org/arto#Artwork" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      { "@id": "http://w3id.org/arto#Location" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Specifies the current physical location where an artwork is housed or displayed.\r\n\r\n                      Examples:\r\n                      - Museum location: :mona_lisa arto:currentLocation :louvre_museum\r\n                      - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24\r\n                      "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      { "@value": "currentLocation" }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      { "@id": "http://www.europeana.eu/schemas/edm/currentLocation" }
+    ]
   },
   {
     "@id": "http://w3id.org/arto#direction",
@@ -789,7 +925,9 @@
       { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The direction of the line." }
+      {
+        "@value": "Describes the orientation of linear elements in an artwork."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "direction" }]
   },
@@ -808,7 +946,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "emotionType" }]
   },
   {
-    "@id": "http://w3id.org/arto#express",
+    "@id": "http://w3id.org/arto#expresses",
     "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
     "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b9" }],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -816,7 +954,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "The connotation expressed in the Scenes or the Objects or Elements in the artwork."
+        "@value": "Links visual elements, objects, or scenes to their symbolic meanings or emotional connotations.\r\n\r\n              Examples:\r\n              - Emotional expression: :red_color arto:expresses :anger_emotion\r\n              - Symbolic meaning: :dove_object arto:expresses :peace_meaning\r\n              - Scene mood: :storm_scene arto:expresses :turbulence_emotion"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "express" }]
@@ -831,7 +969,9 @@
       { "@id": "http://w3id.org/arto#Connotation" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relate artwork and the connotations." }
+      {
+        "@value": "Associates an artwork with its broader meanings, themes, or emotional content.\r\n                      Examples:\r\n                      - Symbolic meaning: :guernica arto:hasConnotation :anti_war_theme "
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       { "@value": "hasConnotation" }
@@ -847,21 +987,23 @@
       { "@id": "http://w3id.org/arto#Event" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates an artwork to an event happened to this artwork." }
+      {
+        "@value": "Relates an artwork to significant events in its history, including creation, restoration, exhibition, or damage events.\r\n\r\n                Examples:\r\n                - Restoration: :mona_lisa arto:hasEvent :restoration_1956\r\n                - Exhibition: :night_watch arto:hasEvent :rijksmuseum_exhibition_2024\r\n                - Damage event: :the_kiss arto:hasEvent :vandalism_incident_1977"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "hasEvent" }]
   },
   {
     "@id": "http://w3id.org/arto#hasLocation",
     "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      { "@id": "http://xmlns.com/foaf/0.1/Organization" }
-    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b21" }],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       { "@id": "http://w3id.org/arto#Location" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates the organization to its location." }
+      {
+        "@value": "Specifies the physical location of an organization or event related to the artwork.\r\n\r\n                Examples:\r\n                - Museum address: :metropolitan_museum arto:hasLocation :met_nyc_location\r\n                - Gallery location: :tate_modern arto:hasLocation :london_bankside\r\n                - Studio location: :warhol_factory arto:hasLocation :manhattan_location\r\n                - Exhibition event: :venice_biennale_2024 arto:hasLocation :venice_giardini"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "hasLocation" }]
   },
@@ -874,7 +1016,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "The metric of the connotation, scene, Object or the element in the artwork."
+        "@value": "Associates components (Connotation, Scene, Object or the Visual Element) of an artwork with quantifiable measurements or characteristics.\r\n\r\n                Examples:\r\n                - Color metrics: :sky_area arto:hasMetric :blue_intensity_75_percent\r\n                - Composition balance: :landscape_scene arto:hasMetric :symmetry_score_0.8\r\n                - Emotional intensity: :expression_scene arto:hasMetric :fear_intensity_high"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "hasMetric" }]
@@ -888,7 +1030,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Relates the event to the date. Could be a time interval or a time point"
+        "@value": "Associates an event or location with its temporal information.\r\n              Example:\r\n              - Event timing: :exhibition2024 arto:hasTime :spring2024\r\n              - Location historical period: :paris_studio arto:hasTime :belle_epoque\r\n              "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "hasTime" }]
@@ -914,12 +1056,28 @@
       { "@id": "http://w3id.org/arto#Line" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://www.w3.org/2001/XMLSchema#float" }
+      { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       { "@value": "The type of the line." }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "lineType" }]
+  },
+  {
+    "@id": "http://w3id.org/arto#locationType",
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      { "@id": "http://w3id.org/arto#Location" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      { "@id": "http://www.w3.org/2001/XMLSchema#string" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The type of the location. available options are: country, state, city, district,\r\n      street, building etc. "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "locationType" }]
   },
   {
     "@id": "http://w3id.org/arto#material",
@@ -964,7 +1122,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "The Objects could related to Objects, such as behind, holds, and grazingIn, etc."
+        "@value": "Describes spatial or conceptual relationships between objects within an artwork.\r\n                Examples:\r\n                - Spatial relation: :cup_object arto:relatedTo :table_object ;\r\n                                  arto:relationType \"rests_on\"\r\n                - Interaction: :mother_figure arto:relatedTo :child_figure ;\r\n                              arto:relationType \"holds\"\r\n                - Position: :cloud_object arto:relatedTo :mountain_object ;\r\n                          arto:relationType \"above\" "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "relatedTo" }]
@@ -977,7 +1135,9 @@
       { "@id": "http://w3id.org/arto#Event" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates an artwork to an event included in the artwork." }
+      {
+        "@value": "Connects an artwork or its connotation to historical, mythological, or contemporary events depicted or referenced in the work.\r\n                      Examples:\r\n                      - Historical event: :liberty_leading_the_people arto:relatedToEvent :french_revolution_1830\r\n                      - Biblical event: :last_supper arto:relatedToEvent :biblical_last_supper\r\n                      "
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       { "@value": "relatedToEvent" }
@@ -993,16 +1153,18 @@
       { "@id": "http://w3id.org/arto#Scene" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The Scenes that objects related." }
+      {
+        "@value": "Links objects to the scenes they appear in or are associated with.\r\n                      Examples:\r\n                      - Object context: :bread_loaf arto:relatedToScene :market_scene "
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
-      { "@value": "relatedToSecne" }
+      { "@value": "relatedToScene" }
     ]
   },
   {
     "@id": "http://w3id.org/arto#size",
     "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b24" }],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b27" }],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
@@ -1032,7 +1194,7 @@
       { "@id": "http://w3id.org/arto#Space" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://www.w3.org/2001/XMLSchema#float" }
+      { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       { "@value": "The type of the space." }
@@ -1049,7 +1211,9 @@
       { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The state of the Object." }
+      {
+        "@value": "Describes the current condition, position, or status of objects within an artwork."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "state" }]
   },
@@ -1067,6 +1231,14 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "timeType" }]
   },
+  { "@id": "http://w3id.org/arto/v0.1" },
+  { "@id": "http://www.cidoc-crm.org/cidoc-crm/E21_Person" },
+  { "@id": "http://www.cidoc-crm.org/cidoc-crm/E22_Human_Made_Object" },
+  { "@id": "http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature" },
+  { "@id": "http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object" },
+  { "@id": "http://www.cidoc-crm.org/cidoc-crm/E53_Place" },
+  { "@id": "http://www.cidoc-crm.org/cidoc-crm/E5_Event" },
+  { "@id": "http://www.cidoc-crm.org/cidoc-crm/E78_Collection" },
   {
     "@id": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions",
     "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
@@ -1098,7 +1270,7 @@
   {
     "@id": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width",
     "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b27" }],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [{ "@id": "_:b30" }],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       { "@id": "http://www.w3.org/2001/XMLSchema#string" }
     ],
@@ -1107,38 +1279,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "width" }]
   },
-  {
-    "@id": "http://www.europeana.eu/schemas/edm/currentLocation",
-    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      { "@id": "http://w3id.org/arto#Artwork" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://w3id.org/arto#Location" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates an artwork to its current physical location." }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      { "@value": "currentLocation" }
-    ]
-  },
-  {
-    "@id": "http://www.europeana.eu/schemas/edm/happenedAt",
-    "@type": ["http://www.w3.org/2002/07/owl#ObjectProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      { "@id": "http://w3id.org/arto#Event" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://w3id.org/arto#Location" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Relates the event or provenance to the location where it happened."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "happenedAt" }]
-  },
+  { "@id": "http://www.europeana.eu/schemas/edm/currentLocation" },
   {
     "@id": "http://www.europeana.eu/schemas/edm/isShownBy",
     "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
@@ -1155,25 +1296,9 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "isShownBy" }]
   },
-  {
-    "@id": "http://www.opengis.net/ont/geosparql#asWKT",
-    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      { "@id": "http://w3id.org/arto#Location" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      { "@id": "http://www.opengis.net/ont/geosparql#wktLiteral" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Representing a geographical point using WKT format" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "asWKT" }]
-  },
-  { "@id": "http://www.opengis.net/ont/geosparql#wktLiteral" },
   { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" },
   { "@id": "http://www.w3.org/2001/XMLSchema#dataTime" },
   { "@id": "http://www.w3.org/2001/XMLSchema#float" },
-  { "@id": "http://www.w3.org/2001/XMLSchema#int" },
   { "@id": "http://www.w3.org/2001/XMLSchema#string" },
   { "@id": "http://www.w3.org/2002/07/owl#AnnotationProperty" },
   { "@id": "http://www.w3.org/2002/07/owl#Class" },
@@ -1181,6 +1306,21 @@
   { "@id": "http://www.w3.org/2002/07/owl#NamedIndividual" },
   { "@id": "http://www.w3.org/2002/07/owl#ObjectProperty" },
   { "@id": "http://www.w3.org/2002/07/owl#Ontology" },
+  {
+    "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#asWKT",
+    "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      { "@id": "http://w3id.org/arto#Location" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#wktLiteral" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      { "@value": "Representing a geographical point using WKT format" }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "asWKT" }]
+  },
+  { "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#wktLiteral" },
   { "@id": "http://www.w3.org/2006/time#TemporalEntity" },
   {
     "@id": "http://xmlns.com/foaf/0.1/Agent",
@@ -1214,8 +1354,13 @@
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       { "@id": "http://xmlns.com/foaf/0.1/Agent" }
     ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      { "@id": "http://www.cidoc-crm.org/cidoc-crm/E21_Person" }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Represents a person associated with an artwork." }
+      {
+        "@value": "Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "Person" }]
   },
@@ -1229,7 +1374,9 @@
       { "@id": "http://xmlns.com/foaf/0.1/Person" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "The person knows persons." }
+      {
+        "@value": "The person knows persons.\r\n            Examples:\r\n            - Artist relationships: :vincent_van_gogh foaf:knows :paul_gauguin\r\n            - Teacher-student: :gustav_klimt foaf:knows :egon_schiele\r\n            - Collaborative artists: :pablo_picasso foaf:knows :georges_braque"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "knows" }]
   },
@@ -1257,7 +1404,9 @@
       { "@id": "http://w3id.org/arto#Location" }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
-      { "@value": "Relates a person to the location they lived in." }
+      {
+        "@value": "Indicates where a person (usually an artist) lived during specific periods.\r\n\r\n                Examples:\r\n                - Artist home: :claude_monet dbo:residence :giverny_house\r\n                - Studio location: :andy_warhol dbo:residence :the_factory_nyc\r\n                - Multiple residences: :pablo_picasso dbo:residence :paris_montmartre, :barcelona_gothic_quarter"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "residence" }]
   },
@@ -1278,6 +1427,11 @@
   {
     "@id": "https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"
   },
+  { "@id": "https://schema.org/Color" },
+  { "@id": "https://schema.org/CreativeWork" },
+  { "@id": "https://schema.org/CreativeWorkSeries" },
+  { "@id": "https://schema.org/Event" },
+  { "@id": "https://schema.org/Place" },
   {
     "@id": "https://schema.org/endDate",
     "@type": ["http://www.w3.org/2002/07/owl#DatatypeProperty"],
@@ -1320,41 +1474,5 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [{ "@value": "startDate" }]
   },
-  {
-    "@id": "https://w3id.org/arto",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2002/07/owl#versionIRI": [
-      { "@id": "https://w3id.org/arto/v0.1" }
-    ],
-    "http://creativecommons.org/ns#attributionURL": [
-      { "@id": "https://w3id.org/arto" }
-    ],
-    "http://purl.org/dc/terms/issued": [{ "@value": "2024-04-10" }],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"
-      }
-    ],
-    
-    "http://purl.org/dc/terms/title": [
-      { "@value": "Artwork Object Ontology", "@language": "en" }
-    ],
-    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
-      { "@value": "arto" }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      { "@value": "Artwork Object Ontology (ARTO)", "@language": "en" }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [{ "@value": "0.1" }],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.",
-        "@language": "en"
-      }
-    ]
-  },
-  { "@id": "https://w3id.org/arto/v0.1" }
+  { "@id": "http呢://w3id.org/arto" }
 ]
