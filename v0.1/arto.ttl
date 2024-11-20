@@ -124,7 +124,6 @@ dc:contributor rdf:type owl:ObjectProperty ;
 dc:created rdf:type owl:ObjectProperty ;
            rdfs:domain arto:Artwork ;
            rdfs:range arto:Time ;
-           rdfs:comment "Relates an artwork to its creation date." ;
            rdfs:comment """Specifies the creation date or period of an artwork, which can be a specific date, year, or time range during which the work was produced.
             Examples:
             - Specific date: :mona_lisa dc:created :1503
