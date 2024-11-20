@@ -871,7 +871,6 @@ foaf:Organization rdf:type owl:Class ;
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person rdf:type owl:Class ;
             rdfs:subClassOf foaf:Agent ;
-            owl:equivalentClass crm:E21_Person ;
             rdfs:comment """Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles.""" ;
             rdfs:label "Person" .
 

@@ -10,7 +10,7 @@
   <owl:Ontology rdf:about="http://w3id.org/arto">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
     <owl:versionIRI rdf:resource="http://w3id.org/arto/v0.1" />
-    <cc:attributionURL rdf:resource="http呢://w3id.org/arto" />
+    <cc:attributionURL rdf:resource="http://w3id.org/arto" />
     <dc:issued>2024-04-10</dc:issued>
     <dc:license rdf:resource="https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License" />
     <dc:title xml:lang="en">Artwork Object Ontology</dc:title>
@@ -894,7 +894,6 @@
 
   <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent" />
-    <owl:equivalentClass rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person" />
     <rdfs:comment>Individual human beings involved with artwork may include artists, curators,
       critics, collectors, conservators, researchers, and other roles.</rdfs:comment>
     <rdfs:label>Person</rdfs:label>
