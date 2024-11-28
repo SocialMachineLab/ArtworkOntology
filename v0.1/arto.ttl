@@ -15,7 +15,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix arto: <http://w3id.org/arto#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix event: <http://purl.org/NET/c4dm/event.owl#> .
@@ -64,16 +64,6 @@ vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://purl.org/NET/c4dm/event.owl#agent
-event:agent rdf:type owl:ObjectProperty ;
-            rdfs:domain arto:Event ;
-            rdfs:range foaf:Agent ;
-            rdfs:comment """Relates an event to an agent (person or organization) associated with it.
-            Example:
-            - An acquisition event by a museum: :acquisition_2023 event:agent :metropolitan_museum""" ;
-            rdfs:label "agent" .
-
-
 ###  http://w3id.org/arto#hasTime
 arto:hasTime rdf:type owl:ObjectProperty ;
            rdfs:domain [ rdf:type owl:Class ;
@@ -88,60 +78,6 @@ arto:hasTime rdf:type owl:ObjectProperty ;
               - Location historical period: :paris_studio arto:hasTime :belle_epoque
               """ ;
            rdfs:label "hasTime" .
-
-
-###  http://purl.org/dc/terms/creator
-dc:creator rdf:type owl:ObjectProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( arto:Artwork
-                                         arto:Series
-                                       )
-                         ] ;
-             rdfs:range arto:Artist ;
-             rdfs:comment """Relates an artwork or series to its primary creator(s). This property identifies the artist(s) who conceptualized and executed the work.
-              Examples:
-              - Single artist: :starry_night dc:creator :vincent_van_gogh
-              - Multiple artists: :fountain dc:creator :marcel_duchamp, :alfred_stieglitz
-              - Art series: :water_lilies_series dc:creator :claude_monet""" ;
-             rdfs:label "creator" .
-
-
-###  http://purl.org/dc/terms/contributor
-dc:contributor rdf:type owl:ObjectProperty ;
-               rdfs:domain arto:Artwork ;
-               rdfs:range foaf:Agent ;
-               rdfs:comment "The Contributor of the Artwork." ;
-               rdfs:comment """Identifies contributors to an artwork who assisted in its creation or development. This may include studio assistants, technical advisors, collaborative participants or others.
-
-                Examples:
-                - Studio assistant: :sistine_chapel dc:contributor :workshop_assistant_giovanni
-                - Technical advisor: :digital_installation dc:contributor :software_engineer_smith
-                - Collaborative input: :performance_piece dc:contributor :sound_designer_jones""" ;
-               rdfs:label "contributor" .
-
-
-###  http://purl.org/dc/terms/created
-dc:created rdf:type owl:ObjectProperty ;
-           rdfs:domain arto:Artwork ;
-           rdfs:range arto:Time ;
-           rdfs:comment """Specifies the creation date or period of an artwork, which can be a specific date, year, or time range during which the work was produced.
-            Examples:
-            - Specific date: :mona_lisa dc:created :1503
-            - Period range: :david_sculpture dc:created :1501_1504
-            - Approximate date: :cave_painting dc:created :paleolithic_period""" ;
-           rdfs:label "created" .
-
-
-###  http://purl.org/dc/terms/isPartOf
-dc:isPartOf rdf:type owl:ObjectProperty ;
-            rdfs:domain arto:Artwork ;
-            rdfs:range arto:Series ;
-            rdfs:comment """Identifies an artwork as being part of a larger series or collection.
-
-              Examples:
-              - :water_lily_1919 dc:isPartOf :water_lilies_series
-              - :sunflower_painting_1 dc:isPartOf :sunflowers_series""" ;
-            rdfs:label "isPartOf" .
 
 
 ###  http://w3id.org/arto#containsElement
@@ -185,7 +121,8 @@ arto:containsScene rdf:type owl:ObjectProperty ;
                       - Nested scenes: :market_scene arto:containsScene :vendor_scene, :customer_scene
                       - Background scenes: :landscape_painting arto:containsScene :mountain_scene, :valley_scene""" ;
                     rdfs:subClassOf dc:hasPart ;
-                    rdfs:label "containsScene" .
+                    rdfs:label "containsScene" ;
+                    owl:minCardinality 1 .
 
 
 ###  http://w3id.org/arto#express
@@ -300,12 +237,13 @@ arto:currentLocation rdf:type owl:ObjectProperty ;
                       - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24
                       """ ; 
                     rdfs:label "currentLocation" ;
-                    skos:closeMatch edm:currentLocation .
+                    skos:closeMatch edm:currentLocation ;
+                    owl:cardinality 1 .
 
-
+###  http://w3id.org/arto#hasLocation
 arto:hasLocation rdf:type owl:ObjectProperty ;
                rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( foaf:Organization arto:Event )
+                            owl:unionOf ( arto:Organization arto:Event )
                           ] ;
                rdfs:range arto:Location ;
                rdfs:comment """Specifies the physical location of an organization or event related to the artwork.
@@ -318,58 +256,22 @@ arto:hasLocation rdf:type owl:ObjectProperty ;
                rdfs:label "hasLocation" .
 
 
-###  http://xmlns.com/foaf/0.1/knows
-foaf:knows rdf:type owl:ObjectProperty ;
-           rdfs:domain foaf:Person ;
-           rdfs:range foaf:Person ;
+###  http://w3id.org/arto#knows
+arto:knows rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Person ;
+           rdfs:range arto:Person ;
            rdfs:comment """The person knows persons.
             Examples:
-            - Artist relationships: :vincent_van_gogh foaf:knows :paul_gauguin
-            - Teacher-student: :gustav_klimt foaf:knows :egon_schiele
-            - Collaborative artists: :pablo_picasso foaf:knows :georges_braque""" ;
-           rdfs:label "knows" .
-
-
-###  https://dbpedia.org/ontology/residence
-dbo:residence rdf:type owl:ObjectProperty ;
-              rdfs:domain foaf:Person ;
-              rdfs:range arto:Location ;
-              rdfs:comment """Indicates where a person (usually an artist) lived during specific periods.
-
-                Examples:
-                - Artist home: :claude_monet dbo:residence :giverny_house
-                - Studio location: :andy_warhol dbo:residence :the_factory_nyc
-                - Multiple residences: :pablo_picasso dbo:residence :paris_montmartre, :barcelona_gothic_quarter""" ;
-              rdfs:label "residence" .
-
+            - Artist relationships: :vincent_van_gogh arto:knows :paul_gauguin
+            - Teacher-student: :gustav_klimt arto:knows :egon_schiele
+            - Collaborative artists: :pablo_picasso arto:knows :georges_braque""" ;
+           rdfs:label "knows" ;
+           owl:equivalentProperty foaf:knows .
 
 
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions
-ebucore:dimensions rdf:type owl:DatatypeProperty ;
-            rdfs:domain arto:Artwork ;
-            rdfs:range xsd:string ;
-            rdfs:comment "The dimension of the Artwork." ;
-            rdfs:label "dimension" .
-
-
-###  http://purl.org/dc/terms/title
-dc:title rdf:type owl:DatatypeProperty ;
-           rdfs:domain arto:Artwork ;
-           rdfs:range xsd:string ;
-           rdfs:comment "Relates an artwork to its title." ;
-           rdfs:label "title" .
-
-
-###  http://purl.org/dc/terms/description
-dc:description rdf:type owl:DatatypeProperty ;
-               rdfs:domain arto:Artwork ;
-               rdfs:range xsd:string ;
-               rdfs:comment "Relates an artwork to its description." ;
-               rdfs:label "description" .
 
 
 ###  http://w3id.org/arto#locationType
@@ -380,21 +282,6 @@ arto:locationType rdf:type owl:DatatypeProperty ;
       street, building etc. """ ;
                 rdfs:label "locationType" .
 
-
-###  http://purl.org/dc/terms/medium
-dc:medium rdf:type owl:DatatypeProperty ;
-          rdfs:domain arto:Artwork ;
-          rdfs:range xsd:string ;
-          rdfs:comment "Relates an artwork to the medium(s) used in creating it." ;
-          rdfs:label "medium" .
-
-
-###  http://semanticweb.cs.vu.nl/2009/11/sem/eventType
-sem:eventType rdf:type owl:DatatypeProperty ;
-              rdfs:domain arto:Event ;
-              rdfs:range xsd:string ;
-              rdfs:comment "The type of the event" ;
-              rdfs:label "eventType" .
 
 
 ###  http://w3id.org/arto#HSVValue
@@ -471,21 +358,6 @@ arto:length rdf:type owl:DatatypeProperty ;
             rdfs:comment "The length of the line." ;
             rdfs:label "length" .
 
-###  https://schema.org/startDate
-sdo:startDate rdf:type owl:DatatypeProperty ;
-            rdfs:domain arto:Time ;
-            rdfs:range xsd:dataTime ;
-            rdfs:comment "The start date of a time entity." ;
-            rdfs:label "startDate" .
-
-
-###  https://schema.org/endDate
-sdo:endDate rdf:type owl:DatatypeProperty ;
-            rdfs:domain arto:Time ;
-            rdfs:range xsd:dataTime ;
-            rdfs:comment "The end date of a time entity." ;
-            rdfs:label "endDate" .
-
 
 ###  http://w3id.org/arto#lineType
 arto:lineType rdf:type owl:DatatypeProperty ;
@@ -548,64 +420,6 @@ arto:timeType rdf:type owl:DatatypeProperty ;
               rdfs:label "timeType" .
 
 
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height
-ebucore:height rdf:type owl:DatatypeProperty ;
-               rdfs:domain arto:Artwork ;
-               rdfs:range xsd:string ;
-               rdfs:comment "Relates an artwork to its physical height." ;
-               rdfs:label "height" .
-
-
-###  http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width
-ebucore:width rdf:type owl:DatatypeProperty ;
-              rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( arto:Artwork
-                                          arto:Line
-                                        )
-                          ] ;
-              rdfs:range xsd:string ;
-              rdfs:comment "Relates an artwork to its physical width." ;
-              rdfs:label "width" .
-
-
-###  http://www.europeana.eu/schemas/edm/isShownBy
-edm:isShownBy rdf:type owl:DatatypeProperty ;
-              rdfs:domain arto:Artwork ;
-              rdfs:range xsd:string ;
-              rdfs:comment """An unambiguous URI reference to the digital object on the provider's web site in
-      the best available resolution/quality. """ ;
-              rdfs:label "isShownBy" .
-
-
-###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
-geo:asWKT rdf:type owl:DatatypeProperty ;
-        rdfs:domain arto:Location ;
-        rdfs:range geo:wktLiteral ;
-        rdfs:comment "Representing a geographical point using WKT format" ;
-        rdfs:label "asWKT" .
-
-###  https://dbpedia.org/ontology/nationality
-dbo:nationality rdf:type owl:DatatypeProperty ;
-                rdfs:domain foaf:Person ;
-                rdfs:range xsd:string ;
-                rdfs:comment "Relates an person to the Nationality." ;
-                rdfs:label "nationality" .
-
-
-###  https://dbpedia.org/property/style
-dbp:style rdf:type owl:DatatypeProperty ;
-          rdfs:domain arto:Artwork ;
-          rdfs:range xsd:string ;
-          rdfs:comment "Relates an artwork to its artistic style or movement." ;
-          rdfs:label "style" .
-
-
-###  https://schema.org/genre
-sdo:genre rdf:type owl:DatatypeProperty ;
-          rdfs:domain arto:Artwork ;
-          rdfs:range xsd:string ;
-          rdfs:comment "Relates an artwork to its genre." ;
-          rdfs:label "genre" .
 
 
 #################################################################
@@ -621,7 +435,17 @@ arto:Event rdf:type owl:Class ;
             rdfs:subClassOf event:Event ;
             rdfs:subClassOf sdo:Event ;
             skos:closeMatch crm:E5_Event ;
-            rdfs:label "Event" .
+            rdfs:label "Event" ;
+            rdfs:subClassOf 
+            [ 
+              rdf:type owl:Restriction ;
+              owl:onProperty event:agent ;
+              owl:allValuesFrom arto:Agent ],
+            [ 
+              rdf:type owl:Restriction ;
+              owl:onProperty sem:eventType ;
+              owl:allValuesFrom xsd:string ] .
+
 
 
 ###  http://w3id.org/arto#Location
@@ -630,12 +454,17 @@ arto:Location rdf:type owl:Class ;
             rdfs:subClassOf dc:Location ;
             skos:closeMatch crm:E53_Place ;
             skos:closeMatch sdo:Place ;
-            rdfs:label "Location" .
+            rdfs:label "Location" ;
+            rdfs:subClassOf 
+            [ rdf:type owl:Restriction ;
+              owl:onProperty geo:asWKT ;
+              owl:cardinality "1"^^xsd:nonNegativeInteger ;
+              owl:allValuesFrom geo:wktLiteral ] .
 
 
 ###  http://w3id.org/arto#Artist
 arto:Artist rdf:type owl:Class ;
-            rdfs:subClassOf foaf:Person ;
+            rdfs:subClassOf arto:Person ;
             rdfs:comment "The person or group who create or contribute the artwork." ;
             rdfs:label "Artist" .
             
@@ -648,8 +477,55 @@ arto:Artwork rdf:type owl:Class ;
                 """ ;
              rdfs:label "Artwork" ;
              skos:closeMatch crm:E22_Human_Made_Object ;
-             rdfs:subClassOf sdo:CreativeWork .
+             rdfs:subClassOf sdo:CreativeWork ;
+              # Artwork class restrictions
 
+            rdfs:subClassOf 
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:title ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom xsd:string ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:description ;
+                owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom xsd:string ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:medium ;
+                owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom xsd:string ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:creator ;
+                owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom arto:Artist ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty edm:isShownBy ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom xsd:anyURI ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty ebucore:dimensions ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom xsd:string ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:isPartOf ;
+                owl:allValuesFrom arto:Series ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty sdo:genre ;
+                owl:allValuesFrom xsd:string ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:contributor ;
+                owl:allValuesFrom arto:Agent ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dc:created ;
+                owl:allValuesFrom arto:Time ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty ebucore:height ;
+                owl:allValuesFrom xsd:string ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty ebucore:width ;
+                owl:allValuesFrom xsd:string ],
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dbp:style ;
+                owl:allValuesFrom xsd:string ] .
 
 ###  http://w3id.org/arto#BalanceOfComposition
 arto:BalanceOfComposition rdf:type owl:Class ;
@@ -663,7 +539,7 @@ arto:BalanceOfComposition rdf:type owl:Class ;
 
 ###  http://w3id.org/arto#Character
 arto:Character rdf:type owl:Class ;
-               rdfs:subClassOf foaf:Person ;
+               rdfs:subClassOf arto:Person ;
                rdfs:comment "Represents persons, figures, or beings depicted within an artwork." ;
                rdfs:label "Character" .
                
@@ -734,7 +610,12 @@ arto:Line rdf:type owl:Class ;
             - Contour lines
             - Gestural lines
             - Structural lines""" ;
-          rdfs:label "Line" .
+          rdfs:label "Line" ;
+          rdfs:subClassOf 
+            [ rdf:type owl:Restriction ;
+              owl:onProperty ebucore:width ;
+              owl:cardinality "1"^^xsd:nonNegativeInteger ;
+              owl:allValuesFrom xsd:string ] .
 
 
 ###  http://w3id.org/arto#MainColor
@@ -806,7 +687,11 @@ arto:Series rdf:type owl:Class ;
                 - Documentary series""" ;
             rdfs:label "Series" ;
             skos:closeMatch crm:E78_Collection ;
-            rdfs:subClassOf sdo:CreativeWorkSeries .
+            rdfs:subClassOf sdo:CreativeWorkSeries ;
+            rdfs:subClassOf [ 
+              rdf:type owl:Restriction ;
+              owl:onProperty dc:creator ;
+              owl:allValuesFrom arto:Artist ] .
 
 
 
@@ -819,7 +704,7 @@ arto:Space rdf:type owl:Class ;
 
 ###  http://w3id.org/arto#Sponsor
 arto:Sponsor rdf:type owl:Class ;
-             rdfs:subClassOf foaf:Person ;
+             rdfs:subClassOf arto:Person ;
              rdfs:comment "The person or group who sponsor the artwork." ;
              rdfs:label "Sponsor" .
 
@@ -849,30 +734,51 @@ arto:Time rdf:type owl:Class ;
                 arto:culturalPeriod "European_Renaissance"
             """ ;
           owl:equivalentClass <http://www.w3.org/2006/time#TemporalEntity> ;
-          rdfs:label "Time" .
+          rdfs:label "Time" ;
+          rdfs:subClassOf 
+            [ rdf:type owl:Restriction ;
+              owl:onProperty sdo:startDate ;
+              owl:cardinality "1"^^xsd:nonNegativeInteger ;
+              owl:allValuesFrom xsd:dataTime ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty sdo:endDate ; 
+              owl:cardinality "1"^^xsd:nonNegativeInteger ;
+              owl:allValuesFrom xsd:dataTime ] .
 
 
-###  http://xmlns.com/foaf/0.1/Agent
-foaf:Agent rdf:type owl:Class ;
+###  http://w3id.org/arto#Agent
+arto:Agent rdf:type owl:Class ;
            rdfs:comment """Represents an Agent.This class comprises people, either individually or in groups,
       who have the potential to perform intentional actions for which they can be held responsible.""" ;
-           rdfs:label "Agent" .
+           rdfs:label "Agent" ;
+           owl:equivalentClass foaf:Agent.
 
 
-###  http://xmlns.com/foaf/0.1/Organization
-foaf:Organization rdf:type owl:Class ;
-                  rdfs:subClassOf foaf:Agent ;
-                  owl:disjointWith foaf:Person ;
+###  http://w3id.org/arto#Organization
+arto:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf arto:Agent ;
+                  owl:disjointWith arto:Person ;
                   rdfs:comment """The Organization class represents a kind of Agent corresponding to instititutions
       such as galleries, museums etc.""" ;
-                  rdfs:label "Organization" .
+                  rdfs:label "Organization" ;
+                  owl:equivalentClass foaf:Organization .
 
 
-###  http://xmlns.com/foaf/0.1/Person
-foaf:Person rdf:type owl:Class ;
-            rdfs:subClassOf foaf:Agent ;
+###  http://w3id.org/arto#Person
+arto:Person rdf:type owl:Class ;
+            rdfs:subClassOf arto:Agent ;
             rdfs:comment """Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles.""" ;
-            rdfs:label "Person" .
+            rdfs:label "Person" ;
+            owl:equivalentClass foaf:Person;
+            rdfs:subClassOf 
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dbo:nationality ;
+                owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom xsd:string ] ,
+              [ rdf:type owl:Restriction ;
+                owl:onProperty dbo:residence ;
+                owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:allValuesFrom arto:Location ] .
 
 
 #################################################################
