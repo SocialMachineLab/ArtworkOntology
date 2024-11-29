@@ -84,10 +84,10 @@ arto:hasTime rdf:type owl:ObjectProperty ;
 arto:containsElement rdf:type owl:ObjectProperty ;
                       rdfs:domain arto:Object ;
                       rdfs:range arto:VisualElement ;
-                      rdfs:comment """Specifies the visual elements (such as color, line, composition) contained within an object in the artwork.
+                      rdfs:comment """Specifies the visual elements (such as colour, line, composition) contained within an object in the artwork.
 
                       Examples:
-                      - Color elements: :sky_object arto:containsElement :blue_gradient_color
+                      - Colour elements: :sky_object arto:containsElement :blue_gradient_colour
                       - Line elements: :mountain_object arto:containsElement :diagonal_line
                       - Compositional elements: :tree_object arto:containsElement :vertical_composition""" ;
                       rdfs:subClassOf dc:hasPart ;
@@ -137,7 +137,7 @@ arto:expresses rdf:type owl:ObjectProperty ;
              rdfs:comment """Links visual elements, objects, or scenes to their symbolic meanings or emotional connotations.
 
               Examples:
-              - Emotional expression: :red_color arto:expresses :anger_emotion
+              - Emotional expression: :red_colour arto:expresses :anger_emotion
               - Symbolic meaning: :dove_object arto:expresses :peace_meaning
               - Scene mood: :storm_scene arto:expresses :turbulence_emotion""" ;
              rdfs:label "express" .
@@ -179,7 +179,7 @@ arto:hasMetric rdf:type owl:ObjectProperty ;
                rdfs:comment """Associates components (Connotation, Scene, Object or the Visual Element) of an artwork with quantifiable measurements or characteristics.
 
                 Examples:
-                - Color metrics: :sky_area arto:hasMetric :blue_intensity_75_percent
+                - Colour metrics: :sky_area arto:hasMetric :blue_intensity_75_percent
                 - Composition balance: :landscape_scene arto:hasMetric :symmetry_score_0.8
                 - Emotional intensity: :expression_scene arto:hasMetric :fear_intensity_high""" ;
                rdfs:label "hasMetric" .
@@ -189,14 +189,14 @@ arto:hasMetric rdf:type owl:ObjectProperty ;
 arto:relatedTo rdf:type owl:ObjectProperty ;
                rdfs:domain arto:Object ;
                rdfs:range arto:Object ;
-               rdfs:comment """Describes spatial or conceptual relationships between objects within an artwork.
+               rdfs:comment """Describes spatial or conceptual relationships between objects within an artwork. The specific relationships are specified using the rdfs:subPropertyOf.
                 Examples:
-                - Spatial relation: :cup_object arto:relatedTo :table_object ;
-                                  arto:relationType "rests_on"
-                - Interaction: :mother_figure arto:relatedTo :child_figure ;
-                              arto:relationType "holds"
-                - Position: :cloud_object arto:relatedTo :mountain_object ;
-                          arto:relationType "above" """ ;
+                - Spatial relation: :cup_object arto:rests_on :table_object ;
+                  arto:rests_on rdfs:subPropertyOf arto:relatedTo;
+                - Interaction: :mother_figure arto:holds :child_figure ;
+                  arto:holds rdfs:subPropertyOf arto:relatedTo;
+                - Position: :cloud_object arto:above :mountain_object ;
+                  arto:above rdfs:subPropertyOf arto:relatedTo""" ; 
                rdfs:label "relatedTo" .
 
 
@@ -311,17 +311,17 @@ arto:locationType rdf:type owl:DatatypeProperty ;
 
 ###  http://w3id.org/arto#HSVValue
 arto:HSVValue rdf:type owl:DatatypeProperty ;
-              rdfs:domain arto:Color ;
+              rdfs:domain arto:Colour ;
               rdfs:range xsd:string ;
-              rdfs:comment "HSV color value in format 'H,S,V' where H is the hue and the range is 0-360, S is the saturation and the range is 0-100, and V is the value and the range is 0-100" ;
+              rdfs:comment "HSV colour value in format 'H,S,V' where H is the hue and the range is 0-360, S is the saturation and the range is 0-100, and V is the value and the range is 0-100" ;
               rdfs:label "HSVValue" .
 
 
 ###  http://w3id.org/arto#RGBValue
 arto:RGBValue rdf:type owl:DatatypeProperty ;
-              rdfs:domain arto:Color ;
+              rdfs:domain arto:Colour ;
               rdfs:range xsd:string ;
-              rdfs:comment "RGB color value in format 'R,G,B' where R,G,B are integers 0-255" ;
+              rdfs:comment "RGB colour value in format 'R,G,B' where R,G,B are integers 0-255" ;
               rdfs:label "RGBValue" .
 
 
@@ -374,6 +374,21 @@ arto:state rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:string ;
               rdfs:comment "Describes the current condition, position, or status of objects within an artwork." ;
               rdfs:label "state" .
+
+###  http://w3id.org/arto#descriptor
+arto:descriptor rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( arto:VisualElement
+                                          arto:Object
+                                          arto:Scene
+                                        )
+                          ] ;
+              rdfs:range xsd:string ;
+              rdfs:comment """Describes the visual characteristics or properties of an object in an artwork. The specific descriptors are specified using the rdfs:subPropertyOf.
+                Example:
+                Portrait1 :clothing :RedDress ;
+                clothing rdfs:subPropertyOf arto:descriptor""" ;
+              rdfs:label "descriptor" .
 
 
 ###  http://w3id.org/arto#length
@@ -620,22 +635,22 @@ arto:Character rdf:type owl:Class ;
                
 
 
-###  http://w3id.org/arto#Color
-arto:Color rdf:type owl:Class ;
+###  http://w3id.org/arto#Colour
+arto:Colour rdf:type owl:Class ;
            rdfs:subClassOf arto:VisualElement ;
-           rdfs:closeMatch sdo:Color ;
-           rdfs:comment "The use of color in the artwork." ;
-           rdfs:label "Color" .
+           rdfs:closeMatch sdo:Colour ;
+           rdfs:comment "The use of colour in the artwork." ;
+           rdfs:label "Colour" .
 
 
-###  http://w3id.org/arto#ColorHistogram
-arto:ColorHistogram rdf:type owl:Class ;
+###  http://w3id.org/arto#ColourHistogram
+arto:ColourHistogram rdf:type owl:Class ;
                     rdfs:subClassOf arto:Metric ;
-                    rdfs:comment """Represents the distribution of colors in an artwork, typically expressed as a
-      histogram or a quantitative representation of the frequency or proportion of each color
+                    rdfs:comment """Represents the distribution of colours in an artwork, typically expressed as a
+      histogram or a quantitative representation of the frequency or proportion of each colour
       present in
       the artwork.""" ;
-                    rdfs:label "ColorHistogram" .
+                    rdfs:label "ColourHistogram" .
 
 
 ###  http://w3id.org/arto#Composition
@@ -655,7 +670,7 @@ arto:Connotation rdf:type owl:Class ;
 
 ###  http://w3id.org/arto#Element
 arto:VisualElement rdf:type owl:Class ;
-             rdfs:comment "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc." ;
+             rdfs:comment "Represents the fundamental visual components of an artwork, including: lines and shapes, colours and textures, forms and patterns, space and perspective, light and shadow, etc." ;
              rdfs:subClassOf crm:E26_Physical_Feature ;
              rdfs:label "Element" .
 
@@ -693,12 +708,12 @@ arto:Line rdf:type owl:Class ;
               owl:allValuesFrom xsd:string ] .
 
 
-###  http://w3id.org/arto#MainColor
-arto:MainColor rdf:type owl:Class ;
+###  http://w3id.org/arto#MainColour
+arto:MainColour rdf:type owl:Class ;
                rdfs:subClassOf arto:Metric ;
-               rdfs:comment """Represents the dominant or most prominent color in an artwork, which can be
-      determined through visual analysis or color quantization techniques.""" ;
-               rdfs:label "MainColor" .
+               rdfs:comment """Represents the dominant or most prominent colour in an artwork, which can be
+      determined through visual analysis or colour quantization techniques.""" ;
+               rdfs:label "MainColour" .
 
 
 ###  http://w3id.org/arto#Meaning
@@ -712,7 +727,7 @@ arto:Meaning rdf:type owl:Class ;
 ###  http://w3id.org/arto#Metric
 arto:Metric rdf:type owl:Class ;
             rdfs:comment """Represents a quantifiable measurement or characteristic of an artwork,
-      encompassing statistical information about basic elements such as color statistics, emotion
+      encompassing statistical information about basic elements such as colour statistics, emotion
       intensity, balance of composition, and other visual elements, to facilitate structural
       analysis
       and comparison of artworks.""" ;
@@ -731,6 +746,19 @@ arto:Painting rdf:type owl:Class ;
               rdfs:comment """A specific type of artwork created using paint or similar media. """ ;
               rdfs:label "Painting" .
 
+###  http://w3id.org/arto#Photograph
+arto:Photograph rdf:type owl:Class ;
+              rdfs:subClassOf arto:Artwork ;
+              rdfs:comment """A specific type of artwork created using photography or similar media. """ ;
+              rdfs:label "Photograph" .
+            
+
+###  http://w3id.org/arto#Sculpture
+arto:Sculpture rdf:type owl:Class ;
+              rdfs:subClassOf arto:Artwork ;
+              rdfs:comment """A specific type of artwork created using sculptural techniques, such as carving,
+      modelling, or casting.""" ;
+              rdfs:label "Sculpture" .
 
 ###  http://w3id.org/arto#Relevance
 arto:Relevance rdf:type owl:Class ;
