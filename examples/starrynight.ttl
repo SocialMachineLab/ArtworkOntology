@@ -1,0 +1,120 @@
+
+# Artwork Basic Information
+:starry_night rdf:type arto:Painting ;
+    dc:title "The Starry Night"@en ;
+    arto:originalTitle "De sterrennacht"@nl ;
+    dc:medium "Oil on canvas"@en ;
+    dc:creator :vincent_van_gogh ;
+    edm:isShownBy <https://www.moma.org/collection/works/79802> ;
+    ebucore:dimensions "73.7 cm × 92.1 cm" ;
+    sdo:genre "Landscape painting"@en ;
+    dc:created :june_1889 ;
+    ebucore:height "73.7 cm" ;
+    ebucore:width "92.1 cm" ;
+    dbp:style "Post-Impressionism"@en ;
+    arto:currentLocation :moma .
+
+# Artist Information
+:vincent_van_gogh rdf:type arto:Artist ;
+    dbo:nationality "Dutch"@en ;
+    dbo:residence :saint_remy_asylum ;
+    arto:knows :paul_gauguin, :theo_van_gogh .
+
+# Location Information
+:moma rdf:type arto:Location ;
+    arto:locationType "museum" ;
+    geo:asWKT "POINT(40.7614 -73.9776)" .
+
+:saint_remy_asylum rdf:type arto:Location ;
+    arto:locationType "building" ;
+    geo:asWKT "POINT(43.7889 4.8364)" .
+
+# Time Information
+:june_1889 rdf:type arto:Time ;
+    sdo:startDate "1889-06-01"^^xsd:date ;
+    sdo:endDate "1889-06-30"^^xsd:date  .
+
+# Events
+:asylum_stay rdf:type arto:Event ;
+    sem:eventType "medical_treatment" ;
+    arto:hasLocation :saint_remy_asylum ;
+    arto:hasTime :asylum_period_1889 .
+
+:moma_acquisition rdf:type arto:Event ;
+    sem:eventType "acquisition" ;
+    arto:hasLocation :moma ;
+    arto:hasTime :acquisition_1941 .
+
+# Scenes
+:sky_scene rdf:type arto:Scene ;
+    arto:containsObject :moon, :stars, :swirling_clouds ;
+    arto:coordinates "upper_half" ;
+    arto:size "large" .
+
+:village_scene rdf:type arto:Scene ;
+    arto:containsObject :church, :houses, :cypress_tree ;
+    arto:coordinates "lower_half" ;
+    arto:size "medium" .
+
+# Objects and Their Relationships
+:moon rdf:type arto:Object ;
+    arto:containsElement :yellow_color, :crescent_shape ;
+    arto:relatedToScene :sky_scene ;
+    arto:state "crescent" .
+
+:stars rdf:type arto:Object ;
+    arto:containsElement :yellow_color, :spiral_pattern ;
+    arto:relatedToScene :sky_scene ;
+    arto:descriptor "swirling" .
+
+:church rdf:type arto:Object ;
+    arto:containsElement :dark_color, :vertical_line ;
+    arto:relatedToScene :village_scene ;
+    arto:material "stone" .
+
+:cypress_tree rdf:type arto:Object ;
+    arto:containsElement :dark_green_color, :flame_shape ;
+    arto:relatedToScene :village_scene ;
+    arto:descriptor "towering" .
+
+# Visual Elements
+:swirling_pattern rdf:type arto:Line ;
+    arto:lineType "curved" ;
+    arto:direction "spiral" ;
+    ebucore:width "varied" .
+
+:yellow_color rdf:type arto:Colour ;
+    arto:RGBValue "255,223,0" ;
+    arto:HSVValue "52,100,100" .
+
+:dark_blue_color rdf:type arto:Colour ;
+    arto:RGBValue "0,0,139" ;
+    arto:HSVValue "240,100,54" .
+
+# Composition
+:painting_composition rdf:type arto:Composition ;
+    arto:compositionType "dynamic" ;
+    arto:hasMetric :compositional_balance .
+
+# Metrics
+:compositional_balance rdf:type arto:BalanceOfComposition ;
+    arto:hasMetric "0.8"^^xsd:float .
+
+:color_intensity rdf:type arto:ColourHistogram ;
+    arto:hasMetric "high"^^xsd:string .
+
+# Connotations
+:night_theme rdf:type arto:Theme ;
+    arto:expresses :cosmic_connection .
+
+:emotional_state rdf:type arto:Emotion ;
+    arto:emotionType "turbulent" ;
+    arto:hasMetric :emotion_intensity .
+
+:emotion_intensity rdf:type arto:EmotionIntensity ;
+    arto:hasMetric "high"^^xsd:string .
+
+# Series Information
+:saint_remy_series rdf:type arto:Series ;
+    dc:creator :vincent_van_gogh ;
+    arto:containsScene :sky_scene, :village_scene .

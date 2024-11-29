@@ -1,0 +1,179 @@
+
+:TheLastSupper rdf:type arto:Painting ;
+    dc:title "The Last Supper"@en ;
+    arto:originalTitle "Il Cenacolo"@it ;
+    dc:creator :LeonardoDaVinci ;
+    dc:created :Time-1495-1498 ;
+    dc:medium "Tempera and oil on plaster"@en ;
+    ebucore:dimensions "460 x 880 cm" ;
+    dbp:style "Italian Renaissance" ;
+    sdo:genre "Religious painting", "Mural" ;
+    edm:currentLocation :SantaMariaDelleGrazie ;
+    edm:isShownBy <https://upload.wikimedia.org/wikipedia/commons/4/4b/%C3%9Altima_Cena_-_Da_Vinci_5.jpg> ;
+    arto:hasEvent :LastSupperEvent, :RestorationEvent-1999, :RestorationEvent-1978, :DamageEvent-1943 ;
+    arto:containsScene :MainScene, :BackgroundScene ;
+    arto:hasConnotation :BetrayalTheme, :SacredMoment, :UnityTheme .
+
+# Time periods
+:Time-1495-1498 rdf:type arto:Time ;
+    sdo:startDate "1495"^^xsd:date ;
+    sdo:endDate "1498"^^xsd:date .
+
+:BiblicalTime-33AD rdf:type arto:Time ;
+    arto:timeType "Depicted historical event" ;
+    sdo:startDate "0033"^^xsd:date .
+
+# Location
+:SantaMariaDelleGrazie rdf:type arto:Location ;
+    arto:locationType "church" ;
+    geo:asWKT "POINT(9.1712 45.4655)" ;
+    arto:hasTime :Time-1495-Present .
+
+# Events
+:LastSupperEvent rdf:type arto:Event ;
+    sem:eventType "Biblical event" ;
+    arto:hasTime :BiblicalTime-33AD ;
+    event:agent :Jesus, :Apostles ;
+    arto:hasLocation :Jerusalem .
+
+:RestorationEvent-1999 rdf:type arto:Event ;
+    sem:eventType "Restoration" ;
+    arto:hasTime :Time-1999 ;
+    dc:description "Major restoration completed by Pinin Brambilla Barcilon"@en .
+
+:RestorationEvent-1978 rdf:type arto:Event ;
+    sem:eventType "Restoration" ;
+    arto:hasTime :Time-1978 ;
+    dc:description "Restoration work to stabilize the painting"@en .
+
+:DamageEvent-1943 rdf:type arto:Event ;
+    sem:eventType "Damage" ;
+    arto:hasTime :Time-1943 ;
+    dc:description "Damage from World War II bombing"@en .
+
+# Scenes
+:MainScene rdf:type arto:Scene ;
+    arto:coordinates "full" ;
+    arto:containsObject :DiningTable, :Jesus, :TwelveApostles ;
+    arto:expresses :BetrayalTheme ;
+    arto:containsElement :CentralPerspective, :TriangularComposition .
+
+:BackgroundScene rdf:type arto:Scene ;
+    arto:coordinates "background" ;
+    arto:containsObject :Windows, :LandscapeView ;
+    arto:containsElement :EveningLight .
+
+# Groups of Characters
+:TwelveApostles rdf:type arto:Object ;
+    arto:containsObject :Bartholomew, :James_Minor, :Andrew, :JudasIscariot, 
+                       :Peter, :John, :ThomasApostle, :JamesGreater, 
+                       :Philip, :Matthew, :ThaddeusTaddeo, :SimonZealot .
+
+# Individual Characters
+:Jesus rdf:type arto:Character ;
+    arto:state "seated" ;
+    arto:coordinates "center" ;
+    arto:containsElement :CalmExpression, :RedRobe, :BlueCloak ;
+    arto:expresses :DivinePresence .
+
+:JudasIscariot rdf:type arto:Character ;
+    arto:state "leaning back" ;
+    arto:coordinates "third from left" ;
+    arto:containsElement :DarkExpression, :GreenRobe, :MoneyBag ;
+    arto:expresses :Betrayal .
+
+:Peter rdf:type arto:Character ;
+    arto:state "leaning forward" ;
+    arto:coordinates "fourth from left" ;
+    arto:containsElement :AngerExpression ;
+    arto:relatedTo :John .
+
+# Character Groupings
+:ApostleGroup1 rdf:type arto:Object ;
+    arto:containsObject :Bartholomew, :James_Minor, :Andrew ;
+    arto:expresses :Surprise .
+
+:ApostleGroup2 rdf:type arto:Object ;
+    arto:containsObject :Peter, :JudasIscariot, :John ;
+    arto:expresses :Tension .
+
+:DiningTable rdf:type arto:Scene ;
+    arto:material "wood" ;
+    arto:state "set for meal" ;
+    arto:containsObject :Bread, :Wine, :Plates, :Chalice, :Table ;
+    arto:expresses :Eucharist .
+
+
+# Visual Elements
+:CentralPerspective rdf:type arto:Space ;
+    arto:spaceType "Linear perspective" ;
+    arto:containsElement :VanishingPoint .
+
+:TriangularComposition rdf:type arto:Composition ;
+    arto:compositionType "Triangular" ;
+    arto:hasMetric :BalanceScore .
+
+:ColourScheme rdf:type arto:Colour ;
+    arto:containsElement :WarmColors, :CoolColors .
+
+# Lighting Elements
+:EveningLight rdf:type arto:VisualElement ;
+    arto:descriptor "warm, directional" ;
+    arto:expresses :DramaticMood .
+
+# Connotations
+:BetrayalTheme rdf:type arto:Theme ;
+    arto:expresses :DramaticTension ;
+    arto:relatedToEvent :BiblicalBetrayal .
+
+:UnityTheme rdf:type arto:Theme ;
+    arto:expresses :Communion ;
+    arto:relatedToEvent :LastSupperEvent .
+
+:DivinePresence rdf:type arto:Meaning ;
+    arto:source "Biblical" ;
+    arto:expresses :Spirituality .
+
+# Metrics
+:BalanceScore rdf:type arto:BalanceOfComposition ;
+    arto:hasMetric "0.95"^^xsd:float .
+
+:EmotionalIntensity rdf:type arto:EmotionIntensity ;
+    arto:hasMetric "high" .
+
+:ColourHarmony rdf:type arto:ColourHistogram ;
+    arto:hasMetric "balanced" .
+
+# Creator and Historical Context
+:LeonardoDaVinci rdf:type arto:Artist ;
+    dbo:nationality "Italian" ;
+    dbo:residence :Milan, :Florence ;
+    arto:knows :LorenzoMedici, :LudovicoSforza ;
+    dc:created :TheLastSupper .
+
+:LudovicoSforza rdf:type arto:Sponsor ;
+    arto:hasLocation :Milan ;
+    dc:contributor :TheLastSupper .
+
+:Arches rdf:type arto:Object ;
+    arto:material "stone" ;
+    arto:containsElement :GeometricPattern .
+
+# Symbolic Objects
+:Chalice rdf:type arto:Object ;
+    arto:material "metal" ;
+    arto:coordinates "table center" ;
+    arto:expresses :HolyCup ;
+    arto:hasMetric :CentralRelevance .
+
+# Individual Apostle Details
+:John rdf:type arto:Character ;
+    arto:state "leaning towards Peter" ;
+    arto:containsElement :YouthfulAppearance ;
+    arto:expresses :Devotion .
+
+:Philip rdf:type arto:Character ;
+    arto:state "standing" ;
+    arto:containsElement :QuestioningGesture ;
+    arto:expresses :Doubt .
+

@@ -1,0 +1,113 @@
+
+:girl_with_pearl_earring rdf:type :Painting ;
+    dc:title "Girl with a Pearl Earring"@en ;
+    arto:originalTitle "Meisje met de parel"@nl ;
+    dc:created :creation_period ;
+    dc:creator :vermeer ;
+    dc:medium "Oil on canvas" ;
+    dbp:style "Dutch Golden Age painting", "Baroque" ;
+    sdo:genre "Portrait", "Tronie" ;
+    ebucore:height "44.5 cm" ;
+    ebucore:width "39 cm" ;
+    :currentLocation :mauritshuis_museum .
+
+:vermeer rdf:type :Artist ;
+    foaf:name "Johannes Vermeer" ;
+    dbo:nationality "Dutch" ;
+    dbo:residence :delft_netherlands .
+
+
+:mauritshuis_museum rdf:type :Location ;
+    rdfs:label "Mauritshuis"@en ;
+    :locationType "museum" .
+
+:delft_netherlands rdf:type :Location ;
+    rdfs:label "Delft"@en ;
+    :locationType "city" .
+
+
+:creation_period rdf:type :Time ;
+    sdo:startDate "1665"^^xsd:date ;
+    sdo:endDate "1667"^^xsd:date .
+
+
+:main_scene rdf:type :Scene ;
+    :containsObject :girl_figure, :pearl_earring, :turban, :blue_headscarf, :yellow_jacket ;
+    :coordinates "full_canvas" ;
+    :size "full" .
+
+
+:girl_figure rdf:type :Character ;
+    rdfs:label "Girl figure" ;
+    :state "turning" ;
+    :descriptor "young", "female" ;
+    :relatedToScene :main_scene .
+
+:pearl_earring rdf:type :Object ;
+    rdfs:label "Pearl earring" ;
+    :material "pearl" ;
+    :state "hanging" ;
+    :relatedTo :girl_figure .
+
+:turban rdf:type :Object ;
+    :material "fabric" ;
+    :descriptor "exotic" ;
+    :containsElement :blue_color, :yellow_color .
+
+:yellow_jacket rdf:type :Object ;
+    :material "fabric" ;
+    :descriptor "lustrous" ;
+    :containsElement :yellow_color .
+
+:composition_balance rdf:type :BalanceOfComposition ;
+    :compositionType "asymmetrical" .
+
+:main_lighting rdf:type :VisualElement ;
+    :descriptor "chiaroscuro", "dramatic" .
+
+:blue_color rdf:type :Colour ;
+    :RGBValue "0,71,171" ;
+    :expresses :serenity_emotion .
+
+:yellow_color rdf:type :Colour ;
+    :RGBValue "255,198,73" ;
+    :expresses :warmth_emotion .
+
+:restoration_1994 rdf:type :Event ;
+    sem:eventType "restoration" ;
+    :hasTime [
+        rdf:type :Time ;
+        sdo:startDate "1994"^^xsd:date ;
+        sdo:endDate "1994"^^xsd:date
+    ] .
+
+:theft_attempt_2002 rdf:type :Event ;
+    sem:eventType "security incident" ;
+    :hasTime [
+        rdf:type :Time ;
+        sdo:startDate "2002-04"^^xsd:date
+    ] .
+
+:major_exhibition_2014 rdf:type :Event ;
+    sem:eventType "exhibition" ;
+    :hasLocation :louvre_museum ;
+    :hasTime [
+        rdf:type :Time ;
+        sdo:startDate "2014-02-22"^^xsd:date ;
+        sdo:endDate "2014-05-22"^^xsd:date
+    ] .
+
+
+:exotic_theme rdf:type :Theme ;
+    rdfs:label "Exoticism and Oriental influence" .
+
+:mystery_meaning rdf:type :Meaning ;
+    rdfs:label "Mystery and ambiguity" ;
+    :source "Girl's gaze and expression" .
+
+:gaze_emotion rdf:type :Emotion ;
+    :emotionType "intrigue" ;
+    :hasMetric [
+        rdf:type :EmotionIntensity ;
+        rdfs:label "Strong"
+    ] .
