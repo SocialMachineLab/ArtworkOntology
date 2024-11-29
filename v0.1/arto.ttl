@@ -269,6 +269,31 @@ arto:knows rdf:type owl:ObjectProperty ;
            owl:equivalentProperty foaf:knows .
 
 
+dbo:residence rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Person ;
+           rdfs:range arto:Location .
+
+geo:asWKT rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Location ;
+           rdfs:range geo:wktLiteral .
+
+dc:creator rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Artwork ;
+           rdfs:range arto:Artist .
+
+dc:isPartOf rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Artwork ;
+           rdfs:range arto:Series .
+
+dc:contributor rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Artwork ;
+           rdfs:range arto:Agent .
+
+dc:created  rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Artwork ;
+           rdfs:range arto:Time .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -420,6 +445,57 @@ arto:timeType rdf:type owl:DatatypeProperty ;
               rdfs:label "timeType" .
 
 
+dbo:nationality rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Person ;
+              rdfs:range xsd:string .
+
+ebucore:width rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Line ;
+              rdfs:range xsd:string .
+
+sem:eventType rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Event ;
+              rdfs:range xsd:string .
+
+dc:title rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string .
+
+dc:description rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string .
+
+dc:medium rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string .
+
+
+edm:isShownBy rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:anyURI .
+
+
+ebucore:dimensions rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string .
+
+
+sdo:genre rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string .
+
+ebucore:height rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string .
+
+ebucore:width rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Line ;
+              rdfs:range xsd:string .
+
+dbp:style rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Artwork ;
+              rdfs:range xsd:string .
+
 
 
 #################################################################
@@ -467,7 +543,6 @@ arto:Artist rdf:type owl:Class ;
             rdfs:subClassOf arto:Person ;
             rdfs:comment "The person or group who create or contribute the artwork." ;
             rdfs:label "Artist" .
-            
 
 
 ###  http://w3id.org/arto#Artwork
@@ -751,7 +826,7 @@ arto:Agent rdf:type owl:Class ;
            rdfs:comment """Represents an Agent.This class comprises people, either individually or in groups,
       who have the potential to perform intentional actions for which they can be held responsible.""" ;
            rdfs:label "Agent" ;
-           owl:equivalentClass foaf:Agent.
+           rdfs:subClassOf foaf:Agent.
 
 
 ###  http://w3id.org/arto#Organization
@@ -761,7 +836,7 @@ arto:Organization rdf:type owl:Class ;
                   rdfs:comment """The Organization class represents a kind of Agent corresponding to instititutions
       such as galleries, museums etc.""" ;
                   rdfs:label "Organization" ;
-                  owl:equivalentClass foaf:Organization .
+                  rdfs:subClassOf foaf:Organization .
 
 
 ###  http://w3id.org/arto#Person
@@ -769,7 +844,7 @@ arto:Person rdf:type owl:Class ;
             rdfs:subClassOf arto:Agent ;
             rdfs:comment """Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles.""" ;
             rdfs:label "Person" ;
-            owl:equivalentClass foaf:Person;
+            rdfs:subClassOf foaf:Person;
             rdfs:subClassOf 
               [ rdf:type owl:Restriction ;
                 owl:onProperty dbo:nationality ;
