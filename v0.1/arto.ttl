@@ -386,8 +386,8 @@ arto:descriptor rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:string ;
               rdfs:comment """Describes the visual characteristics or properties of an object in an artwork. The specific descriptors are specified using the rdfs:subPropertyOf.
                 Example:
-                Portrait1 :clothing :RedDress ;
-                clothing rdfs:subPropertyOf arto:descriptor""" ;
+                Portrait1 :hasClothing :RedDress ;
+                hasClothing rdfs:subPropertyOf arto:descriptor""" ;
               rdfs:label "descriptor" .
 
 
