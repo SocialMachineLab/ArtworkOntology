@@ -474,9 +474,9 @@
   </owl:DatatypeProperty>
 
   <owl:DatatypeProperty rdf:about="http://w3id.org/arto#source">
-    <rdfs:domain rdf:resource="http://w3id.org/arto#Symbolism"/>
+    <rdfs:domain rdf:resource="http://w3id.org/arto#Meaning"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment>Relates the source of the symbolism in artworks.</rdfs:comment>
+    <rdfs:comment>Relates the source of the meaning in artworks.</rdfs:comment>
     <rdfs:label>source</rdfs:label>
   </owl:DatatypeProperty>
 

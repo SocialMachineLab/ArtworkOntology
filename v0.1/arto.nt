@@ -1,135 +1,127 @@
 <http://w3id.org/arto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://w3id.org/arto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/arto> <http://www.w3.org/2002/07/owl#versionIRI> <http://w3id.org/arto/v0.1> .
-<http://w3id.org/arto> <http://creativecommons.org/ns#attributionURL> <http\u5462://w3id.org/arto> .
+<http://w3id.org/arto> <http://creativecommons.org/ns#attributionURL> <http://w3id.org/arto> .
+<http://w3id.org/arto> <http://purl.org/dc/terms/description> "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en .
 <http://w3id.org/arto> <http://purl.org/dc/terms/issued> "2024-04-10" .
 <http://w3id.org/arto> <http://purl.org/dc/terms/license> <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> .
+<http://w3id.org/arto> <http://purl.org/dc/terms/modified> "2024-12-05" .
 <http://w3id.org/arto> <http://purl.org/dc/terms/title> "Artwork Object Ontology"@en .
 <http://w3id.org/arto> <http://purl.org/vocab/vann/preferredNamespacePrefix> "arto" .
 <http://w3id.org/arto> <http://www.w3.org/2000/01/rdf-schema#label> "Artwork Object Ontology (ARTO)"@en .
-<http://w3id.org/arto> <http://www.w3.org/2002/07/owl#versionInfo> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto> <http://purl.org/dc/terms/description> "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en .
+<http://w3id.org/arto> <http://www.w3.org/2002/07/owl#versionInfo> "0.1" .
 <http://creativecommons.org/ns#attributionURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to its title." .
-<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
 <http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2002/07/owl#cardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2002/07/owl#maxCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2002/07/owl#minCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://purl.org/NET/c4dm/event.owl#agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/NET/c4dm/event.owl#agent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Event> .
-<http://purl.org/NET/c4dm/event.owl#agent> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
-<http://purl.org/NET/c4dm/event.owl#agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an event to an agent (person or organization) associated with it.\r\n            Example:\r\n            - An acquisition event by a museum: :acquisition_2023 event:agent :metropolitan_museum" .
-<http://purl.org/NET/c4dm/event.owl#agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent" .
-<http://w3id.org/arto#hasTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
-<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Time> .
-<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an event or location with its temporal information.\r\n              Example:\r\n              - Event timing: :exhibition2024 arto:hasTime :spring2024\r\n              - Location historical period: :paris_studio arto:hasTime :belle_epoque\r\n              " .
-<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#label> "hasTime" .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Event> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Location> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Artist> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork or series to its primary creator(s). This property identifies the artist(s) who conceptualized and executed the work.\r\n              Examples:\r\n              - Single artist: :starry_night dc:creator :vincent_van_gogh\r\n              - Multiple artists: :fountain dc:creator :marcel_duchamp, :alfred_stieglitz\r\n              - Art series: :water_lilies_series dc:creator :claude_monet" .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#label> "creator" .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid5 .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Artwork> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Series> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#comment> "The Contributor of the Artwork." .
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies contributors to an artwork who assisted in its creation or development. This may include studio assistants, technical advisors, collaborative participants or others.\r\n\r\n                Examples:\r\n                - Studio assistant: :sistine_chapel dc:contributor :workshop_assistant_giovanni\r\n                - Technical advisor: :digital_installation dc:contributor :software_engineer_smith\r\n                - Collaborative input: :performance_piece dc:contributor :sound_designer_jones" .
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#label> "contributor" .
-<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Time> .
-<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to its creation date." .
-<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the creation date or period of an artwork, which can be a specific date, year, or time range during which the work was produced.\r\n            Examples:\r\n            - Specific date: :mona_lisa dc:created :1503\r\n            - Period range: :david_sculpture dc:created :1501_1504\r\n            - Approximate date: :cave_painting dc:created :paleolithic_period" .
-<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#label> "created" .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://purl.org/dc/terms/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Series> .
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies an artwork as being part of a larger series or collection.\r\n\r\n              Examples:\r\n              - :water_lily_1919 dc:isPartOf :water_lilies_series\r\n              - :sunflower_painting_1 dc:isPartOf :sunflowers_series" .
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "isPartOf" .
 <http://w3id.org/arto#containsElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/arto#containsElement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
 <http://w3id.org/arto#containsElement> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Object> .
 <http://w3id.org/arto#containsElement> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#VisualElement> .
-<http://w3id.org/arto#containsElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the visual elements (such as color, line, composition) contained within an object in the artwork.\r\n\r\n                      Examples:\r\n                      - Color elements: :sky_object arto:containsElement :blue_gradient_color\r\n                      - Line elements: :mountain_object arto:containsElement :diagonal_line\r\n                      - Compositional elements: :tree_object arto:containsElement :vertical_composition" .
-<http://w3id.org/arto#containsElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/hasPart> .
+<http://w3id.org/arto#containsElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the visual elements (such as color, line, composition) contained within an object in the artwork.\r\n\r\n                      Examples:\r\n                      - color elements: :sky_object arto:containsElement :blue_gradient_color\r\n                      - Line elements: :mountain_object arto:containsElement :diagonal_line\r\n                      - Compositional elements: :tree_object arto:containsElement :vertical_composition" .
 <http://w3id.org/arto#containsElement> <http://www.w3.org/2000/01/rdf-schema#label> "containsElement" .
 <http://w3id.org/arto#containsObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/arto#containsObject> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
 <http://w3id.org/arto#containsObject> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Scene> .
 <http://w3id.org/arto#containsObject> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Object> .
 <http://w3id.org/arto#containsObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates specific objects that are present within a scene of an artwork.\r\n\r\n                      Examples:\r\n                      - Landscape scene: :garden_scene arto:containsObject :fountain, :bench, :flowers\r\n                      - Portrait scene: :interior_scene arto:containsObject :chair, :table, :book\r\n                      - Still life scene: :table_scene arto:containsObject :fruit_bowl, :wine_glass, :cloth" .
-<http://w3id.org/arto#containsObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/hasPart> .
 <http://w3id.org/arto#containsObject> <http://www.w3.org/2000/01/rdf-schema#label> "containsObject" .
 <http://w3id.org/arto#containsScene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/arto#containsScene> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+<http://w3id.org/arto#containsScene> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<http://w3id.org/arto#containsScene> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
 <http://w3id.org/arto#containsScene> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Scene> .
 <http://w3id.org/arto#containsScene> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies distinct scenes within an artwork or within another scene, allowing for hierarchical scene composition.\r\n                      Examples:\r\n                      - Nested scenes: :market_scene arto:containsScene :vendor_scene, :customer_scene\r\n                      - Background scenes: :landscape_painting arto:containsScene :mountain_scene, :valley_scene" .
-<http://w3id.org/arto#containsScene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/hasPart> .
 <http://w3id.org/arto#containsScene> <http://www.w3.org/2000/01/rdf-schema#label> "containsScene" .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Artwork> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/arto#containsScene> <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Artwork> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/arto#currentLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
+<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Location> .
+<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the current physical location where an artwork is housed or displayed.\r\n\r\n                      Examples:\r\n                      - Museum location: :mona_lisa arto:currentLocation :louvre_museum\r\n                      - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24\r\n                      " .
+<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#label> "currentLocation" .
+<http://w3id.org/arto#currentLocation> <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://w3id.org/arto#currentLocation> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.europeana.eu/schemas/edm/currentLocation> .
 <http://w3id.org/arto#expresses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/arto#expresses> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
+<http://w3id.org/arto#expresses> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
 <http://w3id.org/arto#expresses> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Connotation> .
 <http://w3id.org/arto#expresses> <http://www.w3.org/2000/01/rdf-schema#comment> "Links visual elements, objects, or scenes to their symbolic meanings or emotional connotations.\r\n\r\n              Examples:\r\n              - Emotional expression: :red_color arto:expresses :anger_emotion\r\n              - Symbolic meaning: :dove_object arto:expresses :peace_meaning\r\n              - Scene mood: :storm_scene arto:expresses :turbulence_emotion" .
 <http://w3id.org/arto#expresses> <http://www.w3.org/2000/01/rdf-schema#label> "express" .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#VisualElement> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#VisualElement> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <http://w3id.org/arto#hasConnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/arto#hasConnotation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
 <http://w3id.org/arto#hasConnotation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Connotation> .
 <http://w3id.org/arto#hasConnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an artwork with its broader meanings, themes, or emotional content.\r\n                      Examples:\r\n                      - Symbolic meaning: :guernica arto:hasConnotation :anti_war_theme " .
 <http://w3id.org/arto#hasConnotation> <http://www.w3.org/2000/01/rdf-schema#label> "hasConnotation" .
-<http://w3id.org/arto#hasEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/arto#hasEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://w3id.org/arto#hasEvent> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Event> .
-<http://w3id.org/arto#hasEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to significant events in its history, including creation, restoration, exhibition, or damage events.\r\n\r\n                Examples:\r\n                - Restoration: :mona_lisa arto:hasEvent :restoration_1956\r\n                - Exhibition: :night_watch arto:hasEvent :rijksmuseum_exhibition_2024\r\n                - Damage event: :the_kiss arto:hasEvent :vandalism_incident_1977" .
-<http://w3id.org/arto#hasEvent> <http://www.w3.org/2000/01/rdf-schema#label> "hasEvent" .
+<http://w3id.org/arto#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid8 .
+<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Location> .
+<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the physical location of an organization or event related to the artwork.\r\n\r\n                Examples:\r\n                - Museum address: :metropolitan_museum arto:hasLocation :met_nyc_location\r\n                - Gallery location: :tate_modern arto:hasLocation :london_bankside\r\n                - Studio location: :warhol_factory arto:hasLocation :manhattan_location\r\n                - Exhibition event: :venice_biennale_2024 arto:hasLocation :venice_giardini" .
+<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#label> "hasLocation" .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Agent> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Event> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <http://w3id.org/arto#hasMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/arto#hasMetric> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid14 .
+<http://w3id.org/arto#hasMetric> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid11 .
 <http://w3id.org/arto#hasMetric> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Metric> .
 <http://w3id.org/arto#hasMetric> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates components (Connotation, Scene, Object or the Visual Element) of an artwork with quantifiable measurements or characteristics.\r\n\r\n                Examples:\r\n                - Color metrics: :sky_area arto:hasMetric :blue_intensity_75_percent\r\n                - Composition balance: :landscape_scene arto:hasMetric :symmetry_score_0.8\r\n                - Emotional intensity: :expression_scene arto:hasMetric :fear_intensity_high" .
 <http://w3id.org/arto#hasMetric> <http://www.w3.org/2000/01/rdf-schema#label> "hasMetric" .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid15 .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Connotation> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#VisualElement> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Connotation> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#VisualElement> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/arto#hasTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid16 .
+<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Time> .
+<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an event or location with its temporal information.\r\n              Example:\r\n              - Event timing: :exhibition2024 arto:hasTime :spring2024\r\n              - Location historical period: :paris_studio arto:hasTime :belle_epoque\r\n              " .
+<http://w3id.org/arto#hasTime> <http://www.w3.org/2000/01/rdf-schema#label> "hasTime" .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Event> .
 _:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Location> .
 _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/arto#knows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/arto#knows> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Person> .
+<http://w3id.org/arto#knows> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Person> .
+<http://w3id.org/arto#knows> <http://www.w3.org/2000/01/rdf-schema#comment> "The person knows persons.\r\n            Examples:\r\n            - Artist relationships: :vincent_van_gogh arto:knows :paul_gauguin\r\n            - Teacher-student: :gustav_klimt arto:knows :egon_schiele\r\n            - Collaborative artists: :pablo_picasso arto:knows :georges_braque" .
+<http://w3id.org/arto#knows> <http://www.w3.org/2000/01/rdf-schema#label> "knows" .
 <http://w3id.org/arto#relatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/arto#relatedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Object> .
 <http://w3id.org/arto#relatedTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Object> .
-<http://w3id.org/arto#relatedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes spatial or conceptual relationships between objects within an artwork.\r\n                Examples:\r\n                - Spatial relation: :cup_object arto:relatedTo :table_object ;\r\n                                  arto:relationType \"rests_on\"\r\n                - Interaction: :mother_figure arto:relatedTo :child_figure ;\r\n                              arto:relationType \"holds\"\r\n                - Position: :cloud_object arto:relatedTo :mountain_object ;\r\n                          arto:relationType \"above\" " .
+<http://w3id.org/arto#relatedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes spatial or conceptual relationships between objects within an artwork. The specific relationships are specified using the rdfs:subPropertyOf.\r\n                Examples:\r\n                - Spatial relation: :cup_object arto:rests_on :table_object ;\r\n                  arto:rests_on rdfs:subPropertyOf arto:relatedTo;\r\n                - Interaction: :mother_figure arto:holds :child_figure ;\r\n                  arto:holds rdfs:subPropertyOf arto:relatedTo;\r\n                - Position: :cloud_object arto:above :mountain_object ;\r\n                  arto:above rdfs:subPropertyOf arto:relatedTo" .
 <http://w3id.org/arto#relatedTo> <http://www.w3.org/2000/01/rdf-schema#label> "relatedTo" .
 <http://w3id.org/arto#relatedToEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/arto#relatedToEvent> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid19 .
@@ -140,65 +132,19 @@ _:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 _:genid19 <http://www.w3.org/2002/07/owl#unionOf> _:genid20 .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Artwork> .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Connotation> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
 _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/arto#relatedToConnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/arto#relatedToConnotation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Event> .
+<http://w3id.org/arto#relatedToConnotation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Connotation> .
+<http://w3id.org/arto#relatedToConnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that an event relatedToConnotation some connotations.\r\n                Examples:\r\n                  ex:NoahDoveEvent rdf:type arto:Event ;\r\n                  arto:relatedToConnotation ex:PeaceSymbolism ;\r\n                " .
+<http://w3id.org/arto#relatedToConnotation> <http://www.w3.org/2000/01/rdf-schema#label> "relatedToConnotation" .
 <http://w3id.org/arto#relatedToScene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/arto#relatedToScene> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Object> .
 <http://w3id.org/arto#relatedToScene> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Scene> .
 <http://w3id.org/arto#relatedToScene> <http://www.w3.org/2000/01/rdf-schema#comment> "Links objects to the scenes they appear in or are associated with.\r\n                      Examples:\r\n                      - Object context: :bread_loaf arto:relatedToScene :market_scene " .
 <http://w3id.org/arto#relatedToScene> <http://www.w3.org/2000/01/rdf-schema#label> "relatedToScene" .
-<http://w3id.org/arto#currentLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Location> .
-<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the current physical location where an artwork is housed or displayed.\r\n\r\n                      Examples:\r\n                      - Museum location: :mona_lisa arto:currentLocation :louvre_museum\r\n                      - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24\r\n                      " .
-<http://w3id.org/arto#currentLocation> <http://www.w3.org/2000/01/rdf-schema#label> "currentLocation" .
-<http://w3id.org/arto#currentLocation> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.europeana.eu/schemas/edm/currentLocation> .
-<http://w3id.org/arto#hasLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid22 .
-<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Location> .
-<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the physical location of an organization or event related to the artwork.\r\n\r\n                Examples:\r\n                - Museum address: :metropolitan_museum arto:hasLocation :met_nyc_location\r\n                - Gallery location: :tate_modern arto:hasLocation :london_bankside\r\n                - Studio location: :warhol_factory arto:hasLocation :manhattan_location\r\n                - Exhibition event: :venice_biennale_2024 arto:hasLocation :venice_giardini" .
-<http://w3id.org/arto#hasLocation> <http://www.w3.org/2000/01/rdf-schema#label> "hasLocation" .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid22 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/Organization> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Event> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<http://xmlns.com/foaf/0.1/knows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://xmlns.com/foaf/0.1/knows> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
-<http://xmlns.com/foaf/0.1/knows> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
-<http://xmlns.com/foaf/0.1/knows> <http://www.w3.org/2000/01/rdf-schema#comment> "The person knows persons.\r\n            Examples:\r\n            - Artist relationships: :vincent_van_gogh foaf:knows :paul_gauguin\r\n            - Teacher-student: :gustav_klimt foaf:knows :egon_schiele\r\n            - Collaborative artists: :pablo_picasso foaf:knows :georges_braque" .
-<http://xmlns.com/foaf/0.1/knows> <http://www.w3.org/2000/01/rdf-schema#label> "knows" .
-<https://dbpedia.org/ontology/residence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://dbpedia.org/ontology/residence> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
-<https://dbpedia.org/ontology/residence> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/arto#Location> .
-<https://dbpedia.org/ontology/residence> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates where a person (usually an artist) lived during specific periods.\r\n\r\n                Examples:\r\n                - Artist home: :claude_monet dbo:residence :giverny_house\r\n                - Studio location: :andy_warhol dbo:residence :the_factory_nyc\r\n                - Multiple residences: :pablo_picasso dbo:residence :paris_montmartre, :barcelona_gothic_quarter" .
-<https://dbpedia.org/ontology/residence> <http://www.w3.org/2000/01/rdf-schema#label> "residence" .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions> <http://www.w3.org/2000/01/rdf-schema#comment> "The dimension of the Artwork." .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions> <http://www.w3.org/2000/01/rdf-schema#label> "dimension" .
-<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to its description." .
-<http://purl.org/dc/terms/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
-<http://w3id.org/arto#locationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#locationType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Location> .
-<http://w3id.org/arto#locationType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#locationType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the location. available options are: country, state, city, district,\r\n      street, building etc. " .
-<http://w3id.org/arto#locationType> <http://www.w3.org/2000/01/rdf-schema#label> "locationType" .
 <http://purl.org/dc/terms/medium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/dc/terms/medium> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://purl.org/dc/terms/medium> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/dc/terms/medium> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to the medium(s) used in creating it." .
-<http://purl.org/dc/terms/medium> <http://www.w3.org/2000/01/rdf-schema#label> "medium" .
-<http://semanticweb.cs.vu.nl/2009/11/sem/eventType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://semanticweb.cs.vu.nl/2009/11/sem/eventType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Event> .
-<http://semanticweb.cs.vu.nl/2009/11/sem/eventType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://semanticweb.cs.vu.nl/2009/11/sem/eventType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the event" .
-<http://semanticweb.cs.vu.nl/2009/11/sem/eventType> <http://www.w3.org/2000/01/rdf-schema#label> "eventType" .
 <http://w3id.org/arto#HSVValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://w3id.org/arto#HSVValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Color> .
 <http://w3id.org/arto#HSVValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
@@ -209,232 +155,405 @@ _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <http://w3id.org/arto#RGBValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#RGBValue> <http://www.w3.org/2000/01/rdf-schema#comment> "RGB color value in format 'R,G,B' where R,G,B are integers 0-255" .
 <http://w3id.org/arto#RGBValue> <http://www.w3.org/2000/01/rdf-schema#label> "RGBValue" .
-<http://w3id.org/arto#compositionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#compositionType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Composition> .
-<http://w3id.org/arto#compositionType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#compositionType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the composition.  This includes:\r\n                        - Basic composition types (triangular, circular, linear)\r\n                        - Dynamic vs. static arrangements\r\n                        - Symmetrical vs. asymmetrical balance\r\n                        - Grid-based structures\r\n                        - Rule of thirds applications\r\n                        - Golden ratio compositions\r\n                        - Hierarchical arrangements" .
-<http://w3id.org/arto#compositionType> <http://www.w3.org/2000/01/rdf-schema#label> "compositionType" .
 <http://w3id.org/arto#coordinates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#coordinates> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid25 .
+<http://w3id.org/arto#coordinates> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid22 .
 <http://w3id.org/arto#coordinates> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#coordinates> <http://www.w3.org/2000/01/rdf-schema#comment> "The coordinates of the Scene or the Object in the artwork." .
 <http://w3id.org/arto#coordinates> <http://www.w3.org/2000/01/rdf-schema#label> "coordinates" .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid22 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://w3id.org/arto#descriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/arto#descriptor> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid25 .
+<http://w3id.org/arto#descriptor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/arto#descriptor> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the visual characteristics or properties of an object in an artwork. The specific descriptors are specified using the rdfs:subPropertyOf.\r\n                Example:\r\n                Portrait1 :clothing :RedDress ;\r\n                :clothing rdfs:subPropertyOf arto:descriptor" .
+<http://w3id.org/arto#descriptor> <http://www.w3.org/2000/01/rdf-schema#label> "descriptor" .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid25 <http://www.w3.org/2002/07/owl#unionOf> _:genid26 .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#VisualElement> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <http://w3id.org/arto#direction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://w3id.org/arto#direction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Line> .
 <http://w3id.org/arto#direction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#direction> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the orientation of linear elements in an artwork." .
 <http://w3id.org/arto#direction> <http://www.w3.org/2000/01/rdf-schema#label> "direction" .
-<http://w3id.org/arto#emotionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#emotionType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Emotion> .
-<http://w3id.org/arto#emotionType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#emotionType> <http://www.w3.org/2000/01/rdf-schema#comment> "Point out the emotion type." .
-<http://w3id.org/arto#emotionType> <http://www.w3.org/2000/01/rdf-schema#label> "emotionType" .
-<http://w3id.org/arto#state> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Object> .
-<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the current condition, position, or status of objects within an artwork." .
-<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#label> "state" .
 <http://w3id.org/arto#length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://w3id.org/arto#length> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Line> .
 <http://w3id.org/arto#length> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <http://w3id.org/arto#length> <http://www.w3.org/2000/01/rdf-schema#comment> "The length of the line." .
 <http://w3id.org/arto#length> <http://www.w3.org/2000/01/rdf-schema#label> "length" .
-<https://schema.org/startDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://schema.org/startDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Time> .
-<https://schema.org/startDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dataTime> .
-<https://schema.org/startDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The start date of a time entity." .
-<https://schema.org/startDate> <http://www.w3.org/2000/01/rdf-schema#label> "startDate" .
-<https://schema.org/endDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://schema.org/endDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Time> .
-<https://schema.org/endDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dataTime> .
-<https://schema.org/endDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The end date of a time entity." .
-<https://schema.org/endDate> <http://www.w3.org/2000/01/rdf-schema#label> "endDate" .
-<http://w3id.org/arto#lineType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#lineType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Line> .
-<http://w3id.org/arto#lineType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#lineType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the line." .
-<http://w3id.org/arto#lineType> <http://www.w3.org/2000/01/rdf-schema#label> "lineType" .
-<http://w3id.org/arto#originalTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#originalTitle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://w3id.org/arto#originalTitle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#originalTitle> <http://www.w3.org/2000/01/rdf-schema#comment> "The original title of the artwork, potentially in its original language." .
-<http://w3id.org/arto#originalTitle> <http://www.w3.org/2000/01/rdf-schema#label> "originalTitle" .
 <http://w3id.org/arto#material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://w3id.org/arto#material> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Object> .
 <http://w3id.org/arto#material> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#material> <http://www.w3.org/2000/01/rdf-schema#comment> "The material of the Object." .
 <http://w3id.org/arto#material> <http://www.w3.org/2000/01/rdf-schema#label> "material" .
 <http://w3id.org/arto#size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#size> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid28 .
+<http://w3id.org/arto#size> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid29 .
 <http://w3id.org/arto#size> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#size> <http://www.w3.org/2000/01/rdf-schema#comment> "The size of the Scene or the Object in the artwork." .
 <http://w3id.org/arto#size> <http://www.w3.org/2000/01/rdf-schema#label> "size" .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid28 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid29 <http://www.w3.org/2002/07/owl#unionOf> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Object> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Scene> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <http://w3id.org/arto#source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://w3id.org/arto#source> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Meaning> .
 <http://w3id.org/arto#source> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#source> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates the source of the meaning in artworks." .
 <http://w3id.org/arto#source> <http://www.w3.org/2000/01/rdf-schema#label> "source" .
-<http://w3id.org/arto#spaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#spaceType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Space> .
-<http://w3id.org/arto#spaceType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#spaceType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the space." .
-<http://w3id.org/arto#spaceType> <http://www.w3.org/2000/01/rdf-schema#label> "spaceType" .
-<http://w3id.org/arto#timeType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://w3id.org/arto#timeType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalEntity> .
-<http://w3id.org/arto#timeType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://w3id.org/arto#timeType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the time entity." .
-<http://w3id.org/arto#timeType> <http://www.w3.org/2000/01/rdf-schema#label> "timeType" .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to its physical height." .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height> <http://www.w3.org/2000/01/rdf-schema#label> "height" .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid31 .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to its physical width." .
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width> <http://www.w3.org/2000/01/rdf-schema#label> "width" .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid31 <http://www.w3.org/2002/07/owl#unionOf> _:genid32 .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Artwork> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/arto#Line> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<http://www.europeana.eu/schemas/edm/isShownBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.europeana.eu/schemas/edm/isShownBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<http://www.europeana.eu/schemas/edm/isShownBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://www.europeana.eu/schemas/edm/isShownBy> <http://www.w3.org/2000/01/rdf-schema#comment> "An unambiguous URI reference to the digital object on the provider's web site in\r\n      the best available resolution/quality. " .
-<http://www.europeana.eu/schemas/edm/isShownBy> <http://www.w3.org/2000/01/rdf-schema#label> "isShownBy" .
-<http://www.w3.org/2003/01/geo/wgs84_pos#asWKT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.w3.org/2003/01/geo/wgs84_pos#asWKT> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Location> .
-<http://www.w3.org/2003/01/geo/wgs84_pos#asWKT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2003/01/geo/wgs84_pos#wktLiteral> .
-<http://www.w3.org/2003/01/geo/wgs84_pos#asWKT> <http://www.w3.org/2000/01/rdf-schema#comment> "Representing a geographical point using WKT format" .
-<http://www.w3.org/2003/01/geo/wgs84_pos#asWKT> <http://www.w3.org/2000/01/rdf-schema#label> "asWKT" .
-<https://dbpedia.org/ontology/nationality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://dbpedia.org/ontology/nationality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
-<https://dbpedia.org/ontology/nationality> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://dbpedia.org/ontology/nationality> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an person to the Nationality." .
-<https://dbpedia.org/ontology/nationality> <http://www.w3.org/2000/01/rdf-schema#label> "nationality" .
-<https://dbpedia.org/property/style> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://dbpedia.org/property/style> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<https://dbpedia.org/property/style> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://dbpedia.org/property/style> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to its artistic style or movement." .
-<https://dbpedia.org/property/style> <http://www.w3.org/2000/01/rdf-schema#label> "style" .
-<https://schema.org/genre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://schema.org/genre> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
-<https://schema.org/genre> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://schema.org/genre> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an artwork to its genre." .
-<https://schema.org/genre> <http://www.w3.org/2000/01/rdf-schema#label> "genre" .
-<http://w3id.org/arto#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "\r\n      An arbitrary classification of a space/time region, by a\r\n      cognitive agent. An event may have actively participating agents,\r\n      passive factors, products, and a location in space/time." .
-<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/NET/c4dm/event.owl#Event> .
-<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/Event> .
-<http://w3id.org/arto#Event> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
-<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
-<http://w3id.org/arto#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a physical or virtual space associated with an artwork." .
-<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/Location> .
-<http://w3id.org/arto#Location> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
-<http://w3id.org/arto#Location> <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Place> .
-<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
+<http://w3id.org/arto#state> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Object> .
+<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the current condition, position, or status of objects within an artwork." .
+<http://w3id.org/arto#state> <http://www.w3.org/2000/01/rdf-schema#label> "state" .
+<http://w3id.org/arto#style> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/arto#style> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/arto#Artwork> .
+<http://w3id.org/arto#style> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/arto#style> <http://www.w3.org/2000/01/rdf-schema#comment> "The style of the artwork." .
+<http://w3id.org/arto#style> <http://www.w3.org/2000/01/rdf-schema#label> "style" .
+<http://w3id.org/arto#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/spec/Agent> .
+<http://w3id.org/arto#Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+<http://w3id.org/arto#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents an Agent.This class comprises people, either individually or in groups,\r\n      who have the potential to perform intentional actions for which they can be held responsible." .
+<http://w3id.org/arto#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent" .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasLocation> .
+_:genid32 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Location> .
 <http://w3id.org/arto#Artist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Artist> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<http://w3id.org/arto#Artist> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Person> .
 <http://w3id.org/arto#Artist> <http://www.w3.org/2000/01/rdf-schema#comment> "The person or group who create or contribute the artwork." .
 <http://w3id.org/arto#Artist> <http://www.w3.org/2000/01/rdf-schema#label> "Artist" .
 <http://w3id.org/arto#Artwork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/CreativeWork> .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid41 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid44 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid46 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
 <http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#comment> "A created object or piece of art that is intended to be aesthetically pleasing or\r\n                convey a message.\r\n                " .
 <http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#label> "Artwork" .
 <http://w3id.org/arto#Artwork> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.cidoc-crm.org/cidoc-crm/E22_Human_Made_Object> .
-<http://w3id.org/arto#Artwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/CreativeWork> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/contributor> .
+_:genid33 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Agent> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/creator> .
+_:genid34 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Artist> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/isPartOf> .
+_:genid35 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Series> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/description> .
+_:genid36 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/medium> .
+_:genid37 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/property/technique> .
+_:genid38 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/title> .
+_:genid39 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/height> .
+_:genid40 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/width> .
+_:genid41 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <http://www.europeana.eu/schemas/edm/isShownBy> .
+_:genid42 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#anyURI> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#style> .
+_:genid43 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/genre> .
+_:genid44 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#currentLocation> .
+_:genid45 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Location> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#relatedToEvent> .
+_:genid46 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Event> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid47 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasConnotation> .
+_:genid47 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Connotation> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#containsScene> .
+_:genid48 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Scene> .
 <http://w3id.org/arto#BalanceOfComposition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#BalanceOfComposition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Metric> .
 <http://w3id.org/arto#BalanceOfComposition> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the degree of visual equilibrium or harmony in the arrangement of\r\n      elements within an artwork, considering factors such as symmetry, asymmetry, and distribution\r\n      of\r\n      visual elements." .
 <http://w3id.org/arto#BalanceOfComposition> <http://www.w3.org/2000/01/rdf-schema#label> "BalanceOfComposition" .
 <http://w3id.org/arto#Character> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<http://w3id.org/arto#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Person> .
 <http://w3id.org/arto#Character> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents persons, figures, or beings depicted within an artwork." .
 <http://w3id.org/arto#Character> <http://www.w3.org/2000/01/rdf-schema#label> "Character" .
 <http://w3id.org/arto#Color> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Color> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#VisualElement> .
-<http://w3id.org/arto#Color> <http://www.w3.org/2000/01/rdf-schema#closeMatch> <https://schema.org/Color> .
+<http://w3id.org/arto#Color> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid49 .
+<http://w3id.org/arto#Color> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid50 .
 <http://w3id.org/arto#Color> <http://www.w3.org/2000/01/rdf-schema#comment> "The use of color in the artwork." .
 <http://w3id.org/arto#Color> <http://www.w3.org/2000/01/rdf-schema#label> "Color" .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#RGBValue> .
+_:genid49 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#HSVValue> .
+_:genid50 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#ColorHistogram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#ColorHistogram> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Metric> .
 <http://w3id.org/arto#ColorHistogram> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the distribution of colors in an artwork, typically expressed as a\r\n      histogram or a quantitative representation of the frequency or proportion of each color\r\n      present in\r\n      the artwork." .
 <http://w3id.org/arto#ColorHistogram> <http://www.w3.org/2000/01/rdf-schema#label> "ColorHistogram" .
 <http://w3id.org/arto#Composition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Composition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#VisualElement> .
+<http://w3id.org/arto#Composition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid51 .
 <http://w3id.org/arto#Composition> <http://www.w3.org/2000/01/rdf-schema#comment> "The arrangement and organization of visual elements." .
 <http://w3id.org/arto#Composition> <http://www.w3.org/2000/01/rdf-schema#label> "Composition" .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/type> .
+_:genid51 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#Connotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Connotation> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the implied meanings of artwork, includeing themes, symbolic meanings, and\r\n      emotions conveyed by an artwork." .
 <http://w3id.org/arto#Connotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> .
+<http://w3id.org/arto#Connotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+<http://w3id.org/arto#Connotation> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the implied meanings of artwork, includeing themes, symbolic meanings, and\r\n      emotions conveyed by an artwork." .
 <http://w3id.org/arto#Connotation> <http://www.w3.org/2000/01/rdf-schema#label> "Cnnotation" .
-<http://w3id.org/arto#VisualElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc." .
-<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature> .
-<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasMetric> .
+_:genid52 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Metric> .
 <http://w3id.org/arto#Emotion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Emotion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Connotation> .
+<http://w3id.org/arto#Emotion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid53 .
 <http://w3id.org/arto#Emotion> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the emotional response or affective state evoked by an artwork in the\r\n      artist or viewers, such as joy, sadness, anger, or fear." .
 <http://w3id.org/arto#Emotion> <http://www.w3.org/2000/01/rdf-schema#label> "Emotion" .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid53 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/type> .
+_:genid53 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#EmotionIntensity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#EmotionIntensity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Metric> .
 <http://w3id.org/arto#EmotionIntensity> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the strength or degree of emotional response evoked by an artwork." .
 <http://w3id.org/arto#EmotionIntensity> <http://www.w3.org/2000/01/rdf-schema#label> "EmotionIntensity" .
+<http://w3id.org/arto#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/NET/c4dm/event.owl#Event> .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid54 .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid55 .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid56 .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid57 .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid58 .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "\r\n      An arbitrary classification of a space/time region, by a\r\n      cognitive agent. An event may have actively participating agents,\r\n      passive factors, products, and a location in space/time." .
+<http://w3id.org/arto#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event" .
+<http://w3id.org/arto#Event> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/NET/c4dm/event.owl#agent> .
+_:genid54 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Agent> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid55 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/type> .
+_:genid55 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid56 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasTime> .
+_:genid56 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Time> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasLocation> .
+_:genid57 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Location> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid58 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#relatedToConnotation> .
+_:genid58 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Connotation> .
 <http://w3id.org/arto#Line> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#VisualElement> .
+<http://w3id.org/arto#Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid59 .
+<http://w3id.org/arto#Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid60 .
+<http://w3id.org/arto#Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid61 .
+<http://w3id.org/arto#Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid62 .
 <http://w3id.org/arto#Line> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents linear elements in artwork, including their characteristics and functions:\r\n            - Types of lines (straight, curved, implied)\r\n            - Line qualities (thick, thin, broken, continuous)\r\n            - Directional lines\r\n            - Contour lines\r\n            - Gestural lines\r\n            - Structural lines" .
 <http://w3id.org/arto#Line> <http://www.w3.org/2000/01/rdf-schema#label> "Line" .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/width> .
+_:genid59 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid60 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#direction> .
+_:genid60 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid61 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#length> .
+_:genid61 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#float> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid62 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/type> .
+_:genid62 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/arto#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/Place> .
+<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid63 .
+<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid64 .
+<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid65 .
+<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a physical or virtual space associated with an artwork." .
+<http://w3id.org/arto#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
+<http://w3id.org/arto#Location> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#asWKT> .
+_:genid63 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.opengis.net/ont/geosparql#wktLiteral> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid64 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasTime> .
+_:genid64 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Time> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid65 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/type> .
+_:genid65 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#MainColor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#MainColor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Metric> .
 <http://w3id.org/arto#MainColor> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the dominant or most prominent color in an artwork, which can be\r\n      determined through visual analysis or color quantization techniques." .
 <http://w3id.org/arto#MainColor> <http://www.w3.org/2000/01/rdf-schema#label> "MainColor" .
-<http://w3id.org/arto#Meaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Meaning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Connotation> .
-<http://w3id.org/arto#Meaning> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the underlying message, symbolism, or significance conveyed by an\r\n      artwork." .
-<http://w3id.org/arto#Meaning> <http://www.w3.org/2000/01/rdf-schema#label> "Meaning" .
+<http://w3id.org/arto#Symbolism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Symbolism> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Connotation> .
+<http://w3id.org/arto#Symbolism> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid66 .
+<http://w3id.org/arto#Symbolism> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the symbolism conveyed by the object, scene or the visual elements." .
+<http://w3id.org/arto#Symbolism> <http://www.w3.org/2000/01/rdf-schema#label> "Symbolism" .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid66 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#source> .
+_:genid66 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#Metric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Metric> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a quantifiable measurement or characteristic of an artwork,\r\n      encompassing statistical information about basic elements such as color statistics, emotion\r\n      intensity, balance of composition, and other visual elements, to facilitate structural\r\n      analysis\r\n      and comparison of artworks." .
 <http://w3id.org/arto#Metric> <http://www.w3.org/2000/01/rdf-schema#label> "Metric" .
 <http://w3id.org/arto#Object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid67 .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid68 .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid69 .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid70 .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid71 .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid72 .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid73 .
+<http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid74 .
 <http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the physical or conceptual object within an artwork." .
 <http://w3id.org/arto#Object> <http://www.w3.org/2000/01/rdf-schema#label> "Object" .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#expresses> .
+_:genid67 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/arto#Symbolism> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid68 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#relatedToScene> .
+_:genid68 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Scene> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid69 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#relatedTo> .
+_:genid69 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Object> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid70 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasMetric> .
+_:genid70 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Metric> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid71 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#state> .
+_:genid71 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid72 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#material> .
+_:genid72 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid73 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#size> .
+_:genid73 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid74 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#descriptor> .
+_:genid74 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/arto#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Agent> .
+<http://w3id.org/arto#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/spec/Organization> .
+<http://w3id.org/arto#Organization> <http://www.w3.org/2002/07/owl#disjointWith> <http://w3id.org/arto#Person> .
+<http://w3id.org/arto#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "The Organization class represents a kind of Agent corresponding to instititutions\r\n      such as galleries, museums etc." .
+<http://w3id.org/arto#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
 <http://w3id.org/arto#Painting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Painting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Artwork> .
 <http://w3id.org/arto#Painting> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific type of artwork created using paint or similar media. " .
 <http://w3id.org/arto#Painting> <http://www.w3.org/2000/01/rdf-schema#label> "Painting" .
+<http://w3id.org/arto#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Agent> .
+<http://w3id.org/arto#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/spec/Person> .
+<http://w3id.org/arto#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid75 .
+<http://w3id.org/arto#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid76 .
+<http://w3id.org/arto#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles." .
+<http://w3id.org/arto#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid75 <http://www.w3.org/2002/07/owl#onProperty> <https://dbpedia.org/property/residence> .
+_:genid75 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Location> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid76 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#knows> .
+_:genid76 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Person> .
+<http://w3id.org/arto#Photograph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Photograph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Artwork> .
+<http://w3id.org/arto#Photograph> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific type of artwork created using photography or similar media. " .
+<http://w3id.org/arto#Photograph> <http://www.w3.org/2000/01/rdf-schema#label> "Photograph" .
 <http://w3id.org/arto#Relevance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Relevance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Metric> .
 <http://w3id.org/arto#Relevance> <http://www.w3.org/2000/01/rdf-schema#comment> "Measures and describes the significance or importance of elements within an artwork, including:\r\n                  - Thematic relevance\r\n                  - Visual importance\r\n                  - Symbolic significance\r\n                  - Narrative relevance\r\n                  - Historical relevance\r\n                  - Compositional importance" .
 <http://w3id.org/arto#Relevance> <http://www.w3.org/2000/01/rdf-schema#label> "Relevance" .
 <http://w3id.org/arto#Scene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid77 .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid78 .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid79 .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid80 .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid81 .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid82 .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid83 .
+<http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid84 .
 <http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a distinct portion or area of an artwork that forms a coherent visual or narrative unit. " .
 <http://w3id.org/arto#Scene> <http://www.w3.org/2000/01/rdf-schema#label> "Scene" .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#containsObject> .
+_:genid77 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Object> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid78 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#containsScene> .
+_:genid78 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Scene> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid79 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasMetric> .
+_:genid79 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Metric> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid80 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#expresses> .
+_:genid80 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Connotation> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid81 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#coordinates> .
+_:genid81 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid82 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#size> .
+_:genid82 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid83 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#descriptor> .
+_:genid83 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid84 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#relatedToEvent> .
+_:genid84 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Event> .
+<http://w3id.org/arto#Sculpture> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Sculpture> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Artwork> .
+<http://w3id.org/arto#Sculpture> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific type of artwork created using sculptural techniques, such as carving,\r\n      modelling, or casting." .
+<http://w3id.org/arto#Sculpture> <http://www.w3.org/2000/01/rdf-schema#label> "Sculpture" .
 <http://w3id.org/arto#Series> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#Series> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/CreativeWorkSeries> .
+<http://w3id.org/arto#Series> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid85 .
 <http://w3id.org/arto#Series> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of related artworks that share common characteristics, themes, or purposes, including:\r\n                - Thematic series\r\n                - Chronological series\r\n                - Technique-based series\r\n                - Subject-based series\r\n                - Experimental series\r\n                - Documentary series" .
 <http://w3id.org/arto#Series> <http://www.w3.org/2000/01/rdf-schema#label> "Series" .
 <http://w3id.org/arto#Series> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.cidoc-crm.org/cidoc-crm/E78_Collection> .
-<http://w3id.org/arto#Series> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/CreativeWorkSeries> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid85 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/creator> .
+_:genid85 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Artist> .
 <http://w3id.org/arto#Space> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/arto#Space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#VisualElement> .
+<http://w3id.org/arto#Space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid86 .
 <http://w3id.org/arto#Space> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the spatial elements and relationships within an artwork." .
 <http://w3id.org/arto#Space> <http://www.w3.org/2000/01/rdf-schema#label> "Space" .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid86 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/type> .
+_:genid86 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
 <http://w3id.org/arto#Sponsor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Sponsor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<http://w3id.org/arto#Sponsor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/arto#Person> .
 <http://w3id.org/arto#Sponsor> <http://www.w3.org/2000/01/rdf-schema#comment> "The person or group who sponsor the artwork." .
 <http://w3id.org/arto#Sponsor> <http://www.w3.org/2000/01/rdf-schema#label> "Sponsor" .
 <http://w3id.org/arto#Theme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -442,19 +561,54 @@ _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <http://w3id.org/arto#Theme> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a central idea, subject, or concept explored in an artwork, which can\r\n      be explicit or implicit, and may reflect broader cultural, social, or political issues." .
 <http://w3id.org/arto#Theme> <http://www.w3.org/2000/01/rdf-schema#label> "Theme" .
 <http://w3id.org/arto#Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/arto#Time> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents temporal aspects related to artwork, including:\r\n            - Creation periods\r\n            - Historical periods\r\n            - Exhibition periods\r\n            - Conservation periods\r\n            - Depicted time periods\r\n            - Time-based elements\r\n\r\n            Examples:\r\n            - :renaissance_period rdf:type arto:Time ;\r\n                arto:startDate \"1400\" ;\r\n                arto:endDate \"1600\" ;\r\n                arto:culturalPeriod \"European_Renaissance\"\r\n            " .
 <http://w3id.org/arto#Time> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://w3id.org/arto#Time> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid87 .
+<http://w3id.org/arto#Time> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid88 .
+<http://w3id.org/arto#Time> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid89 .
+<http://w3id.org/arto#Time> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents temporal aspects related to artwork, including:\r\n            - Creation periods\r\n            - Historical periods\r\n            - Exhibition periods\r\n            - Conservation periods\r\n            - Depicted time periods\r\n            - Time-based elements\r\n\r\n            Examples:\r\n            - :renaissance_period rdf:type arto:Time ;\r\n                sdo:startDate \"1400\" ;\r\n                sdo:endDate \"1600\" ;\r\n                arto:culturalPeriod \"European_Renaissance\"\r\n            " .
 <http://w3id.org/arto#Time> <http://www.w3.org/2000/01/rdf-schema#label> "Time" .
-<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents an Agent.This class comprises people, either individually or in groups,\r\n      who have the potential to perform intentional actions for which they can be held responsible." .
-<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent" .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2002/07/owl#disjointWith> <http://xmlns.com/foaf/0.1/Person> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "The Organization class represents a kind of Agent corresponding to instititutions\r\n      such as galleries, museums etc." .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization" .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#comment> "Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles." .
-<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid87 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/endDate> .
+_:genid87 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#dataTime> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid88 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/startDate> .
+_:genid88 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#dataTime> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid89 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/type> .
+_:genid89 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/arto#VisualElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature> .
+<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid90 .
+<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid91 .
+<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid92 .
+<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc." .
+<http://w3id.org/arto#VisualElement> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid90 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#hasMetric> .
+_:genid90 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Metric> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid91 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#expresses> .
+_:genid91 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/arto#Connotation> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid92 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/arto#descriptor> .
+_:genid92 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2001/XMLSchema#dataTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/spec/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/spec/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/spec/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/CreativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/CreativeWorkSeries> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid93 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid94 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid95 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid96 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid97 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid98 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid99 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid100 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid101 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid102 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid103 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
