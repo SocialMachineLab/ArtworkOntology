@@ -18,7 +18,7 @@ The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for desc
 
 The Artwork Descriptive Model is designed to encapsulate the representation of the content of artworks. It focuses on detailed content representation including visual elements, scenes, and emotional undertones that are conveyed through the artwork. This model aims to provide a framework that allows users to visually reconstruct the artwork in their mind’s eye, fostering a deep, intuitive understanding.
 
-![The Artwork Descriptive Model](images/adm.png)
+![The Artwork Descriptive Model](images/aom.png)
 
 
 ### Artwork Contextual Model
