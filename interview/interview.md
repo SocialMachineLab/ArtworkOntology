@@ -1,5 +1,10 @@
 # Analysis of Art Expert Interviews on Describing Artworks
 
+## Important Note 
+
+It is important to recognize that the concept maps included in this document are based on an older version of Arto and do not accurately represent the current version. These maps were crafted prior to recent updates, which may have introduced significant changes. 
+
+
 ## Introduction
 
 This document presents an analysis of interviews conducted with art experts to validate our designed ontology and gain insights into the processes employed by experts when creating captions for artworks. By presenting the ontology to the experts and soliciting their feedback, we aim to evaluate its accuracy and completeness and cover the art domain knowledge, ensuring its practical applicability. Additionally, the interviews will explore their thought processes, methodologies, and decision-making steps used by experts when analysing and describing various aspects of artworks. The insights gained will not only refine our ontology but also guide the process of automated captioning for generating accurate, meaningful, and contextually relevant captions, enhancing the accessibility and understanding of artworks.
