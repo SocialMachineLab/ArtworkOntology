@@ -1,0 +1,98 @@
+@prefix : <http://w3id.org/arto#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dbo: <https://dbpedia.org/ontology/> .
+@prefix dbp: <https://dbpedia.org/property/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix arto: <http://w3id.org/arto#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+
+:TheShepherdess rdf:type :Painting ;
+    dc:title "The Shepherdess"@en ;
+    arto:originalTitle "Pastourelle"@fr ;
+    dc:creator :William-AdolpheBouguereau ;
+    dc:medium "Oil, canvas" ;
+    dbp:style "Academicism, Naturalism" ;
+    sdo:genre "Portrait" ;
+    ebucore:dimensions "93 x 159 cm" ;
+    :currentLocation :PhiladelphiaMuseumOfArt ;
+    :containsScene :Foreground, :Background .
+
+:William-AdolpheBouguereau rdf:type :Artist ;
+    foaf:name "William-Adolphe Bouguereau" ;
+    dbo:nationality "French" ;
+    :hasTime :Time-1889 ;
+    :teachingAt :AcademieJulian .
+
+:Time-1889 rdf:type :Time ;
+    sdo:startDate "1889"^^xsd:date ;
+    sdo:endDate "1889"^^xsd:date .
+
+:Foreground rdf:type :Scene ;
+    :containsObject :Bush, :YoungWoman, :Stick ;
+    :coordinates "lower_section" ;
+    :size "large" .
+
+:Background rdf:type :Scene ;
+    :containsObject :Oxen, :Field, :Sky ;
+    :coordinates "upper_section" ;
+    :size "large" .
+
+:YoungWoman rdf:type :Character ;
+    rdfs:label "Young Woman" ;
+    :clothing "Rural dress with a plaid scarf" ;
+    :state "barefooted" ;
+    :containsElement :PaleWhite, :DarkGreen ;
+    :holds :Stick .
+
+:Bush rdf:type :Object ;
+    :behind :YoungWoman ;
+    :containsElement :Green ;
+    :material "natural" .
+
+:Stick rdf:type :Object ;
+    :containsElement :Brown ;
+    :material "Wood" .
+
+:Oxen rdf:type :Object ;
+    :containsElement :Brown ;
+    :grazingIn :Field .
+
+:Field rdf:type :Object ;
+    :containsElement :Green .
+
+:Sky rdf:type :Object ;
+    :containsElement :WarmYellow .
+
+:Green rdf:type :Color ;
+    :RGBValue "34,139,34" .
+
+:Brown rdf:type :Color ;
+    :RGBValue "139,69,19" .
+
+:PaleWhite rdf:type :Color ;
+    :RGBValue "255,250,240" .
+
+:DarkGreen rdf:type :Color ;
+    :RGBValue "0,100,0" .
+
+:WarmYellow rdf:type :Color ;
+    :RGBValue "255,198,73" .
+
+:rural_life_theme rdf:type :Theme ;
+    rdfs:label "Rural Life and Pastoral Scene" .
+
+:pastoral_meaning rdf:type :Symbolism ;
+    rdfs:label "Pastoral Idealism" ;
+    :source "Rural setting and shepherd figure" .
