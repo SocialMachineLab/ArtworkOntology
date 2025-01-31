@@ -639,7 +639,7 @@ arto:Connotation rdf:type owl:Class ;
                  ];
                  rdfs:comment """Represents the implied meanings of artwork, includeing themes, symbolic meanings, and
       emotions conveyed by an artwork.""" ;
-                 rdfs:label "Cnnotation" .
+                 rdfs:label "Connotation" .
 
 
 ###  http://w3id.org/arto#Emotion
