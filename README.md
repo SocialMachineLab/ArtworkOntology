@@ -28,9 +28,16 @@ The Artwork Contextual Model complements the descriptive aspects by incorporatin
 ![The Artwork Contextual Model](images/acm.png)
 
 
+## Competency Questions
+
+## SPARQL Queries
+
 ## Example 
 
 To demonstrate the application of the ARTO models, consider the artwork “[The Shepherdess](https://www.wikiart.org/en/william-adolphe-bouguereau/shepherdess-1889)” by William-Adolphe Bouguereau. The Descriptive Model would detail the visual elements like the serene posture of the shepherdess and the gentle, pastoral setting. The Contextual Model would provide insights into the painting’s creation in 1889, during the artist's life, reflecting the social and historical aspects of that era in France. This example is presented below using RDF-star and RDF to help better understand the differences between representing events in the contextual model. 
+
+### The picture of the artwork "The Shepherdess"
+![The picture of the artwork "The Shepherdess"](images/example.jpg)
 
 ### Contextual Model of The Shepherdess using RDF-star
 ![The contextual model of The Shepherdess using RDF-Star](images/example_rdfstar.png)
