@@ -1,0 +1,186 @@
+@prefix : <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix icon: <https://w3id.org/icon/ontology/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+:girl_with_pearl_earring a icon:Artwork ;
+    dc:title "Girl with a Pearl Earring"@en ;
+    dc:creator "Johannes Vermeer" ;
+    dc:date "1665"^^xsd:gYear ;
+    dc:description "Famous painting by Johannes Vermeer depicting a girl wearing an exotic dress and a large pearl earring"@en ;
+    icon:hasRecognition :preiconographical_recognition1, 
+                         :preiconographical_recognition2,
+                         :preiconographical_recognition3,
+                         :preiconographical_recognition4,
+                         :iconographical_recognition1,
+                         :iconological_recognition1 .
+
+# Pre-iconographical Recognitions (Level 1)
+:preiconographical_recognition1 a icon:PreiconographicalRecognition ;
+    icon:aboutWorkOfArt :girl_with_pearl_earring ;
+    dul:includesAgent :art_historian1 ;
+    dc:date "2023-10-15"^^xsd:date ;
+    icon:recognizedArtisticMotif :girl_motif ;
+    icon:preiconographicallyCompliesWith :interpretation_description1 .
+
+:preiconographical_recognition2 a icon:PreiconographicalRecognition ;
+    icon:aboutWorkOfArt :girl_with_pearl_earring ;
+    dul:includesAgent :art_historian1 ;
+    dc:date "2023-10-15"^^xsd:date ;
+    icon:recognizedArtisticMotif :earring_motif ;
+    icon:preiconographicallyCompliesWith :interpretation_description1 .
+
+:preiconographical_recognition3 a icon:PreiconographicalRecognition ;
+    icon:aboutWorkOfArt :girl_with_pearl_earring ;
+    dul:includesAgent :art_historian1 ;
+    dc:date "2023-10-15"^^xsd:date ;
+    icon:recognizedArtisticMotif :turban_motif ;
+    icon:preiconographicallyCompliesWith :interpretation_description1 .
+
+:preiconographical_recognition4 a icon:PreiconographicalRecognition ;
+    icon:aboutWorkOfArt :girl_with_pearl_earring ;
+    dul:includesAgent :art_historian1 ;
+    dc:date "2023-10-15"^^xsd:date ;
+    icon:recognizedComposition :portrait_composition ;
+    icon:preiconographicallyCompliesWith :interpretation_description1 .
+
+# Artistic Motifs (Pre-iconographical subjects)
+:girl_motif a icon:ArtisticMotif ;
+    rdfs:label "Young woman's face and shoulders"@en ;
+    icon:isRecognizedArtisticMotifOf :preiconographical_recognition1 ;
+    icon:hasFactualMeaning :young_woman ;
+    icon:hasExpressionalMeaning :gaze_expression ;
+    icon:partOf :portrait_composition ;
+    icon:regionDescription "Central part of the painting, taking most of the canvas" ;
+    icon:associatedColor :blue, :brown, :beige .
+
+:earring_motif a icon:ArtisticMotif ;
+    rdfs:label "Pearl earring"@en ;
+    icon:isRecognizedArtisticMotifOf :preiconographical_recognition2 ;
+    icon:hasFactualMeaning :pearl ;
+    icon:partOf :portrait_composition ;
+    icon:regionDescription "Bottom left region of the painting, hanging from the girl's ear" ;
+    icon:associatedColor :white, :silver ;
+    icon:associatedMaterial :pearl_material .
+
+:turban_motif a icon:ArtisticMotif ;
+    rdfs:label "Blue and yellow fabric head covering"@en ;
+    icon:isRecognizedArtisticMotifOf :preiconographical_recognition3 ;
+    icon:hasFactualMeaning :fabric ;
+    icon:partOf :portrait_composition ;
+    icon:regionDescription "Top and right side of the painting, covering the girl's head" ;
+    icon:associatedColor :blue, :yellow .
+
+# Composition
+:portrait_composition a icon:Composition ;
+    rdfs:label "Three-quarter portrait against dark background"@en ;
+    icon:isRecognizedCompositionOf :preiconographical_recognition4 ;
+    icon:hasCompositionalStructure :triangular_structure ;
+    icon:hasPart :girl_motif, :earring_motif, :turban_motif .
+
+:triangular_structure a icon:CompositionalStructure ;
+    rdfs:label "Triangular composition"@en ;
+    rdfs:comment "The composition forms a triangle with the head at the top and the shoulders forming the base" .
+
+# Pre-iconographical subjects
+:young_woman a icon:NaturalElement ;
+    rdfs:label "Young woman"@en ;
+    rdfs:comment "A young female human figure" .
+
+:pearl a icon:NaturalElement ;
+    rdfs:label "Pearl"@en ;
+    rdfs:comment "A lustrous concretion formed within certain mollusks and valued as a gem" .
+
+:fabric a icon:NaturalElement ;
+    rdfs:label "Fabric"@en ;
+    rdfs:comment "Cloth or material used for clothing or decoration" .
+
+:gaze_expression a icon:ExpressionalQuality ;
+    rdfs:label "Direct gaze"@en ;
+    rdfs:comment "An expression that conveys directness, intimacy, and contemplation" .
+
+# Colors
+:blue a icon:Color ;
+    rdfs:label "Blue"@en .
+
+:yellow a icon:Color ;
+    rdfs:label "Yellow"@en .
+
+:brown a icon:Color ;
+    rdfs:label "Brown"@en .
+
+:beige a icon:Color ;
+    rdfs:label "Beige"@en .
+
+:white a icon:Color ;
+    rdfs:label "White"@en .
+
+:silver a icon:Color ;
+    rdfs:label "Silver"@en .
+
+# Materials
+:pearl_material a icon:Material ;
+    rdfs:label "Pearl"@en .
+
+# Iconographical Recognition (Level 2)
+:iconographical_recognition1 a icon:IconographicalRecognition ;
+    icon:aboutWorkOfArt :girl_with_pearl_earring ;
+    dul:includesAgent :art_historian1 ;
+    dc:date "2023-10-15"^^xsd:date ;
+    icon:recognizedImage :troni_image ;
+    icon:refersToArtisticMotif :girl_motif, :earring_motif, :turban_motif ;
+    icon:iconographicallyCompliesWith :interpretation_description1 .
+
+# Iconographical subjects
+:troni_image a icon:Image ;
+    rdfs:label "Troni (Idealized character study)"@en ;
+    icon:isIconographicallyRecognizedBy :iconographical_recognition1 ;
+    icon:hasCharacter :exotic_character ;
+    icon:hasRecAttribute :earring_motif, :turban_motif .
+
+:exotic_character a icon:Character ;
+    rdfs:label "Exotic character"@en ;
+    rdfs:comment "A character study representing an exotic or oriental figure, common in Dutch Golden Age painting" .
+
+# Iconological Recognition (Level 3)
+:iconological_recognition1 a icon:IconologicalRecognition ;
+    icon:aboutWorkOfArt :girl_with_pearl_earring ;
+    dul:includesAgent :art_historian1 ;
+    dc:date "2023-10-15"^^xsd:date ;
+    icon:recognizedIntrinsicMeaning :dutch_fascination_with_exotic ;
+    icon:iconologicallyCompliesWith :interpretation_description1 .
+
+# Iconological subjects
+:dutch_fascination_with_exotic a icon:IntrinsicMeaning ;
+    rdfs:label "Dutch Golden Age fascination with exoticism"@en ;
+    icon:isIntrinsicMeaningOf :iconological_recognition1 ;
+    icon:hasArtisticMotif :turban_motif, :earring_motif ;
+    icon:hasImage :troni_image ;
+    icon:recognizedCulturalPhenomenon :orientalism_in_dutch_art ;
+    icon:recognizedConcept :exoticism_concept .
+
+:orientalism_in_dutch_art a icon:CulturalPhenomenon ;
+    rdfs:label "Orientalism in Dutch art"@en ;
+    rdfs:comment "The fascination with and depiction of Eastern cultures, costumes, and objects in 17th century Dutch art, influenced by global trade expansion" .
+
+:exoticism_concept a dul:SocialObject ;
+    rdfs:label "Exoticism"@en ;
+    rdfs:comment "The quality of being unusual or different in a way that is striking or fascinating, particularly referring to foreign cultures" .
+
+# Interpretation Description
+:interpretation_description1 a icon:InterpretationDescription ;
+    rdfs:label "Comprehensive interpretation of Girl with a Pearl Earring"@en ;
+    rdfs:comment "A holistic interpretation covering pre-iconographical, iconographical, and iconological aspects of Vermeer's painting" ;
+    icon:isCompliantWithPreiconographicalRecognition :preiconographical_recognition1, :preiconographical_recognition2, :preiconographical_recognition3, :preiconographical_recognition4 ;
+    icon:isCompliantWithIconographicalRecognition :iconographical_recognition1 ;
+    icon:isCompliantWithIconologicalRecognition :iconological_recognition1 ;
+    icon:hasResponsibleAgent :art_historian1 .
+
+# Agent
+:art_historian1 a dul:Agent ;
+    rdfs:label "Dr. Jane Smith"@en ;
+    rdfs:comment "Art historian specializing in Dutch Golden Age painting" .

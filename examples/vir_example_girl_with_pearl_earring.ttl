@@ -1,0 +1,94 @@
+@prefix vir: <http://w3id.org/vir#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ex: <http://example.org/art/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://w3id.org/vir> .
+
+# Physical Painting Object
+ex:GirlWithPearlEarring_Painting rdf:type crm:E22_Man-Made_Object ;
+    rdfs:label "Girl with a Pearl Earring"@en ;
+    rdfs:label "Het meisje met de parel"@nl ;
+    crm:P50_has_current_keeper ex:Mauritshuis ;
+    vir:K1_denotes ex:GirlFullRepresentation .
+
+# The main representation in the painting
+ex:GirlFullRepresentation rdf:type vir:IC9_Representation ;
+    rdfs:label "Full portrait representation"@en ;
+    vir:K17_has_attribute ex:PearlEarringAttribute, ex:BlueTurbanAttribute, ex:GoldenLightAttribute ;
+    vir:K24_portray ex:GirlCharacter ;
+    vir:K34_illustrate ex:VermeerCatalogEntry .
+
+# Representation components - face details
+ex:GirlFace rdf:type vir:IC9_Representation ;
+    rdfs:label "Facial representation"@en ;
+    vir:K20i_is_composed_of ex:GirlFullRepresentation ;
+    vir:K17_has_attribute ex:SoftLightingAttribute, ex:PartedLipsAttribute .
+
+# Eye detail as a subcomponent
+ex:GirlEyes rdf:type vir:IC9_Representation ;
+    rdfs:label "Eye representation"@en ;
+    vir:K20i_is_composed_of ex:GirlFace ;
+    vir:K17_has_attribute ex:GazeAttribute .
+
+# Main visual attributes
+ex:PearlEarringAttribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Pearl Earring"@en ;
+    vir:K21_depict_things_of_type ex:JewelryType .
+
+ex:BlueTurbanAttribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Blue Turban/Headscarf"@en ;
+    vir:K21_depict_things_of_type ex:HeadgearType ;
+    vir:K14_symbolize ex:ExoticismConcept ;
+    vir:K25_express ex:MysterySymbol .
+
+ex:GoldenLightAttribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Golden Light Effect"@en ;
+    vir:K21_depict_things_of_type ex:ChiaroscuroTechnique .
+
+ex:GazeAttribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Direct Gaze"@en ;
+    vir:K14_symbolize ex:IntimacyConcept .
+
+ex:SoftLightingAttribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Soft Facial Lighting"@en ;
+    vir:K21_depict_things_of_type ex:LightingTechnique .
+
+ex:PartedLipsAttribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Slightly Parted Lips"@en .
+
+ex:ExoticismConcept rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Exoticism"@en .
+
+ex:MysterySymbol rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Mystery"@en .
+
+ex:IntimacyConcept rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Intimacy and Connection"@en .
+
+
+# Character depicted in the painting
+ex:GirlCharacter rdf:type vir:IC16_Character ;
+    rdfs:label "The Girl (Unknown Model)"@en ;
+    crm:P2_has_type ex:UnidentifiedFemaleType ;
+    vir:K24i_is_portrayed_in ex:GirlFullRepresentation .
+
+
+ex:JewelryType rdf:type crm:E55_Type ;
+    rdfs:label "Jewelry"@en .
+
+ex:HeadgearType rdf:type crm:E55_Type ;
+    rdfs:label "Headgear"@en .
+
+ex:ChiaroscuroTechnique rdf:type crm:E55_Type ;
+    rdfs:label "Chiaroscuro"@en .
+
+ex:UnidentifiedFemaleType rdf:type crm:E55_Type ;
+    rdfs:label "Unidentified Female Figure"@en .
+
+# Agents involved
+ex:Mauritshuis rdf:type crm:E40_Legal_Body ;
+    rdfs:label "Mauritshuis Museum"@en .
+
+ex:JohannesVermeer rdf:type crm:E39_Actor ;
+    rdfs:label "Johannes Vermeer"@en .

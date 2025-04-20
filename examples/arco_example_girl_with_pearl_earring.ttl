@@ -1,0 +1,253 @@
+@prefix : <https://w3id.org/arco/ontology/arco/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix dbo: <https://dbpedia.org/ontology/> .
+@prefix dbp: <https://dbpedia.org/property/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix arco-core: <https://w3id.org/arco/ontology/core/> .
+@prefix arco-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix arco-dd: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix arco-cat: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix arco-loc: <https://w3id.org/arco/ontology/location/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix ti: <https://w3id.org/italia/onto/TI/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@base <https://w3id.org/arco/ontology/arco/> .
+
+:girl_with_pearl_earring rdf:type :HistoricOrArtisticProperty ;
+    l0:name "Girl with a Pearl Earring"@en, "Ragazza con l'orecchino di perla"@it ;
+    rdfs:label "Girl with a Pearl Earring"@en, "Ragazza con l'orecchino di perla"@it ;
+    arco-cat:uniqueIdentifier "NLGPE1665" ;
+    arco-cat:catalogueNumber "MAU-1665-JP-01" ;
+    arco-core:hasCategory :painting_category ;
+    arco-dd:hasCulturalPropertyType :painting_type ;
+    :hasMibacScopeOfProtection :HistoricalArtisticScope ;
+    arco-dd:hasMeasurementCollection :measurements ;
+    arco-dd:hasTechnicalStatus :technical_status ;
+    arco-dd:hasConservationStatus :conservation_status ;
+    arco-dd:hasIconographicOrDecorativeApparatus :iconographic_apparatus ;
+    arco-cd:hasAuthor :vermeer ;
+    arco-cd:hasDating :dating ;
+    arco-cd:hasSubject :subject ;
+    arco-cd:hasTitle :title ;
+    arco-cd:hasDocumentation :documentation ;
+    arco-cd:hasBibliography :bibliography ;
+    arco-loc:hasTimeIndexedTypedLocation :current_location ;
+    arco-cd:hasLegalSituation :legal_situation ;
+    arco-cd:hasIntervention :restoration_1994 ;
+    arco-dd:hasCulturalPropertyAvailability :availability ;
+    arco-cd:historicalInformation """'Girl with a Pearl Earring' is one of Dutch painter Johannes Vermeer's masterpieces. 
+    It depicts a girl (likely a servant) wearing an exotic dress, an oriental turban, and a large pearl earring. 
+    The painting is renowned for its photographic quality, the vivid colors, and especially for the girl's captivating gaze directed at the viewer. 
+    Though often referred to as the 'Mona Lisa of the North' or the 'Dutch Mona Lisa', the work is not a portrait but a 'tronie' - 
+    a Dutch genre depicting imaginary figures."""@en .
+
+:painting_category rdf:type arco-core:CulturalPropertyCategory ;
+    rdfs:label "Painting"@en, "Dipinto"@it ;
+    l0:name "Painting"@en, "Dipinto"@it .
+
+:painting_type rdf:type arco-dd:CulturalPropertyType ;
+    rdfs:label "Oil on canvas"@en, "Olio su tela"@it ;
+    arco-dd:hasFunctionalPurpose :artistic_purpose .
+
+:artistic_purpose rdf:type arco-dd:FunctionalPurpose ;
+    rdfs:label "Artistic"@en, "Artistico"@it .
+
+:measurements rdf:type arco-dd:MeasurementCollection ;
+    arco-dd:hasHeight [
+        rdf:type arco-dd:HeightMeasurement ;
+        arco-dd:hasValue "44.5"^^xsd:float ;
+        arco-dd:hasUnitOfMeasurement "cm"
+    ] ;
+    arco-dd:hasWidth [
+        rdf:type arco-dd:WidthMeasurement ;
+        arco-dd:hasValue "39"^^xsd:float ;
+        arco-dd:hasUnitOfMeasurement "cm"
+    ] ;
+    arco-dd:hasWeight [
+        rdf:type arco-dd:WeightMeasurement ;
+        arco-dd:hasValue "5.2"^^xsd:float ;
+        arco-dd:hasUnitOfMeasurement "kg"
+    ] .
+
+:technical_status rdf:type arco-dd:TechnicalStatus ;
+    arco-dd:hasTechnique :oil_painting_technique ;
+    arco-dd:hasMaterial :canvas, :oil_paint ;
+    arco-dd:hasElement :pearl_earring_element, :blue_turban_element, :yellow_jacket_element .
+
+:pearl_earring_element rdf:type arco-dd:TechnicalDetailOccurrence ;
+    rdfs:label "Pearl earring"@en ;
+    arco-dd:hasPosition "Right ear of the subject"@en .
+
+:blue_turban_element rdf:type arco-dd:TechnicalDetailOccurrence ;
+    rdfs:label "Blue turban"@en ;
+    arco-dd:hasPosition "Head of the subject"@en .
+
+:yellow_jacket_element rdf:type arco-dd:TechnicalDetailOccurrence ;
+    rdfs:label "Yellow jacket"@en ;
+    arco-dd:hasPosition "Upper body of the subject"@en .
+
+:oil_painting_technique rdf:type arco-dd:Technique ;
+    rdfs:label "Oil painting"@en, "Pittura ad olio"@it .
+
+:canvas rdf:type arco-dd:Material ;
+    rdfs:label "Canvas"@en, "Tela"@it .
+
+:oil_paint rdf:type arco-dd:Material ;
+    rdfs:label "Oil paint"@en, "Colore ad olio"@it .
+
+:conservation_status rdf:type arco-dd:ConservationStatus ;
+    arco-dd:hasConservationStatusType :good_conservation ;
+    arco-dd:hasConservationNote "The painting underwent a major restoration in 1994, where several layers of varnish were removed, revealing the original vivid colors that had been obscured over time."@en ;
+    arco-dd:assessmentDate "2015-06-15"^^xsd:date .
+
+:good_conservation rdf:type arco-dd:ConservationStatusType ;
+    rdfs:label "Good condition"@en, "Buono stato"@it .
+
+:iconographic_apparatus rdf:type arco-dd:IconographicOrDecorativeApparatus ;
+    rdfs:label "Portrait of a young woman wearing a turban and pearl earring"@en ;
+    arco-dd:hasIconographySubject :girl_iconography .
+
+:girl_iconography rdf:type arco-dd:IconographySubject ;
+    rdfs:label "Young woman with exotic dress"@en ;
+    arco-dd:hasIconClass "31D212" .
+
+:vermeer rdf:type l0:Agent, arco-cd:Author ;
+    l0:name "Johannes Vermeer"@en, "Johannes Vermeer"@it ;
+    arco-cd:historicalBiographicalInformation """Johannes Vermeer (1632-1675) was a Dutch Baroque Period painter who specialized in domestic interior scenes of middle-class life. 
+    He was moderately successful in his lifetime but was not wealthy, leaving his wife and children in debt at his death. Vermeer produced relatively few paintings, around 35 works are 
+    confidently attributed to him today. During the 19th and early 20th centuries, Vermeer was rediscovered by art critics and historians."""@en ;
+    arco-cd:birthDate "1632-10-31"^^xsd:date ;
+    arco-cd:deathDate "1675-12-15"^^xsd:date ;
+    arco-cd:birthPlace :delft ;
+    arco-cd:deathPlace :delft .
+
+:delft rdf:type clv:Feature ;
+    l0:name "Delft"@en, "Delft"@it ;
+    clv:hasCountry :netherlands .
+
+:netherlands rdf:type clv:Feature ;
+    l0:name "Netherlands"@en, "Paesi Bassi"@it .
+
+:dating rdf:type arco-cd:Dating ;
+    arco-cd:hasDatingEvent :creation_event .
+
+:creation_event rdf:type arco-cd:Creation ;
+    ti:hasTimeInterval :creation_time .
+
+:creation_time rdf:type ti:TimeInterval ;
+    arco:startTime "1665-01-01"^^xsd:date ;
+    arco:endTime "1667-12-31"^^xsd:date ;
+    rdfs:label "c. 1665-1667"@en .
+
+:subject rdf:type arco-cd:Subject ;
+    rdfs:label "Girl with pearl earring"@en ;
+    arco-cd:subject "Portrait; Young woman; Turban; Pearl earring; Tronie; Dutch Golden Age"@en .
+
+:title rdf:type arco-cd:Title ;
+    arco-cd:title "Girl with a Pearl Earring"@en, "Ragazza con l'orecchino di perla"@it ;
+    arco-cd:hasTitleType :traditional_title .
+
+:traditional_title rdf:type arco-cd:TitleType ;
+    rdfs:label "Traditional title"@en, "Titolo tradizionale"@it .
+
+:documentation rdf:type arco-cd:Documentation ;
+    arco-cd:hasDocumentationType :digital_photography ;
+    arco-cd:documentationIdentifier "MAU-1665-JP-01-DOC-001" ;
+    arco-cd:documentationDate "2018-05-12"^^xsd:date .
+
+:digital_photography rdf:type arco-cd:DocumentationType ;
+    rdfs:label "Digital photography"@en, "Fotografia digitale"@it .
+
+:bibliography rdf:type arco-cd:Bibliography ;
+    arco-cd:hasBibliographicSource :chevalier_book, :wheelock_article .
+
+:chevalier_book rdf:type arco-cd:Book ;
+    arco-cd:hasAuthor :tracy_chevalier ;
+    arco-cd:title "Girl with a Pearl Earring"@en ;
+    arco-cd:publicationYear "1999"^^xsd:gYear ;
+    arco-cd:publisher "HarperCollins" .
+
+:tracy_chevalier rdf:type l0:Agent ;
+    l0:name "Tracy Chevalier" .
+
+:wheelock_article rdf:type arco-cd:Article ;
+    arco-cd:hasAuthor :arthur_wheelock ;
+    arco-cd:title "Vermeer and the Art of Painting"@en ;
+    arco-cd:publicationYear "1995"^^xsd:gYear ;
+    arco-cd:publisher "Yale University Press" .
+
+:arthur_wheelock rdf:type l0:Agent ;
+    l0:name "Arthur K. Wheelock Jr." .
+
+:current_location rdf:type arco-loc:TimeIndexedTypedLocation ;
+    arco-loc:hasLocationType :museum_location ;
+    ti:hasTimeInterval :location_time ;
+    clv:hasAddress :mauritshuis_address .
+
+:museum_location rdf:type arco-loc:LocationType ;
+    rdfs:label "Museum"@en, "Museo"@it .
+
+:location_time rdf:type ti:TimeInterval ;
+    arco:startTime "1902-01-01"^^xsd:date .
+
+:mauritshuis_address rdf:type clv:Address ;
+    l0:name "Mauritshuis"@en ;
+    clv:fullAddress "Plein 29, 2511 CS Den Haag, Netherlands" ;
+    clv:hasCity :the_hague ;
+    clv:hasCountry :netherlands .
+
+:the_hague rdf:type clv:Feature ;
+    l0:name "The Hague"@en, "L'Aia"@it .
+
+:legal_situation rdf:type arco-cd:LegalSituation ;
+    arco-cd:hasOwner :mauritshuis ;
+    arco-cd:hasOwnershipType :public_ownership ;
+    arco-cd:hasAcquisitionType :purchase ;
+    arco-cd:acquisitionDate "1902"^^xsd:gYear .
+
+:mauritshuis rdf:type l0:Agent ;
+    l0:name "Mauritshuis"@en, "Mauritshuis"@it ;
+    rdfs:label "Royal Picture Gallery Mauritshuis"@en .
+
+:public_ownership rdf:type arco-cd:OwnershipType ;
+    rdfs:label "Public ownership"@en, "Proprietà pubblica"@it .
+
+:purchase rdf:type arco-cd:AcquisitionType ;
+    rdfs:label "Purchase"@en, "Acquisto"@it .
+
+:restoration_1994 rdf:type arco-cd:Intervention ;
+    arco-cd:hasInterventionType :restoration ;
+    arco-cd:interventionDate "1994-01-15"^^xsd:date ;
+    arco-cd:interventionDescription """Major restoration that involved the removal of several layers of varnish that had yellowed over time. 
+    The restoration revealed vibrant colors that had been obscured, particularly the blue turban and the contrast between the yellow jacket and the dark background. 
+    Technical analysis revealed details about Vermeer's painting technique, including the use of thin glazes of paint to create luminous effects."""@en ;
+    arco-cd:hasResponsibleAgent :mauritshuis_conservation_team .
+
+:restoration rdf:type arco-cd:InterventionType ;
+    rdfs:label "Restoration"@en, "Restauro"@it .
+
+:mauritshuis_conservation_team rdf:type l0:Agent ;
+    l0:name "Mauritshuis Conservation Team" .
+
+:availability rdf:type arco-dd:CulturalPropertyAvailability ;
+    arco-dd:hasAvailabilityType :permanent_exhibition ;
+    arco-dd:hasAvailabilityNote "The painting is occasionally loaned to other museums for special exhibitions"@en .
+
+:permanent_exhibition rdf:type arco-dd:AvailabilityType ;
+    rdfs:label "Permanent exhibition"@en, "Esposizione permanente"@it .

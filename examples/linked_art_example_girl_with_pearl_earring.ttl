@@ -1,0 +1,87 @@
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <https://example.org/> .
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix tgn: <https://vocab.getty.edu/tgn/> .
+
+# The Painting
+ex:GirlWithPearlEarring_Painting a la:HumanMadeObject ;
+    rdfs:label "Girl with a Pearl Earring" ;
+    la:identified_by ex:GirlWithPearlEarring_Title ;
+    la:classified_as aat:300033618 ; # Painting
+    la:referred_to_by ex:GirlWithPearlEarring_Description ;
+    la:dimension ex:GirlWithPearlEarring_Height, ex:GirlWithPearlEarring_Width ;
+    la:made_of aat:300015050, aat:300014078 ; # oil paint, canvas
+    la:produced_by ex:GirlWithPearlEarring_Production ;
+    la:current_owner ex:Mauritshuis ;
+    la:current_location ex:Mauritshuis_Gallery ;
+    la:represents ex:UnknownYoungWoman .
+
+# Title
+ex:GirlWithPearlEarring_Title a la:Name ;
+    rdf:value "Girl with a Pearl Earring" ;
+    la:classified_as aat:300404670 . # Primary Title
+
+# Description
+ex:GirlWithPearlEarring_Description a la:LinguisticObject ;
+    rdf:value "Portrait of a young woman with an exotic dress and a turban on her head, with a pearl in her ear." ;
+    la:classified_as aat:300080091 . # Description
+
+# Dimensions
+ex:GirlWithPearlEarring_Height a la:Dimension ;
+    rdf:value "44.5"^^xsd:decimal ;
+    la:unit aat:300379098 ; # centimeters
+    la:classified_as aat:300055644 . # Height
+
+ex:GirlWithPearlEarring_Width a la:Dimension ;
+    rdf:value "39"^^xsd:decimal ;
+    la:unit aat:300379098 ; # centimeters
+    la:classified_as aat:300055647 . # Width
+
+# Production Event
+ex:GirlWithPearlEarring_Production a la:Production ;
+    la:timespan ex:GirlWithPearlEarring_ProductionTimespan ;
+    la:carried_out_by ex:Vermeer ;
+    la:took_place_at tgn:7006891 . # Delft
+
+# Production Timespan
+ex:GirlWithPearlEarring_ProductionTimespan a la:TimeSpan ;
+    la:begin_of_the_begin "1665-01-01T00:00:00Z"^^xsd:dateTime ;
+    la:end_of_the_end "1667-12-31T23:59:59Z"^^xsd:dateTime .
+
+# Artist
+ex:Vermeer a la:Person ;
+    rdfs:label "Johannes Vermeer" ;
+    la:born ex:Vermeer_Birth ;
+    la:died ex:Vermeer_Death .
+
+# Vermeer's Birth
+ex:Vermeer_Birth a la:Birth ;
+    la:timespan [
+        a la:TimeSpan ;
+        la:begin_of_the_begin "1632-01-01T00:00:00Z"^^xsd:dateTime
+    ] ;
+    la:took_place_at tgn:7006891 . # Delft
+
+# Vermeer's Death
+ex:Vermeer_Death a la:Death ;
+    la:timespan [
+        a la:TimeSpan ;
+        la:begin_of_the_begin "1675-01-01T00:00:00Z"^^xsd:dateTime
+    ] .
+
+# Current Owner
+ex:Mauritshuis a la:Group ;
+    rdfs:label "Mauritshuis" ;
+    la:residence tgn:7006952 . # The Hague
+
+# Current Location
+ex:Mauritshuis_Gallery a la:Place ;
+    rdfs:label "Mauritshuis Gallery" .
+    
+# Subject of the painting
+ex:UnknownYoungWoman a la:Person ;
+    rdfs:label "Unknown Young Woman" ;
+    la:classified_as aat:300189557 . # Unidentified

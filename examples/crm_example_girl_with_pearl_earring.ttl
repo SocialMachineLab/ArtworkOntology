@@ -1,0 +1,250 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+:girl_with_pearl_earring a crm:E22_Human-Made_Object ;
+    rdfs:label "Girl with a Pearl Earring"@en, "Meisje met de parel"@nl ;
+    dc:identifier "670" ;  # Mauritshuis inventory number
+    crm:P1_is_identified_by [
+        a crm:E42_Identifier ;
+        rdfs:label "Mauritshuis Inventory Number 670" ;
+        crm:P2_has_type :museum_inventory_number
+    ] ;
+    crm:P2_has_type :painting, :portrait, :tronie ;
+    crm:P45_consists_of :oil_paint, :canvas ;
+    crm:P138_represents :young_woman ;
+    crm:P43_has_dimension [
+        a crm:E54_Dimension ;
+        crm:P2_has_type :height ;
+        crm:P90_has_value "44.5"^^xsd:decimal ;
+        crm:P91_has_unit :cm
+    ] ;
+    crm:P43_has_dimension [
+        a crm:E54_Dimension ;
+        crm:P2_has_type :width ;
+        crm:P90_has_value "39"^^xsd:decimal ;
+        crm:P91_has_unit :cm
+    ] ;
+    crm:P108i_was_produced_by [
+        a crm:E12_Production ;
+        crm:P14_carried_out_by :johannes_vermeer ;
+        crm:P4_has_time-span [
+            a crm:E52_Time-Span ;
+            crm:P82a_begin_of_the_begin "1665-01-01"^^xsd:date ;
+            crm:P82b_end_of_the_end "1667-12-31"^^xsd:date ;
+            rdfs:label "circa 1665-1667"
+        ] ;
+        crm:P7_took_place_at :delft ;
+        crm:P32_used_general_technique :oil_painting_technique
+    ] ;
+    crm:P55_has_current_location [
+        a crm:E53_Place ;
+        rdfs:label "Room 15, Mauritshuis" ;
+        crm:P89_falls_within :mauritshuis
+    ] ;
+    crm:P62_depicts :young_woman_with_turban, :pearl_earring, :exotic_costume ;
+    crm:P67_refers_to :dutch_golden_age ;
+    crm:P104_is_subject_to :mauritshuis_copyright ;
+    crm:P12i_was_present_at :restoration_2018, :examination_2018 ;
+    crm:P12i_was_present_at :exhibition_vermeer_rijksmuseum_2023 ;
+    crm:P128_carries [
+        a crm:E34_Inscription ;
+        rdfs:label "Signature" ;
+        crm:P3_has_note "IVMeer"@zxx ;
+        crm:P65i_is_shown_by [
+            a crm:E36_Visual_Item ;
+            crm:P2_has_type :signature
+        ]
+    ] ;
+    crm:P130i_features_are_also_found_on [
+        a crm:E25_Human-Made_Feature ;
+        rdfs:label "Pentimenti detected through X-ray examination" ;
+        crm:P2_has_type :pentimento
+    ] ;
+    crm:P65_shows_visual_item [
+        a crm:E36_Visual_Item ;
+        rdfs:label "Portrait image of a young woman" ;
+        crm:P138_represents [
+            a crm:E1_CRM_Entity ;
+            rdfs:label "Forward-facing pose with head turned over shoulder"
+        ]
+    ] ;
+    crm:P46i_forms_part_of [
+        a crm:E78_Collection ;
+        rdfs:label "Royal Cabinet of Paintings Mauritshuis Collection" ;
+        crm:P109i_is_curated_by :mauritshuis_curatorial_dept
+    ] ;
+    crm:P30i_custody_transferred_through [
+        a crm:E10_Transfer_of_Custody ;
+        rdfs:label "Acquisition by Mauritshuis" ;
+        crm:P4_has_time-span [
+            a crm:E52_Time-Span ;
+            crm:P82_at_some_time_within "1903"^^xsd:gYear
+        ] ;
+        crm:P29_custody_received_by :mauritshuis ;
+        crm:P28_custody_surrendered_by :des_tombes_collection
+    ] ;
+    crm:P12i_was_present_at [
+        a crm:E7_Activity ;
+        rdfs:label "Technical Examination 2018" ;
+        crm:P2_has_type :scientific_examination ;
+        crm:P14_carried_out_by :mauritshuis_conservation_team ;
+        crm:P16_used_specific_object [
+            a crm:E22_Human-Made_Object ;
+            rdfs:label "X-ray equipment" ;
+            crm:P2_has_type :examination_equipment
+        ] ;
+        crm:P125_used_object_of_type [
+            a crm:E55_Type ;
+            rdfs:label "X-ray radiography"
+        ]
+    ] .
+
+:johannes_vermeer a crm:E21_Person ;
+    rdfs:label "Johannes Vermeer" ;
+    crm:P1_is_identified_by [
+        a crm:E41_Appellation ;
+        rdfs:label "Johannes Vermeer"
+    ] ;
+    crm:P98i_was_born [
+        a crm:E67_Birth ;
+        crm:P4_has_time-span [
+            a crm:E52_Time-Span ;
+            crm:P82_at_some_time_within "1632-10"^^xsd:gYearMonth
+        ] ;
+        crm:P7_took_place_at :delft
+    ] ;
+    crm:P100i_died_in [
+        a crm:E69_Death ;
+        crm:P4_has_time-span [
+            a crm:E52_Time-Span ;
+            crm:P82_at_some_time_within "1675-12-15"^^xsd:date
+        ] ;
+        crm:P7_took_place_at :delft
+    ] ;
+    crm:P107i_is_current_or_former_member_of :delft_guild_of_saint_luke ;
+    crm:P14i_performed [
+        a crm:E12_Production ;
+        rdfs:label "Painting career of Johannes Vermeer" ;
+        crm:P4_has_time-span [
+            a crm:E52_Time-Span ;
+            crm:P82a_begin_of_the_begin "1653"^^xsd:gYear ;
+            crm:P82b_end_of_the_end "1675"^^xsd:gYear
+        ]
+    ] ;
+    crm:P2_has_type :baroque_painter, :dutch_painter .
+
+:young_woman_with_turban a crm:E21_Person ;
+    rdfs:label "Young woman with turban" ;
+    crm:P67_refers_to :exotic_costume ;
+    crm:P46_is_composed_of :pearl_earring ;
+    crm:P138i_has_representation [
+        a crm:E38_Image ;
+        rdfs:label "Image of young woman with pearl earring"
+    ] .
+
+:pearl_earring a crm:E22_Human-Made_Object ;
+    rdfs:label "Pearl earring" ;
+    crm:P2_has_type :jewelry ;
+    crm:P45_consists_of :pearl ;
+    crm:P43_has_dimension [
+        a crm:E54_Dimension ;
+        crm:P2_has_type :size ;
+        crm:P90_has_value "large"^^xsd:string
+    ] .
+
+:mauritshuis a crm:E53_Place, crm:E39_Actor ;
+    rdfs:label "Mauritshuis" ;
+    crm:P89_falls_within :the_hague, :netherlands ;
+    crm:P76_has_contact_point <https://www.mauritshuis.nl/> ;
+    crm:P74_has_current_or_former_residence [
+        a crm:E53_Place ;
+        rdfs:label "Plein 29, 2511 CS The Hague, Netherlands"
+    ] .
+
+:examination_2018 a crm:E7_Activity ;
+    rdfs:label "Technical examination of Girl with a Pearl Earring 2018" ;
+    crm:P2_has_type :conservation_research ;
+    crm:P14_carried_out_by :mauritshuis_conservation_team ;
+    crm:P4_has_time-span [
+        a crm:E52_Time-Span ;
+        crm:P82a_begin_of_the_begin "2018-02-26"^^xsd:date ;
+        crm:P82b_end_of_the_end "2018-03-11"^^xsd:date
+    ] ;
+    crm:P16_used_specific_object [
+        a crm:E22_Human-Made_Object ;
+        rdfs:label "MA-XRF scanner" ;
+        crm:P2_has_type :scanning_equipment
+    ] ;
+    crm:P117_occurs_during [
+        a crm:E5_Event ;
+        rdfs:label "The Girl in the Spotlight Project" ;
+        crm:P2_has_type :research_project
+    ] ;
+    crm:P7_took_place_at :mauritshuis ;
+    crm:P125_used_object_of_type [
+        a crm:E55_Type ;
+        rdfs:label "X-ray fluorescence spectroscopy"
+    ] ;
+    crm:P16_used_specific_object [
+        a crm:E22_Human-Made_Object ;
+        rdfs:label "High-resolution 3D digital microscope" ;
+        crm:P2_has_type :digital_microscope
+    ] .
+
+:restoration_2018 a crm:E11_Modification ;
+    rdfs:label "Conservation treatment of Girl with a Pearl Earring 2018" ;
+    crm:P14_carried_out_by :mauritshuis_conservation_team ;
+    crm:P4_has_time-span [
+        a crm:E52_Time-Span ;
+        crm:P82a_begin_of_the_begin "2018-03-12"^^xsd:date ;
+        crm:P82b_end_of_the_end "2018-03-26"^^xsd:date
+    ] ;
+    crm:P7_took_place_at :mauritshuis_conservation_studio ;
+    crm:P33_used_specific_technique :varnish_removal ;
+    crm:P125_used_object_of_type [
+        a crm:E55_Type ;
+        rdfs:label "Conservation materials" 
+    ] ;
+    crm:P17_was_motivated_by [
+        a crm:E5_Event ;
+        rdfs:label "Regular conservation maintenance" ;
+        crm:P2_has_type :conservation_policy
+    ] .
+
+:exhibition_vermeer_rijksmuseum_2023 a crm:E7_Activity ;
+    rdfs:label "Vermeer Exhibition at Rijksmuseum 2023" ;
+    crm:P2_has_type :art_exhibition ;
+    crm:P4_has_time-span [
+        a crm:E52_Time-Span ;
+        crm:P82a_begin_of_the_begin "2023-02-10"^^xsd:date ;
+        crm:P82b_end_of_the_end "2023-06-04"^^xsd:date
+    ] ;
+    crm:P7_took_place_at :rijksmuseum ;
+    crm:P14_carried_out_by :rijksmuseum_curatorial_team .
+
+:delft a crm:E53_Place ;
+    rdfs:label "Delft" ;
+    crm:P89_falls_within :netherlands ;
+    crm:P168_place_is_defined_by [
+        a crm:E94_Space_Primitive ;
+        rdfs:label "POINT(4.35556 52.01167)"^^crm:E94_Space_Primitive
+    ] .
+
+:netherlands a crm:E53_Place ;
+    rdfs:label "Netherlands" ;
+    crm:P2_has_type :country .
+
+:the_hague a crm:E53_Place ;
+    rdfs:label "The Hague" ;
+    crm:P89_falls_within :netherlands .
+
+:dutch_golden_age a crm:E4_Period ;
+    rdfs:label "Dutch Golden Age" ;
+    crm:P4_has_time-span [
+        a crm:E52_Time-Span ;
+        crm:P82a_begin_of_the_begin "1581"^^xsd:gYear ;
+        crm:P82b_end_of_the_end "1672"^^xsd:gYear
+    ] .
