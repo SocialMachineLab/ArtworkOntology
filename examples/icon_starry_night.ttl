@@ -1,0 +1,133 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix icon: <https://w3id.org/icon/ontology/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/> .
+
+# artwork
+ex:starry_night rdf:type icon:Artwork ;
+    rdfs:label "The Starry Night"@en .
+
+
+ex:recognition1 rdf:type icon:PreiconographicalRecognition ;
+    icon:aboutWorkOfArt ex:starry_night ;
+    dul:includesAgent ex:art_historian ;
+    icon:recognizedArtisticMotif ex:swirls_motif ;
+    dc:description "Recognition of swirling patterns in the sky of the painting."@en .
+
+ex:recognition2 rdf:type icon:PreiconographicalRecognition ;
+    icon:aboutWorkOfArt ex:starry_night ;
+    dul:includesAgent ex:art_historian ;
+    icon:recognizedComposition ex:village_composition ;
+    dc:description "Recognition of the village composition in the lower part of the painting."@en .
+
+ex:swirls_motif rdf:type icon:ArtisticMotif ;
+    rdfs:label "Swirling Sky Motif"@en ;
+    icon:hasFactualMeaning ex:sky_natural_element ;
+    icon:hasExpressionalMeaning ex:turbulence_quality ;
+    icon:associatedColor ex:blue_color .
+
+ex:village_composition rdf:type icon:Composition ;
+    rdfs:label "Village Composition"@en ;
+    icon:hasCompositionalStructure ex:linear_structure ;
+    icon:hasPart ex:church_motif, ex:houses_motif, ex:cypress_motif .
+
+ex:church_motif rdf:type icon:ArtisticMotif ;
+    rdfs:label "Church Motif"@en ;
+    icon:hasFactualMeaning ex:church_natural_element .
+
+ex:houses_motif rdf:type icon:ArtisticMotif ;
+    rdfs:label "Houses Motif"@en ;
+    icon:hasFactualMeaning ex:houses_natural_element .
+
+ex:cypress_motif rdf:type icon:ArtisticMotif ;
+    rdfs:label "Cypress Tree Motif"@en ;
+    icon:hasFactualMeaning ex:cypress_natural_element .
+
+
+ex:sky_natural_element rdf:type icon:NaturalElement ;
+    rdfs:label "Sky"@en .
+
+ex:church_natural_element rdf:type icon:NaturalElement ;
+    rdfs:label "Church"@en .
+
+ex:houses_natural_element rdf:type icon:NaturalElement ;
+    rdfs:label "Houses"@en .
+
+ex:cypress_natural_element rdf:type icon:NaturalElement ;
+    rdfs:label "Cypress Tree"@en .
+
+ex:turbulence_quality rdf:type icon:ExpressionalQuality ;
+    rdfs:label "Turbulence"@en .
+
+ex:blue_color rdf:type icon:Color ;
+    rdfs:label "Blue"@en .
+
+ex:linear_structure rdf:type icon:CompositionalStructure ;
+    rdfs:label "Linear Arrangement"@en .
+
+
+ex:icon_recognition1 rdf:type icon:IconographicalRecognition ;
+    icon:aboutWorkOfArt ex:starry_night ;
+    dul:includesAgent ex:art_historian ;
+    icon:recognizedImage ex:night_sky_image ;
+    dc:description "Recognition of the night sky as a theme."@en .
+
+ex:icon_recognition2 rdf:type icon:IconographicalRecognition ;
+    icon:aboutWorkOfArt ex:starry_night ;
+    dul:includesAgent ex:art_historian ;
+    icon:recognizedImage ex:village_image ;
+    dc:description "Recognition of the peaceful village scene."@en .
+
+
+ex:night_sky_image rdf:type icon:Image ;
+    rdfs:label "Night Sky Image"@en ;
+    icon:hasSymbol ex:celestial_symbol ;
+    icon:hasRecAttribute ex:swirls_motif .
+
+ex:village_image rdf:type icon:Image ;
+    rdfs:label "Village Image"@en ;
+    icon:hasPlace ex:village_place ;
+    icon:hasRecAttribute ex:church_motif .
+
+ex:celestial_symbol rdf:type icon:Symbol ;
+    rdfs:label "Celestial Symbol"@en .
+
+ex:village_place rdf:type dul:Place ;
+    rdfs:label "Village Place"@en .
+
+
+ex:icono_recognition rdf:type icon:IconologicalRecognition ;
+    icon:aboutWorkOfArt ex:starry_night ;
+    dul:includesAgent ex:art_historian ;
+    icon:recognizedIntrinsicMeaning ex:spiritual_meaning ;
+    dc:description "Recognition of the spiritual and emotional turmoil expressed through the contrast between the turbulent sky and peaceful village."@en .
+
+
+ex:spiritual_meaning rdf:type icon:IntrinsicMeaning ;
+    rdfs:label "Spiritual Meaning"@en ;
+    icon:hasArtisticMotif ex:swirls_motif ;
+    icon:hasImage ex:night_sky_image ;
+    icon:recognizedConcept ex:spiritual_turmoil ;
+    icon:recognizedCulturalPhenomenon ex:expressionism_phenomenon .
+
+
+ex:spiritual_turmoil rdf:type dul:SocialObject ;
+    rdfs:label "Spiritual Turmoil"@en .
+
+ex:expressionism_phenomenon rdf:type icon:CulturalPhenomenon ;
+    rdfs:label "Early Expressionism"@en .
+
+
+ex:interpretation_description rdf:type icon:InterpretationDescription ;
+    icon:isCompliantWithPreiconographicalRecognition ex:recognition1, ex:recognition2 ;
+    icon:isCompliantWithIconographicalRecognition ex:icon_recognition1, ex:icon_recognition2 ;
+    icon:isCompliantWithIconologicalRecognition ex:icono_recognition ;
+    dul:includesAgent ex:art_historian .
+
+
+ex:art_historian rdf:type dul:Agent ;
+    rdfs:label "Art Historian"@en .

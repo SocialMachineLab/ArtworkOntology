@@ -1,0 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/> .
+
+ex:starry_night rdf:type crm:E22_Man-Made_Object ;
+    rdfs:label "The Starry Night"@en ;
+    crm:P2_has_type ex:painting ;
+    crm:P43_has_dimension ex:starry_night_height, ex:starry_night_width ;
+    crm:P45_consists_of ex:oil_paint, ex:canvas ;
+    crm:P46_is_composed_of ex:painting_surface ;
+    crm:P50_has_current_keeper ex:moma ;
+    crm:P52_has_current_owner ex:moma ;
+    crm:P55_has_current_location ex:moma_gallery ;
+    crm:P62_depicts ex:night_sky, ex:village, ex:cypress_tree, ex:church_spire ;
+    crm:P108i_was_produced_by ex:starry_night_production .
+
+ex:starry_night_production rdf:type crm:E12_Production ;
+    rdfs:label "Production of The Starry Night"@en ;
+    crm:P14_carried_out_by ex:vincent_van_gogh ;
+    crm:P4_has_time-span ex:starry_night_creation_timespan ;
+    crm:P7_took_place_at ex:saint_remy_asylum .
+
+
+ex:vincent_van_gogh rdf:type crm:E21_Person ;
+    rdfs:label "Vincent van Gogh"@en ;
+    crm:P2_has_type ex:artist ;
+    crm:P98i_was_born ex:van_gogh_birth ;
+    crm:P100i_died_in ex:van_gogh_death .
+
+ex:van_gogh_birth rdf:type crm:E67_Birth ;
+    crm:P4_has_time-span [
+        rdf:type crm:E52_Time-Span ;
+        crm:P82_at_some_time_within "1853-03-30"^^xsd:date
+    ] .
+
+ex:van_gogh_death rdf:type crm:E69_Death ;
+    crm:P4_has_time-span [
+        rdf:type crm:E52_Time-Span ;
+        crm:P82_at_some_time_within "1890-07-29"^^xsd:date
+    ] .
+
+
+ex:starry_night_creation_timespan rdf:type crm:E52_Time-Span ;
+    rdfs:label "Starry Night Creation Time"@en ;
+    crm:P82_at_some_time_within "1889-06"^^xsd:gYearMonth .
+
+
+ex:saint_remy_asylum rdf:type crm:E53_Place ;
+    rdfs:label "Saint-Paul-de-Mausole asylum, Saint-Rémy-de-Provence, France"@en .
+
+
+ex:moma rdf:type crm:E40_Legal_Body ;
+    rdfs:label "Museum of Modern Art"@en ;
+    crm:P76_has_contact_point "11 West 53 Street, Manhattan, New York City, United States"@en .
+
+ex:moma_gallery rdf:type crm:E53_Place ;
+    rdfs:label "Gallery at the Museum of Modern Art"@en ;
+    crm:P89_falls_within ex:moma_building .
+

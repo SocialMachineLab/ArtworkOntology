@@ -19,6 +19,7 @@
 @prefix event: <http://purl.org/NET/c4dm/event.owl#> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix aat: <http://vocab.getty.edu/aat/>.
+@prefix icon: <https://w3id.org/icon/ontology/> .
 @base <http://w3id.org/arto#> .
 
 <http://w3id.org/arto> rdf:type owl:Ontology ;
@@ -214,15 +215,17 @@ arto:expresses rdf:type owl:ObjectProperty ;
                              owl:unionOf ( arto:Object
                                            arto:Scene
                                            arto:VisualElement
+                                           arto:Artwork
                                          )
                            ] ;
                rdfs:range arto:Connotation ;
-               rdfs:comment """Links visual elements, objects, or scenes to their symbolic meanings or emotional connotations.""";
+               rdfs:comment """Links visual elements, objects, scenes, or artworks to their symbolic meanings or emotional connotations.""";
 
               skos:example """
               - Emotional expression: :red_color arto:expresses :anger_emotion
               - Symbolic meaning: :dove_object arto:expresses :peace_meaning
-              - Scene mood: :storm_scene arto:expresses :turbulence_emotion""" ;
+              - Scene mood: :storm_scene arto:expresses :turbulence_emotion
+              - Artwork meaning: :guernica arto:expresses :anti_war_theme""" ;
                rdfs:label "express" .
 
 ###  http://w3id.org/arto#isExpressedBy
@@ -232,33 +235,35 @@ arto:isExpressedBy rdf:type owl:ObjectProperty ;
                               owl:unionOf ( arto:Object
                                             arto:Scene
                                             arto:VisualElement
+                                            arto:Artwork
                                           )
                             ] ;
-                  rdfs:comment """Associates a connotation with the visual elements, objects, or scenes that express it.""";
+                  rdfs:comment """Associates a connotation with the visual elements, objects, scenes or artwork that express it.""";
 
                   skos:example """
                     - Emotional expression: :anger_emotion arto:isExpressedBy :red_color
                     - Symbolic meaning: :peace_meaning arto:isExpressedBy :dove_object
-                    - Scene mood: :turbulence_emotion arto:isExpressedBy :storm_scene""" ;
+                    - Scene mood: :turbulence_emotion arto:isExpressedBy :storm_scene
+                    - Artwork meaning: :anti_war_theme arto:isExpressedBy :guernica""" ;
                   rdfs:label "isExpressedBy" .
 
-###  http://w3id.org/arto#hasConnotation
-arto:hasConnotation rdf:type owl:ObjectProperty ;
-                    rdfs:domain arto:Artwork ;
-                    rdfs:range arto:Connotation ; 
-                    rdfs:comment """Associates an artwork with its broader meanings, themes, or emotional content.""";
-                    skos:example """
-                      - Symbolic meaning: :guernica arto:hasConnotation :anti_war_theme """ ;
-                    rdfs:label "hasConnotation" .
+# ###  http://w3id.org/arto#hasConnotation
+# arto:hasConnotation rdf:type owl:ObjectProperty ;
+#                     rdfs:domain arto:Artwork ;
+#                     rdfs:range arto:Connotation ; 
+#                     rdfs:comment """Associates an artwork with its broader meanings, themes, or emotional content.""";
+#                     skos:example """
+#                       - Symbolic meaning: :guernica arto:hasConnotation :anti_war_theme """ ;
+#                     rdfs:label "hasConnotation" .
 
-###  http://w3id.org/arto#isConnotationOf
-arto:isConnotationOf rdf:type owl:ObjectProperty ;
-                    rdfs:domain arto:Connotation ;
-                    rdfs:range arto:Artwork ;
-                    rdfs:comment """Associates a connotation with the artwork that it is related to.""";
-                    skos:example """
-                      - Symbolic meaning: :anti_war_theme arto:isConnotationOf :guernica """ ;
-                    rdfs:label "isConnotationOf" .
+# ###  http://w3id.org/arto#isConnotationOf
+# arto:isConnotationOf rdf:type owl:ObjectProperty ;
+#                     rdfs:domain arto:Connotation ;
+#                     rdfs:range arto:Artwork ;
+#                     rdfs:comment """Associates a connotation with the artwork that it is related to.""";
+#                     skos:example """
+#                       - Symbolic meaning: :anti_war_theme arto:isConnotationOf :guernica """ ;
+#                     rdfs:label "isConnotationOf" .
 
 ###  http://w3id.org/arto#hasLocation
 arto:hasLocation rdf:type owl:ObjectProperty ;
@@ -530,7 +535,7 @@ arto:length rdf:type owl:DatatypeProperty ;
 ###  http://w3id.org/arto#material
 arto:material rdf:type owl:DatatypeProperty ;
               rdfs:domain arto:Object ;
-              rdfs:range xsd:string ;
+              rdfs:range arto:MaterialType ;
               rdfs:comment "The material of the Object." ;
               rdfs:label "material" .
 
@@ -695,6 +700,7 @@ arto:Color rdf:type owl:Class ;
                               owl:allValuesFrom xsd:string;
                               owl:cardinality "1"^^xsd:nonNegativeInteger
                             ] ;
+            skos:closeMatch aat:300131647 ;
             rdfs:comment "The use of color in the artwork." ;
             rdfs:label "Color" .
 
@@ -717,6 +723,7 @@ arto:Composition rdf:type owl:Class ;
                                    owl:allValuesFrom xsd:string;
                                     owl:cardinality "1"^^xsd:nonNegativeInteger
                                  ] ;
+                 skos:closeMatch aat:300056255 ;
                  rdfs:comment "The arrangement and organization of visual elements." ;
                  rdfs:label "Composition" .
 
@@ -742,6 +749,7 @@ arto:Emotion rdf:type owl:Class ;
                                owl:allValuesFrom xsd:string;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ;  
+             skos:closeMatch aat:300055150 ;
              rdfs:comment """Represents the emotional response or affective state evoked by an artwork in the
       artist or viewers, such as joy, sadness, anger, or fear.""" ;
              rdfs:label "Emotion" .
@@ -1096,15 +1104,15 @@ arto:Time rdf:type owl:Class ;
             """ ;
           rdfs:label "Time" .
 
-# ###  http://w3id.org/arto#MaterialType
-# arto:MaterialType rdf:type owl:Class ;
-#     rdfs:subClassOf skos:Concept ;
-#     owl:equivalentClass [
-#         owl:unionOf (
-#             [ owl:hasValue aat:300264091 ] # AAT Materials Facet
-#             skos:Concept        # Custom materials
-#         )
-#     ] .
+###  http://w3id.org/arto#MaterialType
+arto:MaterialType rdf:type owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    owl:equivalentClass [
+        owl:unionOf (
+            [ owl:hasValue aat:300264091 ] # AAT Materials Facet
+            skos:Concept        # Custom materials
+        )
+    ] .
 
 
 arto:ArtStyleType rdf:type owl:Class ;

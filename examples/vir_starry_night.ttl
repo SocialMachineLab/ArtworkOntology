@@ -1,0 +1,118 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix vir: <http://w3id.org/vir#> .
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:starry_night rdf:type crm:E22_Man-Made_Object ;
+    rdfs:label "The Starry Night"@en ;
+    crm:P138_represents ex:night_sky_representation ;
+    vir:K1_denotes ex:starry_night_representation .
+
+
+ex:recognition_event rdf:type vir:IC12_Visual_Recognition ;
+    rdfs:label "Recognition of Starry Night iconography"@en ;
+    vir:K9_Assigned_status_to ex:starry_night ;
+    vir:K11_assigned ex:starry_night_representation ;
+    vir:K10_on_the_base_of ex:art_historical_analysis .
+
+
+ex:starry_night_representation rdf:type vir:IC9_Representation ;
+    rdfs:label "Representation in Starry Night"@en ;
+    vir:K20_forms_part_of ex:sky_representation, ex:village_representation ;
+    vir:K14_symbolize ex:emotional_turmoil, ex:spirituality .
+
+ex:sky_representation rdf:type vir:IC9_Representation ;
+    rdfs:label "Sky Representation"@en ;
+    vir:K17_has_attribute ex:swirl_attribute, ex:star_attribute ;
+    vir:K20i_is_composed_of ex:starry_night_representation ;
+    vir:K23_connote ex:cosmic_energy .
+
+ex:village_representation rdf:type vir:IC9_Representation ;
+    rdfs:label "Village Representation"@en ;
+    vir:K17_has_attribute ex:church_attribute, ex:cypress_attribute ;
+    vir:K20i_is_composed_of ex:starry_night_representation .
+
+
+ex:swirl_attribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Swirling Pattern"@en ;
+    vir:K21_depict_things_of_type ex:swirl_type ;
+    vir:K25_express ex:emotional_turbulence .
+
+ex:star_attribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Stars"@en ;
+    vir:K21_depict_things_of_type ex:star_type ;
+    vir:K25_express ex:divine_presence .
+
+ex:church_attribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Church"@en ;
+    vir:K21_depict_things_of_type ex:church_type ;
+    vir:K25_express ex:faith_symbol .
+
+ex:cypress_attribute rdf:type vir:IC10_Attribute ;
+    rdfs:label "Cypress Tree"@en ;
+    vir:K21_depict_things_of_type ex:cypress_type ;
+    vir:K25_express ex:death_symbol .
+
+
+ex:swirl_type rdf:type crm:E55_Type ;
+    rdfs:label "Swirl"@en .
+
+ex:star_type rdf:type crm:E55_Type ;
+    rdfs:label "Star"@en .
+
+ex:church_type rdf:type crm:E55_Type ;
+    rdfs:label "Church"@en .
+
+ex:cypress_type rdf:type crm:E55_Type ;
+    rdfs:label "Cypress Tree"@en .
+
+
+ex:emotional_turbulence rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Emotional Turbulence"@en .
+
+ex:divine_presence rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Divine Presence"@en .
+
+ex:faith_symbol rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Faith"@en .
+
+ex:death_symbol rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Death"@en .
+
+ex:emotional_turmoil rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Emotional Turmoil"@en .
+
+ex:spirituality rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Spirituality"@en .
+
+ex:cosmic_energy rdf:type crm:E90_Symbolic_Object ;
+    rdfs:label "Cosmic Energy"@en .
+
+
+ex:turner_sky rdf:type vir:IC9_Representation ;
+    rdfs:label "Turner's Sky Representations"@en .
+
+ex:starry_night_sky_prototype rdf:type vir:PCK4_is_visual_prototype_of ;
+    crm:P01_has_domain ex:turner_sky ;
+    crm:P02_has_range ex:sky_representation ;
+    vir:K4_1_prototypical_model ex:romantic_sublime_type .
+
+
+ex:similarity_statement rdf:type vir:IC21_Similarity_Statement ;
+    rdfs:label "Similarity between Starry Night and The Scream"@en ;
+    vir:K35_assigned_similarity_to ex:starry_night_representation, ex:scream_representation .
+
+ex:scream_representation rdf:type vir:IC9_Representation ;
+    rdfs:label "Representation in The Scream"@en ;
+    vir:K36_is_similar_to ex:starry_night_representation .
+
+
+ex:art_historical_analysis rdf:type crm:E89_Propositional_Object ;
+    rdfs:label "Art Historical Analysis"@en .
+
+ex:romantic_sublime_type rdf:type crm:E55_Type ;
+    rdfs:label "Romantic Sublime"@en .
