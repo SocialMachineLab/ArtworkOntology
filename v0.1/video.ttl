@@ -1,0 +1,239 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix arto: <http://w3id.org/arto#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix sdo: <https://schema.org/> .
+@prefix gn: <https://www.geonames.org/ontology#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix ex: <http://example.org/> .
+
+# The main artwork: Bill Viola's "The Greeting"
+ex:TheGreeting rdf:type arto:Artwork ;
+    rdf:type sdo:Movie ;  # Additional type to indicate it's a video work
+    dc:title "The Greeting"@en ;
+    dc:created "1995"^^xsd:gYear ;
+    dc:creator ex:BillViola ;
+    dc:description """Video/sound installation with color video projection on a large vertical screen mounted on wall in darkened space with amplified stereo sound. The 45-second scene is dramatically slowed down and extended to last 10 minutes and 22 seconds."""@en ;
+    dc:medium "Video installation"@en ;
+    sdo:genre "Video art"@en ;
+    sdo:height "2.8 m"^^xsd:string ;
+    sdo:width "2.4 m"^^xsd:string ;
+    edm:isShownBy <https://www.billviola.com/images/the-greeting> ;
+    arto:currentLocation ex:Guggenheim_Bilbao ;
+    arto:relatedToEvent ex:Venice_Biennale_1995 ;
+    arto:containsScene ex:MainScene ;
+    ex:duration "622"^^xsd:int ;  # 10 minutes and 22 seconds in seconds
+    ex:originalFootage "45"^^xsd:int .
+
+# Artist
+ex:BillViola rdf:type arto:Artist ;
+    foaf:name "Bill Viola"@en ;
+    foaf:givenName "William John"@en ;
+    foaf:familyName "Viola"@en ;
+    sdo:birthDate "1951-01-25"^^xsd:date ;
+    sdo:deathDate "2024-07-12"^^xsd:date ;
+    sdo:nationality "American"@en .
+
+# Artwork Location
+ex:Guggenheim_Bilbao rdf:type arto:Location ;
+    dc:type "Museum"@en ;
+    foaf:name "Guggenheim Museum Bilbao"@en ;
+    geo:asWKT "POINT(43.2689 -2.9341)"^^geo:wktLiteral .
+
+
+
+ex:Pontormo rdf:type arto:Artist ;
+    foaf:name "Jacopo da Pontormo"@en ;
+    foaf:givenName "Jacopo"@en ;
+    foaf:familyName "Carrucci"@en ;
+    sdo:birthDate "1494"^^xsd:gYear ;
+    sdo:deathDate "1557"^^xsd:gYear ;
+    sdo:nationality "Italian"@en .
+
+ex:TheVisitation rdf:type arto:Artwork ;
+    rdf:type sdo:Painting ;
+    dc:title "The Visitation"@en ;
+    dc:created "1528"^^xsd:gYear ;
+    dc:creator ex:Pontormo ;
+    dc:description """Oil on wood, 2.5 m x 1.7 m, Museo di San Michele in Bosco, Bologna, Italy."""@en ;
+    dc:medium "Oil on wood"@en ;
+    sdo:genre "Renaissance painting"@en ;
+    sdo:height "2.5 m"^^xsd:string ;
+    sdo:width "1.7 m"^^xsd:string ;
+    arto:currentLocation ex:Museo_di_San_Michele_in_Bosco .
+
+# Artwork Location
+ex:Museo_di_San_Michele_in_Bosco rdf:type arto:Location ;
+    dc:type "Museum"@en ;
+    foaf:name "Museo di San Michele in Bosco"@en ;
+    geo:asWKT "POINT(44.4932 11.3394)"^^geo:wktLiteral .
+
+# Artwork Scene
+ex:MainScene rdf:type arto:Scene ;
+    arto:isSceneOf ex:TheGreeting ;
+    arto:containsScene ex:InitialConversationScene , ex:ApproachScene , ex:GreetingMomentScene , ex:WhisperingScene , ex:AcknowledgementScene ;
+    arto:containsElement ex:SlowMotionTechnique , ex:TriangularComposition.
+
+
+# Scene 1 - Initial Conversation Scene
+ex:InitialConversationScene rdf:type arto:Scene ;
+    arto:isSceneOf ex:MainScene ;
+    dc:description "At the beginning of the work, two women (a middle-aged woman and a younger woman) are engaged in conversation."@en ;
+    arto:descriptor "Two-person dialogue"@en ;
+    ex:temporalSpan "0 seconds - approximately 120 seconds"@en ;
+    ex:sceneAction "WomanOne and WomanTwo stand face to face, appearing to be engaged in a focused conversation."@en ;
+    arto:containsObject ex:WomanOne ;
+    arto:containsObject ex:WomanTwo ;
+    arto:containsObject ex:IndustrialBuilding .
+
+# Scene 2 - Approach Scene
+ex:ApproachScene rdf:type arto:Scene ;
+    arto:isSceneOf ex:MainScene ;
+    dc:description "The third woman enters the frame and approaches the two women in conversation."@en ;
+    arto:descriptor "Third person approaching"@en ;
+    ex:temporalSpan "Approximately 120 seconds - approximately 250 seconds"@en ;
+    ex:sceneAction "WomanThree enters from the left side of the frame and walks toward WomanOne and WomanTwo."@en ;
+    arto:containsObject ex:WomanOne ;
+    arto:containsObject ex:WomanTwo ;
+    arto:containsObject ex:WomanThree ;
+    arto:containsObject ex:IndustrialBuilding ;
+    arto:expresses ex:SurpriseEmotion .
+
+# Scene 3 - Greeting Moment Scene
+ex:GreetingMomentScene rdf:type arto:Scene ;
+    arto:isSceneOf ex:MainScene ;
+    dc:description "The key moment when WomanThree interrupts the conversation and greets WomanOne."@en ;
+    arto:coordinates "Center of frame"^^xsd:string ;
+    arto:descriptor "Greeting moment"@en ;
+    ex:temporalSpan "Approximately 250 seconds - approximately 320 seconds"@en ;
+    ex:sceneAction "WomanThree approaches and interrupts the conversation, WomanOne turns toward her with an expression of recognition."@en ;
+    arto:containsObject ex:WomanOne ;
+    arto:containsObject ex:WomanTwo ;
+    arto:containsObject ex:WomanThree ;
+    arto:containsObject ex:IndustrialBuilding ;
+    arto:expresses ex:IntimacyEmotion .
+
+# Scene 4 - Whispering Scene
+ex:WhisperingScene rdf:type arto:Scene ;
+    arto:isSceneOf ex:MainScene ;
+    dc:description "The intimate interaction where WomanThree leans close to WomanOne and whispers."@en ;
+    arto:coordinates "Center of frame"^^xsd:string ;
+    arto:descriptor "Intimate whispering"@en ;
+    ex:temporalSpan "Approximately 320 seconds - approximately 450 seconds"@en ;
+    ex:sceneAction "WomanThree leans close to WomanOne and speaks in her ear, the two interact intimately while WomanTwo is excluded."@en ;
+    arto:containsObject ex:WomanOne ;
+    arto:containsObject ex:WomanTwo ;
+    arto:containsObject ex:WomanThree ;
+    arto:containsObject ex:IndustrialBuilding ;
+    arto:expresses  ex:ExclusionEmotion .
+
+# Scene 5 - Acknowledgement Scene
+ex:AcknowledgementScene rdf:type arto:Scene ;
+    arto:isSceneOf ex:MainScene ;
+    dc:description "The awkward interaction where WomanOne introduces WomanThree to WomanTwo."@en ;
+    ex:temporalSpan "Approximately 450 seconds - approximately 550 seconds"@en ;
+    ex:sceneAction "WomanOne introduces WomanThree to WomanTwo, and the three engage in brief small talk."@en ;
+    arto:containsObject ex:WomanOne ;
+    arto:containsObject ex:WomanTwo ;
+    arto:containsObject ex:WomanThree ;
+    arto:containsObject ex:IndustrialBuilding ;
+    arto:expresses ex:EmbarrassmentEmotion .
+
+
+ex:InitialConversationScene ex:precedesScene ex:ApproachScene .
+ex:ApproachScene ex:precedesScene ex:GreetingMomentScene .
+ex:GreetingMomentScene ex:precedesScene ex:WhisperingScene .
+ex:WhisperingScene ex:precedesScene ex:AcknowledgementScene .
+
+
+
+# Objects in the scene
+ex:WomanOne rdf:type arto:Object ;
+    arto:state "Standing and conversing"@en ;
+    arto:descriptor "WearingGolden yellow top, with a red cape and  dark pants with some patterns."@en .
+
+ex:WomanTwo rdf:type arto:Object ;
+    arto:state "Standing and conversing"@en ;
+    arto:descriptor "Wearing blue dress"@en .
+
+ex:WomanThree rdf:type arto:Object ;
+    arto:state "Entering and greeting"@en ;
+    arto:descriptor "Wearing orange dress"@en .
+
+ex:IndustrialBuilding rdf:type arto:Object ;
+    dc:description "Industrial buildings in strange perspective"@en ;
+    arto:containsElement ex:DustColor .
+
+ex:DustColor rdf:type arto:VisualElement ;
+    arto:RGBValue "B2996E" .
+
+# Relationships between objects
+ex:WomanThree arto:greets ex:WomanOne ;
+    arto:approach ex:WomanOne ;
+    arto:whisper ex:WomanOne ;
+    arto:ignores ex:WomanTwo .
+
+ex:WomanOne arto:talk ex:WomanTwo .
+
+# Define the custom relationships
+arto:greets rdfs:subPropertyOf arto:relatedTo .
+arto:ignores rdfs:subPropertyOf arto:relatedTo .
+
+# Visual Elements
+ex:SlowMotionTechnique rdf:type arto:VisualElement ;
+    rdf:type arto:Composition ;
+    dc:type "Temporal manipulation"@en ;
+    arto:descriptor "Extreme slow motion that extends 45 seconds to over 10 minutes"@en ;
+    arto:isElementOf ex:MainScene .
+
+ex:TriangularComposition rdf:type arto:VisualElement ;
+    rdf:type arto:Composition ;
+    arto:isElementOf ex:MainScene .
+
+
+# Connotations
+ex:IntimacyEmotion rdf:type arto:Emotion ;
+    dc:type "Intimacy"@en .
+
+ex:ExclusionEmotion rdf:type arto:Emotion ;
+    dc:type "Exclusion"@en .
+
+
+ex:AnticipationEmotion rdf:type arto:Emotion ;
+    dc:type "Anticipation"@en .
+
+ex:SurpriseEmotion  rdf:type arto:Emotion ;
+    dc:type "Surprise"@en .
+
+ex:EmbarrassmentEmotion rdf:type arto:Emotion ;
+    dc:type "Embarrassment"@en .
+
+# Events
+ex:Venice_Biennale_1995 rdf:type arto:Event ;
+    dc:type "Exhibition"@en ;
+    dc:description "The 46th Venice Biennale where Bill Viola represented the United States"@en ;
+    event:agent ex:BillViola ;
+    arto:hasTime ex:Time_1995 ;
+    arto:hasLocation ex:Venice_Location .
+
+
+
+# Time periods
+ex:Time_1995 rdf:type arto:Time ;
+    dc:type "Year"@en ;
+    sdo:startDate "1995-01-01T00:00:00Z"^^xsd:dateTime ;
+    sdo:endDate "1995-12-31T23:59:59Z"^^xsd:dateTime .
+
+# Locations
+ex:Venice_Location rdf:type arto:Location ;
+    dc:type "City"@en ;
+    foaf:name "Venice, Italy"@en ;
+    geo:asWKT "POINT(45.4408 12.3155)"^^geo:wktLiteral .
+

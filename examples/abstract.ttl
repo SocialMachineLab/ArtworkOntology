@@ -1,0 +1,239 @@
+@prefix arto: <http://w3id.org/arto#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix sdo: <https://schema.org/> .
+@prefix dbp: <https://dbpedia.org/property/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Artwork
+:composition_ii a arto:Painting ;
+    dc:title "Composition II in Red, Blue, and Yellow"@en ;
+    dc:creator :mondrian ;
+    sdo:height "55 cm" ;
+    sdo:width "55 cm" ;
+    dc:medium "oil on canvas"@en ;
+    dc:description "A Neoplastic abstract work expressing universal harmony through vertical and horizontal black lines and combinations of primary colors and non-colors."@en ;
+    arto:style :neoplasticism ;
+    sdo:genre "Abstract art"@en ;
+    arto:currentLocation :moma ;
+    arto:containsScene :main_scene ;
+    dc:isPartOf :composition_series .
+
+# Artist
+:mondrian a arto:Artist ;
+    foaf:name "Piet Mondrian"@en ;
+    foaf:givenName "Pieter"@en ;
+    foaf:familyName "Mondriaan"@en ;
+    dbp:residence :new_york_location ,
+                  :paris_location ,
+                  :netherlands_location ;
+    dc:creator :composition_ii ;
+    arto:knows :theo_van_doesburg ,
+              :georges_vantongerloo ,
+              :bart_van_der_leck .
+
+# Time instances
+:creation_time a arto:Time ;
+    dc:type "year"@en ;
+    sdo:startDate "1930-01-01"^^xsd:dateTime ;
+    sdo:endDate "1930-12-31"^^xsd:dateTime .
+
+:1931_time a arto:Time ;
+    dc:type "year"@en ;
+    sdo:startDate "1931-01-01"^^xsd:dateTime ;
+    sdo:endDate "1931-12-31"^^xsd:dateTime .
+
+:de_stijl_period a arto:Time ;
+    dc:type "art movement period"@en ;
+    sdo:startDate "1917-01-01"^^xsd:dateTime ;
+    sdo:endDate "1931-12-31"^^xsd:dateTime .
+
+# Locations
+:moma a arto:Location ;
+    dc:type "museum"@en ;
+    foaf:name "Museum of Modern Art"@en ;
+    geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(-73.9776 40.7614)" .
+
+:paris_location a arto:Location ;
+    dc:type "city"@en ;
+    foaf:name "Paris"@en ;
+    geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(2.3522 48.8566)" .
+
+:new_york_location a arto:Location ;
+    dc:type "city"@en ;
+    foaf:name "New York"@en ;
+    geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(-74.0060 40.7128)" .
+
+:netherlands_location a arto:Location ;
+    dc:type "country"@en ;
+    foaf:name "Netherlands"@en ;
+    geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(5.291266 52.132633)" .
+
+# Events (without RDF-star syntax)
+:creation_event a arto:Event ;
+    dc:type "artwork creation"@en ;
+    event:agent :mondrian ;
+    arto:hasTime :creation_time ;
+    arto:hasLocation :paris_location .
+
+:first_exhibition a arto:Event ;
+    dc:type "first exhibition"@en ;
+    event:agent :valentine_gallery ;
+    arto:hasTime :1931_time ;
+    arto:hasLocation :new_york_location .
+
+:de_stijl_movement a arto:Event ;
+    dc:type "art movement"@en ;
+    event:agent :de_stijl_group ;
+    arto:hasTime :de_stijl_period ;
+    arto:hasLocation :netherlands_location .
+
+# Scene
+:main_scene a arto:Scene ;
+    arto:size "55x55cm" ;
+    arto:coordinates "0,0,55,55" ;
+    arto:containsObject :grid_structure ,
+                       :red_rectangle ,
+                       :blue_rectangle ,
+                       :yellow_rectangle ,
+                       :white_areas ;
+    arto:expresses :universal_balance ;
+    arto:descriptor :geometric_composition ;
+    arto:isSceneOf :composition_ii .
+
+# Objects (with required inverse relationships)
+:grid_structure a arto:Object ;
+    arto:material "paint"@en ;
+    arto:state "vertical and horizontal intersection"@en ;
+    arto:descriptor :grid_lines ;
+    arto:size "variable width" ;
+    arto:containsElement :black_lines ;
+    arto:expresses :structural_order ;
+    arto:relatedToScene :main_scene ;
+    arto:isObjectOf :main_scene .
+
+:red_rectangle a arto:Object ;
+    arto:state "upper right corner"@en ;
+    arto:containsElement :red_color ;
+    arto:expresses :energy_warmth ;
+    arto:relatedToScene :main_scene ;
+    arto:isObjectOf :main_scene ;
+    arto:size "small" .
+
+:blue_rectangle a arto:Object ;
+    arto:state "lower left corner"@en ;
+    arto:containsElement :blue_color ;
+    arto:expresses :calm_stability ;
+    arto:relatedToScene :main_scene ;
+    arto:isObjectOf :main_scene ;
+    arto:size "medium" .
+
+:yellow_rectangle a arto:Object ;
+    arto:state "lower right corner"@en ;
+    arto:containsElement :yellow_color ;
+    arto:expresses :joy_optimism ;
+    arto:relatedToScene :main_scene ;
+    arto:isObjectOf :main_scene ;
+    arto:size "small" .
+
+:white_areas a arto:Object ;
+    arto:state "main background"@en ;
+    arto:containsElement :white_color ;
+    arto:expresses :purity_space ;
+    arto:relatedToScene :main_scene ;
+    arto:isObjectOf :main_scene ;
+    arto:size "large" .
+
+# Visual Elements (with inverse relationships)
+:black_lines a arto:Line ;
+    arto:direction "vertical and horizontal" ;
+    sdo:width "variable" ;
+    dc:type "solid line" ;
+    arto:RGBValue "0,0,0" ;
+    arto:length 55.0 ;
+    arto:isElementOf :grid_structure .
+
+:red_color a arto:Color ;
+    arto:RGBValue "248,70,91" ;
+    arto:HSVValue "354,72,97" ;
+    arto:isElementOf :red_rectangle .
+
+:blue_color a arto:Color ;
+    arto:RGBValue "42,156,229" ;
+    arto:HSVValue "203,82,90" ;
+    arto:isElementOf :blue_rectangle .
+
+:yellow_color a arto:Color ;
+    arto:RGBValue "255,230,60" ;
+    arto:HSVValue "52,76,100" ;
+    arto:isElementOf :yellow_rectangle .
+
+:white_color a arto:Color ;
+    arto:RGBValue "255,255,255" ;
+    arto:HSVValue "0,0,100" ;
+    arto:isElementOf :white_areas .
+
+
+# Metrics
+:emotional_intensity_high a arto:EmotionIntensity ;
+    rdfs:value "high" ;
+    arto:isMetricOf :universal_balance .
+
+# Connotations (with inverse relationships)
+:universal_balance a arto:Emotion ;
+    dc:type "harmony"@en ;
+    arto:hasMetric :emotional_intensity_high ;
+    arto:isExpressedBy :main_scene .
+
+:structural_order a arto:Theme ;
+    arto:isExpressedBy :grid_structure .
+
+:energy_warmth a arto:Symbolism ;
+    arto:source "color theory" ;
+    arto:isExpressedBy :red_rectangle .
+
+:calm_stability a arto:Symbolism ;
+    arto:source "color psychology" ;
+    arto:isExpressedBy :blue_rectangle .
+
+:joy_optimism a arto:Symbolism ;
+    arto:isExpressedBy :yellow_rectangle .
+
+:purity_space a arto:Symbolism ;
+    arto:source "artistic convention" ;
+    arto:isExpressedBy :white_areas .
+
+
+:neoplasticism a arto:ArtStyleType ;
+    foaf:name "Neoplasticism"@en .
+
+# Additional Entities
+:de_stijl_group a arto:Organization ;
+    foaf:name "De Stijl"@en ;
+    event:agent :de_stijl_movement .
+
+:valentine_gallery a arto:Organization ;
+    foaf:name "Valentine Gallery"@en ;
+    event:agent :first_exhibition .
+
+:theo_van_doesburg a arto:Artist ;
+    foaf:name "Theo van Doesburg"@en .
+
+:georges_vantongerloo a arto:Artist ;
+    foaf:name "Georges Vantongerloo"@en .
+
+:bart_van_der_leck a arto:Artist ;
+    foaf:name "Bart van der Leck"@en .
+
+# Series
+:composition_series a arto:Series ;
+    dc:title "Composition Series"@en ;
+    dc:creator :mondrian ;
+    dc:hasPart :composition_ii ,
+              :composition_with_red_yellow_blue ,
+              :composition_1921 .
+

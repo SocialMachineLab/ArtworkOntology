@@ -1,0 +1,272 @@
+@prefix arto: <http://w3id.org/arto#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dbp: <https://dbpedia.org/property/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# The Thinker Sculpture
+:the_thinker a arto:Sculpture ;
+    dc:title "The Thinker" ;
+    dc:creator :auguste_rodin ;
+    dc:description "A bronze sculpture representing a nude male figure sitting on a rock with his chin resting on his hand, in a profound state of contemplation" ;
+    sdo:height "186 cm" ;
+    sdo:width "98 cm" ;
+    sdo:depth "140 cm" ;  # Additional dimension for 3D
+    dc:medium "Bronze cast" ;
+    dbp:technique "Lost-wax casting" ;
+    arto:style :neoclassicism ;
+    sdo:genre "Portrait sculpture" ;
+    arto:currentLocation :rodin_museum_paris ;
+    arto:relatedToEvent :gates_of_hell_creation, :original_creation_event,:museum_acquisition_event ;
+    arto:containsScene :contemplation_scene .
+
+# Artist Information
+:auguste_rodin a arto:Artist ;
+    foaf:name "Auguste Rodin" ;
+    foaf:firstName "Auguste" ;
+    foaf:lastName "Rodin" ;
+    dc:creator "The Thinker" ;
+    dbp:residence :paris_france_19th_century ;
+    arto:knows :camille_claudel, :jules_dalou, :paul_cruet ;
+    arto:hasTime :rodin_active_period .
+
+:rodin_active_period a arto:Time ;
+    dc:type "artistic career" ;
+    sdo:startDate "1858"^^xsd:dateTime ;
+    sdo:endDate "1917"^^xsd:dateTime .
+
+# Current Location
+:rodin_museum_paris a arto:Organization ;
+    rdfs:label "Musée Rodin" ;
+    arto:hasLocation :paris_location .
+
+:paris_location a arto:Location ;
+    rdfs:label "Paris, France" ;
+    dc:type "city" ;
+    geo:asWKT "POINT(2.3522 48.8566)" .
+
+# Artistic Style
+:neoclassicism a arto:ArtStyleType ;
+    rdfs:label "Neoclassicism" ;
+    skos:definition "An art style that draws inspiration from classical antiquity" .
+
+# Scene Description
+:contemplation_scene a arto:Scene ;
+    arto:containsObject :male_figure ;
+    arto:containsScene :figure_scene, :rock_scene ;
+    arto:size "full sculpture" ;
+    arto:expresses :philosophical_contemplation_theme ;
+    arto:coordinates "0,0,0" ;
+    arto:hasMetric  :spatial_tension_metric, :pose_balance_metric ;
+    arto:relatedToEvent :dante_contemplation_event .
+
+
+:male_figure a arto:Object ;
+    arto:relatedToScene :figure_scene ;
+    arto:state "seated, contemplative pose" ;
+    arto:material aat:300010957 ;  # bronze
+    arto:descriptor "nude", "muscular", "bearded" ;
+    arto:containsElement :flesh_texture .
+
+
+:figure_scene a arto:Scene ;
+    arto:isSceneOf :contemplation_scene ;
+    arto:containsScene :head_scene, :torso_scene, :limbs_scene .
+
+
+:head_scene a arto:Scene ;
+    arto:isSceneOf :figure_scene ;
+    arto:containsObject :head, :hand ;
+    arto:descriptor "The focal point of contemplation" ;
+    arto:expresses :deep_thought_emotion .
+
+:head a arto:Object ;
+    arto:isObjectOf :head_scene ;
+    arto:state "bowed, furrowed brow" ;
+    arto:descriptor "bearded", "detailed facial features", "heavy brow" .
+
+:hand a arto:Object ;
+    arto:isObjectOf :head_scene ;
+    arto:state "supporting chin" ;
+    arto:descriptor "muscular", "tensed" ;
+    arto:supports :head .
+
+:torso_scene a arto:Scene ;
+    arto:isSceneOf :figure_scene ;
+    arto:containsObject :chest, :back, :shoulders ;
+    arto:descriptor "Muscular core showing tension and power" ;
+    arto:expresses :physical_strength_theme .
+
+:chest a arto:Object ;
+    arto:isObjectOf :torso_scene ;
+    arto:state "contracted, tense" ;
+    arto:descriptor "defined musculature", "anatomically detailed" .
+
+:back a arto:Object ;
+    arto:isObjectOf :torso_scene ;
+    arto:state "curved" ;
+    arto:descriptor "arched", "powerful"  .
+
+:shoulders a arto:Object ;
+    arto:isObjectOf :torso_scene ;
+    arto:state "hunched" ;
+    arto:descriptor "broad", "muscular" .
+
+
+:limbs_scene a arto:Scene ;
+    arto:isSceneOf :figure_scene ;
+    arto:containsObject :arms, :legs ;
+    arto:descriptor "Limbs arranged in balanced tension" ;
+    arto:hasMetric :limb_composition_metric .
+
+:arms a arto:Object ;
+    arto:isObjectOf :limbs_scene ;
+    arto:state "one supporting head, one resting on knee" ;
+    arto:descriptor "muscular", "veined" ;
+    arto:relatedTo :head, :legs .
+
+arto:restOn rdfs:subPropertyOf arto:relatedTo .
+
+:legs a arto:Object ;
+    arto:isObjectOf :limbs_scene ;
+    arto:state "crossed, supporting" ;
+    arto:descriptor "powerful", "tensed muscles" ;
+    arto:rest_on :rock_base .
+
+
+:rock_scene a arto:Scene ;
+    arto:isSceneOf :contemplation_scene ;
+    arto:containsObject :rock_base ;
+    arto:descriptor "Rough, unfinished base contrasting with the figure" .
+
+arto:supports rdfs:subPropertyOf arto:relatedTo.
+
+:rock_base a arto:Object ;
+    arto:isObjectOf :rock_scene ;
+    arto:state "rough, unfinished" ;
+    arto:descriptor "irregular", "natural", "jagged" ;
+    arto:supports :male_figure ;
+    arto:containsElement :rough_texture .
+
+:rough_texture a arto:VisualElement ;
+    arto:isElementOf :rock_base ;
+    arto:descriptor "rough, unfinished bronze surface imitating rock" .
+
+
+:flesh_texture a arto:VisualElement ;
+    a arto:Texture ;  # We can extend VisualElement for sculpture-specific elements
+    arto:isElementOf :male_figure ;
+    arto:descriptor "smooth, polished bronze surface imitating human skin" ;
+    arto:hasMetric :bronze_patina_quality .
+
+# Metrics
+:bronze_patina_quality a arto:Metric ;
+    rdfs:label "Bronze Patina Quality" ;
+    rdfs:comment "Measures the surface finish and aging of the bronze" .
+
+
+:pose_balance_metric a arto:Metric ;
+    rdfs:label "Pose Balance" ;
+    rdfs:comment "Analyzes the precarious yet stable balance of the seated figure" ;
+    arto:isMetricOf :pose_scene .
+
+# Connotations
+:philosophical_contemplation_theme a arto:Theme ;
+    arto:isExpressedBy :contemplation_scene, :the_thinker ;
+    rdfs:label "Philosophical Contemplation" ;
+    rdfs:comment "Theme of deep thought and meditation" .
+
+
+
+:deep_thought_emotion a arto:Emotion ;
+    arto:isExpressedBy :head_scene ;
+    dc:type "contemplation" ;
+    rdfs:label "Deep Thought" .
+
+
+:physical_strength_theme a arto:Theme ;
+    arto:isExpressedBy :torso_scene ;
+    rdfs:label "Physical Strength" .
+
+
+# Historical Event Connection
+:original_creation_event a arto:Event ;
+    arto:isEventOf :the_thinker ;
+    dc:type "artistic creation" ;
+    rdfs:label "Original Creation of The Thinker as 'The Poet'" ;
+    arto:hasTime :original_creation_period ;
+    arto:hasLocation :paris_studio ;
+    event:agent :auguste_rodin .
+
+
+:original_creation_period a arto:Time ;
+    dc:type "creation period" ;
+    sdo:startDate "1880"^^xsd:dateTime ;
+    sdo:endDate "1881"^^xsd:dateTime .
+
+:paris_studio a arto:Location ;
+    rdfs:label "Rodin's Paris Studio" ;
+    dc:type "artist studio" ;
+    geo:asWKT "POINT(2.3522 48.8566)" ;
+    arto:hasTime :studio_period .
+
+
+
+:gates_of_hell_creation a arto:Event ;
+    arto:isEventOf :the_thinker ;
+    dc:type "artistic creation" ;
+    rdfs:label "Creation of The Gates of Hell" ;
+    arto:hasTime :gates_creation_period ;
+    arto:hasLocation :paris_studio ;
+    event:agent :auguste_rodin , :commission_committee.
+
+:gates_creation_period a arto:Time ;
+    dc:type "creation period" ;
+    sdo:startDate "1880"^^xsd:dateTime ;
+    sdo:endDate "1890"^^xsd:dateTime .
+
+
+:commission_committee a arto:Organization ;
+    rdfs:label "Decorative Arts Museum Commission Committee" ;
+    arto:hasLocation :paris_location .
+
+
+
+
+:museum_acquisition_event a arto:Event ;
+    arto:isEventOf :the_thinker ;
+    dc:type "acquisition" ;
+    rdfs:label "Acquisition by Musée Rodin" ;
+    arto:hasTime :acquisition_period ;
+    arto:hasLocation :rodin_museum_paris ;
+    event:agent :french_government, :museum_curators  .
+
+:acquisition_period a arto:Time ;
+    dc:type "acquisition period" ;
+    sdo:startDate "1922"^^xsd:dateTime ;
+    sdo:endDate "1922"^^xsd:dateTime .
+
+:rodin_museum_paris a arto:Organization ;
+    rdfs:label "Musée Rodin" ;
+    arto:hasLocation :rodin_museum_location .
+
+:rodin_museum_location a arto:Location ;
+    rdfs:label "77 rue de Varenne, Paris" ;
+    dc:type "museum" ;
+    geo:asWKT "POINT(2.3154 48.8555)" .
+
+:french_government a arto:Organization ;
+    rdfs:label "French Government" ;
+    dc:type "government" .
+
+:museum_curators a arto:Organization ;
+    rdfs:label "Musée Rodin Curatorial Team" ;
+    dc:type "museum staff" .
+
+

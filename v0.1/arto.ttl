@@ -113,7 +113,11 @@ dc:isPartOf rdf:type owl:ObjectProperty .
 ###  http://w3id.org/arto#containsElement
 arto:containsElement rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf dc:hasPart ;
-                     rdfs:domain arto:Object ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( arto:Object
+                                               arto:Scene
+                                             )
+                               ] ;
                      rdfs:range arto:VisualElement ;
                      rdfs:comment """Specifies the visual elements (such as color, line, composition) contained within an object in the artwork.""";
 
@@ -127,9 +131,12 @@ arto:containsElement rdf:type owl:ObjectProperty ;
 arto:isElementOf rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf dc:isPartOf ;
                 rdfs:domain arto:VisualElement ;
-                rdfs:range arto:Object ;
+                rdfs:range [ rdf:type owl:Class ;
+                                 owl:unionOf ( arto:Object
+                                               arto:Scene
+                                             )
+                               ]  ;
                 rdfs:comment """Specifies the object that contains the visual element in the artwork.""";
-
                 skos:example """
                   - color elements: :blue_gradient_color arto:isElementOf :sky_object
                   - Line elements: :diagonal_line arto:isElementOf :mountain_object
@@ -219,6 +226,7 @@ arto:expresses rdf:type owl:ObjectProperty ;
                                          )
                            ] ;
                rdfs:range arto:Connotation ;
+               owl:inverseOf arto:isExpressedBy ;
                rdfs:comment """Links visual elements, objects, scenes, or artworks to their symbolic meanings or emotional connotations.""";
 
               skos:example """
@@ -226,7 +234,8 @@ arto:expresses rdf:type owl:ObjectProperty ;
               - Symbolic meaning: :dove_object arto:expresses :peace_meaning
               - Scene mood: :storm_scene arto:expresses :turbulence_emotion
               - Artwork meaning: :guernica arto:expresses :anti_war_theme""" ;
-               rdfs:label "express" .
+               rdfs:label "express" ;
+               skos:closeMatch icon:recognizedConcept .
 
 ###  http://w3id.org/arto#isExpressedBy
 arto:isExpressedBy rdf:type owl:ObjectProperty ;
@@ -238,6 +247,7 @@ arto:isExpressedBy rdf:type owl:ObjectProperty ;
                                             arto:Artwork
                                           )
                             ] ;
+                  owl:inverseOf arto:expresses ;
                   rdfs:comment """Associates a connotation with the visual elements, objects, scenes or artwork that express it.""";
 
                   skos:example """
@@ -247,24 +257,6 @@ arto:isExpressedBy rdf:type owl:ObjectProperty ;
                     - Artwork meaning: :anti_war_theme arto:isExpressedBy :guernica""" ;
                   rdfs:label "isExpressedBy" .
 
-# ###  http://w3id.org/arto#hasConnotation
-# arto:hasConnotation rdf:type owl:ObjectProperty ;
-#                     rdfs:domain arto:Artwork ;
-#                     rdfs:range arto:Connotation ; 
-#                     rdfs:comment """Associates an artwork with its broader meanings, themes, or emotional content.""";
-#                     skos:example """
-#                       - Symbolic meaning: :guernica arto:hasConnotation :anti_war_theme """ ;
-#                     rdfs:label "hasConnotation" .
-
-# ###  http://w3id.org/arto#isConnotationOf
-# arto:isConnotationOf rdf:type owl:ObjectProperty ;
-#                     rdfs:domain arto:Connotation ;
-#                     rdfs:range arto:Artwork ;
-#                     rdfs:comment """Associates a connotation with the artwork that it is related to.""";
-#                     skos:example """
-#                       - Symbolic meaning: :anti_war_theme arto:isConnotationOf :guernica """ ;
-#                     rdfs:label "isConnotationOf" .
-
 ###  http://w3id.org/arto#hasLocation
 arto:hasLocation rdf:type owl:ObjectProperty ;
                  rdfs:domain [ rdf:type owl:Class ;
@@ -273,6 +265,7 @@ arto:hasLocation rdf:type owl:ObjectProperty ;
                                            )
                              ] ;
                  rdfs:range arto:Location ;
+                 owl:inverseOf arto:isLocationOf ;
                  rdfs:comment """Specifies the physical location of an organization or event related to the artwork.""";
 
                 skos:example """
@@ -290,6 +283,7 @@ arto:isLocationOf rdf:type owl:ObjectProperty ;
                                            arto:Event
                                          )
                            ] ;
+                 owl:inverseOf arto:hasLocation ;
                  rdfs:comment """Associates a location with the organization or event that it is related to.""";
 
                 skos:example """
@@ -309,6 +303,7 @@ arto:hasMetric rdf:type owl:ObjectProperty ;
                                          )
                            ] ;
                rdfs:range arto:Metric ;
+               owl:inverseOf arto:isMetricOf ;
                rdfs:comment """Associates components (Connotation, Scene, Object or the Visual Element) of an artwork with quantifiable measurements or characteristics.""";
 
                 skos:example """
@@ -327,6 +322,7 @@ arto:isMetricOf rdf:type owl:ObjectProperty ;
                                          arto:VisualElement
                                        )
                          ] ;
+               owl:inverseOf arto:hasMetric ;
                rdfs:comment """Associates a metric with the component of an artwork that it is related to.""";
 
                skos:example """
@@ -344,6 +340,7 @@ arto:hasTime rdf:type owl:ObjectProperty ;
                                        )
                          ] ;
              rdfs:range arto:Time ;
+             owl:inverseOf arto:isTimeOf ;
              rdfs:comment """Associates an event or location with its temporal information.""";
              skos:example """
               - Event timing: :exhibition2024 arto:hasTime :spring2024
@@ -359,6 +356,7 @@ arto:isTimeOf rdf:type owl:ObjectProperty ;
                                        arto:Location
                                      )
                        ] ;
+             owl:inverseOf arto:hasTime ;
              rdfs:comment """Associates a time with the event or location that it is related to.""";
               skos:example """
               - Event timing: :spring2024 arto:isTimeOf :exhibition2024
@@ -401,6 +399,7 @@ arto:relatedToEvent rdf:type owl:ObjectProperty ;
                                               )
                                 ] ;
                     rdfs:range arto:Event ;
+                    owl:inverseOf arto:isEventOf ;
                     rdfs:comment "Connects an artwork or its connotation to historical, mythological, or contemporary events depicted or referenced in the work.";
                     skos:example """
                       - Historical event: :liberty_leading_the_people arto:relatedToEvent :french_revolution_1830
@@ -416,6 +415,7 @@ arto:isEventOf rdf:type owl:ObjectProperty ;
                                         arto:Scene
                                       )
                         ] ;
+              owl:inverseOf arto:relatedToEvent ;
               rdfs:comment "Associates an event with the artwork or scene that it is related to.";
               skos:example """
                 - Historical event: :french_revolution_1830 arto:isEventOf :liberty_leading_the_people
@@ -612,6 +612,10 @@ arto:Artwork rdf:type owl:Class ;
                                owl:minCardinality "1"^^xsd:nonNegativeInteger
                              ] ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty arto:expresses ;
+                               owl:allValuesFrom arto:Connotation
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty dbp:technique ;
                                owl:allValuesFrom xsd:string
                              ] ,
@@ -667,7 +671,9 @@ arto:Artwork rdf:type owl:Class ;
                 convey a message.
                 """ ;
              rdfs:label "Artwork" ;
-             skos:closeMatch crm:E22_Human_Made_Object .
+             skos:closeMatch crm:E22_Human_Made_Object ,
+                             icon:Artwork .
+
 
 
 ###  http://w3id.org/arto#BalanceOfComposition
@@ -869,7 +875,8 @@ arto:Symbolism rdf:type owl:Class ;
                              ] ;
 
              rdfs:comment """Represents the symbolism conveyed by the object, scene or the visual elements.""" ;
-             rdfs:label "Symbolism" . 
+             rdfs:label "Symbolism" ;
+             skos:closeMatch icon:Symbol . 
 
 
 ###  http://w3id.org/arto#Metric
@@ -919,7 +926,8 @@ arto:Object rdf:type owl:Class ;
                               owl:allValuesFrom xsd:string
                             ] ;
             rdfs:comment "Represents the physical or conceptual object within an artwork." ;
-            rdfs:label "Object" .
+            rdfs:label "Object" ;
+            skos:relatedMatch icon:ArtisticMotif .
 
 
 ###  http://w3id.org/arto#Organization
@@ -1007,14 +1015,14 @@ arto:Scene rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:descriptor ;
                               owl:allValuesFrom xsd:string;
-
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:relatedToEvent ;
                               owl:allValuesFrom arto:Event
                             ] ;
            rdfs:comment "Represents a distinct portion or area of an artwork that forms a coherent visual or narrative unit. " ;
-           rdfs:label "Scene" .
+           rdfs:label "Scene" ;
+           skos:closeMatch icon:Image .
 
 
 ###  http://w3id.org/arto#Sculpture
@@ -1075,12 +1083,12 @@ arto:Time rdf:type owl:Class ;
           owl:equivalentClass <http://www.w3.org/2006/time#TemporalEntity> ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty sdo:endDate ;
-                            owl:allValuesFrom xsd:dataTime;
+                            owl:allValuesFrom xsd:dateTime;
                             owl:cardinality "1"^^xsd:nonNegativeInteger
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty sdo:startDate ;
-                            owl:allValuesFrom xsd:dataTime;
+                            owl:allValuesFrom xsd:dateTime;
                             owl:cardinality "1"^^xsd:nonNegativeInteger
                           ] ,
                           [ rdf:type owl:Restriction ;
@@ -1151,8 +1159,8 @@ crm:E26_Physical_Feature rdf:type owl:Class .
 crm:E28_Conceptual_Object rdf:type owl:Class .
 
 
-###  http://www.w3.org/2001/XMLSchema#dataTime
-xsd:dataTime rdf:type owl:Class .
+###  http://www.w3.org/2001/XMLSchema#dateTime
+xsd:dateTime rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2006/time#TemporalEntity
