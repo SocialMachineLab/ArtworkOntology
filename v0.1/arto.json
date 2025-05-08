@@ -14,7 +14,7 @@
     "@id": "_:b1",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
-        "@id": "http://w3id.org/arto#Artwork"
+        "@id": "http://w3id.org/arto#Object"
       }
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
@@ -25,141 +25,6 @@
   },
   {
     "@id": "_:b10",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b11"
-      }
-    ]
-  },
-  {
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@value": "1",
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ]
-  },
-  {
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@value": "1",
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ]
-  },
-  {
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@value": "1",
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ]
-  },
-  {
-    "@id": "_:b11",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Connotation"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b12"
-      }
-    ]
-  },
-  {
-    "@id": "_:b12",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Object"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b13"
-      }
-    ]
-  },
-  {
-    "@id": "_:b13",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b14"
-      }
-    ]
-  },
-  {
-    "@id": "_:b14",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#VisualElement"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b15",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b16"
-      }
-    ]
-  },
-  {
-    "@id": "_:b16",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Event"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b17"
-      }
-    ]
-  },
-  {
-    "@id": "_:b17",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Location"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b18",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b19"
-      }
-    ]
-  },
-  {
-    "@id": "_:b19",
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
         "@id": "http://w3id.org/arto#Artwork"
@@ -167,788 +32,12 @@
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
       {
-        "@id": "_:b20"
+        "@id": "_:b11"
       }
     ]
   },
   {
-    "@id": "_:b2",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b20",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b21",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b22"
-      }
-    ]
-  },
-  {
-    "@id": "_:b22",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Object"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b23"
-      }
-    ]
-  },
-  {
-    "@id": "_:b23",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b24",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b25"
-      }
-    ]
-  },
-  {
-    "@id": "_:b25",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Object"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b26"
-      }
-    ]
-  },
-  {
-    "@id": "_:b26",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b27"
-      }
-    ]
-  },
-  {
-    "@id": "_:b27",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#VisualElement"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b28",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b29"
-      }
-    ]
-  },
-  {
-    "@id": "_:b29",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Object"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b30"
-      }
-    ]
-  },
-  {
-    "@id": "_:b3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b4"
-      }
-    ]
-  },
-  {
-    "@id": "_:b30",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b31",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#hasLocation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Location"
-      }
-    ]
-  },
-  {
-    "@id": "_:b32",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/contributor"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Agent"
-      }
-    ]
-  },
-  {
-    "@id": "_:b33",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/creator"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Artist"
-      }
-    ]
-  },
-  {
-    "@id": "_:b34",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/isPartOf"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Series"
-      }
-    ]
-  },
-  {
-    "@id": "_:b35",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/description"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b36",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/medium"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b37",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://dbpedia.org/property/technique"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b38",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/title"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b39",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://schema.org/height"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b4",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Object"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b5"
-      }
-    ]
-  },
-  {
-    "@id": "_:b40",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://schema.org/width"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b41",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.europeana.eu/schemas/edm/isShownBy"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
-      }
-    ]
-  },
-  {
-    "@id": "_:b42",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#style"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b43",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://schema.org/genre"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#currentLocation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Location"
-      }
-    ]
-  },
-  {
-    "@id": "_:b45",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#relatedToEvent"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Event"
-      }
-    ]
-  },
-  {
-    "@id": "_:b46",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#hasConnotation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Connotation"
-      }
-    ]
-  },
-  {
-    "@id": "_:b47",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#containsScene"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ]
-  },
-  {
-    "@id": "_:b48",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#RGBValue"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b49",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#HSVValue"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b5",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Scene"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b6"
-      }
-    ]
-  },
-  {
-    "@id": "_:b50",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b51",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#hasMetric"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Metric"
-      }
-    ]
-  },
-  {
-    "@id": "_:b52",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b53",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/NET/c4dm/event.owl#agent"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Agent"
-      }
-    ]
-  },
-  {
-    "@id": "_:b54",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b55",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#hasTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Time"
-      }
-    ]
-  },
-  {
-    "@id": "_:b56",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#hasLocation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Location"
-      }
-    ]
-  },
-  {
-    "@id": "_:b57",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#relatedToConnotation"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Connotation"
-      }
-    ]
-  },
-  {
-    "@id": "_:b58",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://schema.org/width"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b59",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#direction"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b6",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#VisualElement"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b60",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#length"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#float"
-      }
-    ]
-  },
-  {
-    "@id": "_:b61",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b62",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#wktLiteral"
-      }
-    ]
-  },
-  {
-    "@id": "_:b63",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#hasTime"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Time"
-      }
-    ]
-  },
-  {
-    "@id": "_:b64",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b65",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#source"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:b66",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://w3id.org/arto#expresses"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://w3id.org/arto#Symbolism"
-      }
-    ]
-  },
-  {
-    "@id": "_:b67",
+    "@id": "_:b100",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -961,10 +50,16 @@
       {
         "@id": "http://w3id.org/arto#Scene"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
     ]
   },
   {
-    "@id": "_:b68",
+    "@id": "_:b101",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -980,7 +75,7 @@
     ]
   },
   {
-    "@id": "_:b69",
+    "@id": "_:b102",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -996,18 +91,7 @@
     ]
   },
   {
-    "@id": "_:b7",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@id": "_:b8"
-      }
-    ]
-  },
-  {
-    "@id": "_:b70",
+    "@id": "_:b103",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1023,7 +107,7 @@
     ]
   },
   {
-    "@id": "_:b71",
+    "@id": "_:b104",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1039,7 +123,29 @@
     ]
   },
   {
-    "@id": "_:b72",
+    "@id": "_:b105",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#coordinates"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b106",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1052,10 +158,16 @@
       {
         "@id": "http://www.w3.org/2001/XMLSchema#string"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
     ]
   },
   {
-    "@id": "_:b73",
+    "@id": "_:b107",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1071,7 +183,7 @@
     ]
   },
   {
-    "@id": "_:b74",
+    "@id": "_:b108",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1087,7 +199,7 @@
     ]
   },
   {
-    "@id": "_:b75",
+    "@id": "_:b109",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1103,7 +215,20 @@
     ]
   },
   {
-    "@id": "_:b76",
+    "@id": "_:b11",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b110",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1119,7 +244,7 @@
     ]
   },
   {
-    "@id": "_:b77",
+    "@id": "_:b111",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1135,7 +260,7 @@
     ]
   },
   {
-    "@id": "_:b78",
+    "@id": "_:b112",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1151,7 +276,7 @@
     ]
   },
   {
-    "@id": "_:b79",
+    "@id": "_:b113",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1167,20 +292,7 @@
     ]
   },
   {
-    "@id": "_:b8",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Agent"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:b9"
-      }
-    ]
-  },
-  {
-    "@id": "_:b80",
+    "@id": "_:b114",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1193,10 +305,16 @@
       {
         "@id": "http://www.w3.org/2001/XMLSchema#string"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
     ]
   },
   {
-    "@id": "_:b81",
+    "@id": "_:b115",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1209,10 +327,16 @@
       {
         "@id": "http://www.w3.org/2001/XMLSchema#string"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
     ]
   },
   {
-    "@id": "_:b82",
+    "@id": "_:b116",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1228,7 +352,7 @@
     ]
   },
   {
-    "@id": "_:b83",
+    "@id": "_:b117",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1244,7 +368,7 @@
     ]
   },
   {
-    "@id": "_:b84",
+    "@id": "_:b118",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1257,10 +381,16 @@
       {
         "@id": "http://w3id.org/arto#Artist"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
     ]
   },
   {
-    "@id": "_:b85",
+    "@id": "_:b119",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1276,7 +406,18 @@
     ]
   },
   {
-    "@id": "_:b86",
+    "@id": "_:b12",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b13"
+      }
+    ]
+  },
+  {
+    "@id": "_:b120",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1287,12 +428,18 @@
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dataTime"
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ]
   },
   {
-    "@id": "_:b87",
+    "@id": "_:b121",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1303,12 +450,18 @@
     ],
     "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dataTime"
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ]
   },
   {
-    "@id": "_:b88",
+    "@id": "_:b122",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1321,10 +474,113 @@
       {
         "@id": "http://www.w3.org/2001/XMLSchema#string"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
     ]
   },
   {
-    "@id": "_:b89",
+    "@id": "_:b123",
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b125"
+      }
+    ]
+  },
+  {
+    "@id": "_:b124",
+    "http://www.w3.org/2002/07/owl#hasValue": [
+      {
+        "@id": "http://vocab.getty.edu/aat/300264091"
+      }
+    ]
+  },
+  {
+    "@id": "_:b125",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:b124"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b126"
+      }
+    ]
+  },
+  {
+    "@id": "_:b126",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b127",
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b129"
+      }
+    ]
+  },
+  {
+    "@id": "_:b128",
+    "http://www.w3.org/2002/07/owl#hasValue": [
+      {
+        "@id": "http://vocab.getty.edu/aat/300015646"
+      }
+    ]
+  },
+  {
+    "@id": "_:b129",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:b128"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b130"
+      }
+    ]
+  },
+  {
+    "@id": "_:b13",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b14"
+      }
+    ]
+  },
+  {
+    "@id": "_:b130",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b131",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1340,20 +596,7 @@
     ]
   },
   {
-    "@id": "_:b9",
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "http://w3id.org/arto#Event"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-      }
-    ]
-  },
-  {
-    "@id": "_:b90",
+    "@id": "_:b132",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1369,7 +612,7 @@
     ]
   },
   {
-    "@id": "_:b91",
+    "@id": "_:b133",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1433,6 +676,19 @@
     ]
   },
   {
+    "@id": "_:b14",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b15"
+      }
+    ]
+  },
+  {
     "http://www.w3.org/2002/07/owl#cardinality": [
       {
         "@value": "1",
@@ -1445,6 +701,1462 @@
       {
         "@value": "1",
         "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b15",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#VisualElement"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b16"
+      }
+    ]
+  },
+  {
+    "@id": "_:b16",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Artwork"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b17",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b18"
+      }
+    ]
+  },
+  {
+    "@id": "_:b18",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b19"
+      }
+    ]
+  },
+  {
+    "@id": "_:b19",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b20"
+      }
+    ]
+  },
+  {
+    "@id": "_:b2",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b20",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#VisualElement"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b21"
+      }
+    ]
+  },
+  {
+    "@id": "_:b21",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Artwork"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b22",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b23"
+      }
+    ]
+  },
+  {
+    "@id": "_:b23",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Agent"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b24"
+      }
+    ]
+  },
+  {
+    "@id": "_:b24",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Event"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b25",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b26"
+      }
+    ]
+  },
+  {
+    "@id": "_:b26",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Agent"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b27"
+      }
+    ]
+  },
+  {
+    "@id": "_:b27",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Event"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b28",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b29"
+      }
+    ]
+  },
+  {
+    "@id": "_:b29",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Connotation"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b30"
+      }
+    ]
+  },
+  {
+    "@id": "_:b3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b4"
+      }
+    ]
+  },
+  {
+    "@id": "_:b30",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b31"
+      }
+    ]
+  },
+  {
+    "@id": "_:b31",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b32"
+      }
+    ]
+  },
+  {
+    "@id": "_:b32",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#VisualElement"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b33",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b34"
+      }
+    ]
+  },
+  {
+    "@id": "_:b34",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Connotation"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b35"
+      }
+    ]
+  },
+  {
+    "@id": "_:b35",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b36"
+      }
+    ]
+  },
+  {
+    "@id": "_:b36",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b37"
+      }
+    ]
+  },
+  {
+    "@id": "_:b37",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#VisualElement"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b38",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b39"
+      }
+    ]
+  },
+  {
+    "@id": "_:b39",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Event"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b40"
+      }
+    ]
+  },
+  {
+    "@id": "_:b4",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b5"
+      }
+    ]
+  },
+  {
+    "@id": "_:b40",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Location"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b41",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b42"
+      }
+    ]
+  },
+  {
+    "@id": "_:b42",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Event"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b43"
+      }
+    ]
+  },
+  {
+    "@id": "_:b43",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Location"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b45"
+      }
+    ]
+  },
+  {
+    "@id": "_:b45",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Artwork"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b46"
+      }
+    ]
+  },
+  {
+    "@id": "_:b46",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b47",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b48"
+      }
+    ]
+  },
+  {
+    "@id": "_:b48",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Artwork"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b49"
+      }
+    ]
+  },
+  {
+    "@id": "_:b49",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b5",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b50",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b51"
+      }
+    ]
+  },
+  {
+    "@id": "_:b51",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b52"
+      }
+    ]
+  },
+  {
+    "@id": "_:b52",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b53",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b54"
+      }
+    ]
+  },
+  {
+    "@id": "_:b54",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b55"
+      }
+    ]
+  },
+  {
+    "@id": "_:b55",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b56",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b57"
+      }
+    ]
+  },
+  {
+    "@id": "_:b57",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b58"
+      }
+    ]
+  },
+  {
+    "@id": "_:b58",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b59"
+      }
+    ]
+  },
+  {
+    "@id": "_:b59",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#VisualElement"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b7"
+      }
+    ]
+  },
+  {
+    "@id": "_:b60",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b61"
+      }
+    ]
+  },
+  {
+    "@id": "_:b61",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b62"
+      }
+    ]
+  },
+  {
+    "@id": "_:b62",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b63",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#hasLocation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Location"
+      }
+    ]
+  },
+  {
+    "@id": "_:b64",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/contributor"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:b65",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/creator"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Artist"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b66",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/isPartOf"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Series"
+      }
+    ]
+  },
+  {
+    "@id": "_:b67",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/description"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b68",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/medium"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b69",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#expresses"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Connotation"
+      }
+    ]
+  },
+  {
+    "@id": "_:b7",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Artwork"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:b8"
+      }
+    ]
+  },
+  {
+    "@id": "_:b70",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://dbpedia.org/property/technique"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "_:b71",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/title"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b72",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://schema.org/height"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b73",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://schema.org/width"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b74",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.europeana.eu/schemas/edm/isShownBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b75",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#style"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b76",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://schema.org/genre"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b77",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#currentLocation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Location"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b78",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#relatedToEvent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Event"
+      }
+    ]
+  },
+  {
+    "@id": "_:b79",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#expresses"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Connotation"
+      }
+    ]
+  },
+  {
+    "@id": "_:b8",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+      }
+    ]
+  },
+  {
+    "@id": "_:b80",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#containsScene"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b81",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#RGBValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b82",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#HSVValue"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b83",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b84",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#hasMetric"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Metric"
+      }
+    ]
+  },
+  {
+    "@id": "_:b85",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b86",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/NET/c4dm/event.owl#agent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Agent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b87",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b88",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#hasTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Time"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b89",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#hasLocation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Location"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@id": "_:b10"
+      }
+    ]
+  },
+  {
+    "@id": "_:b90",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#relatedToConnotation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Connotation"
+      }
+    ]
+  },
+  {
+    "@id": "_:b91",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://schema.org/width"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b92",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#direction"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b93",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#length"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#float"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b94",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b95",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#wktLiteral"
+      }
+    ]
+  },
+  {
+    "@id": "_:b96",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#hasTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Time"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "_:b98",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#source"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "_:b99",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://w3id.org/arto#expresses"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://w3id.org/arto#Symbolism"
       }
     ]
   },
@@ -1462,6 +2174,9 @@
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/"
   },
   {
     "@id": "http://purl.org/dc/terms/contributor",
@@ -1536,6 +2251,21 @@
     ]
   },
   {
+    "@id": "http://vocab.getty.edu/aat/300015646"
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300055150"
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300056255"
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300131647"
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300264091"
+  },
+  {
     "@id": "http://w3id.org/arto",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology",
@@ -1593,6 +2323,23 @@
       {
         "@value": "0.1"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://www.cidoc-crm.org/cidoc-crm/"
+      },
+      {
+        "@id": "http://xmlns.com/foaf/0.1/"
+      },
+      {
+        "@id": "http://purl.org/dc/terms/"
+      },
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core"
+      },
+      {
+        "@id": "https://schema.org/"
+      }
     ]
   },
   {
@@ -1605,7 +2352,7 @@
         "@id": "http://xmlns.com/foaf/spec/Agent"
       },
       {
-        "@id": "_:b31"
+        "@id": "_:b63"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1616,6 +2363,22 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "Agent"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#ArtStyleType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:b127"
       }
     ]
   },
@@ -1650,52 +2413,55 @@
         "@id": "https://schema.org/CreativeWork"
       },
       {
-        "@id": "_:b32"
+        "@id": "_:b64"
       },
       {
-        "@id": "_:b33"
+        "@id": "_:b65"
       },
       {
-        "@id": "_:b34"
+        "@id": "_:b66"
       },
       {
-        "@id": "_:b35"
+        "@id": "_:b67"
       },
       {
-        "@id": "_:b36"
+        "@id": "_:b68"
       },
       {
-        "@id": "_:b37"
+        "@id": "_:b69"
       },
       {
-        "@id": "_:b38"
+        "@id": "_:b70"
       },
       {
-        "@id": "_:b39"
+        "@id": "_:b71"
       },
       {
-        "@id": "_:b40"
+        "@id": "_:b72"
       },
       {
-        "@id": "_:b41"
+        "@id": "_:b73"
       },
       {
-        "@id": "_:b42"
+        "@id": "_:b74"
       },
       {
-        "@id": "_:b43"
+        "@id": "_:b75"
       },
       {
-        "@id": "_:b44"
+        "@id": "_:b76"
       },
       {
-        "@id": "_:b45"
+        "@id": "_:b77"
       },
       {
-        "@id": "_:b46"
+        "@id": "_:b78"
       },
       {
-        "@id": "_:b47"
+        "@id": "_:b79"
+      },
+      {
+        "@id": "_:b80"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1711,6 +2477,9 @@
     "http://www.w3.org/2004/02/skos/core#closeMatch": [
       {
         "@id": "http://www.cidoc-crm.org/cidoc-crm/E22_Human_Made_Object"
+      },
+      {
+        "@id": "https://w3id.org/icon/ontology/Artwork"
       }
     ]
   },
@@ -1766,10 +2535,15 @@
         "@id": "http://w3id.org/arto#VisualElement"
       },
       {
-        "@id": "_:b48"
+        "@id": "_:b81"
       },
       {
-        "@id": "_:b49"
+        "@id": "_:b82"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://vocab.getty.edu/aat/300131647"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1814,7 +2588,12 @@
         "@id": "http://w3id.org/arto#VisualElement"
       },
       {
-        "@id": "_:b50"
+        "@id": "_:b83"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://vocab.getty.edu/aat/300056255"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1838,7 +2617,7 @@
         "@id": "http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"
       },
       {
-        "@id": "_:b51"
+        "@id": "_:b84"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1848,7 +2627,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "Cnnotation"
+        "@value": "Connotation"
       }
     ]
   },
@@ -1862,7 +2641,12 @@
         "@id": "http://w3id.org/arto#Connotation"
       },
       {
-        "@id": "_:b52"
+        "@id": "_:b85"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://vocab.getty.edu/aat/300055150"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1907,19 +2691,19 @@
         "@id": "http://purl.org/NET/c4dm/event.owl#Event"
       },
       {
-        "@id": "_:b53"
+        "@id": "_:b86"
       },
       {
-        "@id": "_:b54"
+        "@id": "_:b87"
       },
       {
-        "@id": "_:b55"
+        "@id": "_:b88"
       },
       {
-        "@id": "_:b56"
+        "@id": "_:b89"
       },
       {
-        "@id": "_:b57"
+        "@id": "_:b90"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1950,7 +2734,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "http://www.w3.org/2001/XMLSchema#int"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1974,16 +2758,16 @@
         "@id": "http://w3id.org/arto#VisualElement"
       },
       {
-        "@id": "_:b58"
+        "@id": "_:b91"
       },
       {
-        "@id": "_:b59"
+        "@id": "_:b92"
       },
       {
-        "@id": "_:b60"
+        "@id": "_:b93"
       },
       {
-        "@id": "_:b61"
+        "@id": "_:b94"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2007,13 +2791,13 @@
         "@id": "https://schema.org/Place"
       },
       {
-        "@id": "_:b62"
+        "@id": "_:b95"
       },
       {
-        "@id": "_:b63"
+        "@id": "_:b96"
       },
       {
-        "@id": "_:b64"
+        "@id": "_:b97"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2054,7 +2838,20 @@
     ]
   },
   {
-    "@id": "http://w3id.org/arto#Meaning"
+    "@id": "http://w3id.org/arto#MaterialType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:b123"
+      }
+    ]
   },
   {
     "@id": "http://w3id.org/arto#Metric",
@@ -2079,28 +2876,31 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:b66"
+        "@id": "_:b99"
       },
       {
-        "@id": "_:b67"
+        "@id": "_:b100"
       },
       {
-        "@id": "_:b68"
+        "@id": "_:b101"
       },
       {
-        "@id": "_:b69"
+        "@id": "_:b102"
       },
       {
-        "@id": "_:b70"
+        "@id": "_:b103"
       },
       {
-        "@id": "_:b71"
+        "@id": "_:b104"
       },
       {
-        "@id": "_:b72"
+        "@id": "_:b105"
       },
       {
-        "@id": "_:b73"
+        "@id": "_:b106"
+      },
+      {
+        "@id": "_:b107"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2111,6 +2911,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "Object"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
+      {
+        "@id": "https://w3id.org/icon/ontology/ArtisticMotif"
       }
     ]
   },
@@ -2177,10 +2982,10 @@
         "@id": "http://xmlns.com/foaf/spec/Person"
       },
       {
-        "@id": "_:b74"
+        "@id": "_:b108"
       },
       {
-        "@id": "_:b75"
+        "@id": "_:b109"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2227,7 +3032,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "http://www.w3.org/2001/XMLSchema#int"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2269,28 +3074,28 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:b76"
+        "@id": "_:b110"
       },
       {
-        "@id": "_:b77"
+        "@id": "_:b111"
       },
       {
-        "@id": "_:b78"
+        "@id": "_:b112"
       },
       {
-        "@id": "_:b79"
+        "@id": "_:b113"
       },
       {
-        "@id": "_:b80"
+        "@id": "_:b114"
       },
       {
-        "@id": "_:b81"
+        "@id": "_:b115"
       },
       {
-        "@id": "_:b82"
+        "@id": "_:b116"
       },
       {
-        "@id": "_:b83"
+        "@id": "_:b117"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2301,6 +3106,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "Scene"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://w3id.org/icon/ontology/Image"
       }
     ]
   },
@@ -2335,7 +3145,7 @@
         "@id": "https://schema.org/CreativeWorkSeries"
       },
       {
-        "@id": "_:b84"
+        "@id": "_:b118"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2364,7 +3174,7 @@
         "@id": "http://w3id.org/arto#VisualElement"
       },
       {
-        "@id": "_:b85"
+        "@id": "_:b119"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2409,7 +3219,7 @@
         "@id": "http://w3id.org/arto#Connotation"
       },
       {
-        "@id": "_:b65"
+        "@id": "_:b98"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2420,6 +3230,11 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "Symbolism"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://w3id.org/icon/ontology/Symbol"
       }
     ]
   },
@@ -2456,18 +3271,23 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:b86"
+        "@id": "_:b120"
       },
       {
-        "@id": "_:b87"
+        "@id": "_:b121"
       },
       {
-        "@id": "_:b88"
+        "@id": "_:b122"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Represents temporal aspects related to artwork, including:\r\n            - Creation periods\r\n            - Historical periods\r\n            - Exhibition periods\r\n            - Conservation periods\r\n            - Depicted time periods\r\n            - Time-based elements\r\n\r\n            Examples:\r\n            - :renaissance_period rdf:type arto:Time ;\r\n                sdo:startDate \"1400\" ;\r\n                sdo:endDate \"1600\" ;\r\n                arto:culturalPeriod \"European_Renaissance\"\r\n            "
+        "@value": "Represents temporal aspects related to artwork, including:\r\n            - Creation periods\r\n            - Historical periods\r\n            - Exhibition periods\r\n            - Conservation periods\r\n            - Depicted time periods\r\n            - Time-based elements\r\n            "
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n            - :renaissance_period rdf:type arto:Time ;\r\n                sdo:startDate \"1400\" ;\r\n                sdo:endDate \"1600\" .\r\n                \r\n            "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2486,13 +3306,13 @@
         "@id": "http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature"
       },
       {
-        "@id": "_:b89"
+        "@id": "_:b131"
       },
       {
-        "@id": "_:b90"
+        "@id": "_:b132"
       },
       {
-        "@id": "_:b91"
+        "@id": "_:b133"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2518,7 +3338,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://w3id.org/arto#Object"
+        "@id": "_:b0"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2528,7 +3348,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Specifies the visual elements (such as color, line, composition) contained within an object in the artwork.\r\n\r\n                      Examples:\r\n                      - color elements: :sky_object arto:containsElement :blue_gradient_color\r\n                      - Line elements: :mountain_object arto:containsElement :diagonal_line\r\n                      - Compositional elements: :tree_object arto:containsElement :vertical_composition"
+        "@value": "Specifies the visual elements (such as color, line, composition) contained within an object in the artwork."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                      - color elements: :sky_object arto:containsElement :blue_gradient_color\r\n                      - Line elements: :mountain_object arto:containsElement :diagonal_line\r\n                      - Compositional elements: :tree_object arto:containsElement :vertical_composition"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2559,7 +3384,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Indicates specific objects that are present within a scene of an artwork.\r\n\r\n                      Examples:\r\n                      - Landscape scene: :garden_scene arto:containsObject :fountain, :bench, :flowers\r\n                      - Portrait scene: :interior_scene arto:containsObject :chair, :table, :book\r\n                      - Still life scene: :table_scene arto:containsObject :fruit_bowl, :wine_glass, :cloth"
+        "@value": "Indicates specific objects that are present within a scene of an artwork."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                      - Landscape scene: :garden_scene arto:containsObject :fountain, :bench, :flowers\r\n                      - Portrait scene: :interior_scene arto:containsObject :chair, :table, :book\r\n                      - Still life scene: :table_scene arto:containsObject :fruit_bowl, :wine_glass, :cloth"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2580,7 +3410,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b0"
+        "@id": "_:b6"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2590,17 +3420,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Identifies distinct scenes within an artwork or within another scene, allowing for hierarchical scene composition.\r\n                      Examples:\r\n                      - Nested scenes: :market_scene arto:containsScene :vendor_scene, :customer_scene\r\n                      - Background scenes: :landscape_painting arto:containsScene :mountain_scene, :valley_scene"
+        "@value": "Identifies distinct scenes within an artwork or within another scene, allowing for hierarchical scene composition."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                      - Nested scenes: :market_scene arto:containsScene :vendor_scene, :customer_scene\r\n                      - Background scenes: :landscape_painting arto:containsScene :mountain_scene, :valley_scene"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "containsScene"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#minCardinality": [
-      {
-        "@value": 1
       }
     ]
   },
@@ -2611,7 +3441,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b21"
+        "@id": "_:b53"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2647,7 +3477,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Specifies the current physical location where an artwork is housed or displayed.\r\n\r\n                      Examples:\r\n                      - Museum location: :mona_lisa arto:currentLocation :louvre_museum\r\n                      - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24\r\n                      "
+        "@value": "Specifies the current physical location where an artwork is housed or displayed."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                      - Museum location: :mona_lisa arto:currentLocation :louvre_museum\r\n                      - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24\r\n                      "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2673,7 +3508,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b24"
+        "@id": "_:b56"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2683,7 +3518,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Describes the visual characteristics or properties of an object in an artwork. The specific descriptors are specified using the rdfs:subPropertyOf.\r\n                Example:\r\n                Portrait1 :clothing :RedDress ;\r\n                :clothing rdfs:subPropertyOf arto:descriptor"
+        "@value": "Describes the visual characteristics or properties of an object in an artwork. The specific descriptors are specified using the rdfs:subPropertyOf."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                Portrait1 :clothing :RedDress ;\r\n                :clothing rdfs:subPropertyOf arto:descriptor"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2725,7 +3565,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b3"
+        "@id": "_:b12"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2733,40 +3573,29 @@
         "@id": "http://w3id.org/arto#Connotation"
       }
     ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#isExpressedBy"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Links visual elements, objects, or scenes to their symbolic meanings or emotional connotations.\r\n\r\n              Examples:\r\n              - Emotional expression: :red_color arto:expresses :anger_emotion\r\n              - Symbolic meaning: :dove_object arto:expresses :peace_meaning\r\n              - Scene mood: :storm_scene arto:expresses :turbulence_emotion"
+        "@value": "Links visual elements, objects, scenes, or artworks to their symbolic meanings or emotional connotations."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n              - Emotional expression: :red_color arto:expresses :anger_emotion\r\n              - Symbolic meaning: :dove_object arto:expresses :peace_meaning\r\n              - Scene mood: :storm_scene arto:expresses :turbulence_emotion\r\n              - Artwork meaning: :guernica arto:expresses :anti_war_theme"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "express"
       }
-    ]
-  },
-  {
-    "@id": "http://w3id.org/arto#hasConnotation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
       {
-        "@id": "http://w3id.org/arto#Artwork"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://w3id.org/arto#Connotation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Associates an artwork with its broader meanings, themes, or emotional content.\r\n                      Examples:\r\n                      - Symbolic meaning: :guernica arto:hasConnotation :anti_war_theme "
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "hasConnotation"
+        "@id": "https://w3id.org/icon/ontology/recognizedConcept"
       }
     ]
   },
@@ -2777,7 +3606,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b7"
+        "@id": "_:b22"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2785,9 +3614,19 @@
         "@id": "http://w3id.org/arto#Location"
       }
     ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#isLocationOf"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Specifies the physical location of an organization or event related to the artwork.\r\n\r\n                Examples:\r\n                - Museum address: :metropolitan_museum arto:hasLocation :met_nyc_location\r\n                - Gallery location: :tate_modern arto:hasLocation :london_bankside\r\n                - Studio location: :warhol_factory arto:hasLocation :manhattan_location\r\n                - Exhibition event: :venice_biennale_2024 arto:hasLocation :venice_giardini"
+        "@value": "Specifies the physical location of an organization or event related to the artwork."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Museum address: :metropolitan_museum arto:hasLocation :met_nyc_location\r\n                - Gallery location: :tate_modern arto:hasLocation :london_bankside\r\n                - Studio location: :warhol_factory arto:hasLocation :manhattan_location\r\n                - Exhibition event: :venice_biennale_2024 arto:hasLocation :venice_giardini"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2803,7 +3642,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b10"
+        "@id": "_:b28"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2811,9 +3650,19 @@
         "@id": "http://w3id.org/arto#Metric"
       }
     ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#isMetricOf"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Associates components (Connotation, Scene, Object or the Visual Element) of an artwork with quantifiable measurements or characteristics.\r\n\r\n                Examples:\r\n                - Color metrics: :sky_area arto:hasMetric :blue_intensity_75_percent\r\n                - Composition balance: :landscape_scene arto:hasMetric :symmetry_score_0.8\r\n                - Emotional intensity: :expression_scene arto:hasMetric :fear_intensity_high"
+        "@value": "Associates components (Connotation, Scene, Object or the Visual Element) of an artwork with quantifiable measurements or characteristics."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Color metrics: :sky_area arto:hasMetric :blue_intensity_75_percent\r\n                - Composition balance: :landscape_scene arto:hasMetric :symmetry_score_0.8\r\n                - Emotional intensity: :expression_scene arto:hasMetric :fear_intensity_high"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2829,7 +3678,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b15"
+        "@id": "_:b38"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2837,14 +3686,322 @@
         "@id": "http://w3id.org/arto#Time"
       }
     ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#isTimeOf"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Associates an event or location with its temporal information.\r\n              Example:\r\n              - Event timing: :exhibition2024 arto:hasTime :spring2024\r\n              - Location historical period: :paris_studio arto:hasTime :belle_epoque\r\n              "
+        "@value": "Associates an event or location with its temporal information."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n              - Event timing: :exhibition2024 arto:hasTime :spring2024\r\n              - Location historical period: :paris_studio arto:hasTime :belle_epoque\r\n              "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "hasTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isElementOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/isPartOf"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#VisualElement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:b3"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Specifies the object that contains the visual element in the artwork."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                  - color elements: :blue_gradient_color arto:isElementOf :sky_object\r\n                  - Line elements: :diagonal_line arto:isElementOf :mountain_object\r\n                  - Compositional elements: :vertical_composition arto:isElementOf :tree_object"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isElementOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isEventOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:b47"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#relatedToEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Associates an event with the artwork or scene that it is related to."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Historical event: :french_revolution_1830 arto:isEventOf :liberty_leading_the_people\r\n                - Biblical event: :biblical_last_supper arto:isEventOf :last_supper\r\n                "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isEventOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isExpressedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#Connotation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:b17"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#expresses"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Associates a connotation with the visual elements, objects, scenes or artwork that express it."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                    - Emotional expression: :anger_emotion arto:isExpressedBy :red_color\r\n                    - Symbolic meaning: :peace_meaning arto:isExpressedBy :dove_object\r\n                    - Scene mood: :turbulence_emotion arto:isExpressedBy :storm_scene\r\n                    - Artwork meaning: :anti_war_theme arto:isExpressedBy :guernica"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isExpressedBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isLocationOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#Location"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:b25"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#hasLocation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Associates a location with the organization or event that it is related to."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Museum address: :met_nyc_location arto:isLocationOf :metropolitan_museum\r\n                - Gallery location: :london_bankside arto:isLocationOf :tate_modern\r\n                - Studio location: :manhattan_location arto:isLocationOf :warhol_factory\r\n                - Exhibition event: :venice_giardini arto:isLocationOf :venice_biennale_2024"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isLocationOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isMetricOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#Metric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:b33"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#hasMetric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Associates a metric with the component of an artwork that it is related to."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Color metrics: :blue_intensity_75_percent arto:isMetricOf :sky_area\r\n                - Composition balance: :symmetry_score_0.8 arto:isMetricOf :landscape_scene\r\n                - Emotional intensity: :fear_intensity_high arto:isMetricOf :expression_scene"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isMetricOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isObjectOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/isPartOf"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#Object"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#containsObject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Indicates the scene that contains the object in the artwork."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Landscape scene: :fountain arto:isObjectOf :garden_scene\r\n                - Portrait scene: :chair arto:isObjectOf :interior_scene\r\n                - Still life scene: :fruit_bowl arto:isObjectOf :table_scene"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isObjectOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isSceneOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://purl.org/dc/terms/isPartOf"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#Scene"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:b9"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#containsScene"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Specifies the artwork or scene that contains the scene in the artwork."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Nested scenes: :vendor_scene arto:isSceneOf :market_scene\r\n                - Background scenes: :mountain_scene arto:isSceneOf :landscape_painting"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isSceneOf"
+      }
+    ]
+  },
+  {
+    "@id": "http://w3id.org/arto#isTimeOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/arto#Time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:b41"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#hasTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Associates a time with the event or location that it is related to."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n              - Event timing: :spring2024 arto:isTimeOf :exhibition2024\r\n              - Location historical period: :belle_epoque arto:isTimeOf :paris_studio\r\n              "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "isTimeOf"
       }
     ]
   },
@@ -2865,7 +4022,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "The person knows persons.\r\n            Examples:\r\n            - Artist relationships: :vincent_van_gogh arto:knows :paul_gauguin\r\n            - Teacher-student: :gustav_klimt arto:knows :egon_schiele\r\n            - Collaborative artists: :pablo_picasso arto:knows :georges_braque"
+        "@value": "The person knows persons."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n            - Artist relationships: :vincent_van_gogh arto:knows :paul_gauguin\r\n            - Teacher-student: :gustav_klimt arto:knows :egon_schiele\r\n            - Collaborative artists: :pablo_picasso arto:knows :georges_braque"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2912,7 +4074,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "http://w3id.org/arto#MaterialType"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2943,7 +4105,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Describes spatial or conceptual relationships between objects within an artwork. The specific relationships are specified using the rdfs:subPropertyOf.\r\n                Examples:\r\n                - Spatial relation: :cup_object arto:rests_on :table_object ;\r\n                  arto:rests_on rdfs:subPropertyOf arto:relatedTo;\r\n                - Interaction: :mother_figure arto:holds :child_figure ;\r\n                  arto:holds rdfs:subPropertyOf arto:relatedTo;\r\n                - Position: :cloud_object arto:above :mountain_object ;\r\n                  arto:above rdfs:subPropertyOf arto:relatedTo"
+        "@value": "Describes spatial or conceptual relationships between objects within an artwork. The specific relationships are specified using the rdfs:subPropertyOf."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                - Spatial relation: :cup_object arto:rests_on :table_object ;\r\n                  arto:rests_on rdfs:subPropertyOf arto:relatedTo;\r\n                - Interaction: :mother_figure arto:holds :child_figure ;\r\n                  arto:holds rdfs:subPropertyOf arto:relatedTo;\r\n                - Position: :cloud_object arto:above :mountain_object ;\r\n                  arto:above rdfs:subPropertyOf arto:relatedTo"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2969,7 +4136,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Indicates that an event relatedToConnotation some connotations.\r\n                Examples:\r\n                  ex:NoahDoveEvent rdf:type arto:Event ;\r\n                  arto:relatedToConnotation ex:PeaceSymbolism ;\r\n                "
+        "@value": "Indicates that an event relatedToConnotation some connotations."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                  ex:NoahDoveEvent rdf:type arto:Event ;\r\n                  arto:relatedToConnotation ex:PeaceSymbolism ;\r\n                "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2985,7 +4157,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b18"
+        "@id": "_:b44"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2993,9 +4165,19 @@
         "@id": "http://w3id.org/arto#Event"
       }
     ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://w3id.org/arto#isEventOf"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Connects an artwork or its connotation to historical, mythological, or contemporary events depicted or referenced in the work.\r\n                      Examples:\r\n                      - Historical event: :liberty_leading_the_people arto:relatedToEvent :french_revolution_1830\r\n                      - Biblical event: :last_supper arto:relatedToEvent :biblical_last_supper\r\n                      "
+        "@value": "Connects an artwork or its connotation to historical, mythological, or contemporary events depicted or referenced in the work."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                      - Historical event: :liberty_leading_the_people arto:relatedToEvent :french_revolution_1830\r\n                      - Biblical event: :last_supper arto:relatedToEvent :biblical_last_supper\r\n                      "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -3021,7 +4203,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Links objects to the scenes they appear in or are associated with.\r\n                      Examples:\r\n                      - Object context: :bread_loaf arto:relatedToScene :market_scene "
+        "@value": "Links objects to the scenes they appear in or are associated with."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#example": [
+      {
+        "@value": "\r\n                      - Object context: :bread_loaf arto:relatedToScene :market_scene "
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -3037,7 +4224,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:b28"
+        "@id": "_:b60"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -3063,7 +4250,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://w3id.org/arto#Meaning"
+        "@id": "http://w3id.org/arto#Symbolism"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -3073,7 +4260,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Relates the source of the meaning in artworks."
+        "@value": "Relates the source of the symbolism in artworks."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -3085,7 +4272,7 @@
   {
     "@id": "http://w3id.org/arto#state",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
@@ -3094,12 +4281,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "_:b50"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Describes the current condition, position, or status of objects within an artwork."
+        "@value": "Describes the current condition, position, or status of objects within an artwork, which may be an AAT concept or free text."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -3111,7 +4298,7 @@
   {
     "@id": "http://w3id.org/arto#style",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
@@ -3120,7 +4307,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "http://w3id.org/arto#ArtStyleType"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -3136,6 +4323,9 @@
   },
   {
     "@id": "http://w3id.org/arto/v0.1"
+  },
+  {
+    "@id": "http://www.cidoc-crm.org/cidoc-crm/"
   },
   {
     "@id": "http://www.cidoc-crm.org/cidoc-crm/E22_Human_Made_Object"
@@ -3180,13 +4370,16 @@
     "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
   },
   {
-    "@id": "http://www.w3.org/2001/XMLSchema#dataTime",
+    "@id": "http://www.w3.org/2001/XMLSchema#dateTime",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
     "@id": "http://www.w3.org/2001/XMLSchema#float"
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#int"
   },
   {
     "@id": "http://www.w3.org/2001/XMLSchema#string"
@@ -3231,6 +4424,12 @@
     ]
   },
   {
+    "@id": "http://www.w3.org/2004/02/skos/core"
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+  },
+  {
     "@id": "http://www.w3.org/2004/02/skos/core#closeMatch",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
@@ -3241,6 +4440,9 @@
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
+  },
+  {
+    "@id": "http://xmlns.com/foaf/0.1/"
   },
   {
     "@id": "http://xmlns.com/foaf/spec/Agent",
@@ -3268,6 +4470,9 @@
   },
   {
     "@id": "https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"
+  },
+  {
+    "@id": "https://schema.org/"
   },
   {
     "@id": "https://schema.org/CreativeWork",
@@ -3298,5 +4503,20 @@
   },
   {
     "@id": "https://schema.org/width"
+  },
+  {
+    "@id": "https://w3id.org/icon/ontology/ArtisticMotif"
+  },
+  {
+    "@id": "https://w3id.org/icon/ontology/Artwork"
+  },
+  {
+    "@id": "https://w3id.org/icon/ontology/Image"
+  },
+  {
+    "@id": "https://w3id.org/icon/ontology/Symbol"
+  },
+  {
+    "@id": "https://w3id.org/icon/ontology/recognizedConcept"
   }
 ]

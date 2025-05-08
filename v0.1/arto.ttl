@@ -162,6 +162,7 @@ arto:isObjectOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf dc:isPartOf ;
               rdfs:domain arto:Object ;
               rdfs:range arto:Scene ;
+              owl:inverseOf arto:containsObject ;
               rdfs:comment """Indicates the scene that contains the object in the artwork.""";
 
               skos:example """
@@ -195,6 +196,7 @@ arto:isSceneOf rdf:type owl:ObjectProperty ;
                                         arto:Scene
                                       )
                         ] ;
+              owl:inverseOf arto:containsScene ;
               rdfs:comment """Specifies the artwork or scene that contains the scene in the artwork.""";
               skos:example """
                 - Nested scenes: :vendor_scene arto:isSceneOf :market_scene
@@ -473,7 +475,7 @@ dc:medium rdf:type owl:DatatypeProperty .
 ###  http://w3id.org/arto#HSVValue
 arto:HSVValue rdf:type owl:DatatypeProperty ;
               rdfs:domain arto:Color ;
-              rdfs:range xsd:string ;
+              rdfs:range xsd:int ;
               rdfs:comment "HSV color value in format 'H,S,V' where H is the hue and the range is 0-360, S is the saturation and the range is 0-100, and V is the value and the range is 0-100" ;
               rdfs:label "HSVValue" .
 
@@ -481,7 +483,7 @@ arto:HSVValue rdf:type owl:DatatypeProperty ;
 ###  http://w3id.org/arto#RGBValue
 arto:RGBValue rdf:type owl:DatatypeProperty ;
               rdfs:domain arto:Color ;
-              rdfs:range xsd:string ;
+              rdfs:range xsd:int ;
               rdfs:comment "RGB color value in format 'R,G,B' where R,G,B are integers 0-255" ;
               rdfs:label "RGBValue" .
 
@@ -659,7 +661,7 @@ arto:Artwork rdf:type owl:Class ;
                                owl:allValuesFrom arto:Event
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:hasConnotation ;
+                               owl:onProperty arto:expresses ;
                                owl:allValuesFrom arto:Connotation
                              ] ,
                              [ rdf:type owl:Restriction ;
@@ -915,6 +917,12 @@ arto:Object rdf:type owl:Class ;
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:material ;
                               owl:allValuesFrom xsd:string
+                            ] ,
+                            [
+                              rdf:type owl:Restriction ;
+                              owl:onProperty arto:coordinates ;
+                              owl:allValuesFrom xsd:string ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:size ;

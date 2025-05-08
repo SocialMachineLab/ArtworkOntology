@@ -153,7 +153,6 @@ ex:GreetingMomentScene ex:precedesScene ex:WhisperingScene .
 ex:WhisperingScene ex:precedesScene ex:AcknowledgementScene .
 
 
-
 # Objects in the scene
 ex:WomanOne rdf:type arto:Object ;
     arto:state "Standing and conversing"@en ;
