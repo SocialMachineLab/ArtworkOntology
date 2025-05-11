@@ -1,0 +1,107 @@
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix a-dd: <https://w3id.org/arco/ontology/denotative-description/> .
+@prefix a-loc: <https://w3id.org/arco/ontology/location/> .
+@prefix core: <https://w3id.org/arco/ontology/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix CLV: <https://w3id.org/italia/onto/CLV/> .
+@prefix : <https://example.org/> .
+
+:starry-night a arco:HistoricOrArtisticProperty ;
+   rdfs:label "The Starry Night"@en, "Notte stellata"@it ;
+   arco:hasMibacScopeOfProtection arco:HistoricalArtisticScope ;
+   core:hasCategory :oil-painting ;
+   a-dd:hasCulturalPropertyType :painting ;
+   a-cd:hasTitle :title ;
+   a-cd:hasDating :dating ;
+   a-cd:hasAuthorshipAttribution :authorship ;
+   a-cd:hasSubject :subject ;
+   a-dd:hasMeasurementCollection :measurements ;
+   a-dd:hasConservationStatus :conservation ;
+   a-loc:hasTimeIndexedTypedLocation :location ;
+   a-dd:hasTechnicalStatus :technical ;
+   a-cd:hasAcquisition :acquisition .
+
+:oil-painting a arco:CulturalPropertyCategory ;
+   rdfs:label "Oil painting"@en ;
+   l0:name "Dipinto a olio"@it .
+
+:painting a a-dd:CulturalPropertyType ;
+   rdfs:label "Painting"@en .
+
+:title a a-cd:Title ;
+   a-cd:title "The Starry Night"@en ;
+   core:hasType :original-title .
+
+:original-title a core:Type ;
+   rdfs:label "Original title"@en .
+
+:dating a a-cd:Dating ;
+   arco:startTime "1889"^^xsd:gYear ;
+   core:hasType :execution-date .
+
+:execution-date a core:Type ;
+   rdfs:label "Execution date"@en .
+
+:authorship a a-cd:AuthorshipAttribution ;
+   a-cd:hasAuthor :van-gogh ;
+   core:hasRole :painter .
+
+:van-gogh a l0:Agent ;
+   rdfs:label "Vincent van Gogh"@en ;
+   l0:name "Vincent Willem van Gogh"@en .
+
+:painter a core:Role ;
+   rdfs:label "Painter"@en .
+
+:subject a a-cd:Subject ;
+   a-cd:subject "Night sky with stars and moon"@en ;
+   core:hasType :landscape .
+
+:landscape a core:Type ;
+   rdfs:label "Landscape"@en .
+
+:measurements a a-dd:MeasurementCollection ;
+   core:hasMeasurement :height, :width .
+
+:height a a-dd:Measurement ;
+   a-dd:hasMeasurementType :height-type ;
+   a-dd:hasValue :height-value .
+
+:height-value a a-dd:Value ;
+   l0:name "73.7" ;
+   a-dd:hasUnitOfMeasurement "cm" .
+
+:width a a-dd:Measurement ;
+   a-dd:hasMeasurementType :width-type ;
+   a-dd:hasValue :width-value .
+
+:width-value a a-dd:Value ;
+   l0:name "92.1" ;
+   a-dd:hasUnitOfMeasurement "cm" .
+
+:conservation a a-dd:ConservationStatus ;
+   a-dd:hasConservationStatusType :good ;
+   core:note "Good condition"@en .
+
+:location a a-loc:TimeIndexedTypedLocation ;
+   a-loc:atLocation :moma ;
+   arco:startTime "1941" ;
+   core:current "true" .
+
+:moma a CLV:Feature ;
+   rdfs:label "Museum of Modern Art"@en .
+
+:technical a a-dd:TechnicalStatus ;
+   a-dd:includesTechnicalCharacteristic :oil-on-canvas ;
+   a-dd:includesMaterialOrTechnique :oil-paint, :canvas .
+
+:oil-on-canvas a a-dd:TechnicalCharacteristic ;
+   rdfs:label "Oil on canvas"@en .
+
+:acquisition a a-cd:Acquisition ;
+   core:hasType :purchase ;
+   arco:startTime "1941" ;
+   a-cd:hasTransferee :moma .
