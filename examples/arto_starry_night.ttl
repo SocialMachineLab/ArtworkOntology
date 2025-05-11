@@ -74,7 +74,8 @@ ex:cypress rdf:type arto:Object ;
     arto:size "Large" ;
     arto:isObjectOf ex:village_scene ;
     arto:containsElement ex:dark_green_color, ex:vertical_composition ;
-    arto:expresses ex:symbol_death .
+    arto:expresses ex:symbol_death ;
+    arto:next_to ex:church .
 
 ex:church rdf:type arto:Object ;
     rdfs:label "Church" ;
@@ -87,7 +88,7 @@ ex:houses rdf:type arto:Object ;
     rdfs:label "Houses" ;
     arto:size "Small" ;
     arto:isObjectOf ex:village_scene ;
-    arto:relatedTo ex:church .
+    arto:adjacent_to ex:church .
 
 # visual elements
 ex:blue_color rdf:type arto:Color ;

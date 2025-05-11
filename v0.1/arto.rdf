@@ -5,12 +5,14 @@
          xmlns:dc="http://purl.org/dc/terms/"
          xmlns:ns0="http://purl.org/vocab/vann/"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:foaf="http://xmlns.com/foaf/spec/">
 
   <owl:Ontology rdf:about="http://w3id.org/arto">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <owl:versionIRI rdf:resource="http://w3id.org/arto/v0.1"/>
     <cc:attributionURL rdf:resource="http://w3id.org/arto"/>
+
     <dc:description xml:lang="en">The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.</dc:description>
     <dc:issued>2024-04-10</dc:issued>
     <dc:license rdf:resource="https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License"/>
@@ -881,33 +883,7 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://purl.org/dc/terms/isPartOf"/>
-        <owl:allValuesFrom>
-          <owl:Class rdf:about="http://w3id.org/arto#Series">
-            <rdfs:subClassOf>
-              <owl:Class rdf:about="https://schema.org/CreativeWorkSeries">
-              </owl:Class>
-            </rdfs:subClassOf>
-
-            <rdfs:subClassOf>
-              <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
-                <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Artist"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-              </owl:Restriction>
-            </rdfs:subClassOf>
-
-            <rdfs:comment>A collection of related artworks that share common characteristics, themes, or purposes, including:
-                - Thematic series
-                - Chronological series
-                - Technique-based series
-                - Subject-based series
-                - Experimental series
-                - Documentary series</rdfs:comment>
-            <rdfs:label>Series</rdfs:label>
-            <skos:closeMatch rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E78_Collection"/>
-          </owl:Class>
-        </owl:allValuesFrom>
-
+        <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Series"/>
       </owl:Restriction>
     </rdfs:subClassOf>
 
@@ -1026,6 +1002,32 @@
     <skos:closeMatch rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human_Made_Object"/>
     <skos:closeMatch rdf:resource="https://w3id.org/icon/ontology/Artwork"/>
   </owl:Class>
+
+  <owl:Class rdf:about="http://w3id.org/arto#Series">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="https://schema.org/CreativeWorkSeries">
+      </owl:Class>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
+        <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Artist"/>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:comment>A collection of related artworks that share common characteristics, themes, or purposes, including:
+        - Thematic series
+        - Chronological series
+        - Technique-based series
+        - Subject-based series
+        - Experimental series
+        - Documentary series</rdfs:comment>
+    <rdfs:label>Series</rdfs:label>
+    <skos:closeMatch rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E78_Collection"/>
+  </owl:Class>
+  
 
   <owl:Class rdf:about="http://w3id.org/arto#BalanceOfComposition">
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Metric"/>

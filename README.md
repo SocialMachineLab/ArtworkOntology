@@ -12,6 +12,43 @@ The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.1/arto.ttl)) is a compreh
 - Evaluation: The ontology has been validated using the [OntOlogy Pitfall Scanner (OOPS!)](https://github.com/oeg-upm/OOPS) and refined through interviews with art experts.
 - Integration with Large Language Models (LLMs): Knowledge graphs based on ARTO can be integrated with LLMs by providing context to prompt engineering tasks, enabling automated artwork captioning.
 
+
+
+## Models
+
+### Artwork Descriptive Model
+
+The Artwork Descriptive Model is designed to encapsulate the representation of the content of artworks. It focuses on detailed content representation including visual elements, scenes, and emotional undertones that are conveyed through the artwork. This model aims to provide a framework that allows users to visually reconstruct the artwork and capture multiple perspectives and emotions related to and triggered by the artwork, which may foster a better understanding and representation of them.
+
+![The Artwork Descriptive Model](images/aom.png)
+
+
+### Artwork Contextual Model
+
+The Artwork Contextual Model complements the descriptive aspects by incorporating contextual information about the artwork. This model includes metadata, historical context, and related events, enriching the viewer’s appreciation and understanding of the artwork beyond its physical appearance.
+
+![The Artwork Contextual Model](images/acm.png)
+
+
+
+## Example 
+
+To demonstrate the application of the ARTO models, consider the artwork “[The Shepherdess](https://www.wikiart.org/en/william-adolphe-bouguereau/shepherdess-1889)” by William-Adolphe Bouguereau. The Descriptive Model would detail the visual elements like the serene posture of the shepherdess and the gentle, pastoral setting. The Contextual Model would provide insights into the painting’s creation in 1889, during the artist's life, reflecting the social and historical aspects of that era in France. This example is presented below using RDF-star and RDF to help better understand the differences between representing events in the contextual model (more examples of various artwork types available [here](examples/README.md)).
+
+### The picture of the artwork "The Shepherdess"
+![The picture of the artwork "The Shepherdess"](images/example.jpg)
+
+### Contextual Model of The Shepherdess using RDF-star
+![The contextual model of The Shepherdess using RDF-Star](images/example_rdfstar.png)
+
+### Contextual Model of The Shepherdess using RDF
+![The contextual model of The Shepherdess using RDF](images/example_rdf.png)
+
+### Descriptive Model of The Shepherdess
+![The Descriptive model of The Shepherdess](images/example_adm.png)
+
+
+
 ## Versioning (Based on experts feedback (e.g., art experts, semantic web experts, conference reviewers))
 
 
@@ -22,7 +59,7 @@ The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.1/arto.ttl)) is a compreh
 
 ARTO's main contributions include integrating both descriptive content and contextual information into a unified framework, providing an ontological structure specifically for artwork caption generation. The existing ontologies focus on museum management and artifact cataloging, while artwork captioning requires capturing detailed visual content and the relation to the context. ARTO‘s target users are artwork captioning developers and AI researchers who have distinctly different requirements compared to existing ontology users. Our users demand fine-grained artwork representations that are machine-understandable, enabling seamless integration into AI models for automated caption generation. They require representations that enable visual-semantic alignment and support the development of comprehensive, context-aware captions. These captions go beyond simply stating artworks' provenance, metadata, etc., instead encompassing detailed content representations and connecting them with cultural context and artistic interpretation. This shift from cataloging-oriented to content-analysis-oriented ontology reflects the evolving demands in digital art analysis and automated understanding systems.
 
-The table below summarizes previous works in the field. The "Motivation for ARTO" column briefly introduces the need for ARTO.
+The table below summarizes previous works in the field. The "Motivation for ARTO" column briefly introduces the need for ARTO (For detailed examples of ARTO and other ontologies, please see [here](./ARTOandOthers.md)). 
 
 | Name      | Domain           | Goal       | Ontology Scope                         | Strengths    | Motivation for ARTO                   |
 |-----------|------------------|---------------------------|---------------------|--------------------------------------|-----------------------------------------------------------------------|
@@ -113,352 +150,16 @@ Example:
 ARTO has been under development since beginning of 2023 and we are constantly improving it. We have created more [examples](examples) here to showcase ARTO's capabilities. We are also constantly collecting expert feedback to better meet their needs. We have also created a pipeline for building knowledge graphs, which can extract entities and relations from text and store them in the knowledge graph. We are also continuously improving our algorithms to improve the quality and accuracy of the knowledge graph. We are also developing the pipeline for extracting knowledge graphs from the content of the artwork (images). And the webpage is accessible [here](website/Artwork%20Object%20Ontology.html). Contact the authors of this page if you want to [contribute](#how-to-contribute) to this project.
 
 
-
-## Models
-
-### Artwork Descriptive Model
-
-The Artwork Descriptive Model is designed to encapsulate the representation of the content of artworks. It focuses on detailed content representation including visual elements, scenes, and emotional undertones that are conveyed through the artwork. This model aims to provide a framework that allows users to visually reconstruct the artwork and capture multiple perspectives and emotions related to and triggered by the artwork, which may foster a better understanding and representation of them.
-
-![The Artwork Descriptive Model](images/aom.png)
-
-
-### Artwork Contextual Model
-
-The Artwork Contextual Model complements the descriptive aspects by incorporating contextual information about the artwork. This model includes metadata, historical context, and related events, enriching the viewer’s appreciation and understanding of the artwork beyond its physical appearance.
-
-![The Artwork Contextual Model](images/acm.png)
-
-
 ## Competency Questions | EXAMPLES OF SPARQL QUERIES
 
-### 1. Basic Information Queries
-
-- **CQ1.1**: What are the basic properties (title, year, dimensions, material) of a given artwork?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-PREFIX dc: <http://purl.org/dc/terms/>
-PREFIX sdo: <https://schema.org/>
-
-SELECT ?title ?year ?height ?width ?medium
-WHERE {
-    ?artwork a arto:Artwork ;
-            dc:title ?title ;
-            dc:medium ?medium ;
-            sdo:height ?height ;
-            sdo:width ?width .
-    OPTIONAL { ?artwork dc:created ?year }
-}
-```
-- **CQ1.2**: How can we retrieve all artworks by a specific artist?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-PREFIX dc: <http://purl.org/dc/terms/>
-
-SELECT ?artwork ?title 
-WHERE {
-    ?artwork a arto:Artwork ;
-            dc:title ?title ;
-            dc:creator ?artist .
-    ?artist a arto:Artist ;
-            rdfs:label "Artist Name" .
-}
-```
-- **CQ1.3**: What is the current location and collection information of an artwork?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-PREFIX dc: <http://purl.org/dc/terms/>
-
-SELECT ?artwork ?title ?location ?locationType
-WHERE {
-    ?artwork a arto:Artwork ;
-            dc:title ?title ;
-            arto:currentLocation ?loc .
-    ?loc a arto:Location ;
-         dc:type ?locationType .
-}
-```
-- **CQ1.4**: How should incomplete or uncertain information be handled?
-```
-PREFIX arto: <http://w3id.org/arto#>
-PREFIX dc: <http://purl.org/dc/terms/>
-PREFIX sdo: <https://schema.org/>
-SELECT ?artwork ?missingProperty
-WHERE {
-    ?artwork a arto:Artwork .
-    # Check required properties
-    FILTER NOT EXISTS {
-        { ?artwork dc:title ?title } UNION
-        { ?artwork dc:creator ?creator } UNION
-        { ?artwork dc:medium ?medium } UNION
-        { ?artwork dc:description ?description } UNION
-        { ?artwork sdo:height ?height } UNION
-        { ?artwork sdo:width ?width } UNION
-        { ?artwork edm:isShownBy ?image } UNION
-        { ?artwork arto:style ?style } UNION
-        { ?artwork sdo:genre ?genre } UNION
-        { ?artwork arto:currentLocation ?location }
-    }
-    
-    # Identify specific missing properties
-    BIND(
-        IF(!EXISTS { ?artwork dc:title ?title }, "Missing title",
-        IF(!EXISTS { ?artwork dc:creator ?creator }, "Missing creator",
-        IF(!EXISTS { ?artwork dc:medium ?medium }, "Missing medium",
-        IF(!EXISTS { ?artwork dc:description ?description }, "Missing description",
-        IF(!EXISTS { ?artwork sdo:height ?height }, "Missing height",
-        IF(!EXISTS { ?artwork sdo:width ?width }, "Missing width",
-        IF(!EXISTS { ?artwork edm:isShownBy ?image }, "Missing image",
-        IF(!EXISTS { ?artwork arto:style ?style }, "Missing style",
-        IF(!EXISTS { ?artwork sdo:genre ?genre }, "Missing genre",
-        IF(!EXISTS { ?artwork arto:currentLocation ?location }, "Missing location",
-        "Complete"))))))))))
-    ) as ?missingProperty)
-}
-```
-
-### 2. Visual Description Queries
-
-- **CQ2.1**: How are visual elements (color, line, composition) represented and queried in an artwork?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-
-SELECT ?artwork ?element ?elementType ?descriptor
-WHERE {
-    ?artwork a arto:Artwork ;
-            arto:containsScene ?scene .
-    ?scene arto:containsObject ?object .
-    ?object arto:containsElement ?element .
-    ?element a ?elementType ;
-             arto:descriptor ?descriptor .
-    FILTER (?elementType IN (arto:Color, arto:Line, arto:Composition))
-}
-```
-
-- **CQ2.2**: What objects are present in the artwork and how do they relate to each other?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-
-SELECT ?object1 ?relationship ?object2
-WHERE {
-    ?artwork a arto:Artwork ;
-            arto:containsScene ?scene .
-    ?scene arto:containsObject ?object1 .
-    ?object1 arto:relatedTo ?object2 .
-    ?object1 arto:descriptor ?relationship .
-}
-```
-- **CQ2.3**: How are multiple scenes structured and connected within the artwork?
-```
-PREFIX arto: <http://w3id.org/arto#>
-
-SELECT ?mainScene ?subScene
-WHERE {
-    ?artwork a arto:Artwork ;
-            arto:containsScene ?mainScene .
-    ?mainScene arto:containsScene ?subScene .
-}
-```
-- **CQ2.4**: What artistic techniques and stylistic features are used in the artwork?
-```sparql
-SELECT DISTINCT ?artwork ?title ?style ?technique
-WHERE {
-    # Basic artwork information
-    ?artwork a arto:Artwork ;           # Find items that are artworks
-            dc:title ?title ;           # Get their titles
-            arto:style ?style .         # Get their artistic styles
-    
-    # Creation technique (optional)
-    OPTIONAL {
-        ?artwork dbp:technique ?technique .  # Get technique if available
-    }
-}
-GROUP BY ?artwork ?title ?style ?technique 
-ORDER BY ?artwork
-```
-
-### 3. Semantic Interpretation Queries
-
-- **CQ3.1**: How can we represent the symbolic meanings and allegories in an artwork?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-
-SELECT ?artwork ?symbolism ?source
-WHERE {
-    ?artwork a arto:Artwork ;
-            arto:hasConnotation ?connotation .
-    ?connotation a arto:Symbolism ;
-                 arto:source ?source .
-}
-```
-- **CQ3.2**: What is the relationship between visual features and emotional expression?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-
-SELECT ?visualElement ?emotion ?intensity
-WHERE {
-    ?artwork a arto:Artwork .
-    ?visualElement arto:expresses ?emotion .
-    ?emotion a arto:Emotion ;
-            arto:hasMetric ?metric .
-    ?metric a arto:EmotionIntensity .
-}
-```
-- **CQ3.3**: What is the main theme or subject matter of the artwork?
-```
-PREFIX arto: <http://w3id.org/arto#>
-PREFIX dc: <http://purl.org/dc/terms/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-SELECT DISTINCT ?artwork ?title ?mainTheme ?symbolism ?relatedScene ?sceneObject
-WHERE {
-    # Basic artwork information
-    ?artwork a arto:Artwork ;
-            dc:title ?title .
-    
-    # Get themes
-    ?artwork arto:hasConnotation ?themeConnotation .
-    ?themeConnotation a arto:Theme ;
-                     rdfs:label ?mainTheme .
-    
-    # Get related symbolism
-    OPTIONAL {
-        ?artwork arto:hasConnotation ?symbolismConnotation .
-        ?symbolismConnotation a arto:Symbolism ;
-                            rdfs:label ?symbolism ;
-                            arto:source ?symbolSource .
-    }
-    
-    # Get scenes expressing the theme
-    OPTIONAL {
-        ?artwork arto:containsScene ?scene .
-        ?scene rdfs:label ?relatedScene ;
-               arto:expresses ?themeConnotation .
-        
-        # Key objects in the scene
-        OPTIONAL {
-            ?scene arto:containsObject ?object .
-            ?object rdfs:label ?sceneObject ;
-                    arto:expresses ?themeConnotation .
-        }
-    }
-}
-GROUP BY ?artwork ?title ?mainTheme ?symbolism ?relatedScene ?sceneObject
-ORDER BY ?artwork ?mainTheme
-```
-
-### 4. Context Information Queries
-
-- **CQ4.1**: What was the historical context during the artwork's creation?
-```
-PREFIX arto: <http://w3id.org/arto#>
-
-SELECT ?artwork ?event ?time
-WHERE {
-    ?artwork a arto:Artwork ;
-            arto:relatedToEvent ?event .
-    ?event arto:hasTime ?time .
-    ?time a arto:Time .
-}
-```
-- **CQ4.2**: How did the artist's personal experiences influence the artwork?
-```
-PREFIX arto: <http://w3id.org/arto#>
-PREFIX dc: <http://purl.org/dc/terms/>
-PREFIX event: <http://purl.org/NET/c4dm/event.owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-SELECT DISTINCT ?artwork ?artist ?event ?eventTime ?theme ?emotion ?symbolism
-WHERE {
-    # Get artwork and its creator
-    ?artwork a arto:Artwork ;
-            dc:creator ?artist ;
-            dc:title ?artworkTitle .
-    ?artist a arto:Artist .
-    # Get events related to the artist
-    ?event a arto:Event ;
-           event:agent ?artist ;
-           arto:hasTime ?timeEntity .
-    ?timeEntity a arto:Time .
-    
-    # Time information of the event
-    OPTIONAL {
-        ?timeEntity sdo:startDate ?eventTime .
-    }
-    # Association between event and artwork content
-    OPTIONAL {
-        ?artwork arto:relatedToEvent ?event .
-    }
-}
-ORDER BY ?eventTime
-```
-- **CQ4.3**: What was the social and cultural background of the time?
-```sparql
-PREFIX arto: <http://w3id.org/arto#>
-PREFIX dc: <http://purl.org/dc/terms/>
-PREFIX event: <http://purl.org/NET/c4dm/event.owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX sdo: <http://schema.org/>
-
-SELECT DISTINCT ?artwork ?period ?event ?eventType
-WHERE {
-    # Basic artwork information
-    ?artwork a arto:Artwork ;
-            dc:title ?title ;
-            arto:style ?artStyle .
-    
-    # Get creation period
-    ?artwork arto:relatedToEvent ?timeEvent .
-    ?timeEvent a arto:Event ;
-              arto:hasTime ?period .
-    
-    # Historical events from the same period
-    ?event a arto:Event ;
-           arto:hasTime ?eventTime ;
-           dc:type ?eventType .
-    
-    # Ensure events occurred in a similar timeframe
-    ?eventTime sdo:startDate ?startDate .
-    ?period sdo:startDate ?periodStart .
-    
-    # Can add time range filter
-    FILTER (
-        abs(year(?startDate) - year(?periodStart)) <= 10
-    )
-    
-    # Filter event types
-    FILTER (?eventType IN (
-        "Cultural_Movement",
-        "Social_Movement",
-        "Historical_Event",
-        "Art_Movement"
-    ))
-}
-ORDER BY ?period ?eventType
-```
-
-</details>
-
-
-
-## Example 
-
-To demonstrate the application of the ARTO models, consider the artwork “[The Shepherdess](https://www.wikiart.org/en/william-adolphe-bouguereau/shepherdess-1889)” by William-Adolphe Bouguereau. The Descriptive Model would detail the visual elements like the serene posture of the shepherdess and the gentle, pastoral setting. The Contextual Model would provide insights into the painting’s creation in 1889, during the artist's life, reflecting the social and historical aspects of that era in France. This example is presented below using RDF-star and RDF to help better understand the differences between representing events in the contextual model (more examples available [here](examples/README.md)).
-
-### The picture of the artwork "The Shepherdess"
-![The picture of the artwork "The Shepherdess"](images/example.jpg)
-
-### Contextual Model of The Shepherdess using RDF-star
-![The contextual model of The Shepherdess using RDF-Star](images/example_rdfstar.png)
-
-### Contextual Model of The Shepherdess using RDF
-![The contextual model of The Shepherdess using RDF](images/example_rdf.png)
-
-### Descriptive Model of The Shepherdess
-![The Descriptive model of The Shepherdess](images/example_adm.png)
-
+Please see [Competency Questions](./CompetencyQuestions.md) for more detailed SPARQL query examples.
 
 ## Interview: ARTO Conceptual Evaluation
 
 Art experts verbally described some example artworks, labelling their own captions according to descriptive, contextual, and interpretive categories. The experts listed and ranked the aspects they considered most crucial when describing artworks, shared their approaches to describing art, and provided insights on depicting subjective elements like emotion and subject matter. They also outlined the most challenging elements to describe and their thoughts on verifying the accuracy of descriptions. Finally, after being introduced to the initial ontology design, the experts applied the new ontology to create captions for four artwork examples and assessed the comprehensiveness and structure of the generated content. You can access and check the detailed interview questionnaire and results in the folder [interview](/interview). 
+
+
+
 
 ## Application for ARTO: Pipeline to Artwork Image Captioning (ongoing work)
 Integrating KG with artwork image captioning requires a systematic and clearly defined process. This pipeline elaborates on the steps involved, from initial analysis to the construction of the knowledge graph and the potential ways to collaborate with LLMs. The aim is to create a robust, scalable knowledge graph that aligns with the FAIR principles[^1] and apply it to the artwork image captioning task.
