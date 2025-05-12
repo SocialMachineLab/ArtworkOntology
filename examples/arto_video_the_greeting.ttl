@@ -78,7 +78,7 @@ ex:Museo_di_San_Michele_in_Bosco rdf:type arto:Location ;
 # Artwork Scene
 ex:MainScene rdf:type arto:Scene ;
     arto:isSceneOf ex:TheGreeting ;
-    arto:containsScene ex:InitialConversationScene , ex:ApproachScene , ex:GreetingMomentScene , ex:WhisperingScene , ex:AcknowledgementScene ;
+    arto:containsScene ex:InitialConversationScene , ex:ApproachScene , ex:GreetingMomentScene , ex:WhisperingScene , ex:IntroductionScene ;
     arto:containsElement ex:SlowMotionTechnique , ex:TriangularComposition.
 
 
@@ -134,8 +134,8 @@ ex:WhisperingScene rdf:type arto:Scene ;
     arto:containsObject ex:IndustrialBuilding ;
     arto:expresses  ex:ExclusionEmotion .
 
-# Scene 5 - Acknowledgement Scene
-ex:AcknowledgementScene rdf:type arto:Scene ;
+# Scene 5 - Introduction Scene
+ex:IntroductionScene rdf:type arto:Scene ;
     arto:isSceneOf ex:MainScene ;
     dc:description "The awkward interaction where WomanOne introduces WomanThree to WomanTwo."@en ;
     ex:temporalSpan "Approximately 450 seconds - approximately 550 seconds"@en ;
@@ -150,7 +150,7 @@ ex:AcknowledgementScene rdf:type arto:Scene ;
 ex:InitialConversationScene ex:precedesScene ex:ApproachScene .
 ex:ApproachScene ex:precedesScene ex:GreetingMomentScene .
 ex:GreetingMomentScene ex:precedesScene ex:WhisperingScene .
-ex:WhisperingScene ex:precedesScene ex:AcknowledgementScene .
+ex:WhisperingScene ex:precedesScene ex:IntroductionScene .
 
 
 # Objects in the scene
@@ -165,6 +165,89 @@ ex:WomanTwo rdf:type arto:Object ;
 ex:WomanThree rdf:type arto:Object ;
     arto:state "Entering and greeting"@en ;
     arto:descriptor "Wearing orange dress"@en .
+
+
+
+# Scene 1: Initial Conversation
+<< ex:WomanOne arto:relatedToScene ex:InitialConversationScene >> 
+    arto:state "Standing and conversing" ;
+    arto:talkTo << ex:WomanTwo arto:relatedToScene ex:InitialConversationScene >> ;
+    arto:position "Right side of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:InitialConversationScene >> 
+    arto:state "Standing and conversing" ;
+    arto:talkTo << ex:WomanOne arto:relatedToScene ex:InitialConversationScene >> 
+    arto:position "Left side of frame" .
+
+arto:talkTo rdfs:subPropertyOf arto:relatedTo .
+
+# Scene 2: Approach
+<< ex:WomanOne arto:relatedToScene ex:ApproachScene >> 
+    arto:state "Surprised and turning body" ;
+    arto:position "Center-right of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:ApproachScene >> 
+    arto:state "Still engaged in conversation" ;
+    arto:position "Center of frame" .
+
+<< ex:WomanThree arto:relatedToScene ex:ApproachScene >> 
+    arto:state "Entering" ;
+    arto:position "Far left of frame, moving toward center" ;
+    arto:approach << ex:WomanOne arto:relatedToScene ex:ApproachScene >> .
+
+arto:approach rdfs:subPropertyOf arto:relatedTo .
+
+# Scene 3: Greeting Moment
+<< ex:WomanOne arto:relatedToScene ex:GreetingMomentScene >> 
+    arto:state "Hugging" ;
+    arto:position "Right of frame"  .
+
+<< ex:WomanTwo arto:relatedToScene ex:GreetingMomentScene >> 
+    arto:state "Observing" ;
+    arto:position "Center of frame" .
+
+<< ex:WomanThree arto:relatedToScene ex:GreetingMomentScene >> 
+    arto:state "Greeting" ;
+    arto:position "Center-left of frame" ;
+    arto:greets << ex:WomanOne arto:relatedToScene ex:GreetingMomentScene >> ;
+    arto:ignores  << ex:WomanTwo arto:relatedToScene ex:GreetingMomentScene >> .
+
+
+
+arto:greets rdfs:subPropertyOf arto:relatedTo .
+arto:ignores rdfs:subPropertyOf arto:relatedTo .
+
+# Scene 4: Whispering
+<< ex:WomanOne arto:relatedToScene ex:WhisperingScene >> 
+    arto:state "Listening closely" ;
+    arto:position "Center of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:WhisperingScene >> 
+    arto:state "Feeling excluded" ;
+    arto:position "Center of frame, slightly apart" .
+
+
+<< ex:WomanThree arto:relatedToScene ex:WhisperingScene >> 
+    arto:state "Whispering confidentially" ;
+    arto:position "Center-left of frame" ;
+    arto:whisper << ex:WomanOne arto:relatedToScene ex:WhisperingScene >> .
+
+arto:whisper rdfs:subPropertyOf arto:relatedTo .
+
+# Scene 5: Introduction
+<< ex:WomanOne arto:relatedToScene ex:IntroductionScene >> 
+    arto:state "Talking and awkwardness" ;
+    arto:position "Right side of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:IntroductionScene >> 
+    arto:state "Acknowledging introduction" ;
+    arto:position "Center of frame"  .
+
+<< ex:WomanThree arto:relatedToScene ex:IntroductionScene >> 
+    arto:state "Being introduced" ;
+    arto:position "Left side of frame" .
+
+
 
 ex:IndustrialBuilding rdf:type arto:Object ;
     dc:description "Industrial buildings in strange perspective"@en ;
