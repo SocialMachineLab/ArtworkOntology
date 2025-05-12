@@ -41,8 +41,62 @@ To demonstrate the application of the ARTO models, consider the artwork “[The 
 ### Contextual Model of The Shepherdess using RDF-star
 ![The contextual model of The Shepherdess using RDF-Star](images/example_rdfstar.png)
 
+``` turtle
+# Artist information
+<#William-AdolpheBouguereau> <#bornOn> <#Time-30-November-1825> .
+<#William-AdolpheBouguereau> <arto:hasLocation> <#LaRochelle> .
+<<#William-AdolpheBouguereau> <#bornOn> <#Time-30-November-1825>> <arto:hasTime> <#Time-30-November-1825> .
+
+# Artist's professional history
+<#William-AdolpheBouguereau> <#teachingAt> <#AcadémieJulian> .
+<<#William-AdolpheBouguereau> <#teachingAt> <#AcadémieJulian>> <arto:hasTime> <#Time-1860> .
+<<#William-AdolpheBouguereau> <#teachingAt> <#AcadémieJulian>> <arto:hasLocation> <#Paris> .
+
+# Artist's activities
+<#William-AdolpheBouguereau> <#moveTo> <#Paris> .
+<<#William-AdolpheBouguereau> <#moveTo> <#Paris>> <arto:hasTime> <#Time-March-1846> .
+
+# Creation place and time
+<<#TheShepherdess> <#createdBy> <#William-AdolpheBouguereau>> <arto:hasTime> <#Time-1889> .
+<<#TheShepherdess> <#createdBy> <#William-AdolpheBouguereau>> <#createdIn> <#Paris> .
+<<<#TheShepherdess> <#createdBy> <#William-AdolpheBouguereau>> <#createdIn> <#Paris>> <arto:hasLocation> <#Paris> .
+```
+
 ### Contextual Model of The Shepherdess using RDF
 ![The contextual model of The Shepherdess using RDF](images/example_rdf.png)
+
+
+``` turtle
+# Artwork connected to Creation event
+<#TheShepherdess> <hasEvent> <#Creation> .
+
+# Creation event information
+<#Creation> <createdBy> <William-Adolphe Bouguereau> .
+<#Creation> <arto:hasTime> <1889> .
+
+# Artist information
+<William-Adolphe Bouguereau> <hasEvent> <#Birth> .
+<William-Adolphe Bouguereau> <hasEvent> <#Teaching> .
+<William-Adolphe Bouguereau> <hasEvent> <#MoveHouse> .
+
+# Birth event information
+<#Birth> <arto:hasLocation> <#LaRochelle> .
+<#Birth> <arto:hasTime> <30 November 1825> .
+
+# Teaching event information
+<#Teaching> <teachAt> <Académie Julian> .
+<#Teaching> <arto:hasLocation> <#Paris> .
+<#Teaching> <arto:hasTime> <1860> .
+
+# Move event information
+<#MoveHouse> <arto:hasLocation> <#Paris> .
+<#MoveHouse> <arto:hasTime> <March 1846> .
+
+# Academic institution events
+<Académie Julian> <hasEvent> <#Creation> .
+<#Creation> <arto:hasLocation> <#Paris> .
+<#Creation> <arto:hasTime> <1867> .
+```
 
 ### Descriptive Model of The Shepherdess
 ![The Descriptive model of The Shepherdess](images/example_adm.png)

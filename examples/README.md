@@ -74,23 +74,106 @@ This document demonstrates how various artworks can be represented using the ART
   <img src="../images/greeting_3.png" alt='ARTO Descriptive Model of "The Greeting"' style="width: 60%; ">
 </div>
 
+``` turtle
+<< ex:WomanOne arto:relatedToScene ex:InitialConversationScene >> 
+    arto:state "Standing and conversing" ;
+    arto:talkTo << ex:WomanTwo arto:relatedToScene ex:InitialConversationScene >> ;
+    arto:position "Right side of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:InitialConversationScene >> 
+    arto:state "Standing and conversing" ;
+    arto:talkTo << ex:WomanOne arto:relatedToScene ex:InitialConversationScene >> 
+    arto:position "Left side of frame" .
+
+```
+
 
 <div style="text-align: center;">
   <img src="../images/greeting_4.png" alt='ARTO Descriptive Model of "The Greeting"' style="width: 60%; ">
 </div>
 
+``` turtle
+
+<< ex:WomanOne arto:relatedToScene ex:ApproachScene >> 
+    arto:state "Surprised and turning body" ;
+    arto:position "Center-right of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:ApproachScene >> 
+    arto:state "Still engaged in conversation" ;
+    arto:position "Center of frame" .
+
+<< ex:WomanThree arto:relatedToScene ex:ApproachScene >> 
+    arto:state "Entering" ;
+    arto:position "Far left of frame, moving toward center" ;
+    arto:approach << ex:WomanOne arto:relatedToScene ex:ApproachScene >> .
+
+```
 
 <div style="text-align: center;">
   <img src="../images/greeting_5.png" alt='ARTO Descriptive Model of "The Greeting"' style="width: 60%; ">
 </div>
 
+``` turtle
+
+
+<< ex:WomanOne arto:relatedToScene ex:GreetingMomentScene >> 
+    arto:state "Hugging" ;
+    arto:position "Right of frame"  .
+
+<< ex:WomanTwo arto:relatedToScene ex:GreetingMomentScene >> 
+    arto:state "Observing" ;
+    arto:position "Center of frame" .
+
+<< ex:WomanThree arto:relatedToScene ex:GreetingMomentScene >> 
+    arto:state "Greeting" ;
+    arto:position "Center-left of frame" ;
+    arto:greets << ex:WomanOne arto:relatedToScene ex:GreetingMomentScene >> ;
+    arto:ignores  << ex:WomanTwo arto:relatedToScene ex:GreetingMomentScene >> .
+
+
+```
+
 <div style="text-align: center;">
   <img src="../images/greeting_6.png" alt='ARTO Descriptive Model of "The Greeting"' style="width: 60%; ">
 </div>
 
+``` turtle
+
+<< ex:WomanOne arto:relatedToScene ex:WhisperingScene >> 
+    arto:state "Listening closely" ;
+    arto:position "Center of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:WhisperingScene >> 
+    arto:state "Feeling excluded" ;
+    arto:position "Center of frame, slightly apart" .
+
+
+<< ex:WomanThree arto:relatedToScene ex:WhisperingScene >> 
+    arto:state "Whispering confidentially" ;
+    arto:position "Center-left of frame" ;
+    arto:whisper << ex:WomanOne arto:relatedToScene ex:WhisperingScene >> .
+
+```
+
 <div style="text-align: center;">
   <img src="../images/greeting_7.png" alt='ARTO Descriptive Model of "The Greeting"' style="width: 60%; ">
 </div>
+
+``` turtle
+
+<< ex:WomanOne arto:relatedToScene ex:IntroductionScene >> 
+    arto:state "Talking and awkwardness" ;
+    arto:position "Right side of frame" .
+
+<< ex:WomanTwo arto:relatedToScene ex:IntroductionScene >> 
+    arto:state "Acknowledging introduction" ;
+    arto:position "Center of frame"  .
+
+<< ex:WomanThree arto:relatedToScene ex:IntroductionScene >> 
+    arto:state "Being introduced" ;
+    arto:position "Left side of frame" .
+
+```
 
 
 
