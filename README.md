@@ -44,12 +44,11 @@ To demonstrate the application of the ARTO models, consider the artwork “[The 
 ``` turtle
 # Artist information
 <#William-AdolpheBouguereau> <#bornOn> <#Time-30-November-1825> .
-<#William-AdolpheBouguereau> <arto:hasLocation> <#LaRochelle> .
-<<#William-AdolpheBouguereau> <#bornOn> <#Time-30-November-1825>> <arto:hasTime> <#Time-30-November-1825> .
+<<#William-AdolpheBouguereau> <#bornOn> <#Time-30-November-1825>> <arto:hasLocation> <#LaRochelle> .
 
 # Artist's professional history
 <#William-AdolpheBouguereau> <#teachingAt> <#AcadémieJulian> .
-<<#William-AdolpheBouguereau> <#teachingAt> <#AcadémieJulian>> <arto:hasTime> <#Time-1860> .
+<<#William-AdolpheBouguereau> <#teachingAt> <#AcadémieJulian>> <arto:hasTime> <#Time-1860s> .
 <<#William-AdolpheBouguereau> <#teachingAt> <#AcadémieJulian>> <arto:hasLocation> <#Paris> .
 
 # Artist's activities
@@ -58,8 +57,6 @@ To demonstrate the application of the ARTO models, consider the artwork “[The 
 
 # Creation place and time
 <<#TheShepherdess> <#createdBy> <#William-AdolpheBouguereau>> <arto:hasTime> <#Time-1889> .
-<<#TheShepherdess> <#createdBy> <#William-AdolpheBouguereau>> <#createdIn> <#Paris> .
-<<<#TheShepherdess> <#createdBy> <#William-AdolpheBouguereau>> <#createdIn> <#Paris>> <arto:hasLocation> <#Paris> .
 ```
 
 ### Contextual Model of The Shepherdess using RDF
