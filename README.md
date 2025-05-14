@@ -4,6 +4,29 @@ The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.1/arto.ttl)) is a compreh
 
 ![The Artwork Object Ontology](images/adm_acm.png)
 
+
+## Overview
+
+#### [Features](#features)
+
+#### [Models](#models)
+
+#### [Examples](#example)
+
+#### [Versioning](#versioning-based-on-experts-feedback-eg-art-experts-semantic-web-experts-conference-reviewers)
+
+
+#### [Competency Questions ](#competency-questions--examples-of-sparql-queries)
+
+#### [Interview: ARTO Conceptual Evaluation](#interview-arto-conceptual-evaluation)
+
+
+#### [Application for ARTO](#application-for-arto-pipeline-to-artwork-image-captioning-ongoing-work)
+
+
+#### [How to contribute?](#how-to-contribute)
+
+
 ## Features
 
 - Artwork Descriptive Model: Represents the artistic expression of artworks, including visual elements, scenes, and emotions.
