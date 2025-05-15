@@ -3,12 +3,7 @@
 ### ARTO CREATION
 *Version 0.1 | Date: 2024-02-05*
 
-1. Description Model ... 
-2. Contextual Model ...
-3. RDF-Star included to simplify ... 
-4. **ARTO's unique contribution compared to existing ontologies**
-
-
+The initial version of ARTO introduced the *Artwork Contextual Model* and *Artwork Descriptive Model*. The *Artwork Contextual Model* consist of five main classes (Artwork, Event, Location, Time, Agent), capturing essential background information including artwork metadata, historical events with time and location and related agent relationships. The Descriptive Model established a four-level hierarchical framework that represents artwork content from basic visual elements (colours with RGB/HSV values, lines, composition) to objects (with properties like size, material, state) to scenes (meaningful groupings of objects) to high-level connotations (symbolism, emotion, theme). It's also incorporated RDF-star to simplify complex relationship representation, particularly valuable for modelling interconnected events, people, locations, and times. There are quantitative metrics for artistic elements that can support ARTO for artwork analysis. ARTO's focus is its unified framework designed for comprehensive artwork representation rather than mere cataloguing, offering machine-understandable representations that support artwork captioning, analysis, and information retrieval.
 
 
 ### Theoretical foundation of ARTO - The Panofsky iconographic levels

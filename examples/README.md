@@ -75,14 +75,14 @@ This document demonstrates how various artworks can be represented using the ART
 </div>
 
 ``` turtle
-<< ex:WomanOne arto:relatedToScene ex:InitialConversationScene >> 
+<< ex:WomanOne arto:isObjectOf ex:InitialConversationScene >> 
     arto:state "Standing and conversing" ;
-    arto:talkTo << ex:WomanTwo arto:relatedToScene ex:InitialConversationScene >> ;
+    arto:talkTo << ex:WomanTwo arto:isObjectOf ex:InitialConversationScene >> ;
     arto:position "Right side of frame" .
 
-<< ex:WomanTwo arto:relatedToScene ex:InitialConversationScene >> 
+<< ex:WomanTwo arto:isObjectOf ex:InitialConversationScene >> 
     arto:state "Standing and conversing" ;
-    arto:talkTo << ex:WomanOne arto:relatedToScene ex:InitialConversationScene >> 
+    arto:talkTo << ex:WomanOne arto:isObjectOf ex:InitialConversationScene >> 
     arto:position "Left side of frame" .
 
 ```
@@ -94,18 +94,18 @@ This document demonstrates how various artworks can be represented using the ART
 
 ``` turtle
 
-<< ex:WomanOne arto:relatedToScene ex:ApproachScene >> 
+<< ex:WomanOne arto:isObjectOf ex:ApproachScene >> 
     arto:state "Surprised and turning body" ;
     arto:position "Center-right of frame" .
 
-<< ex:WomanTwo arto:relatedToScene ex:ApproachScene >> 
+<< ex:WomanTwo arto:isObjectOf ex:ApproachScene >> 
     arto:state "Still engaged in conversation" ;
     arto:position "Center of frame" .
 
-<< ex:WomanThree arto:relatedToScene ex:ApproachScene >> 
+<< ex:WomanThree arto:isObjectOf ex:ApproachScene >> 
     arto:state "Entering" ;
     arto:position "Far left of frame, moving toward center" ;
-    arto:approach << ex:WomanOne arto:relatedToScene ex:ApproachScene >> .
+    arto:approach << ex:WomanOne arto:isObjectOf ex:ApproachScene >> .
 
 ```
 
@@ -116,19 +116,19 @@ This document demonstrates how various artworks can be represented using the ART
 ``` turtle
 
 
-<< ex:WomanOne arto:relatedToScene ex:GreetingMomentScene >> 
+<< ex:WomanOne arto:isObjectOf ex:GreetingMomentScene >> 
     arto:state "Hugging" ;
     arto:position "Right of frame"  .
 
-<< ex:WomanTwo arto:relatedToScene ex:GreetingMomentScene >> 
+<< ex:WomanTwo arto:isObjectOf ex:GreetingMomentScene >> 
     arto:state "Observing" ;
     arto:position "Center of frame" .
 
-<< ex:WomanThree arto:relatedToScene ex:GreetingMomentScene >> 
+<< ex:WomanThree arto:isObjectOf ex:GreetingMomentScene >> 
     arto:state "Greeting" ;
     arto:position "Center-left of frame" ;
-    arto:greets << ex:WomanOne arto:relatedToScene ex:GreetingMomentScene >> ;
-    arto:ignores  << ex:WomanTwo arto:relatedToScene ex:GreetingMomentScene >> .
+    arto:greets << ex:WomanOne arto:isObjectOf ex:GreetingMomentScene >> ;
+    arto:ignores  << ex:WomanTwo arto:isObjectOf ex:GreetingMomentScene >> .
 
 
 ```
@@ -139,19 +139,19 @@ This document demonstrates how various artworks can be represented using the ART
 
 ``` turtle
 
-<< ex:WomanOne arto:relatedToScene ex:WhisperingScene >> 
+<< ex:WomanOne arto:isObjectOf ex:WhisperingScene >> 
     arto:state "Listening closely" ;
     arto:position "Center of frame" .
 
-<< ex:WomanTwo arto:relatedToScene ex:WhisperingScene >> 
+<< ex:WomanTwo arto:isObjectOf ex:WhisperingScene >> 
     arto:state "Feeling excluded" ;
     arto:position "Center of frame, slightly apart" .
 
 
-<< ex:WomanThree arto:relatedToScene ex:WhisperingScene >> 
+<< ex:WomanThree arto:isObjectOf ex:WhisperingScene >> 
     arto:state "Whispering confidentially" ;
     arto:position "Center-left of frame" ;
-    arto:whisper << ex:WomanOne arto:relatedToScene ex:WhisperingScene >> .
+    arto:whisper << ex:WomanOne arto:isObjectOf ex:WhisperingScene >> .
 
 ```
 
@@ -161,15 +161,15 @@ This document demonstrates how various artworks can be represented using the ART
 
 ``` turtle
 
-<< ex:WomanOne arto:relatedToScene ex:IntroductionScene >> 
+<< ex:WomanOne arto:isObjectOf ex:IntroductionScene >> 
     arto:state "Talking and awkwardness" ;
     arto:position "Right side of frame" .
 
-<< ex:WomanTwo arto:relatedToScene ex:IntroductionScene >> 
+<< ex:WomanTwo arto:isObjectOf ex:IntroductionScene >> 
     arto:state "Acknowledging introduction" ;
     arto:position "Center of frame"  .
 
-<< ex:WomanThree arto:relatedToScene ex:IntroductionScene >> 
+<< ex:WomanThree arto:isObjectOf ex:IntroductionScene >> 
     arto:state "Being introduced" ;
     arto:position "Left side of frame" .
 
