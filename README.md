@@ -9,17 +9,28 @@ The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.1/arto.ttl)) is a compreh
 
 #### [Features](#features)
 
+
 #### [Models](#models)
 
 #### [Examples](#example)
 
+For more examples covering various artwork types, please see [examples/README.md](examples/README.md).
+
+
 #### [Versioning](#versioning-based-on-experts-feedback-eg-art-experts-semantic-web-experts-conference-reviewers)
+
+For detailed comparsion between ARTO and existing ontologies, please see [ARTOvsOthers.md](ARTOvsOthers.md).
 
 
 #### [Competency Questions ](#competency-questions--examples-of-sparql-queries)
 
+
+For a comprehensive list of SPARQL query examples, please see the [CompetencyQuestions.md](CompetencyQuestions.md) file.
+
+
 #### [Interview: ARTO Conceptual Evaluation](#interview-arto-conceptual-evaluation)
 
+Complete interview questionnaires and results can be found in the [interview/interview.md](interview/interview.md) .
 
 #### [Application for ARTO](#application-for-arto-pipeline-to-artwork-image-captioning-ongoing-work)
 
