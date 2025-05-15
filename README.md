@@ -1,79 +1,65 @@
 # Artwork Object Ontology (ARTO)
 
-The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.1/arto.ttl)) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval.
+In this repo, you will find an [overview](#overview) of ARTO and its contextual and descriptive models, followed by an [example](#an-example-of-using-arto-to-represent-the-shepherdess-artwork) using RDF and RDF-star to demonstrate how ARTO can be used to represent artworks. A set of [queries and competency questions](./CompetencyQuestions.md) are also provided to support the use of ARTO.
 
-![The Artwork Object Ontology](images/adm_acm.png)
+We further explore the [literature](#unique-contributions-of-arto-in-relation-to-the-literature) to highlight ARTO’s unique aspects and compare it with major ontologies used to meta-represent artworks. Finally, we present how ARTO was [evaluated](#interview-arto-conceptual-evaluation).
+
+You can track the evolution of ARTO and find answers to **frequently asked questions [here](ARTOVersioning.md)**. 
+
+**Contributions to this project are welcome** — see more details [here](#how-to-contribute).
+
+---
+
+
+
 
 
 ## Overview
-
-#### [Features](#features)
-
-
-#### [Models](#models)
-
-#### [Examples](#example)
-
-For more examples covering various artwork types, please see [examples/README.md](examples/README.md).
+![The Artwork Object Ontology](images/adm_acm.png)
+*Figure 1. Overview of the ARTO Ontology*
 
 
-#### [Versioning](#versioning-based-on-experts-feedback-eg-art-experts-semantic-web-experts-conference-reviewers)
-
-For detailed comparsion between ARTO and existing ontologies, please see [ARTOvsOthers.md](ARTOvsOthers.md).
+The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.1/arto.ttl)) is a comprehensive ontology designed for describing and contextualizing artworks. It aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval. 
 
 
-#### [Competency Questions ](#competency-questions--examples-of-sparql-queries)
+ARTO consists of two main components briefly described as follows. 
 
 
-For a comprehensive list of SPARQL query examples, please see the [CompetencyQuestions.md](CompetencyQuestions.md) file.
-
-
-#### [Interview: ARTO Conceptual Evaluation](#interview-arto-conceptual-evaluation)
-
-Complete interview questionnaires and results can be found in the [interview/interview.md](interview/interview.md) .
-
-#### [Application for ARTO](#application-for-arto-pipeline-to-artwork-image-captioning-ongoing-work)
-
-
-#### [How to contribute?](#how-to-contribute)
-
-
-## Features
-
-- Artwork Descriptive Model: Represents the artistic expression of artworks, including visual elements, scenes, and emotions.
-- Artwork Contextual Model: Captures background information such as artwork metadata, historical framework, and related events.
-- Data-driven approach: The ontology is built based on existing available data and incorporates concepts from established cultural heritage ontologies like [CIDOC-CRM](http://www.cidoc-crm.org/cidoc-crm/) and [EDM](https://pro.europeana.eu/page/edm-documentation).
-- Evaluation: The ontology has been validated using the [OntOlogy Pitfall Scanner (OOPS!)](https://github.com/oeg-upm/OOPS) and refined through interviews with art experts.
-- Integration with Large Language Models (LLMs): Knowledge graphs based on ARTO can be integrated with LLMs by providing context to prompt engineering tasks, enabling automated artwork captioning.
-
-
-
-## Models
-
-### Artwork Descriptive Model
-
-The Artwork Descriptive Model is designed to encapsulate the representation of the content of artworks. It focuses on detailed content representation including visual elements, scenes, and emotional undertones that are conveyed through the artwork. This model aims to provide a framework that allows users to visually reconstruct the artwork and capture multiple perspectives and emotions related to and triggered by the artwork, which may foster a better understanding and representation of them.
+The *Artwork Descriptive Model* is designed to encapsulate the representation of the content of artworks. It focuses on detailed content representation including visual elements, scenes, and emotional undertones that are conveyed through the artwork. This model aims to provide a framework that allows users to visually reconstruct the artwork and capture multiple perspectives and emotions related to and triggered by the artwork, which may foster a better understanding and representation of them.
 
 ![The Artwork Descriptive Model](images/aom.png)
+*Figure 2. Overview of ARTO's Descriptive Model*
 
-
-### Artwork Contextual Model
-
-The Artwork Contextual Model complements the descriptive aspects by incorporating contextual information about the artwork. This model includes metadata, historical context, and related events, enriching the viewer’s appreciation and understanding of the artwork beyond its physical appearance.
+The *Artwork Contextual Model* complements the descriptive aspects by incorporating contextual information about the artwork. This model includes metadata, historical context, and related events, enriching the viewer’s appreciation and understanding of the artwork beyond its physical appearance.
 
 ![The Artwork Contextual Model](images/acm.png)
+*Figure 3. Overview of ARTO's Contextual Model*
 
+### Main highlights of ARTO
 
+- An Artwork Descriptive Model for the representation of artistic expression of artworks, including visual elements, scenes, and emotions.
+- An Artwork Contextual Model to capture background information such as related events about the artwork besides common artwork metadata.
+- ARTO was created following a data-driven approach and standard ontology creation practices, incorporating concepts from established cultural heritage ontologies such as [CIDOC-CRM](http://www.cidoc-crm.org/cidoc-crm/) and [EDM](https://pro.europeana.eu/page/edm-documentation).
+- ARTO has been validated using the [OntOlogy Pitfall Scanner (OOPS!)](https://github.com/oeg-upm/OOPS) and refined through interviews following a Think-Aloud Protocol with art experts.
+- ARTO provides a comprehensive framework to represent diverse artwork types (e.g., paintings and sculptures) and support next-generation AI/ML applications in artwork captioning, retrieval, analysis, cataloguing, and recreation.
+---
+## An example of using ARTO to represent "The Shepherdess" artwork
 
-## Example 
-
-To demonstrate the application of the ARTO models, consider the artwork “[The Shepherdess](https://www.wikiart.org/en/william-adolphe-bouguereau/shepherdess-1889)” by William-Adolphe Bouguereau. The Descriptive Model would detail the visual elements like the serene posture of the shepherdess and the gentle, pastoral setting. The Contextual Model would provide insights into the painting’s creation in 1889, during the artist's life, reflecting the social and historical aspects of that era in France. This example is presented below using RDF-star and RDF to help better understand the differences between representing events in the contextual model (more examples of various artwork types available [here](examples/README.md)).
-
-### The picture of the artwork "The Shepherdess"
 ![The picture of the artwork "The Shepherdess"](images/example.jpg)
+*Figure 4. The picture of the artwork "The Shepherdess"*
 
-### Contextual Model of The Shepherdess using RDF-star
+To demonstrate the application of the ARTO models, consider Figure 4, the artwork “[The Shepherdess](https://www.wikiart.org/en/william-adolphe-bouguereau/shepherdess-1889)” by William-Adolphe Bouguereau (see more examples [here](examples/README.md)).
+
+The Contextual Model provides insights into the painting’s creation in 1889, during the artist's life, reflecting the social and historical aspects of that era in France. 
+
+> We use RDF-star to represent "The Shepherdess", specifically focusing on the Event class. Standard RDF increases modeling complexity due to its limitation to binary relationships (see [RDF example](RDFExampleContextualModel.md)).
+
+### Contextual Model of The Shepherdess 
+
+The Contextual Model illustrated in Figure 5 demonstrates how ARTO captures the historical and biographical context surrounding "The Shepherdess" painting. Using RDF-star, this model efficiently represents complex relationships between the artist, locations, time periods, and events relevant to the artwork's creation. The graph shows William-Adolphe Bouguereau's life timeline, including his birth in La Rochelle in 1825, his move to Paris in March 1846, and his teaching activities at Académie Julian during the 1860s.  The model also captures the artwork's metadata including its style, dimensions, medium, genre, and its creation date. By structuring this information as a knowledge graph, ARTO enables the representation of the historical information about the artwork.
+
 ![The contextual model of The Shepherdess using RDF-Star](images/example_rdfstar.png)
+*Figure 5. RDF-Star representation of The Shepherdess*
 
 ``` turtle
 # Artist information
@@ -93,58 +79,22 @@ To demonstrate the application of the ARTO models, consider the artwork “[The 
 <<#TheShepherdess> <#createdBy> <#William-AdolpheBouguereau>> <arto:hasTime> <#Time-1889> .
 ```
 
-### Contextual Model of The Shepherdess using RDF
-![The contextual model of The Shepherdess using RDF](images/example_rdf.png)
-
-
-``` turtle
-# Artwork connected to Creation event
-<#TheShepherdess> <hasEvent> <#Creation> .
-
-# Creation event information
-<#Creation> <createdBy> <William-Adolphe Bouguereau> .
-<#Creation> <arto:hasTime> <1889> .
-
-# Artist information
-<William-Adolphe Bouguereau> <hasEvent> <#Birth> .
-<William-Adolphe Bouguereau> <hasEvent> <#Teaching> .
-<William-Adolphe Bouguereau> <hasEvent> <#MoveHouse> .
-
-# Birth event information
-<#Birth> <arto:hasLocation> <#LaRochelle> .
-<#Birth> <arto:hasTime> <30 November 1825> .
-
-# Teaching event information
-<#Teaching> <teachAt> <Académie Julian> .
-<#Teaching> <arto:hasLocation> <#Paris> .
-<#Teaching> <arto:hasTime> <1860> .
-
-# Move event information
-<#MoveHouse> <arto:hasLocation> <#Paris> .
-<#MoveHouse> <arto:hasTime> <March 1846> .
-
-# Academic institution events
-<Académie Julian> <hasEvent> <#Creation> .
-<#Creation> <arto:hasLocation> <#Paris> .
-<#Creation> <arto:hasTime> <1867> .
-```
-
 ### Descriptive Model of The Shepherdess
+
+
+The Descriptive Model shown in Figure 6 breaks down the visual content of "The Shepherdess" into a hierarchical structure of scenes, objects, and visual elements. There are two primary scenes: Foreground and Background. The Foreground scene contains key objects including a Young Woman (the shepherdess herself), a Bush, and a Stick that she holds. The Background contains contextual elements: Oxen grazing in a Field, along with Sky and Mountain elements. Each object is described through visual properties, relationships to other objects, and detailed attributes. For example, the Young Woman is "barefooted" and wears a "Rural dress with a plaid scarf," while also showing the spatial relationships between objects (the Bush is behind the Young Woman, who holds the Stick). Color elements are precisely represented for each object, creating a comprehensive visual representation that could support detailed artwork captioning or analysis.
+
 ![The Descriptive model of The Shepherdess](images/example_adm.png)
+*Figure 6. RDF representation of The Shepherdess*
 
+---
 
+## Unique Contributions of ARTO in relation to the literature
+ARTO's main contributions include integrating both descriptive content and contextual information into a unified framework, providing an ontological structure specifically for artwork caption generation.
 
-## Versioning (Based on experts feedback (e.g., art experts, semantic web experts, conference reviewers))
+Existing ontologies focus on museum management and artifact cataloging, while artwork captioning requires capturing detailed visual content and the relation to the context. ARTO‘s target users are artwork captioning developers and AI researchers who have distinctly different requirements compared to existing ontology users. ARTO users demand fine-grained artwork representations that are machine-understandable, enabling seamless integration into AI models for automated caption generation. They require representations that enable visual-semantic alignment and support the development of comprehensive, context-aware captions. These captions go beyond simply stating artworks' provenance, metadata, etc., instead encompassing detailed content representations and connecting them with cultural context and artistic interpretation. This shift from cataloging-oriented to content-analysis-oriented ontology reflects the evolving demands in digital art analysis and automated understanding systems.
 
-
-### ARTO's unique contribution compared to existing ontologies
-
-*Version 0.1.1 | Date: 2024-06-05*
-
-
-ARTO's main contributions include integrating both descriptive content and contextual information into a unified framework, providing an ontological structure specifically for artwork caption generation. The existing ontologies focus on museum management and artifact cataloging, while artwork captioning requires capturing detailed visual content and the relation to the context. ARTO‘s target users are artwork captioning developers and AI researchers who have distinctly different requirements compared to existing ontology users. Our users demand fine-grained artwork representations that are machine-understandable, enabling seamless integration into AI models for automated caption generation. They require representations that enable visual-semantic alignment and support the development of comprehensive, context-aware captions. These captions go beyond simply stating artworks' provenance, metadata, etc., instead encompassing detailed content representations and connecting them with cultural context and artistic interpretation. This shift from cataloging-oriented to content-analysis-oriented ontology reflects the evolving demands in digital art analysis and automated understanding systems.
-
-The table below summarizes previous works in the field. The "Motivation for ARTO" column briefly introduces the need for ARTO (For detailed examples of ARTO and other ontologies, please see [here](./ARTOandOthers.md)). 
+The table below summarizes previous works in the field. The "Motivation for ARTO" column briefly introduces the need for ARTO (For detailed examples of ARTO and other ontologies, please see [here](./ARTOvsOthers.md)). 
 
 | Name      | Domain           | Goal       | Ontology Scope                         | Strengths    | Motivation for ARTO                   |
 |-----------|------------------|---------------------------|---------------------|--------------------------------------|-----------------------------------------------------------------------|
@@ -159,92 +109,13 @@ The table below summarizes previous works in the field. The "Motivation for ARTO
 | Union List of Artist Names (ULAN)                       | Art               | To provide a structured and standardized list of artist names and biographical information.                             | Artist names, biographical data, and their relationships           | Standardized artist identification.   Enhances artist data accuracy and linkage                       | ULAN and AAT are controlled vocabularies rather than comprehensive frameworks. ARTO incorporates these vocabularies while providing structural modeling |
 |  [Linked Art ](https://linked.art/)     | Art & Cultural Heritage | To link art data across different institutions and provide a comprehensive and interconnected view of art-related information. | Artworks, artists, events, and their relationships               | Facilitates cross-institutional data integration. Promotes data interoperability     | Focused on cross-institutional data integration rather than captioning. ARTO is specifically designed for comprehensive artwork description and captioning  |
 
-
-
-### Theoretical foundation of ARTO - The Panofsky iconographic levels
-*Version 0.1.1 | Date: 2024-06-05*
-
-ARTO's design is informed by Panofsky's influential three-level method of art interpretation, while extending this classical framework to meet the requirements of digital representation and computational analysis. Table [1](#table1)  illustrates how ARTO maps to and extends Panofsky's interpretative layers. The pre-iconographic description corresponds to ARTO's VisualElement and Object classes, capturing the primary visual content. The iconographic analysis maps to ARTO's Scene class and object relationships, representing the identification of themes and conventional subject matter. And the iconological interpretation is represented through ARTO's Connotation class and its subclasses (Symbolism, Emotion, Theme), connecting visual content to deeper cultural meanings and historical context.
-
-While grounded in Panofsky's theoretical framework, ARTO extend it in several ways for advanced computational analysis. First, it transforms these interpretative processes into machine-processable structured data that supports computational analysis and automated caption generation. Second, ARTO introduces the Metric class system, enabling quantitative representation of artistic features such as color distribution, compositional balance, and emotional intensity. Third, ARTO's scene-object-element hierarchy provides a more granular organization of visual content that facilitates both human understanding and machine processing, addressing the hierarchical relationships between visual elements that Panofsky's original framework did not explicitly model.
-
-
-
-<a id="table1"></a>
-| **Panofsky Level** | **Definition**                                               | **ARTO Components**                                          | **ARTO Extensions**                                          |
-| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Pre-iconographical | Identification of primary subject matter: factual and expressional forms | `VisualElement` class and subclasses (`Color`, `Line`, etc.) `Object` class | • Precise color representation (RGB/HSV values)<br>• Quantifiable visual attributes<br>• Object state and material properties |
-| Iconographical     | Recognition of secondary subject matter: stories, allegories, personifications | `Scene` class and the relationships to `Connotation`         | • Hierarchical scene representation<br>• Connect `Scene` and `Object` to `Connotation` connections |
-| Iconological       | Intrinsic meaning: cultural, historical, and symbolic values | `Connotation` class and subclasses (`Symbolism`, `Emotion`, `Theme`) Links to `Event` and contextual information | •  Quantifiable emotional intensity<br>• The connections from connotation to historical events |
-
-
-
-
-### What artworks types are supported by ARTO?
-
-*Version 0.1.2 | Date: 2024-09-24*
-
-
-ARTO supports various visual art forms. The descriptive model has the ability to represent 2D visual arts (e.g., paintings, drawings, photographs), 3D sculptures, and time-based media like videos. The contextual model can also represent the basic information of these kind of arts.
-
-
-
-### Reuse of existing ontologies
-
-*Version 0.1.3 | Date: 2025-02-15*
-
-Our latest ontology version has improved alignment with existing ontologies in the Art domain. We now have better integration with CIDOC-CRM, EDM, [ICON](https://w3id.org/icon/ontology/), and [Getty AAT](https://www.getty.edu/research/tools/vocabularies/aat/) vocabularies. The definition and scope of some properties are not exact match with our definition. Thus, we are also followed the "Keep It Simple, Stupid" design principle to create more lightweight, domain-specific classes for the art domain, while maintaining interoperability with existing ontologies through subclass relationships. 
-
-
-
-
-
-
-### The use of controlled vocabularies vs the use of text literals
-
-*Version 0.1.3 | Date: 2025-02-15*
-
-The first version of ARTO relied on text literals but to enhance semantic interoperability and precision version 0.1.3 of ARTO incorporated controlled vocabularies from Getty AAT and ICONCLASS for representing art-related concepts.
-
- <!-- The latest version addresses this by incorporating controlled vocabularies from Getty AAT and ICONCLASS for representing art-related concepts. This shift from text literals to structured vocabulary terms enhances semantic precision and interoperability. -->
-
-
-### Defined Competency Questions 
-
-*Version 0.1.3 | Date: 2025-02-15*
-
-The latest version includes [Competency Questions](#competency-questions) that outlines the types of queries ARTO supports. These include basic information queries, visual description queries, semantic interpretation queries, and contextual information queries, with specific examples provided. 
-
-
-
-### Bidirectional queries
-
-*Version 0.1.3 | Date: 2025-02-15*
-
-Version 0.1 of ARTO did not explicit inverse relations. This has been added in version 0.1.3 for all significant object properties to enable bidirectional navigation through the knowledge graph. 
-Example:
-- `containsScene` / `isSceneOf`
-- `containsObject` / `isObjectOf`  
-- `containsElement` / `isElementOf`
-- `hasPart` / `isPartOf`
-
-
-
-### Maturity and Accessibility
-
-ARTO has been under development since beginning of 2023 and we are constantly improving it. We have created more [examples](examples) here to showcase ARTO's capabilities. We are also constantly collecting expert feedback to better meet their needs. We have also created a pipeline for building knowledge graphs, which can extract entities and relations from text and store them in the knowledge graph. We are also continuously improving our algorithms to improve the quality and accuracy of the knowledge graph. We are also developing the pipeline for extracting knowledge graphs from the content of the artwork (images). And the webpage is accessible [here](website/Artwork%20Object%20Ontology.html). Contact the authors of this page if you want to [contribute](#how-to-contribute) to this project.
-
-
-## Competency Questions | EXAMPLES OF SPARQL QUERIES
-
-Please see [Competency Questions](./CompetencyQuestions.md) for more detailed SPARQL query examples.
+---
 
 ## Interview: ARTO Conceptual Evaluation
 
 Art experts verbally described some example artworks, labelling their own captions according to descriptive, contextual, and interpretive categories. The experts listed and ranked the aspects they considered most crucial when describing artworks, shared their approaches to describing art, and provided insights on depicting subjective elements like emotion and subject matter. They also outlined the most challenging elements to describe and their thoughts on verifying the accuracy of descriptions. Finally, after being introduced to the initial ontology design, the experts applied the new ontology to create captions for four artwork examples and assessed the comprehensiveness and structure of the generated content. You can access and check the detailed interview questionnaire and results in the folder [interview](/interview). 
 
-
-
+---
 
 ## Application for ARTO: Pipeline to Artwork Image Captioning (ongoing work)
 Integrating KG with artwork image captioning requires a systematic and clearly defined process. This pipeline elaborates on the steps involved, from initial analysis to the construction of the knowledge graph and the potential ways to collaborate with LLMs. The aim is to create a robust, scalable knowledge graph that aligns with the FAIR principles[^1] and apply it to the artwork image captioning task.
@@ -272,11 +143,8 @@ Integrating KG with artwork image captioning requires a systematic and clearly d
 
 [^1]: [FAIR principles](https://www.go-fair.org/fair-principles/)
 
-
-
+--- 
 ## How to contribute?
-
-
 
 To extend the Artwork Object Ontology (ARTO) for specific domains or use cases, follow these steps: First, identify the concepts, relationships, or properties that are not currently covered in ARTO. Next, design new classes to represent the missing concepts, ensuring consistency with ARTO's existing class hierarchy and naming conventions. Then, determine the new properties and relationships needed to capture additional information, specifying their data types, domains, ranges, and cardinality. Integrate the newly designed classes, properties, and relationships into ARTO's structure, update the documentation, and test the extended ontology with sample data to validate its effectiveness. Finally, maintain and update the extension over time to accommodate new requirements and feedback, ensuring compatibility with future versions of ARTO.
 
@@ -290,13 +158,7 @@ We welcome contributions to enhance and expand the *Artwork Object Ontology*. If
 4. Push your changes to your forked repository. 
 5. Submit a pull request detailing your changes and their benefits. 
 
-
-
-
-
-
-
+--- 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
