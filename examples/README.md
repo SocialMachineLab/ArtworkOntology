@@ -77,14 +77,11 @@ For the complete RDF representations of these examples, see the [examples](../ex
 ``` turtle
 << ex:WomanOne arto:isObjectOf ex:InitialConversationScene >> 
     arto:state "Standing and conversing" ;
-    arto:talkTo << ex:WomanTwo arto:isObjectOf ex:InitialConversationScene >> ;
-    arto:position "Right side of frame" .
+    arto:talkTo << ex:WomanTwo arto:isObjectOf ex:InitialConversationScene >> .
 
 << ex:WomanTwo arto:isObjectOf ex:InitialConversationScene >> 
     arto:state "Standing and conversing" ;
-    arto:talkTo << ex:WomanOne arto:isObjectOf ex:InitialConversationScene >> 
-    arto:position "Left side of frame" .
-
+    arto:talkTo << ex:WomanOne arto:isObjectOf ex:InitialConversationScene >> .
 ```
 
 
@@ -93,20 +90,12 @@ For the complete RDF representations of these examples, see the [examples](../ex
 </div>
 
 ``` turtle
-
 << ex:WomanOne arto:isObjectOf ex:ApproachScene >> 
-    arto:state "Surprised and turning body" ;
-    arto:position "Center-right of frame" .
-
-<< ex:WomanTwo arto:isObjectOf ex:ApproachScene >> 
-    arto:state "Still engaged in conversation" ;
-    arto:position "Center of frame" .
+    arto:state "Turning body" .
 
 << ex:WomanThree arto:isObjectOf ex:ApproachScene >> 
     arto:state "Entering" ;
-    arto:position "Far left of frame, moving toward center" ;
     arto:approach << ex:WomanOne arto:isObjectOf ex:ApproachScene >> .
-
 ```
 
 <div style="text-align: center;">
@@ -114,23 +103,16 @@ For the complete RDF representations of these examples, see the [examples](../ex
 </div>
 
 ``` turtle
-
-
 << ex:WomanOne arto:isObjectOf ex:GreetingMomentScene >> 
-    arto:state "Hugging" ;
-    arto:position "Right of frame"  .
+    arto:state "Hugging" .
 
 << ex:WomanTwo arto:isObjectOf ex:GreetingMomentScene >> 
-    arto:state "Observing" ;
-    arto:position "Center of frame" .
+    arto:state "Feeling excluded" .
 
 << ex:WomanThree arto:isObjectOf ex:GreetingMomentScene >> 
-    arto:state "Greeting" ;
-    arto:position "Center-left of frame" ;
-    arto:greets << ex:WomanOne arto:isObjectOf ex:GreetingMomentScene >> ;
-    arto:ignores  << ex:WomanTwo arto:isObjectOf ex:GreetingMomentScene >> .
-
-
+    arto:state "Hugging" ;
+    arto:greet << ex:WomanOne arto:isObjectOf ex:GreetingMomentScene >> ;
+    arto:ignore  << ex:WomanTwo arto:isObjectOf ex:GreetingMomentScene >> .
 ```
 
 <div style="text-align: center;">
@@ -138,21 +120,11 @@ For the complete RDF representations of these examples, see the [examples](../ex
 </div>
 
 ``` turtle
-
-<< ex:WomanOne arto:isObjectOf ex:WhisperingScene >> 
-    arto:state "Listening closely" ;
-    arto:position "Center of frame" .
-
 << ex:WomanTwo arto:isObjectOf ex:WhisperingScene >> 
-    arto:state "Feeling excluded" ;
-    arto:position "Center of frame, slightly apart" .
-
+    arto:state "Feeling excluded" .
 
 << ex:WomanThree arto:isObjectOf ex:WhisperingScene >> 
-    arto:state "Whispering confidentially" ;
-    arto:position "Center-left of frame" ;
     arto:whisper << ex:WomanOne arto:isObjectOf ex:WhisperingScene >> .
-
 ```
 
 <div style="text-align: center;">
@@ -160,19 +132,14 @@ For the complete RDF representations of these examples, see the [examples](../ex
 </div>
 
 ``` turtle
-
 << ex:WomanOne arto:isObjectOf ex:IntroductionScene >> 
-    arto:state "Talking and awkwardness" ;
-    arto:position "Right side of frame" .
+    arto:state "Talking and awkwardness" .
 
 << ex:WomanTwo arto:isObjectOf ex:IntroductionScene >> 
-    arto:state "Acknowledging introduction" ;
-    arto:position "Center of frame"  .
+    arto:state "Talking and awkwardness" .
 
 << ex:WomanThree arto:isObjectOf ex:IntroductionScene >> 
-    arto:state "Being introduced" ;
-    arto:position "Left side of frame" .
-
+    arto:state "Talking and awkwardness" .
 ```
 
 ## The Shepherdess
