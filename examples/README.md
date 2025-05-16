@@ -3,21 +3,21 @@
 This document demonstrates how various artworks can be represented using the ARTO (ARTwork object Ontology) framework through concrete examples. Each example shows how both descriptive content and contextual information can be captured in a structured manner.
 
 
-## The Shepherdess
-![The picture of the artwork "The Shepherdess"](../images/example.jpg)
+## Comparison Across Art Forms
 
-"The Shepherdess", also known as "The Little Shepherdess", is a painting by William-Adolphe Bouguereau completed in 1889. The title is taken from the Southern French dialect. The painting depicts an idyllic, pastoral scene of a lone young woman in peasant attire posed for the artist, balancing a stick (likely her crook) across her shoulders, standing barefooted in the foreground. In the background are oxen grazing in a field.
+These examples demonstrate how ARTO can be applied to diverse art forms while maintaining a consistent ontological framework:
+
+| Artwork | Medium | Descriptive Focus | Contextual Focus |
+|---------|--------|-------------------|------------------|
+| Composition II | Abstract Painting | Geometric elements, color relationships | De Stijl movement, modernism |
+| The Thinker | Sculpture | Posture, physicality, bronze material | Gates of Hell commission |
+| The Greeting | Video Art | Temporal sequence, emotional progression | Renaissance influence, technical specs |
+| The Shepherdess | Painting | Rural figure, pastoral symbolism | 19th century French context |
 
 
-### Contextual Model of The Shepherdess using RDF-star
-![The contextual model of The Shepherdess using RDF-Star](../images/example_rdfstar.png)
+Despite these artworks differing in medium and form, ARTO offers a unified representation method for all. Whether dealing with two-dimensional paintings, three-dimensional sculptures, or time-based video art, ARTO captures both their attributes and visual features. This flexibility makes ARTO a truly comprehensive artwork representation framework capable of adapting to the diversity and complexity of the art domain.
 
-### Contextual Model of The Shepherdess using RDF
-![The contextual model of The Shepherdess using RDF](../images/example_rdf.png)
-
-### Descriptive Model of The Shepherdess
-![The Descriptive model of The Shepherdess](../images/example_adm.png)
-
+For the complete RDF representations of these examples, see the [examples](../examples/) directory.
 
 
 ## Composition II with Red, Blue and Yellow (Piet Mondrian, 1930)
@@ -175,19 +175,21 @@ This document demonstrates how various artworks can be represented using the ART
 
 ```
 
+## The Shepherdess
+![The picture of the artwork "The Shepherdess"](../images/example.jpg)
+
+"The Shepherdess", also known as "The Little Shepherdess", is a painting by William-Adolphe Bouguereau completed in 1889. The title is taken from the Southern French dialect. The painting depicts an idyllic, pastoral scene of a lone young woman in peasant attire posed for the artist, balancing a stick (likely her crook) across her shoulders, standing barefooted in the foreground. In the background are oxen grazing in a field.
 
 
-## Comparison Across Art Forms
+### Contextual Model of The Shepherdess using RDF-star
+![The contextual model of The Shepherdess using RDF-Star](../images/example_rdfstar.png)
 
-These examples demonstrate how ARTO can be applied to diverse art forms while maintaining a consistent ontological framework:
+### Contextual Model of The Shepherdess using RDF
+![The contextual model of The Shepherdess using RDF](../images/example_rdf.png)
 
-| Artwork | Medium | Descriptive Focus | Contextual Focus |
-|---------|--------|-------------------|------------------|
-| The Shepherdess | Painting | Rural figure, pastoral symbolism | 19th century French context |
-| Composition II | Abstract Painting | Geometric elements, color relationships | De Stijl movement, modernism |
-| The Thinker | Sculpture | Posture, physicality, bronze material | Gates of Hell commission |
-| The Greeting | Video Art | Temporal sequence, emotional progression | Renaissance influence, technical specs |
+### Descriptive Model of The Shepherdess
+![The Descriptive model of The Shepherdess](../images/example_adm.png)
 
-By applying the same ontological framework across different art forms, ARTO enables structured representation that captures both the unique aspects of each medium and the universal elements of artistic expression.
 
-For the complete RDF representations of these examples, see the [examples](../examples/) directory.
+
+
