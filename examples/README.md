@@ -111,8 +111,8 @@ For the complete RDF representations of these examples, see the [examples](../ex
 
 << ex:WomanThree arto:isObjectOf ex:GreetingMomentScene >> 
     arto:state "Hugging" ;
-    arto:greet << ex:WomanOne arto:isObjectOf ex:GreetingMomentScene >> ;
-    arto:ignore  << ex:WomanTwo arto:isObjectOf ex:GreetingMomentScene >> .
+    arto:greets << ex:WomanOne arto:isObjectOf ex:GreetingMomentScene >> ;
+    arto:ignores << ex:WomanTwo arto:isObjectOf ex:GreetingMomentScene >> .
 ```
 
 <div style="text-align: center;">
