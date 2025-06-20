@@ -6,7 +6,9 @@
          xmlns:ns0="http://purl.org/vocab/vann/"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xmlns:foaf="http://xmlns.com/foaf/spec/">
+         xmlns:foaf="http://xmlns.com/foaf/spec/"
+         xmlns:plutchik="http://data.odeuropa.eu/vocabulary/plutchik/"
+>
 
   <owl:Ontology rdf:about="http://w3id.org/arto">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -26,6 +28,8 @@
     <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <owl:imports rdf:resource="https://schema.org/"/>
+    <owl:imports rdf:resource="https://w3id.org/icon/ontology/"/>
+    
   </owl:Ontology>
 
   <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#attributionURL">
@@ -521,6 +525,7 @@
   <owl:ObjectProperty rdf:about="http://w3id.org/arto#knows">
     <rdfs:domain rdf:resource="http://w3id.org/arto#Person"/>
     <rdfs:range rdf:resource="http://w3id.org/arto#Person"/>
+    <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
     <rdfs:comment>The person knows persons.</rdfs:comment>
     <skos:example>
             - Artist relationships: :vincent_van_gogh arto:knows :paul_gauguin
@@ -539,8 +544,28 @@
                 - Interaction: :mother_figure arto:holds :child_figure ;
                   arto:holds rdfs:subPropertyOf arto:relatedTo;
                 - Position: :cloud_object arto:above :mountain_object ;
-                  arto:above rdfs:subPropertyOf arto:relatedTo</skos:example>
+                  arto:above rdfs:subPropertyOf arto:relatedTo ; 
+                - Position: :tree_object arto:behind :house_object ;
+                  arto:behind rdfs:subPropertyOf arto:relatedTo ;</skos:example>
     <rdfs:label>relatedTo</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://w3id.org/arto#behind">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/arto#relatedTo"/>
+    <rdfs:domain rdf:resource="http://w3id.org/arto#Object"/>
+    <rdfs:range rdf:resource="http://w3id.org/arto#Object"/>
+    <rdfs:comment>Indicates that one object is positioned behind another object in the artwork.</rdfs:comment>
+    <rdfs:label>behind</rdfs:label>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://w3id.org/arto#holds">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/arto#relatedTo"/>
+    <rdfs:domain rdf:resource="http://w3id.org/arto#Object"/>
+    <rdfs:range rdf:resource="http://w3id.org/arto#Object"/>
+    <rdfs:comment>Indicates that one object is holding or containing another object in the artwork.</rdfs:comment>
+    <rdfs:label>holds</rdfs:label>
   </owl:ObjectProperty>
 
   <owl:ObjectProperty rdf:about="http://w3id.org/arto#relatedToEvent">
@@ -648,6 +673,7 @@
 
   <owl:ObjectProperty rdf:about="http://w3id.org/arto#style">
     <rdfs:domain rdf:resource="http://w3id.org/arto#Artwork"/>
+    <rdfs:comment> Represents materials used in artwork creation. This class encompasses both AAT (Art and Architecture Thesaurus) material concepts from the Getty vocabulary (300264091 - Materials Facet) and custom material concepts defined locally. Examples include oil paint, canvas, bronze, marble, watercolor, etc. </rdfs:comment>
     <rdfs:range>
       <owl:Class rdf:about="http://w3id.org/arto#ArtStyleType">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -774,6 +800,7 @@
     <rdfs:range>
       <owl:Class rdf:about="http://w3id.org/arto#MaterialType">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment>Represents materials used in artwork creation. This class encompasses both AAT (Art and Architecture Thesaurus) material concepts from the Getty vocabulary (300264091 - Materials Facet) and custom material concepts defined locally. Examples include oil paint, canvas, bronze, marble, watercolor, etc.</rdfs:comment>
         <owl:equivalentClass>
           <rdf:Description>
             <owl:unionOf>
@@ -1102,8 +1129,12 @@
         <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
         <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
       </owl:Restriction>
+      <owl:Restriction>
+      <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+      <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
     </rdfs:subClassOf>
-
     <rdfs:comment>Represents the implied meanings of artwork, includeing themes, symbolic meanings, and
       emotions conveyed by an artwork.</rdfs:comment>
     <rdfs:label>Connotation</rdfs:label>
@@ -1113,17 +1144,21 @@
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Connotation"/>
     <rdfs:subClassOf>
       <owl:Restriction>
+      <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+      <owl:allValuesFrom rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      
+      </owl:Restriction>
+      <owl:Restriction>
         <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-
     <skos:closeMatch rdf:resource="http://vocab.getty.edu/aat/300055150"/>
+    <skos:related rdf:resource="http://data.odeuropa.eu/vocabulary/plutchik/"/>
     <rdfs:comment>Represents the emotional response or affective state evoked by an artwork in the
       artist or viewers, such as joy, sadness, anger, or fear.</rdfs:comment>
     <rdfs:label>Emotion</rdfs:label>
-  </owl:Class>
+    </owl:Class>
 
   <owl:Class rdf:about="http://w3id.org/arto#EmotionIntensity">
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Metric"/>

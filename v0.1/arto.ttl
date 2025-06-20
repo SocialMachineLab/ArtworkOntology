@@ -20,6 +20,7 @@
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix aat: <http://vocab.getty.edu/aat/>.
 @prefix icon: <https://w3id.org/icon/ontology/> .
+@prefix plutchik: <http://data.odeuropa.eu/vocabulary/plutchik/> .
 @base <http://w3id.org/arto#> .
 
 <http://w3id.org/arto> rdf:type owl:Ontology ;
@@ -37,7 +38,8 @@
                         owl:imports <http://xmlns.com/foaf/0.1/> ;
                         owl:imports <http://purl.org/dc/terms/> ;
                         owl:imports <http://www.w3.org/2004/02/skos/core> ;
-                        owl:imports <https://schema.org/> .
+                        owl:imports <https://schema.org/> ;
+                        owl:imports <https://w3id.org/icon/ontology/> .
 
 #################################################################
 #    Annotation properties
@@ -370,6 +372,7 @@ arto:isTimeOf rdf:type owl:ObjectProperty ;
 arto:knows rdf:type owl:ObjectProperty ;
            rdfs:domain arto:Person ;
            rdfs:range arto:Person ;
+           owl:equivalentProperty foaf:knows ;
            rdfs:comment "The person knows persons.";
            skos:example """
             - Artist relationships: :vincent_van_gogh arto:knows :paul_gauguin
@@ -389,9 +392,27 @@ arto:relatedTo rdf:type owl:ObjectProperty ;
                 - Interaction: :mother_figure arto:holds :child_figure ;
                   arto:holds rdfs:subPropertyOf arto:relatedTo;
                 - Position: :cloud_object arto:above :mountain_object ;
-                  arto:above rdfs:subPropertyOf arto:relatedTo""" ;
+                  arto:above rdfs:subPropertyOf arto:relatedTo ;
+                - Position: :tree_object arto:behind :house_object ;
+                  arto:behind rdfs:subPropertyOf arto:relatedTo ;""" ;
+                
                rdfs:label "relatedTo" .
 
+###  http://w3id.org/arto#behind
+arto:behind rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf arto:relatedTo ;
+                rdfs:domain arto:Object ;
+                rdfs:range arto:Object ;
+                rdfs:comment "Indicates that one object is positioned behind another object in the artwork." ;
+                rdfs:label "behind" .
+
+###  http://w3id.org/arto#holds  
+arto:holds rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf arto:relatedTo ;
+                rdfs:domain arto:Object ;
+                rdfs:range arto:Object ;
+                rdfs:comment "Indicates that one object is holding or containing another object in the artwork." ;
+                rdfs:label "holds" .
 
 ###  http://w3id.org/arto#relatedToEvent
 arto:relatedToEvent rdf:type owl:ObjectProperty ;
@@ -743,7 +764,11 @@ arto:Connotation rdf:type owl:Class ;
                   rdf:type owl:Restriction ;
                     owl:onProperty arto:hasMetric ;
                     owl:allValuesFrom arto:Metric
-                 ];
+                 ], [ rdf:type owl:Restriction ;
+                               owl:onProperty dc:type ;
+                               owl:allValuesFrom xsd:string;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                  ] ;
                  rdfs:comment """Represents the implied meanings of artwork, includeing themes, symbolic meanings, and
       emotions conveyed by an artwork.""" ;
                  rdfs:label "Connotation" .
@@ -754,10 +779,11 @@ arto:Emotion rdf:type owl:Class ;
              rdfs:subClassOf arto:Connotation ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty dc:type ;
-                               owl:allValuesFrom xsd:string;
+                               owl:allValuesFrom skos:Concept;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ;  
              skos:closeMatch aat:300055150 ;
+             skos:related plutchik: ;
              rdfs:comment """Represents the emotional response or affective state evoked by an artwork in the
       artist or viewers, such as joy, sadness, anger, or fear.""" ;
              rdfs:label "Emotion" .
@@ -1123,6 +1149,7 @@ arto:Time rdf:type owl:Class ;
 ###  http://w3id.org/arto#MaterialType
 arto:MaterialType rdf:type owl:Class ;
     rdfs:subClassOf skos:Concept ;
+    rdfs:comment """Represents materials used in artwork creation. This class encompasses both AAT (Art & Architecture Thesaurus) material concepts from the Getty vocabulary (300264091 - Materials Facet) and custom material concepts defined locally. Examples include oil paint, canvas, bronze, marble, watercolor, etc."""@en ;
     owl:equivalentClass [
         owl:unionOf (
             [ owl:hasValue aat:300264091 ] # AAT Materials Facet
@@ -1133,6 +1160,7 @@ arto:MaterialType rdf:type owl:Class ;
 
 arto:ArtStyleType rdf:type owl:Class ;
     rdfs:subClassOf skos:Concept ;
+    rdfs:comment """Represents artistic styles used to classify artworks. This class encompasses both AAT (Art & Architecture Thesaurus) style concepts from the Getty vocabulary (300015646 - Styles Facet) and custom style concepts defined locally. Examples include Renaissance, Baroque, Impressionism, Abstract Expressionism, etc."""@en ;
     owl:equivalentClass [
         owl:unionOf (
             [ owl:hasValue aat:300015646 ] # AAT Styles Facet

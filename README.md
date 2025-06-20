@@ -158,6 +158,46 @@ We welcome contributions to enhance and expand the *Artwork Object Ontology*. If
 4. Push your changes to your forked repository. 
 5. Submit a pull request detailing your changes and their benefits. 
 
+---
+
+## ARTO Sustainability Plan & Future Work
+
+### Basic Maintenance & Infrastructure
+- **GitHub Repository**: Continue maintaining code and documentation in existing repository
+- **Version Control**: Versioning with changelog documentation
+- **URI Maintenance**: Ensure w3id.org redirection remains functional
+- **Documentation**: Maintain up-to-date ontology specifications and usage guides
+
+### Technical Development & Improvement
+- **Multilingual Support**: Add support for artwork descriptions in multiple languages (Chinese, Spanish, French)
+- **Ontology Integration**: Improve alignment and mappings with existing ontologies (CIDOC-CRM, Schema.org, VIR)
+- **Extended Art Forms**: Add specialized classes for digital art, video art, and performance art
+- **Documentation Enhancement**: Create detailed tutorials, FAQ sections, and usage examples
+- **User Feedback Collection**: Establish GitHub issues and feedback mechanisms for community input
+
+### Application Development
+- **Artwork Description Generation**: Develop methods to use ARTO-structured data for training artwork caption generation models
+- **Museum Data Standardization**: Create tools and guidelines to help museums standardize their artwork metadata using ARTO
+- **Educational Applications**: Develop ARTO as a teaching resource for digital humanities and semantic web courses
+
+
+
+---
+
+## Citation
+
+```bibtex
+@misc{arto_ontology_2025,
+  title={{ARTO}: {ARTwork} Object Ontology for Descriptive and Contextual Representation},
+  author={Yang, Can and Pereira Nunes, Bernardo and Méndez, Sergio R. and Chen, Yige and Manrique, Rubén and Casanova, Marco A.},
+  year={2025},
+  note={Version 1.0},
+  howpublished={Ontology},
+  url={https://w3id.org/arto},
+  institution={Australian National University Social Machine Lab}
+}
+```
+
 --- 
 ## License
 
