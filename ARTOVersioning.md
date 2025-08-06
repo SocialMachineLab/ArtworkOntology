@@ -79,3 +79,16 @@ Example:
 
 ARTO has been under development since beginning of 2023 and we are constantly improving it. We have created more [examples](examples) here to showcase ARTO's capabilities. We are also constantly collecting expert feedback to better meet their needs. We have also created a pipeline for building knowledge graphs, which can extract entities and relations from text and store them in the knowledge graph. We are also continuously improving our algorithms to improve the quality and accuracy of the knowledge graph. We are also developing the pipeline for extracting knowledge graphs from the content of the artwork (images). And the webpage is accessible [here](website/Artwork%20Object%20Ontology.html). Contact the authors of this page if you want to [contribute](#how-to-contribute) to this project.
 
+
+
+
+### Ontology Improvement, Vocabulary Enhancement, and Multi-Perspective Emotion Support
+*Version 0.2 | Date: 2025-07-20*
+
+
+
+Version 0.2 resolves integration issues by importing all referenced external ontologies with their complete axioms and constraints into ARTO provide a foundation for semantic interoperability. Additionally, all missing properties that appeared in documentation diagrams but were absent from the ontology file have been implemented, including spatial relationships like `arto:behind` and `arto:holds`. The version significantly improves semantic precision by replacing problematic string literals with structured references to established controlled vocabularies. Concepts such as emotions, techniques, and colors now link to standardized terminologies like Getty AAT rather than using free text representations.  We are also using `rdfs:subClassOf` for true subclass relationships, `owl:equivalentClass` only when concepts have identical scope, `skos:closeMatch` for closely related but distinct concepts, and `skos:relatedMatch` for broader conceptual relationships. Another enhancement addresses the ambiguity of emotion representation in artworks by adding arto:emotionPerspective property with predefined emotional perspectives that specify the source and nature of emotional interpretations. The framework now distinguishes between artist's intended emotions, emotions expressed by the artwork itself, and viewer emotional responses. Through this approach, the arto:Emotion class enables multi-faceted representation of emotions in artworks, ensuring that the different emotional dimensions are captured. 
+
+
+
+

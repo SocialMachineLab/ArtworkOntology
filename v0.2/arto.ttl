@@ -16,24 +16,25 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix event: <https://w3id.org/MON/event.owl#> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix aat: <http://vocab.getty.edu/aat/>.
 @prefix icon: <https://w3id.org/icon/ontology/> .
+
 @prefix plutchik: <http://data.odeuropa.eu/vocabulary/plutchik/> .
 @base <http://w3id.org/arto#> .
 
 <http://w3id.org/arto> rdf:type owl:Ontology ;
-                        owl:versionIRI <http://w3id.org/arto/v0.1> ;
+                        owl:versionIRI <http://w3id.org/arto/v0.2> ;
                         cc:attributionURL <http://w3id.org/arto> ;
                         dc:description "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualizing artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en ;
                         dc:issued "2024-04-10" ;
                         dc:license <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> ;
-                        dc:modified "2024-12-05" ;
+                        dc:modified "2025-08-05" ;
                         dc:title "Artwork Object Ontology"@en ;
                         vann:preferredNamespacePrefix "arto" ;
                         rdfs:label "Artwork Object Ontology (ARTO)"@en ;
-                        owl:versionInfo "0.1" ;
+                        owl:versionInfo "0.2" ;
                         owl:imports <http://www.cidoc-crm.org/cidoc-crm/> ;
                         owl:imports <http://xmlns.com/foaf/0.1/> ;
                         owl:imports <http://purl.org/dc/terms/> ;
@@ -85,8 +86,8 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
 owl:minCardinality rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#closeMatch
-skos:closeMatch rdf:type owl:AnnotationProperty .
+# ###  http://www.w3.org/2004/02/skos/core#closeMatch
+# skos:closeMatch rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -94,22 +95,22 @@ skos:closeMatch rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://purl.org/NET/c4dm/event.owl#agent
-event:agent rdf:type owl:ObjectProperty .
+# event:agent rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/dc/terms/contributor
-dc:contributor rdf:type owl:ObjectProperty .
+# dc:contributor rdf:type owl:ObjectProperty .
 
 ###  http://purl.org/dc/terms/creator
-dc:creator rdf:type owl:ObjectProperty .
+# dc:creator rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/dc/terms/hasPart
-dc:hasPart rdf:type owl:ObjectProperty .
+# dc:hasPart rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/dc/terms/isPartOf
-dc:isPartOf rdf:type owl:ObjectProperty .
+# dc:isPartOf rdf:type owl:ObjectProperty .
 
 
 ###  http://w3id.org/arto#containsElement
@@ -207,6 +208,7 @@ arto:isSceneOf rdf:type owl:ObjectProperty ;
 
 ###  http://w3id.org/arto#currentLocation
 arto:currentLocation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf edm:currentLocation ;
                      rdfs:domain arto:Artwork ;
                      rdfs:range arto:Location ;
                      rdfs:comment """Specifies the current physical location where an artwork is housed or displayed.""";
@@ -216,8 +218,7 @@ arto:currentLocation rdf:type owl:ObjectProperty ;
                       - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24
                       """ ;
                      rdfs:label "currentLocation" ;
-                     owl:cardinality 1 ;
-                     skos:closeMatch edm:currentLocation .
+                     owl:cardinality 1 .
 
 
 ###  http://w3id.org/arto#expresses
@@ -238,8 +239,8 @@ arto:expresses rdf:type owl:ObjectProperty ;
               - Symbolic meaning: :dove_object arto:expresses :peace_meaning
               - Scene mood: :storm_scene arto:expresses :turbulence_emotion
               - Artwork meaning: :guernica arto:expresses :anti_war_theme""" ;
-               rdfs:label "express" ;
-               skos:closeMatch icon:recognizedConcept .
+               rdfs:label "express" .
+              #  skos:closeMatch icon:recognizedConcept .
 
 ###  http://w3id.org/arto#isExpressedBy
 arto:isExpressedBy rdf:type owl:ObjectProperty ;
@@ -469,34 +470,64 @@ arto:relatedToScene rdf:type owl:ObjectProperty ;
 ###  http://w3id.org/arto#state
 arto:state rdf:type owl:ObjectProperty ;
            rdfs:domain arto:Object ;
-           rdfs:range [ a owl:Class ;
-           owl:unionOf (skos:Concept xsd:string)
-           ] ;
+           rdfs:range skos:Concept ;
            rdfs:comment "Describes the current condition, position, or status of objects within an artwork, which may be an AAT concept or free text." ;
            rdfs:label "state" .
 
 ###  http://w3id.org/arto#style
 arto:style rdf:type owl:ObjectProperty ;
     rdfs:domain arto:Artwork ;
-    rdfs:range arto:ArtStyleType ;
+    rdfs:range [ rdf:type owl:Class ;
+                 owl:unionOf ( 
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty skos:broaderTransitive ;
+                     owl:hasValue aat:300264088 ]  # Styles under AAT Style facet
+                   skos:Concept  # Allow custom concepts
+                 )
+               ] ;
     rdfs:comment "The style of the artwork." ;
     rdfs:label "style" .
 
 
 
+###  http://w3id.org/arto#material
+arto:material rdf:type owl:ObjectProperty ;
+              rdfs:domain arto:Object ;
+              rdfs:range [ rdf:type owl:Class ;
+                 owl:unionOf ( 
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty skos:broaderTransitive ;
+                     owl:hasValue aat:300264091 ]  # Materials under AAT Materials facet
+                   skos:Concept  # Allow custom concepts
+                 )
+               ] ;
+              rdfs:comment "The material of the Object." ;
+              rdfs:label "material" .
+
+
+arto:technique rdf:type owl:ObjectProperty ;
+               rdfs:domain arto:Artwork ;
+               rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( 
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty skos:broaderTransitive ;
+                      owl:hasValue aat:300053001 ]  # Techniques under AAT Techniques facet
+                    skos:Concept  # Allow custom concepts
+                  )
+               ] ;
+               rdfs:comment "The technique used in the Artwork." ;
+               rdfs:label "technique" .
+
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://purl.org/dc/terms/medium
-dc:medium rdf:type owl:DatatypeProperty .
 
 
 
 ###  http://w3id.org/arto#HSVValue
 arto:HSVValue rdf:type owl:DatatypeProperty ;
               rdfs:domain arto:Color ;
-              rdfs:range xsd:int ;
+              rdfs:range xsd:string ;
               rdfs:comment "HSV color value in format 'H,S,V' where H is the hue and the range is 0-360, S is the saturation and the range is 0-100, and V is the value and the range is 0-100" ;
               rdfs:label "HSVValue" .
 
@@ -504,7 +535,7 @@ arto:HSVValue rdf:type owl:DatatypeProperty ;
 ###  http://w3id.org/arto#RGBValue
 arto:RGBValue rdf:type owl:DatatypeProperty ;
               rdfs:domain arto:Color ;
-              rdfs:range xsd:int ;
+              rdfs:range xsd:string ;
               rdfs:comment "RGB color value in format 'R,G,B' where R,G,B are integers 0-255" ;
               rdfs:label "RGBValue" .
 
@@ -553,15 +584,6 @@ arto:length rdf:type owl:DatatypeProperty ;
             rdfs:comment "The length of the line." ;
             rdfs:label "length" .
 
-
-
-###  http://w3id.org/arto#material
-arto:material rdf:type owl:DatatypeProperty ;
-              rdfs:domain arto:Object ;
-              rdfs:range arto:MaterialType ;
-              rdfs:comment "The material of the Object." ;
-              rdfs:label "material" .
-
   
 ###  http://w3id.org/arto#size
 arto:size rdf:type owl:DatatypeProperty ;
@@ -582,6 +604,23 @@ arto:source rdf:type owl:DatatypeProperty ;
             rdfs:comment "Relates the source of the symbolism in artworks." ;
             rdfs:label "source" .
 
+
+arto:emotionPerspective rdf:type owl:DatatypeProperty ;
+                          rdfs:domain arto:Emotion ;
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:oneOf ( 
+                                         "artist"^^xsd:string
+                                         "artwork"^^xsd:string
+                                         "viewer"^^xsd:string
+                                       )
+                                     ] ;
+                          rdfs:comment """Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'artist' (artist's intended emotion), 'artwork' (emotion expressed by the artwork's formal elements), and 'viewer' (viewer's emotional response)."""@en ;
+                          rdfs:label "emotionPerspective"@en ;
+                          skos:example """
+                          ex:melancholy_emotion arto:emotionPerspective "artist"^^xsd:string ;
+                          ex:serenity_emotion arto:emotionPerspective "artwork"^^xsd:string ;
+                          ex:excitement_emotion arto:emotionPerspective "viewer"^^xsd:string .
+                          """ .
 
 
 #################################################################
@@ -607,7 +646,6 @@ arto:Artist rdf:type owl:Class ;
             rdfs:comment "The person or group who create or contribute the artwork." ;
             rdfs:label "Artist" .
 
-
 ###  http://w3id.org/arto#Artwork
 arto:Artwork rdf:type owl:Class ;
              rdfs:subClassOf sdo:CreativeWork ,
@@ -617,7 +655,7 @@ arto:Artwork rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty dc:creator ;
-                               owl:allValuesFrom arto:Artist;
+                               owl:allValuesFrom arto:Agent;
                                owl:minCardinality "1"^^xsd:nonNegativeInteger
                              ] ,
                              [ rdf:type owl:Restriction ;
@@ -631,16 +669,23 @@ arto:Artwork rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty dc:medium ;
-                               owl:allValuesFrom xsd:string;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               owl:allValuesFrom dc:PhysicalMedium ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty arto:expresses ;
                                owl:allValuesFrom arto:Connotation
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty dbp:technique ;
-                               owl:allValuesFrom xsd:string
+                               owl:onProperty arto:technique ;
+                               owl:allValuesFrom [
+                                      owl:unionOf (
+                                        [ rdf:type owl:Restriction ;      
+                                            owl:onProperty skos:broaderTransitive ;
+                                            owl:someValuesFrom [ owl:oneOf ( aat:300053001 ) ]
+                                          ]   # AAT Techniques
+                                          skos:Concept           # Custom techniques    
+                                      )
+                                  ];
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty dc:title ;
@@ -649,12 +694,12 @@ arto:Artwork rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty sdo:height ;
-                               owl:allValuesFrom xsd:string;
+                               owl:allValuesFrom sdo:QuantitativeValue;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty sdo:width ;
-                               owl:allValuesFrom xsd:string;
+                               owl:allValuesFrom sdo:QuantitativeValue;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ,
                              [ rdf:type owl:Restriction ;
@@ -664,12 +709,20 @@ arto:Artwork rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty arto:style ;
-                               owl:allValuesFrom xsd:string;
+                               owl:allValuesFrom [
+                                    owl:unionOf (
+                                      [ rdf:type owl:Restriction ;
+                                          owl:onProperty skos:broaderTransitive ;
+                                          owl:someValuesFrom [ owl:oneOf ( aat:300264088 ) ]
+                                        ]   # AAT Styles Facet
+                                        skos:Concept           # Custom styles
+                                    )
+                                ] ;
                                owl:minCardinality "1"^^xsd:nonNegativeInteger
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty sdo:genre ;
-                               owl:allValuesFrom xsd:string;
+                               owl:allValuesFrom arto:GenreType;
                                owl:minCardinality "1"^^xsd:nonNegativeInteger
                              ],
                              [ rdf:type owl:Restriction ;
@@ -693,10 +746,9 @@ arto:Artwork rdf:type owl:Class ;
              rdfs:comment """A created object or piece of art that is intended to be aesthetically pleasing or
                 convey a message.
                 """ ;
-             rdfs:label "Artwork" ;
-             skos:closeMatch crm:E22_Human_Made_Object ,
-                             icon:Artwork .
-
+             rdfs:label "Artwork" .
+            #  skos:closeMatch crm:E22_Human_Made_Object ,
+                            #  icon:Artwork .
 
 
 ###  http://w3id.org/arto#BalanceOfComposition
@@ -728,8 +780,20 @@ arto:Color rdf:type owl:Class ;
                               owl:onProperty arto:HSVValue ;
                               owl:allValuesFrom xsd:string;
                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty dc:type ;
+                              owl:allValuesFrom [
+                                  owl:unionOf (
+                                    [ rdf:type owl:Restriction ;
+                                        owl:onProperty skos:broaderTransitive ;
+                                        owl:hasValue aat:300131647 
+                                      ]   # AAT Color
+                                      skos:Concept           # Custom colors
+                                  )
+                              ];
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
                             ] ;
-            skos:closeMatch aat:300131647 ;
             rdfs:comment "The use of color in the artwork." ;
             rdfs:label "Color" .
 
@@ -752,7 +816,7 @@ arto:Composition rdf:type owl:Class ;
                                    owl:allValuesFrom xsd:string;
                                     owl:cardinality "1"^^xsd:nonNegativeInteger
                                  ] ;
-                 skos:closeMatch aat:300056255 ;
+                #  skos:closeMatch aat:300056255 ;
                  rdfs:comment "The arrangement and organization of visual elements." ;
                  rdfs:label "Composition" .
 
@@ -781,9 +845,20 @@ arto:Emotion rdf:type owl:Class ;
                                owl:onProperty dc:type ;
                                owl:allValuesFrom skos:Concept;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ]  ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty arto:emotionPerspective ;
+                               owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                   owl:oneOf ( 
+                                                     "artist"^^xsd:string
+                                                     "artwork"^^xsd:string
+                                                     "viewer"^^xsd:string
+                                                   )
+                                                 ] ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ;  
-             skos:closeMatch aat:300055150 ;
-             skos:related plutchik: ;
+            #  skos:closeMatch aat:300055150 ;
+            #  skos:related plutchik: ;
              rdfs:comment """Represents the emotional response or affective state evoked by an artwork in the
       artist or viewers, such as joy, sadness, anger, or fear.""" ;
              rdfs:label "Emotion" .
@@ -827,8 +902,8 @@ arto:Event rdf:type owl:Class ;
       An arbitrary classification of a space/time region, by a
       cognitive agent. An event may have actively participating agents,
       passive factors, products, and a location in space/time.""" ;
-           rdfs:label "Event" ;
-           skos:closeMatch crm:E5_Event .
+           rdfs:label "Event" .
+          #  skos:closeMatch crm:E5_Event .
 
 
 ###  http://w3id.org/arto#Line
@@ -866,11 +941,11 @@ arto:Line rdf:type owl:Class ;
 
 ###  http://w3id.org/arto#Location
 arto:Location rdf:type owl:Class ;
-              rdfs:subClassOf sdo:Place ,
+              rdfs:subClassOf crm:E53_Place ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty geo:asWKT ;
                                 owl:allValuesFrom geo:wktLiteral
-                              ],
+                              ],  
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty arto:hasTime ;
                                 owl:allValuesFrom arto:Time
@@ -881,8 +956,7 @@ arto:Location rdf:type owl:Class ;
                                 owl:cardinality "1"^^xsd:nonNegativeInteger
                               ] ;
               rdfs:comment "Represents a physical or virtual space associated with an artwork." ;
-              rdfs:label "Location" ;
-              skos:closeMatch crm:E53_Place .
+              rdfs:label "Location" .
 
 
 
@@ -903,8 +977,8 @@ arto:Symbolism rdf:type owl:Class ;
                              ] ;
 
              rdfs:comment """Represents the symbolism conveyed by the object, scene or the visual elements.""" ;
-             rdfs:label "Symbolism" ;
-             skos:closeMatch icon:Symbol . 
+             rdfs:label "Symbolism" .
+            #  skos:closeMatch icon:Symbol . 
 
 
 ###  http://w3id.org/arto#Metric
@@ -938,11 +1012,20 @@ arto:Object rdf:type owl:Class ;
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:state ;
-                              owl:allValuesFrom xsd:string
+                              owl:allValuesFrom skos:Concept ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:material ;
-                              owl:allValuesFrom xsd:string
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                  owl:unionOf ( 
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty skos:broaderTransitive ;
+                                      owl:hasValue aat:300264091 ]  # Materials under AAT Materials facet
+                                    skos:Concept  # Allow custom concepts
+                                  )
+                                ] ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
                             ] ,
                             [
                               rdf:type owl:Restriction ;
@@ -960,8 +1043,8 @@ arto:Object rdf:type owl:Class ;
                               owl:allValuesFrom xsd:string
                             ] ;
             rdfs:comment "Represents the physical or conceptual object within an artwork." ;
-            rdfs:label "Object" ;
-            skos:relatedMatch icon:ArtisticMotif .
+            rdfs:label "Object" .
+            # skos:relatedMatch icon:ArtisticMotif .
 
 
 ###  http://w3id.org/arto#Organization
@@ -1055,8 +1138,8 @@ arto:Scene rdf:type owl:Class ;
                               owl:allValuesFrom arto:Event
                             ] ;
            rdfs:comment "Represents a distinct portion or area of an artwork that forms a coherent visual or narrative unit. " ;
-           rdfs:label "Scene" ;
-           skos:closeMatch icon:Image .
+           rdfs:label "Scene" .
+          #  skos:closeMatch icon:Image .
 
 
 ###  http://w3id.org/arto#Sculpture
@@ -1072,7 +1155,7 @@ arto:Series rdf:type owl:Class ;
             rdfs:subClassOf sdo:CreativeWorkSeries ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty dc:creator ;
-                              owl:allValuesFrom arto:Artist;
+                              owl:allValuesFrom arto:Agent;
                               owl:minCardinality "1"^^xsd:nonNegativeInteger
                             ] ;
             rdfs:comment """A collection of related artworks that share common characteristics, themes, or purposes, including:
@@ -1082,8 +1165,8 @@ arto:Series rdf:type owl:Class ;
                 - Subject-based series
                 - Experimental series
                 - Documentary series""" ;
-            rdfs:label "Series" ;
-            skos:closeMatch crm:E78_Collection .
+            rdfs:label "Series" .
+            # skos:closeMatch crm:E78_Collection .
 
 
 ###  http://w3id.org/arto#Space
@@ -1146,32 +1229,9 @@ arto:Time rdf:type owl:Class ;
             """ ;
           rdfs:label "Time" .
 
-###  http://w3id.org/arto#MaterialType
-arto:MaterialType rdf:type owl:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:comment """Represents materials used in artwork creation. This class encompasses both AAT (Art & Architecture Thesaurus) material concepts from the Getty vocabulary (300264091 - Materials Facet) and custom material concepts defined locally. Examples include oil paint, canvas, bronze, marble, watercolor, etc."""@en ;
-    owl:equivalentClass [
-        owl:unionOf (
-            [ owl:hasValue aat:300264091 ] # AAT Materials Facet
-            skos:Concept        # Custom materials
-        )
-    ] .
-
-
-arto:ArtStyleType rdf:type owl:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:comment """Represents artistic styles used to classify artworks. This class encompasses both AAT (Art & Architecture Thesaurus) style concepts from the Getty vocabulary (300015646 - Styles Facet) and custom style concepts defined locally. Examples include Renaissance, Baroque, Impressionism, Abstract Expressionism, etc."""@en ;
-    owl:equivalentClass [
-        owl:unionOf (
-            [ owl:hasValue aat:300015646 ] # AAT Styles Facet
-            skos:Concept           # Custom styles
-        )
-    ] .
-
 ###  http://w3id.org/arto#VisualElement 
 arto:VisualElement rdf:type owl:Class ;
-                   rdfs:subClassOf crm:E26_Physical_Feature ,
-                                    [ rdf:type owl:Restriction ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                       owl:onProperty arto:hasMetric ;
                                       owl:allValuesFrom arto:Metric;
                                     ] ,
@@ -1183,8 +1243,8 @@ arto:VisualElement rdf:type owl:Class ;
                                       owl:onProperty arto:descriptor ;
                                       owl:allValuesFrom xsd:string
                                     ] ;
-                   rdfs:comment "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc." ;
-                   rdfs:label "Element" .
+                  rdfs:comment "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc." ;
+                  rdfs:label "VisualElement" .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature
@@ -1193,10 +1253,6 @@ crm:E26_Physical_Feature rdf:type owl:Class .
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object
 crm:E28_Conceptual_Object rdf:type owl:Class .
-
-
-###  http://www.w3.org/2001/XMLSchema#dateTime
-xsd:dateTime rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2006/time#TemporalEntity
