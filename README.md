@@ -15,7 +15,7 @@ You can track the evolution of ARTO and find answers to **frequently asked quest
 
 
 ## Overview
-![The Artwork Object Ontology](images/adm_acm.png)
+![The Artwork Object Ontology](images/aom+acm.png)
 *Figure 1. Overview of the ARTO Ontology*
 
 
