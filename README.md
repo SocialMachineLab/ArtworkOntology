@@ -19,7 +19,7 @@ You can track the evolution of ARTO and find answers to **frequently asked quest
 *Figure 1. Overview of the ARTO Ontology*
 
 
-The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.1/arto.ttl)) is a comprehensive ontology designed for describing and contextualizing artworks. It aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval. 
+The Artwork Object Ontology (ARTO) ([ARTO TTL file](v0.2/arto.ttl)) is a comprehensive ontology designed for describing and contextualizing artworks. It aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval. 
 
 
 ARTO consists of two main components briefly described as follows. 

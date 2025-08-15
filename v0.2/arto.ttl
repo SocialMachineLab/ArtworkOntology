@@ -2,27 +2,28 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix gn: <https://www.geonames.org/ontology#> .
+@prefix aat: <http://vocab.getty.edu/aat/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dbp: <https://dbpedia.org/property/> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sdo: <https://schema.org/> .
+@prefix sdo: <https://schema.org/> .  
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix arto: <http://w3id.org/arto#> .
 @prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix icon: <https://w3id.org/icon/ontology/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix event: <https://w3id.org/MON/event.owl#> .
+@prefix mfoem: <http://purl.obolibrary.org/obo/> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-@prefix aat: <http://vocab.getty.edu/aat/>.
-@prefix icon: <https://w3id.org/icon/ontology/> .
-
-@prefix plutchik: <http://data.odeuropa.eu/vocabulary/plutchik/> .
 @base <http://w3id.org/arto#> .
+
 
 <http://w3id.org/arto> rdf:type owl:Ontology ;
                         owl:versionIRI <http://w3id.org/arto/v0.2> ;
@@ -39,8 +40,9 @@
                         owl:imports <http://xmlns.com/foaf/0.1/> ;
                         owl:imports <http://purl.org/dc/terms/> ;
                         owl:imports <http://www.w3.org/2004/02/skos/core> ;
-                        owl:imports <https://schema.org/> ;
-                        owl:imports <https://w3id.org/icon/ontology/> .
+                        owl:imports <https://schema.org/> .
+
+
 
 #################################################################
 #    Annotation properties
@@ -50,24 +52,345 @@
 cc:attributionURL rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/dcam/domainIncludes
+<http://purl.org/dc/dcam/domainIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/dcam/rangeIncludes
+<http://purl.org/dc/dcam/rangeIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/coverage
+<http://purl.org/dc/elements/1.1/coverage> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/format
+<http://purl.org/dc/elements/1.1/format> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/identifier
+<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/relation
+<http://purl.org/dc/elements/1.1/relation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/subject
+<http://purl.org/dc/elements/1.1/subject> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/type
+<http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+dc:abstract rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> ,
+                               dc:description .
+
+
+###  http://purl.org/dc/terms/accessRights
+dc:accessRights rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> ,
+                                   dc:rights .
+
+
+###  http://purl.org/dc/terms/accrualMethod
+dc:accrualMethod rdf:type owl:AnnotationProperty ;
+                 rdfs:domain <http://purl.org/dc/dcmitype/Collection> .
+
+
+###  http://purl.org/dc/terms/accrualPeriodicity
+dc:accrualPeriodicity rdf:type owl:AnnotationProperty ;
+                      rdfs:domain <http://purl.org/dc/dcmitype/Collection> .
+
+
+###  http://purl.org/dc/terms/accrualPolicy
+dc:accrualPolicy rdf:type owl:AnnotationProperty ;
+                 rdfs:domain <http://purl.org/dc/dcmitype/Collection> .
+
+###  http://purl.org/dc/terms/audience
+dc:audience rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/available
+dc:available rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+             rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+dc:bibliographicCitation rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> ;
+                         rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/conformsTo
+dc:conformsTo rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                 dc:relation .
+
+
+###  http://purl.org/dc/terms/contributor
+dc:contributor rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/contributor> .
+
+
+###  http://purl.org/dc/terms/coverage
+dc:coverage rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> .
+
+
+###  http://purl.org/dc/terms/created
+dc:created rdf:type owl:AnnotationProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+           rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/creator
+dc:creator rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/creator> ,
+                              dc:contributor .
+
+
+###  http://purl.org/dc/terms/date
+dc:date rdf:type owl:AnnotationProperty ;
+        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+        rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateAccepted
+dc:dateAccepted rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateCopyrighted
+dc:dateCopyrighted rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                   rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+dc:dateSubmitted rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                 rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/description
+dc:description rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> .
+
+
+###  http://purl.org/dc/terms/educationLevel
+dc:educationLevel rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf dc:audience .
+
+
+###  http://purl.org/dc/terms/extent
+dc:extent rdf:type owl:AnnotationProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> ,
+                             dc:format .
+
+
+###  http://purl.org/dc/terms/format
+dc:format rdf:type owl:AnnotationProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
+
+
+###  http://purl.org/dc/terms/hasFormat
+dc:hasFormat rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                dc:relation .
+
+
+###  http://purl.org/dc/terms/hasPart
+dc:hasPart rdf:type owl:AnnotationProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                              dc:relation .
+
+
+###  http://purl.org/dc/terms/hasVersion
+dc:hasVersion rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                 dc:relation .
+
+
+###  http://purl.org/dc/terms/identifier
+dc:identifier rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> ;
+              rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/isFormatOf
+dc:isFormatOf rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                 dc:relation .
+
+
+###  http://purl.org/dc/terms/isPartOf
+dc:isPartOf rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                               dc:relation .
+
+
+###  http://purl.org/dc/terms/isReferencedBy
+dc:isReferencedBy rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                     dc:relation .
+
+
+###  http://purl.org/dc/terms/isReplacedBy
+dc:isReplacedBy rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                   dc:relation .
+
+
+###  http://purl.org/dc/terms/isRequiredBy
+dc:isRequiredBy rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                   dc:relation .
+
+
+###  http://purl.org/dc/terms/isVersionOf
+dc:isVersionOf rdf:type owl:AnnotationProperty ;
+               rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                  dc:relation .
+
+
 ###  http://purl.org/dc/terms/issued
-dc:issued rdf:type owl:AnnotationProperty .
+dc:issued rdf:type owl:AnnotationProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+          rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/language
+dc:language rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/language> .
 
 
 ###  http://purl.org/dc/terms/license
-dc:license rdf:type owl:AnnotationProperty .
+dc:license rdf:type owl:AnnotationProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> ,
+                              dc:rights .
+
+
+###  http://purl.org/dc/terms/mediator
+dc:mediator rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf dc:audience .
+
+
+###  http://purl.org/dc/terms/medium
+dc:medium rdf:type owl:AnnotationProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> ,
+                             dc:format .
 
 
 ###  http://purl.org/dc/terms/modified
-dc:modified rdf:type owl:AnnotationProperty .
+dc:modified rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+            rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/publisher
+dc:publisher rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/publisher> .
+
+
+###  http://purl.org/dc/terms/references
+dc:references rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                 dc:relation .
+
+
+###  http://purl.org/dc/terms/relation
+dc:relation rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> .
+
+
+###  http://purl.org/dc/terms/replaces
+dc:replaces rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                               dc:relation .
+
+
+###  http://purl.org/dc/terms/requires
+dc:requires rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                               dc:relation .
 
 
 ###  http://purl.org/dc/terms/rights
-dc:rights rdf:type owl:AnnotationProperty .
+dc:rights rdf:type owl:AnnotationProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
+
+
+###  http://purl.org/dc/terms/source
+dc:source rdf:type owl:AnnotationProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/source> ,
+                             dc:relation .
+
+
+###  http://purl.org/dc/terms/spatial
+dc:spatial rdf:type owl:AnnotationProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> ,
+                              dc:coverage .
+
+
+###  http://purl.org/dc/terms/subject
+dc:subject rdf:type owl:AnnotationProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/subject> .
+
+
+###  http://purl.org/dc/terms/tableOfContents
+dc:tableOfContents rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> ,
+                                      dc:description .
+
+
+###  http://purl.org/dc/terms/temporal
+dc:temporal rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> ,
+                               dc:coverage .
 
 
 ###  http://purl.org/dc/terms/title
-dc:title rdf:type owl:AnnotationProperty .
+dc:title rdf:type owl:AnnotationProperty ;
+         rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> ;
+         rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/type
+dc:type rdf:type owl:AnnotationProperty ;
+        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/type> .
+
+
+###  http://purl.org/dc/terms/valid
+dc:valid rdf:type owl:AnnotationProperty ;
+         rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+         rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -82,224 +405,192 @@ owl:cardinality rdf:type owl:AnnotationProperty .
 owl:maxCardinality rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2002/07/owl#maxQualifiedCardinality
+owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2002/07/owl#minCardinality
 owl:minCardinality rdf:type owl:AnnotationProperty .
 
 
-# ###  http://www.w3.org/2004/02/skos/core#closeMatch
-# skos:closeMatch rdf:type owl:AnnotationProperty .
+#################################################################
+#    Datatypes
+#################################################################
 
+###  http://purl.org/dc/terms/Box
+dc:Box rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO3166
+dc:ISO3166 rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO639-2
+dc:ISO639-2 rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO639-3
+dc:ISO639-3 rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/Period
+dc:Period rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/Point
+dc:Point rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC1766
+dc:RFC1766 rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC3066
+dc:RFC3066 rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC4646
+dc:RFC4646 rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC5646
+dc:RFC5646 rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/URI
+dc:URI rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/W3CDTF
+dc:W3CDTF rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://purl.org/NET/c4dm/event.owl#agent
-# event:agent rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/dc/terms/contributor
-# dc:contributor rdf:type owl:ObjectProperty .
-
-###  http://purl.org/dc/terms/creator
-# dc:creator rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/dc/terms/hasPart
-# dc:hasPart rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/dc/terms/isPartOf
-# dc:isPartOf rdf:type owl:ObjectProperty .
+###  http://w3id.org/arto#behind
+arto:behind rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf arto:relatedTo ;
+            rdfs:domain arto:Object ;
+            rdfs:range arto:Object ;
+            rdfs:comment "Indicates that one object is positioned behind another object in the artwork." ;
+            rdfs:label "behind" .
 
 
 ###  http://w3id.org/arto#containsElement
 arto:containsElement rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf dc:hasPart ;
                      rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( arto:Object
-                                               arto:Scene
-                                             )
-                               ] ;
-                     rdfs:range arto:VisualElement ;
-                     rdfs:comment """Specifies the visual elements (such as color, line, composition) contained within an object in the artwork.""";
-
-                      skos:example """
-                      - color elements: :sky_object arto:containsElement :blue_gradient_color
-                      - Line elements: :mountain_object arto:containsElement :diagonal_line
-                      - Compositional elements: :tree_object arto:containsElement :vertical_composition""" ;
-                     rdfs:label "containsElement" .
-
-###  http://w3id.org/arto#isElementOf
-arto:isElementOf rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf dc:isPartOf ;
-                rdfs:domain arto:VisualElement ;
-                rdfs:range [ rdf:type owl:Class ;
-                                 owl:unionOf ( arto:Object
-                                               arto:Scene
-                                             )
-                               ]  ;
-                rdfs:comment """Specifies the object that contains the visual element in the artwork.""";
-                skos:example """
-                  - color elements: :blue_gradient_color arto:isElementOf :sky_object
-                  - Line elements: :diagonal_line arto:isElementOf :mountain_object
-                  - Compositional elements: :vertical_composition arto:isElementOf :tree_object""" ;
-                rdfs:label "isElementOf" .
+                                   owl:unionOf ( arto:Object
+                                                 arto:Scene
+                                               )
+                                 ] ;
+                     rdfs:range arto:VisualElement .
 
 
 ###  http://w3id.org/arto#containsObject
 arto:containsObject rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf dc:hasPart ;
+                    owl:inverseOf arto:isObjectOf ;
                     rdfs:domain arto:Scene ;
-                    rdfs:range arto:Object ;
-                    rdfs:comment """Indicates specific objects that are present within a scene of an artwork.""";
-
-                    skos:example """
-                      - Landscape scene: :garden_scene arto:containsObject :fountain, :bench, :flowers
-                      - Portrait scene: :interior_scene arto:containsObject :chair, :table, :book
-                      - Still life scene: :table_scene arto:containsObject :fruit_bowl, :wine_glass, :cloth""" ;
-                    rdfs:label "containsObject" .
-
-###  http://w3id.org/arto#isObjectOf
-arto:isObjectOf rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf dc:isPartOf ;
-              rdfs:domain arto:Object ;
-              rdfs:range arto:Scene ;
-              owl:inverseOf arto:containsObject ;
-              rdfs:comment """Indicates the scene that contains the object in the artwork.""";
-
-              skos:example """
-                - Landscape scene: :fountain arto:isObjectOf :garden_scene
-                - Portrait scene: :chair arto:isObjectOf :interior_scene
-                - Still life scene: :fruit_bowl arto:isObjectOf :table_scene""" ;
-              rdfs:label "isObjectOf" .
+                    rdfs:range arto:Object .
 
 
 ###  http://w3id.org/arto#containsScene
 arto:containsScene rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf dc:hasPart ;
+                   owl:inverseOf arto:isSceneOf ;
                    rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( arto:Artwork
                                                arto:Scene
                                              )
                                ] ;
-                   rdfs:range arto:Scene ;
-                   rdfs:comment """Identifies distinct scenes within an artwork or within another scene, allowing for hierarchical scene composition.""";
-                   skos:example """
-                      - Nested scenes: :market_scene arto:containsScene :vendor_scene, :customer_scene
-                      - Background scenes: :landscape_painting arto:containsScene :mountain_scene, :valley_scene""" ;
-                   rdfs:label "containsScene" .
+                   rdfs:range arto:Scene .
 
-###  http://w3id.org/arto#isSceneOf
-arto:isSceneOf rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf dc:isPartOf ;
-              rdfs:domain arto:Scene ;
-              rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( arto:Artwork
-                                        arto:Scene
-                                      )
-                        ] ;
-              owl:inverseOf arto:containsScene ;
-              rdfs:comment """Specifies the artwork or scene that contains the scene in the artwork.""";
-              skos:example """
-                - Nested scenes: :vendor_scene arto:isSceneOf :market_scene
-                - Background scenes: :mountain_scene arto:isSceneOf :landscape_painting""" ;
-              rdfs:label "isSceneOf" .
+edm:currentLocation rdf:type owl:ObjectProperty .
 
 ###  http://w3id.org/arto#currentLocation
 arto:currentLocation rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf edm:currentLocation ;
                      rdfs:domain arto:Artwork ;
                      rdfs:range arto:Location ;
-                     rdfs:comment """Specifies the current physical location where an artwork is housed or displayed.""";
-
-                    skos:example """
+                     rdfs:comment "Specifies the present physical location where an artwork is housed, displayed, or stored. This property extends EDM's currentLocation with art-specific constraints ensuring single location assignment while supporting location change tracking. Essential for provenance research, exhibition planning, and artwork accessibility, this property maintains connections to institutional and geographical data through the Location class." ;
+                     rdfs:label "currentLocation" ;
+                     owl:cardinality 1 ;
+                     skos:example """
                       - Museum location: :mona_lisa arto:currentLocation :louvre_museum
                       - Gallery location: :starry_night arto:currentLocation :moma_gallery_room_24
-                      """ ;
-                     rdfs:label "currentLocation" ;
-                     owl:cardinality 1 .
-
+                      """ .
 
 ###  http://w3id.org/arto#expresses
 arto:expresses rdf:type owl:ObjectProperty ;
+            rdfs:domain arto:Emotion ;
+            rdfs:range mfoem:MFOEM_000001 ;
+            rdfs:comment """Relates arto:Emotion to a specific emotion concept defined in the Mental Functioning Ontology Emotion Module (MFOEM). This property is used to link local emotion representations to controlled vocabulary terms (e.g., joy, sadness, anger, fear) from MFOEM, ensuring consistent and interoperable emotion classification across datasets. In the context of artworks, this enables precise and standardised description of emotions expressed within artistic content.""" ;
+            rdfs:label "expresses" ;
+            skos:example """
+              - :joy_emotion arto:expresses mfoem:MFOEM_000034 ; 
+              - :sadness_emotion arto:expresses mfoem:MFOEM_000056 ; 
+              - :anger_emotion arto:expresses mfoem:MFOEM_000009 ; 
+              - :fear_emotion arto:expresses mfoem:MFOEM_000026 ; 
+              """ .
+
+###  http://w3id.org/arto#hasConnotation
+arto:hasConnotation rdf:type owl:ObjectProperty ;
+               owl:inverseOf arto:isConnotationOf ;
                rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( arto:Object
+                             owl:unionOf ( arto:Artwork
+                                           arto:Object
                                            arto:Scene
                                            arto:VisualElement
-                                           arto:Artwork
                                          )
                            ] ;
                rdfs:range arto:Connotation ;
-               owl:inverseOf arto:isExpressedBy ;
-               rdfs:comment """Links visual elements, objects, scenes, or artworks to their symbolic meanings or emotional connotations.""";
+               rdfs:comment "Links visual elements, objects, scenes, or artworks to their symbolic meanings or emotional connotations.The relationship enables multiple interpretation levels while maintaining clear connections between visible elements and their cultural, symbolic, or emotional significance. Similar to ICON's recognizedConcept but with broader domain coverage." ;
+               rdfs:label "hasConnotation" ;
+               skos:example """
+              - Emotional expression: :red_color arto:hasConnotation :anger_emotion
+              - Symbolic meaning: :dove_object arto:hasConnotation :peace_meaning
+              - Scene mood: :storm_scene arto:hasConnotation :turbulence_emotion
+              - Artwork meaning: :guernica arto:hasConnotation :anti_war_theme""" .
 
-              skos:example """
-              - Emotional expression: :red_color arto:expresses :anger_emotion
-              - Symbolic meaning: :dove_object arto:expresses :peace_meaning
-              - Scene mood: :storm_scene arto:expresses :turbulence_emotion
-              - Artwork meaning: :guernica arto:expresses :anti_war_theme""" ;
-               rdfs:label "express" .
-              #  skos:closeMatch icon:recognizedConcept .
 
-###  http://w3id.org/arto#isExpressedBy
-arto:isExpressedBy rdf:type owl:ObjectProperty ;
-                  rdfs:domain arto:Connotation ;
-                  rdfs:range [ rdf:type owl:Class ;
-                              owl:unionOf ( arto:Object
-                                            arto:Scene
-                                            arto:VisualElement
-                                            arto:Artwork
-                                          )
-                            ] ;
-                  owl:inverseOf arto:expresses ;
-                  rdfs:comment """Associates a connotation with the visual elements, objects, scenes or artwork that express it.""";
-
-                  skos:example """
-                    - Emotional expression: :anger_emotion arto:isExpressedBy :red_color
-                    - Symbolic meaning: :peace_meaning arto:isExpressedBy :dove_object
-                    - Scene mood: :turbulence_emotion arto:isExpressedBy :storm_scene
-                    - Artwork meaning: :anti_war_theme arto:isExpressedBy :guernica""" ;
-                  rdfs:label "isExpressedBy" .
+###  http://w3id.org/arto#genre
+arto:genre rdf:type owl:ObjectProperty ;
+           rdfs:domain arto:Artwork ;
+           rdfs:range arto:GenreType ;
+           rdfs:comment """Genre classification is fundamental to art analysis, which connects artworks to established genre categories from Getty AAT vocabulary while supporting custom genre definitions.""" ;
+           rdfs:label "genre" ;
+           skos:example """
+               - Traditional genres: :mona_lisa arto:genre aat:portrait_paintings
+               - Landscape genre: :starry_night arto:genre aat:landscape_paintings  
+               - Religious genre: :last_supper arto:genre aat:religious_paintings
+               - Still life genre: :sunflowers arto:genre aat:still_life_paintings
+               - Abstract genre: :composition_vii arto:genre aat:abstract_paintings
+               """ .
 
 ###  http://w3id.org/arto#hasLocation
 arto:hasLocation rdf:type owl:ObjectProperty ;
+                 owl:inverseOf arto:isLocationOf ;
                  rdfs:domain [ rdf:type owl:Class ;
                                owl:unionOf ( arto:Agent
                                              arto:Event
                                            )
                              ] ;
                  rdfs:range arto:Location ;
-                 owl:inverseOf arto:isLocationOf ;
-                 rdfs:comment """Specifies the physical location of an organization or event related to the artwork.""";
-
-                skos:example """
+                 rdfs:comment "Specifies the physical location of an organization or event related to the artwork." ;
+                 rdfs:label "hasLocation" ;
+                 skos:example """
                 - Museum address: :metropolitan_museum arto:hasLocation :met_nyc_location
                 - Gallery location: :tate_modern arto:hasLocation :london_bankside
                 - Studio location: :warhol_factory arto:hasLocation :manhattan_location
-                - Exhibition event: :venice_biennale_2024 arto:hasLocation :venice_giardini""" ;
-                 rdfs:label "hasLocation" .
+                - Exhibition event: :venice_biennale_2024 arto:hasLocation :venice_giardini""" .
 
-###  http://w3id.org/arto#isLocationOf
-arto:isLocationOf rdf:type owl:ObjectProperty ;
-                 rdfs:domain arto:Location ;
-                 rdfs:range [ rdf:type owl:Class ;
-                             owl:unionOf ( arto:Agent
-                                           arto:Event
-                                         )
-                           ] ;
-                 owl:inverseOf arto:hasLocation ;
-                 rdfs:comment """Associates a location with the organization or event that it is related to.""";
-
-                skos:example """
-                - Museum address: :met_nyc_location arto:isLocationOf :metropolitan_museum
-                - Gallery location: :london_bankside arto:isLocationOf :tate_modern
-                - Studio location: :manhattan_location arto:isLocationOf :warhol_factory
-                - Exhibition event: :venice_giardini arto:isLocationOf :venice_biennale_2024""" ;
-                 rdfs:label "isLocationOf" .
 
 ###  http://w3id.org/arto#hasMetric
 arto:hasMetric rdf:type owl:ObjectProperty ;
+               owl:inverseOf arto:isMetricOf ;
                rdfs:domain [ rdf:type owl:Class ;
                              owl:unionOf ( arto:Connotation
                                            arto:Object
@@ -308,85 +599,187 @@ arto:hasMetric rdf:type owl:ObjectProperty ;
                                          )
                            ] ;
                rdfs:range arto:Metric ;
-               owl:inverseOf arto:isMetricOf ;
-               rdfs:comment """Associates components (Connotation, Scene, Object or the Visual Element) of an artwork with quantifiable measurements or characteristics.""";
-
-                skos:example """
+               rdfs:comment "Associates artwork components with quantifiable measurements supporting computational analysis and comparative studies. This property enables integration of statistical color analysis, compositional balance metrics, emotional intensity measures, and other quantitative assessments with qualitative art historical analysis. The relationship supports both automated artwork analysis and structured comparison studies while maintaining connection to interpretive content." ;
+               rdfs:label "hasMetric" ;
+               skos:example """
                 - Color metrics: :sky_area arto:hasMetric :blue_intensity_75_percent
                 - Composition balance: :landscape_scene arto:hasMetric :symmetry_score_0.8
-                - Emotional intensity: :expression_scene arto:hasMetric :fear_intensity_high""" ;
-               rdfs:label "hasMetric" .
-
-###  http://w3id.org/arto#isMetricOf
-arto:isMetricOf rdf:type owl:ObjectProperty ;
-               rdfs:domain arto:Metric ;
-               rdfs:range [ rdf:type owl:Class ;
-                           owl:unionOf ( arto:Connotation
-                                         arto:Object
-                                         arto:Scene
-                                         arto:VisualElement
-                                       )
-                         ] ;
-               owl:inverseOf arto:hasMetric ;
-               rdfs:comment """Associates a metric with the component of an artwork that it is related to.""";
-
-               skos:example """
-                - Color metrics: :blue_intensity_75_percent arto:isMetricOf :sky_area
-                - Composition balance: :symmetry_score_0.8 arto:isMetricOf :landscape_scene
-                - Emotional intensity: :fear_intensity_high arto:isMetricOf :expression_scene""" ;
-               rdfs:label "isMetricOf" .
+                - Emotional intensity: :expression_scene arto:hasMetric :fear_intensity_high""" .
 
 
 ###  http://w3id.org/arto#hasTime
 arto:hasTime rdf:type owl:ObjectProperty ;
+             owl:inverseOf arto:isTimeOf ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( arto:Event
                                          arto:Location
                                        )
                          ] ;
              rdfs:range arto:Time ;
-             owl:inverseOf arto:isTimeOf ;
-             rdfs:comment """Associates an event or location with its temporal information.""";
+             rdfs:comment "Associates an event or location with its temporal information." ;
+             rdfs:label "hasTime" ;
              skos:example """
               - Event timing: :exhibition2024 arto:hasTime :spring2024
               - Location historical period: :paris_studio arto:hasTime :belle_epoque
-              """ ;
-             rdfs:label "hasTime" .
+              """ .
+
+
+###  http://w3id.org/arto#holds
+arto:holds rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf arto:relatedTo ;
+           rdfs:domain arto:Object ;
+           rdfs:range arto:Object ;
+           rdfs:comment "Indicates that one object is holding or containing another object in the artwork." ;
+           rdfs:label "holds" .
+
+
+###  http://w3id.org/arto#isElementOf
+arto:isElementOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain arto:VisualElement ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( arto:Object
+                                            arto:Scene
+                                          )
+                            ] .
+
+
+###  http://w3id.org/arto#isEventOf
+arto:isEventOf rdf:type owl:ObjectProperty ;
+               owl:inverseOf arto:relatedToEvent ;
+               rdfs:domain arto:Event ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( arto:Artwork
+                                          arto:Scene
+                                        )
+                          ] ;
+               rdfs:comment "Associates an event with the artwork or scene that it is related to." ;
+               rdfs:label "isEventOf" ;
+               skos:example """
+                - Historical event: :french_revolution_1830 arto:isEventOf :liberty_leading_the_people
+                - Biblical event: :biblical_last_supper arto:isEventOf :last_supper
+                """ .
+
+
+###  http://w3id.org/arto#isConnotationOf
+arto:isConnotationOf rdf:type owl:ObjectProperty ;
+                   rdfs:domain arto:Connotation ;
+                   rdfs:range [ rdf:type owl:Class ;
+                                owl:unionOf ( arto:Artwork
+                                              arto:Object
+                                              arto:Scene
+                                              arto:VisualElement
+                                            )
+                              ] ;
+                   rdfs:comment "Associates a connotation with the visual elements, objects, scenes or artwork that express it." ;
+                   rdfs:label "isConnotationOf" ;
+                   skos:example """
+                    - Emotional expression: :anger_emotion arto:isConnotationOf :red_color
+                    - Symbolic meaning: :peace_meaning arto:isConnotationOf :dove_object
+                    - Scene mood: :turbulence_emotion arto:isConnotationOf :storm_scene
+                    - Artwork meaning: :anti_war_theme arto:isConnotationOf :guernica""" .
+
+
+###  http://w3id.org/arto#isLocationOf
+arto:isLocationOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain arto:Location ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( arto:Agent
+                                             arto:Event
+                                           )
+                             ] ;
+                  rdfs:comment "Associates a location with the organization or event that it is related to." ;
+                  rdfs:label "isLocationOf" ;
+                  skos:example """
+                - Museum address: :met_nyc_location arto:isLocationOf :metropolitan_museum
+                - Gallery location: :london_bankside arto:isLocationOf :tate_modern
+                - Studio location: :manhattan_location arto:isLocationOf :warhol_factory
+                - Exhibition event: :venice_giardini arto:isLocationOf :venice_biennale_2024""" .
+
+
+###  http://w3id.org/arto#isMetricOf
+arto:isMetricOf rdf:type owl:ObjectProperty ;
+                rdfs:domain arto:Metric ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( arto:Connotation
+                                           arto:Object
+                                           arto:Scene
+                                           arto:VisualElement
+                                         )
+                           ] ;
+                rdfs:comment "Associates a metric with the component of an artwork that it is related to." ;
+                rdfs:label "isMetricOf" ;
+                skos:example """
+                - Color metrics: :blue_intensity_75_percent arto:isMetricOf :sky_area
+                - Composition balance: :symmetry_score_0.8 arto:isMetricOf :landscape_scene
+                - Emotional intensity: :fear_intensity_high arto:isMetricOf :expression_scene""" .
+
+
+###  http://w3id.org/arto#isObjectOf
+arto:isObjectOf rdf:type owl:ObjectProperty ;
+                rdfs:domain arto:Object ;
+                rdfs:range arto:Scene .
+
+
+###  http://w3id.org/arto#isSceneOf
+arto:isSceneOf rdf:type owl:ObjectProperty ;
+               rdfs:domain arto:Scene ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( arto:Artwork
+                                          arto:Scene
+                                        )
+                          ] .
+
 
 ###  http://w3id.org/arto#isTimeOf
 arto:isTimeOf rdf:type owl:ObjectProperty ;
-             rdfs:domain arto:Time ;
-             rdfs:range [ rdf:type owl:Class ;
-                         owl:unionOf ( arto:Event
-                                       arto:Location
-                                     )
-                       ] ;
-             owl:inverseOf arto:hasTime ;
-             rdfs:comment """Associates a time with the event or location that it is related to.""";
+              rdfs:domain arto:Time ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( arto:Event
+                                         arto:Location
+                                       )
+                         ] ;
+              rdfs:comment "Associates a time with the event or location that it is related to." ;
+              rdfs:label "isTimeOf" ;
               skos:example """
               - Event timing: :spring2024 arto:isTimeOf :exhibition2024
               - Location historical period: :belle_epoque arto:isTimeOf :paris_studio
-              """ ;
-             rdfs:label "isTimeOf" .
+              """ .
+
 
 ###  http://w3id.org/arto#knows
 arto:knows rdf:type owl:ObjectProperty ;
            rdfs:domain arto:Person ;
            rdfs:range arto:Person ;
-           owl:equivalentProperty foaf:knows ;
-           rdfs:comment "The person knows persons.";
+           rdfs:comment "The person knows persons. This property, equivalent to foaf:knows, enables study of artistic movements, teacher-student relationships, collaborative networks, and cultural exchange patterns essential for understanding art historical development and cross-cultural artistic influence." ;
+           rdfs:label "knows" ;
            skos:example """
             - Artist relationships: :vincent_van_gogh arto:knows :paul_gauguin
             - Teacher-student: :gustav_klimt arto:knows :egon_schiele
-            - Collaborative artists: :pablo_picasso arto:knows :georges_braque""" ;
-           rdfs:label "knows" .
+            - Collaborative artists: :pablo_picasso arto:knows :georges_braque""" .
+
+
+###  http://w3id.org/arto#material
+arto:material rdf:type owl:ObjectProperty ;
+              rdfs:domain arto:Object ;
+              rdfs:range arto:MaterialType ;
+              rdfs:comment "The material of the Object. It connect to the Getty AAT's material hierarchy, allowing for both standardized and custom material definitions." ;
+              rdfs:label "material" .
+
+
+###  http://w3id.org/arto#medium
+arto:medium rdf:type owl:ObjectProperty ;
+            rdfs:domain arto:Artwork ;
+            rdfs:range arto:MediumType ;
+            rdfs:comment "Specifies the media used in artworks, , connecting to Getty AAT's authoritative materials hierarchy." ;
+            rdfs:label "medium" .
 
 
 ###  http://w3id.org/arto#relatedTo
 arto:relatedTo rdf:type owl:ObjectProperty ;
                rdfs:domain arto:Object ;
                rdfs:range arto:Object ;
-               rdfs:comment "Describes spatial or conceptual relationships between objects within an artwork. The specific relationships are specified using the rdfs:subPropertyOf.";
+               rdfs:comment "Describes spatial or conceptual relationships between objects within artworks. This extensible property enables specific relationship types (behind, holds, above) through subproperty mechanisms, supporting detailed spatial analysis while maintaining semantic clarity." ;
+               rdfs:label "relatedTo" ;
                skos:example """
                 - Spatial relation: :cup_object arto:rests_on :table_object ;
                   arto:rests_on rdfs:subPropertyOf arto:relatedTo;
@@ -395,25 +788,20 @@ arto:relatedTo rdf:type owl:ObjectProperty ;
                 - Position: :cloud_object arto:above :mountain_object ;
                   arto:above rdfs:subPropertyOf arto:relatedTo ;
                 - Position: :tree_object arto:behind :house_object ;
-                  arto:behind rdfs:subPropertyOf arto:relatedTo ;""" ;
-                
-               rdfs:label "relatedTo" .
+                  arto:behind rdfs:subPropertyOf arto:relatedTo ;""" .
 
-###  http://w3id.org/arto#behind
-arto:behind rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf arto:relatedTo ;
-                rdfs:domain arto:Object ;
-                rdfs:range arto:Object ;
-                rdfs:comment "Indicates that one object is positioned behind another object in the artwork." ;
-                rdfs:label "behind" .
 
-###  http://w3id.org/arto#holds  
-arto:holds rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf arto:relatedTo ;
-                rdfs:domain arto:Object ;
-                rdfs:range arto:Object ;
-                rdfs:comment "Indicates that one object is holding or containing another object in the artwork." ;
-                rdfs:label "holds" .
+###  http://w3id.org/arto#relatedToConnotation
+arto:relatedToConnotation rdf:type owl:ObjectProperty ;
+                          rdfs:domain arto:Event ;
+                          rdfs:range arto:Connotation ;
+                          rdfs:comment "Indicates that an event relatedToConnotation some connotations." ;
+                          rdfs:label "relatedToConnotation" ;
+                          skos:example """
+                  ex:NoahDoveEvent rdf:type arto:Event ;
+                  arto:relatedToConnotation ex:PeaceSymbolism ;
+                """ .
+
 
 ###  http://w3id.org/arto#relatedToEvent
 arto:relatedToEvent rdf:type owl:ObjectProperty ;
@@ -423,133 +811,186 @@ arto:relatedToEvent rdf:type owl:ObjectProperty ;
                                               )
                                 ] ;
                     rdfs:range arto:Event ;
-                    owl:inverseOf arto:isEventOf ;
-                    rdfs:comment "Connects an artwork or its connotation to historical, mythological, or contemporary events depicted or referenced in the work.";
+                    rdfs:comment "Connects an artwork or its connotation to historical, mythological, or contemporary events depicted or referenced in the work." ;
+                    rdfs:label "relatedToEvent" ;
                     skos:example """
                       - Historical event: :liberty_leading_the_people arto:relatedToEvent :french_revolution_1830
                       - Biblical event: :last_supper arto:relatedToEvent :biblical_last_supper
-                      """ ;
-                    rdfs:label "relatedToEvent" .
-
-###  http://w3id.org/arto#isEventOf
-arto:isEventOf rdf:type owl:ObjectProperty ;
-              rdfs:domain arto:Event ;
-              rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( arto:Artwork
-                                        arto:Scene
-                                      )
-                        ] ;
-              owl:inverseOf arto:relatedToEvent ;
-              rdfs:comment "Associates an event with the artwork or scene that it is related to.";
-              skos:example """
-                - Historical event: :french_revolution_1830 arto:isEventOf :liberty_leading_the_people
-                - Biblical event: :biblical_last_supper arto:isEventOf :last_supper
-                """ ;
-              rdfs:label "isEventOf" .
-
-arto:relatedToConnotation rdf:type owl:ObjectProperty ;
-              rdfs:domain arto:Event ;
-              rdfs:range arto:Connotation ;
-              rdfs:comment "Indicates that an event relatedToConnotation some connotations.";
-              skos:example """
-                  ex:NoahDoveEvent rdf:type arto:Event ;
-                  arto:relatedToConnotation ex:PeaceSymbolism ;
-                """;
-              rdfs:label "relatedToConnotation" .
+                      """ .
 
 
 ###  http://w3id.org/arto#relatedToScene
 arto:relatedToScene rdf:type owl:ObjectProperty ;
                     rdfs:domain arto:Object ;
                     rdfs:range arto:Scene ;
-                    rdfs:comment "Links objects to the scenes they appear in or are associated with.";
+                    rdfs:comment "Links objects to the scenes they appear in or are associated with." ;
+                    rdfs:label "relatedToScene" ;
                     skos:example """
-                      - Object context: :bread_loaf arto:relatedToScene :market_scene """ ;
-                    rdfs:label "relatedToScene" .
+                      - Object context: :bread_loaf arto:relatedToScene :market_scene """ .
+
 
 ###  http://w3id.org/arto#state
 arto:state rdf:type owl:ObjectProperty ;
            rdfs:domain arto:Object ;
            rdfs:range skos:Concept ;
-           rdfs:comment "Describes the current condition, position, or status of objects within an artwork, which may be an AAT concept or free text." ;
-           rdfs:label "state" .
+           rdfs:comment "Describes the condition, position, or status of objects within artworks, capturing both physical states (damaged, intact) and depicted conditions (motion, rest, emotional states of figures)." ;
+           rdfs:label "state" ;
+           skos:example """
+               - Physical conditions: :broken_amphora arto:state :damaged_state ;
+                 :marble_statue arto:state :weathered_state
+               - Motion states: :running_horse arto:state :galloping_state ;
+                 :falling_figure arto:state :in_motion_state
+               - Positional states: :seated_figure arto:state :sitting_state ;
+                 :reclining_venus arto:state :lying_state
+               - Emotional states: :weeping_magdalene arto:state :grieving_state ;
+                 :laughing_child arto:state :joyful_state
+               - Temporal states: :blooming_flower arto:state :spring_state ;
+                 :withered_leaves arto:state :autumn_state
+               - Functional states: :open_book arto:state :readable_state ;
+                 :lit_candle arto:state :burning_state
+               """ .
+
 
 ###  http://w3id.org/arto#style
 arto:style rdf:type owl:ObjectProperty ;
-    rdfs:domain arto:Artwork ;
-    rdfs:range [ rdf:type owl:Class ;
-                 owl:unionOf ( 
-                   [ rdf:type owl:Restriction ;
-                     owl:onProperty skos:broaderTransitive ;
-                     owl:hasValue aat:300264088 ]  # Styles under AAT Style facet
-                   skos:Concept  # Allow custom concepts
-                 )
-               ] ;
-    rdfs:comment "The style of the artwork." ;
-    rdfs:label "style" .
+           rdfs:domain arto:Artwork ;
+           rdfs:range arto:StyleType ;
+           rdfs:comment "Indicates the artistic style or movement associated with an artwork, drawing from Getty AAT's authoritative style classifications while supporting custom style definitions." ;
+           rdfs:label "style" .
 
 
-
-###  http://w3id.org/arto#material
-arto:material rdf:type owl:ObjectProperty ;
-              rdfs:domain arto:Object ;
-              rdfs:range [ rdf:type owl:Class ;
-                 owl:unionOf ( 
-                   [ rdf:type owl:Restriction ;
-                     owl:onProperty skos:broaderTransitive ;
-                     owl:hasValue aat:300264091 ]  # Materials under AAT Materials facet
-                   skos:Concept  # Allow custom concepts
-                 )
-               ] ;
-              rdfs:comment "The material of the Object." ;
-              rdfs:label "material" .
-
-
+###  http://w3id.org/arto#technique
 arto:technique rdf:type owl:ObjectProperty ;
                rdfs:domain arto:Artwork ;
-               rdfs:range [ rdf:type owl:Class ;
-                  owl:unionOf ( 
-                    [ rdf:type owl:Restriction ;
-                      owl:onProperty skos:broaderTransitive ;
-                      owl:hasValue aat:300053001 ]  # Techniques under AAT Techniques facet
-                    skos:Concept  # Allow custom concepts
-                  )
-               ] ;
-               rdfs:comment "The technique used in the Artwork." ;
+               rdfs:range arto:TechniqueType ;
+               rdfs:comment "Specifies the artistic methods, processes, or technical approaches used in artwork creation. This property aligns with Getty AAT's technique hierarchy while supporting custom undefined techniques." ;
                rdfs:label "technique" .
+
+
+
+###  http://w3id.org/arto#hasCoordinates
+arto:hasCoordinates rdf:type owl:ObjectProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( arto:Object
+                                                arto:Scene
+                                              )
+                                ] ;
+                    rdfs:range qudt:Vector ;
+                    rdfs:comment """Specifies the spatial location of objects and scenes within the artwork's coordinate system. This property supports spatial analysis, object relationship studies, compositional balance analysis, and digital humanities research requiring precise object localization.""" ;
+                    rdfs:label "hasCoordinates" ;
+                    skos:example """
+                        - Digital image coordinates: :main_figure arto:hasCoordinates qudt_Vector_250_300
+                    qudt_Vector_250_300 rdf:type qudt:Vector ;
+                        - 3D artwork coordinates: :sculpture_detail arto:hasCoordinates qudt_Vector_15_20_5
+                    qudt_Vector_15_20_5 rdf:type qudt:Vector ;
+                    """ .
+
+
+###  http://w3id.org/arto#hasColorValue
+arto:hasColorValue rdf:type owl:ObjectProperty ;
+  rdfs:domain arto:Color ;
+  rdfs:range arto:ColorValue ;
+  rdfs:comment "Associates a color with its value, allowing for flexible representation of color information in artworks. This property supports different color spaces for example RGB and HEX formats, enabling detailed color analysis and representation." ;
+  rdfs:label "hasColorValue" .
+
+
+
+arto:hasColorTerm rdf:type owl:ObjectProperty ;
+  rdfs:domain arto:Color ;
+  rdfs:range arto:ColorTerm ;
+  rdfs:label "hasColorTerm" ;
+  rdfs:comment "Links a color to its corresponding standardized term from controlled vocabularies, establishing semantic connections that enable consistent color identification, hierarchical classification, and cross-institutional interoperability for cultural heritage documentation and research." .
+
+
+
+###  http://www.europeana.eu/schemas/edm/currentLocation
+edm:currentLocation rdf:type owl:ObjectProperty .
+
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+geo:asWKT rdf:type owl:ObjectProperty .
+
+
+###  https://dbpedia.org/property/residence
+dbp:residence rdf:type owl:ObjectProperty .
+
+
+###  https://schema.org/height
+sdo:height rdf:type owl:ObjectProperty .
+
+###  https://schema.org/width
+sdo:width rdf:type owl:ObjectProperty .
+
+
+
+###  https://w3id.org/MON/event.owl#agent
+event:agent rdf:type owl:ObjectProperty .
+
 
 #################################################################
 #    Data properties
 #################################################################
 
+###  http://purl.org/dc/terms/alternative
+dc:alternative rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf dc:title .
 
 
-###  http://w3id.org/arto#HSVValue
-arto:HSVValue rdf:type owl:DatatypeProperty ;
-              rdfs:domain arto:Color ;
-              rdfs:range xsd:string ;
-              rdfs:comment "HSV color value in format 'H,S,V' where H is the hue and the range is 0-360, S is the saturation and the range is 0-100, and V is the value and the range is 0-100" ;
-              rdfs:label "HSVValue" .
+###  http://purl.org/dc/terms/available
+dc:available rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf dc:date .
 
 
-###  http://w3id.org/arto#RGBValue
-arto:RGBValue rdf:type owl:DatatypeProperty ;
-              rdfs:domain arto:Color ;
-              rdfs:range xsd:string ;
-              rdfs:comment "RGB color value in format 'R,G,B' where R,G,B are integers 0-255" ;
-              rdfs:label "RGBValue" .
+###  http://purl.org/dc/terms/bibliographicCitation
+dc:bibliographicCitation rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf dc:identifier .
 
 
-###  http://w3id.org/arto#coordinates
-arto:coordinates rdf:type owl:DatatypeProperty ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( arto:Object
-                                             arto:Scene
-                                           )
-                             ] ;
-                 rdfs:range xsd:string ;
-                 rdfs:comment "The coordinates of the Scene or the Object in the artwork." ;
-                 rdfs:label "coordinates" .
+###  http://purl.org/dc/terms/created
+dc:created rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf dc:date .
+
+
+###  http://purl.org/dc/terms/date
+dc:date rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/dateAccepted
+dc:dateAccepted rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf dc:date .
+
+
+###  http://purl.org/dc/terms/dateCopyrighted
+dc:dateCopyrighted rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf dc:date .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+dc:dateSubmitted rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf dc:date .
+
+
+###  http://purl.org/dc/terms/identifier
+dc:identifier rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dc:issued rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf dc:date .
+
+
+###  http://purl.org/dc/terms/modified
+dc:modified rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf dc:date .
+
+
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/valid
+dc:valid rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf dc:date .
 
 
 ###  http://w3id.org/arto#descriptor
@@ -557,15 +998,14 @@ arto:descriptor rdf:type owl:DatatypeProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
                               owl:unionOf ( arto:Object
                                             arto:Scene
-                                            arto:VisualElement
                                           )
                             ] ;
                 rdfs:range xsd:string ;
-                rdfs:comment """Describes the visual characteristics or properties of an object in an artwork. The specific descriptors are specified using the rdfs:subPropertyOf.""";
+                rdfs:comment "Provides extensible descriptive framework for capturing object and scene characteristics not covered by specific properties, enabling domain-specific extensions through subproperties. This design addresses the infinite variety of artistic content while maintaining semantic structure. Examples include clothing descriptions for figures, or environmental conditions for scene." ;
+                rdfs:label "descriptor" ;
                 skos:example """
                 Portrait1 :clothing :RedDress ;
-                :clothing rdfs:subPropertyOf arto:descriptor""" ;
-                rdfs:label "descriptor" .
+                :clothing rdfs:subPropertyOf arto:descriptor""" .
 
 
 ###  http://w3id.org/arto#direction
@@ -576,6 +1016,42 @@ arto:direction rdf:type owl:DatatypeProperty ;
                rdfs:label "direction" .
 
 
+###  http://w3id.org/arto#emotionPerspective
+arto:emotionPerspective rdf:type owl:DatatypeProperty ;
+                        rdfs:domain arto:Emotion ;
+                        rdfs:range [ rdf:type rdfs:Datatype ;
+                                     owl:oneOf [ rdf:type rdf:List ;
+                                                 rdf:first "Artist" ;
+                                                 rdf:rest [ rdf:type rdf:List ;
+                                                            rdf:first "Artwork" ;
+                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                       rdf:first "Viewer" ;
+                                                                       rdf:rest rdf:nil
+                                                                     ]
+                                                          ]
+                                               ]
+                                   ] ;
+                        rdfs:comment "Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'artist' (artist's intended emotion), 'artwork' (emotion expressed by the artwork's formal elements), and 'viewer' (viewer's emotional response)." ;
+                        rdfs:label "emotionPerspective"@en ;
+                        skos:example """
+                          ex:melancholy_emotion arto:emotionPerspective \"artist\"^^xsd:string ;
+                          ex:serenity_emotion arto:emotionPerspective \"artwork\"^^xsd:string ;
+                          ex:excitement_emotion arto:emotionPerspective \"viewer\"^^xsd:string .
+                          """ .
+
+
+
+
+###  http://w3id.org/arto#colorSystem
+arto:colorSystem a owl:DatatypeProperty ;
+            rdfs:domain arto:ColorValue ;
+            rdfs:range  [ a rdfs:Datatype ;
+                owl:oneOf ( "RGB" "HSV" "Lab" "CMYK" "Grayscale" "XYZ" )
+              ] ;
+            rdfs:label "colorSystem" ;
+            rdfs:comment "The color system of the ColorValue, indicating the model used for its representation. This property supports various color models such as RGB, HSV, Lab, and CMYK, allowing for flexible color representation and analysis in artworks. The use of a restricted set of values ensures consistency and interoperability across different systems and applications." .
+
+
 
 ###  http://w3id.org/arto#length
 arto:length rdf:type owl:DatatypeProperty ;
@@ -584,7 +1060,7 @@ arto:length rdf:type owl:DatatypeProperty ;
             rdfs:comment "The length of the line." ;
             rdfs:label "length" .
 
-  
+
 ###  http://w3id.org/arto#size
 arto:size rdf:type owl:DatatypeProperty ;
           rdfs:domain [ rdf:type owl:Class ;
@@ -593,7 +1069,7 @@ arto:size rdf:type owl:DatatypeProperty ;
                                     )
                       ] ;
           rdfs:range xsd:string ;
-          rdfs:comment "The size of the Scene or the Object in the artwork." ;
+          rdfs:comment "Indicates the relative or absolute dimensions of objects and scenes within artwork composition. Size often correlate with narrative importance, symbolic significance, or perspectival organization in artistic composition." ;
           rdfs:label "size" .
 
 
@@ -601,26 +1077,21 @@ arto:size rdf:type owl:DatatypeProperty ;
 arto:source rdf:type owl:DatatypeProperty ;
             rdfs:domain arto:Symbolism ;
             rdfs:range xsd:string ;
-            rdfs:comment "Relates the source of the symbolism in artworks." ;
+            rdfs:comment "Identifies the cultural, historical, or textual origins of symbolic meanings, enabling traceability of iconographic interpretations and cross-cultural symbolic analysis. Sources can include mythological traditions, religious texts, historical events, literary works, or folk traditions that inform symbolic interpretation." ;
             rdfs:label "source" .
 
 
-arto:emotionPerspective rdf:type owl:DatatypeProperty ;
-                          rdfs:domain arto:Emotion ;
-                          rdfs:range [ rdf:type rdfs:Datatype ;
-                                       owl:oneOf ( 
-                                         "artist"^^xsd:string
-                                         "artwork"^^xsd:string
-                                         "viewer"^^xsd:string
-                                       )
-                                     ] ;
-                          rdfs:comment """Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'artist' (artist's intended emotion), 'artwork' (emotion expressed by the artwork's formal elements), and 'viewer' (viewer's emotional response)."""@en ;
-                          rdfs:label "emotionPerspective"@en ;
-                          skos:example """
-                          ex:melancholy_emotion arto:emotionPerspective "artist"^^xsd:string ;
-                          ex:serenity_emotion arto:emotionPerspective "artwork"^^xsd:string ;
-                          ex:excitement_emotion arto:emotionPerspective "viewer"^^xsd:string .
-                          """ .
+###  http://www.europeana.eu/schemas/edm/isShownBy
+edm:isShownBy rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/endDate
+sdo:endDate rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/startDate
+sdo:startDate rdf:type owl:DatatypeProperty .
+
 
 
 #################################################################
@@ -628,15 +1099,119 @@ arto:emotionPerspective rdf:type owl:DatatypeProperty ;
 #################################################################
 
 
+###  http://purl.org/dc/dcam/VocabularyEncodingScheme
+<http://purl.org/dc/dcam/VocabularyEncodingScheme> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/Agent
+dc:Agent rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/AgentClass
+dc:AgentClass rdf:type owl:Class ;
+              rdfs:subClassOf rdfs:Class .
+
+
+###  http://purl.org/dc/terms/BibliographicResource
+dc:BibliographicResource rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/FileFormat
+dc:FileFormat rdf:type owl:Class ;
+              rdfs:subClassOf dc:MediaType .
+
+
+###  http://purl.org/dc/terms/Frequency
+dc:Frequency rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/Jurisdiction
+dc:Jurisdiction rdf:type owl:Class ;
+                rdfs:subClassOf dc:LocationPeriodOrJurisdiction .
+
+
+###  http://purl.org/dc/terms/LicenseDocument
+dc:LicenseDocument rdf:type owl:Class ;
+                   rdfs:subClassOf dc:RightsStatement .
+
+
+###  http://purl.org/dc/terms/LinguisticSystem
+dc:LinguisticSystem rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/Location
+dc:Location rdf:type owl:Class ;
+            rdfs:subClassOf dc:LocationPeriodOrJurisdiction .
+
+
+###  http://purl.org/dc/terms/LocationPeriodOrJurisdiction
+dc:LocationPeriodOrJurisdiction rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/MediaType
+dc:MediaType rdf:type owl:Class ;
+             rdfs:subClassOf dc:MediaTypeOrExtent .
+
+
+###  http://purl.org/dc/terms/MediaTypeOrExtent
+dc:MediaTypeOrExtent rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/MethodOfAccrual
+dc:MethodOfAccrual rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/MethodOfInstruction
+dc:MethodOfInstruction rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/PeriodOfTime
+dc:PeriodOfTime rdf:type owl:Class ;
+                rdfs:subClassOf dc:LocationPeriodOrJurisdiction .
+
+
+###  http://purl.org/dc/terms/PhysicalMedium
+dc:PhysicalMedium rdf:type owl:Class ;
+                  rdfs:subClassOf dc:MediaType .
+
+
+###  http://purl.org/dc/terms/PhysicalResource
+dc:PhysicalResource rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/Policy
+dc:Policy rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/ProvenanceStatement
+dc:ProvenanceStatement rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/RightsStatement
+dc:RightsStatement rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/SizeOrDuration
+dc:SizeOrDuration rdf:type owl:Class ;
+                  rdfs:subClassOf dc:MediaTypeOrExtent .
+
+
+###  http://purl.org/dc/terms/Standard
+dc:Standard rdf:type owl:Class .
+
+
+###  http://vocab.getty.edu/aat/300163343
+<http://vocab.getty.edu/aat/300163343> rdf:type owl:Class .
+
+
 ###  http://w3id.org/arto#Agent
 arto:Agent rdf:type owl:Class ;
            rdfs:subClassOf foaf:Agent ,
-            [ rdf:type owl:Restriction ;
-              owl:onProperty arto:hasLocation ;
-              owl:allValuesFrom arto:Location
-            ] ;
-           rdfs:comment """Represents an Agent.This class comprises people, either individually or in groups,
-      who have the potential to perform intentional actions for which they can be held responsible.""" ;
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:hasLocation ;
+                             owl:allValuesFrom arto:Location
+                           ] ;
+           rdfs:comment "Represents individuals or organizations involved in artwork creation, curation, or related activities. This class extends foaf:Agent with art-specific roles and relationships. Agents can be artists, curators, collectors, institutions, or other entities. " ;
            rdfs:label "Agent" .
 
 
@@ -645,6 +1220,7 @@ arto:Artist rdf:type owl:Class ;
             rdfs:subClassOf arto:Person ;
             rdfs:comment "The person or group who create or contribute the artwork." ;
             rdfs:label "Artist" .
+
 
 ###  http://w3id.org/arto#Artwork
 arto:Artwork rdf:type owl:Class ;
@@ -655,100 +1231,71 @@ arto:Artwork rdf:type owl:Class ;
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty dc:creator ;
-                               owl:allValuesFrom arto:Agent;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               owl:allValuesFrom arto:Artist
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty dc:isPartOf ;
                                owl:allValuesFrom arto:Series
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty dc:description ;
-                               owl:allValuesFrom xsd:string;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               owl:onProperty arto:containsScene ;
+                               owl:allValuesFrom arto:Scene
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty dc:medium ;
-                               owl:allValuesFrom dc:PhysicalMedium ;
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:expresses ;
+                               owl:onProperty arto:hasConnotation ;
                                owl:allValuesFrom arto:Connotation
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:technique ;
-                               owl:allValuesFrom [
-                                      owl:unionOf (
-                                        [ rdf:type owl:Restriction ;      
-                                            owl:onProperty skos:broaderTransitive ;
-                                            owl:someValuesFrom [ owl:oneOf ( aat:300053001 ) ]
-                                          ]   # AAT Techniques
-                                          skos:Concept           # Custom techniques    
-                                      )
-                                  ];
+                               owl:onProperty arto:genre ;
+                               owl:allValuesFrom arto:GenreType
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty dc:title ;
-                               owl:allValuesFrom xsd:string;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               owl:onProperty arto:medium ;
+                               owl:allValuesFrom arto:MediumType
                              ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty sdo:height ;
-                               owl:allValuesFrom sdo:QuantitativeValue;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty sdo:width ;
-                               owl:allValuesFrom sdo:QuantitativeValue;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty edm:isShownBy ;
-                               owl:allValuesFrom xsd:anyURI;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:style ;
-                               owl:allValuesFrom [
-                                    owl:unionOf (
-                                      [ rdf:type owl:Restriction ;
-                                          owl:onProperty skos:broaderTransitive ;
-                                          owl:someValuesFrom [ owl:oneOf ( aat:300264088 ) ]
-                                        ]   # AAT Styles Facet
-                                        skos:Concept           # Custom styles
-                                    )
-                                ] ;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty sdo:genre ;
-                               owl:allValuesFrom arto:GenreType;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
-                             ],
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:currentLocation ;
-                               owl:allValuesFrom arto:Location;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ],
                              [ rdf:type owl:Restriction ;
                                owl:onProperty arto:relatedToEvent ;
                                owl:allValuesFrom arto:Event
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:expresses ;
-                               owl:allValuesFrom arto:Connotation
+                               owl:onProperty arto:style ;
+                               owl:allValuesFrom arto:StyleType
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:containsScene ;
-                               owl:allValuesFrom arto:Scene;
-                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                               owl:onProperty arto:technique ;
+                               owl:allValuesFrom arto:TechniqueType
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty arto:currentLocation ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass arto:Location
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty sdo:height ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass sdo:QuantitativeValue
+                             ] ,
+                             [
+                               rdf:type owl:Restriction ;
+                               owl:onProperty sdo:width ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass sdo:QuantitativeValue
+                             ],
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty dc:description ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty dc:title ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty edm:isShownBy ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:anyURI
                              ] ;
-             rdfs:comment """A created object or piece of art that is intended to be aesthetically pleasing or
-                convey a message.
-                """ ;
+             rdfs:comment "Represents a created object intended to be aesthetically pleasing or convey artistic meaning. This class encompasses various art forms including paintings, sculptures, photographs, and digital art. Unlike CIDOC-CRM's E22_Human-Made_Object which covers all manufactured items, arto:Artwork specifically focuses on objects created with artistic intent. The class inherits essential properties from schema:CreativeWork (creator, dateCreated, description) while adding art-specific constraints such as mandatory visual representation (edm:isShownBy) and current location tracking. Each artwork must contain at least one scene and have defined dimensions, supporting both traditional and contemporary art analysis." ;
              rdfs:label "Artwork" .
-            #  skos:closeMatch crm:E22_Human_Made_Object ,
-                            #  icon:Artwork .
 
 
 ###  http://w3id.org/arto#BalanceOfComposition
@@ -770,42 +1317,87 @@ arto:Character rdf:type owl:Class ;
 
 ###  http://w3id.org/arto#Color
 arto:Color rdf:type owl:Class ;
-            rdfs:subClassOf arto:VisualElement ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:RGBValue ;
-                              owl:allValuesFrom xsd:string;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:HSVValue ;
-                              owl:allValuesFrom xsd:string;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty dc:type ;
-                              owl:allValuesFrom [
-                                  owl:unionOf (
-                                    [ rdf:type owl:Restriction ;
-                                        owl:onProperty skos:broaderTransitive ;
-                                        owl:hasValue aat:300131647 
-                                      ]   # AAT Color
-                                      skos:Concept           # Custom colors
-                                  )
-                              ];
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ;
-            rdfs:comment "The use of color in the artwork." ;
-            rdfs:label "Color" .
+           rdfs:subClassOf arto:VisualElement ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:hasColorTerm ;
+                             owl:allValuesFrom arto:ColorTerm
+                           ] ,
+                          [
+                            rdf:type owl:Restriction ;
+                            owl:onProperty arto:hasColorValue ;
+                            owl:allValuesFrom arto:ColorValue
+                          ] ;
+           rdfs:comment "Represents color usage in artworks with precise technical specifications and art historical context. This class provides both computational color analysis (RGB, HSV values) and art theoretical foundations, aligning with Getty AAT's color concepts while maintaining specific properties for digital analysis. Color instances can express symbolic meanings and emotional content, supporting both technical image processing and interpretive art analysis." ;
+           rdfs:label "Color" .
 
 
 ###  http://w3id.org/arto#ColorHistogram
 arto:ColorHistogram rdf:type owl:Class ;
-                     rdfs:subClassOf arto:Metric ;
-                     rdfs:comment """Represents the distribution of colors in an artwork, typically expressed as a
+                    rdfs:subClassOf arto:Metric ;
+                    rdfs:comment """Represents the distribution of colors in an artwork, typically expressed as a
       histogram or a quantitative representation of the frequency or proportion of each color
       present in
       the artwork.""" ;
-                     rdfs:label "ColorHistogram" .
+                    rdfs:label "ColorHistogram" .
+
+
+###  http://w3id.org/arto#ColorTerm
+arto:ColorTerm rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Class ;
+                                 owl:unionOf ( skos:Concept
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty skos:broaderTransitive ;
+                                                 owl:hasValue <http://vocab.getty.edu/aat/300131647>
+                                               ]
+                                             )
+                               ] ;
+                 rdfs:comment """Represents standardized color terminology from controlled vocabularies, art historical literature, and established color naming systems. This class provides semantic interoperability by linking color instances to authoritative color classifications, enabling consistent color identification across institutions and research projects. Color terms encompass basic color names, specific pigment designations, cultural color concepts, and technical color classifications. The class primarily aligns with Getty AAT's color hierarchy while supporting additional color vocabularies and historical color terminology.""" ;
+               rdfs:label "ColorTerm" ;
+               skos:example """
+                   - Basic color terms: aat:red, aat:blue, aat:yellow, aat:green
+                     # Fundamental color categories from Getty AAT
+                   - Specific pigment terms: aat:ultramarine_blue, aat:vermillion, aat:cadmium_yellow
+                     # Historical and contemporary pigment names
+                   - Cultural color terms: aat:royal_purple, aat:imperial_yellow, aat:sacred_red
+                     # Colors with cultural or symbolic significance
+                   - Technical color terms: aat:primary_colors, aat:complementary_colors, aat:earth_tones
+                     # Color theory and technical classifications
+                   - Historical color terms: aat:tyrian_purple, aat:lapis_lazuli_blue, aat:gold_leaf
+                     # Historically significant colorants and materials
+                   - Descriptive color terms: aat:warm_colors, aat:cool_colors, aat:neutral_tones
+                     # Color temperature and mood classifications
+                   """ .
+
+
+arto:ColorValue rdf:type owl:Class ;
+            rdfs:subClassOf  [
+              rdf:type owl:Restriction ;
+              owl:onProperty qudt:vector ;
+              owl:allValuesFrom qudt:Vector  
+            ] ,
+            [
+              rdf:type owl:Restriction ;
+              owl:onProperty arto:colorSpace ;
+              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+              owl:allValuesFrom [ a rdfs:Datatype ;
+                owl:oneOf ( "RGB" "HSV" "Lab" "CMYK" "Grayscale" "XYZ" )
+              ] 
+            ] ;
+            rdfs:label   "colorValue" ;
+            rdfs:comment """Represents the precise numeric specification of colors using various color models and measurement systems. This class captures quantitative color data for digital analysis, color matching and reproduction studies. Color values enable objective color comparison, automated color analysis, and integration with digital image processing workflows. The class supports multiple color spaces to accommodate different analytical needs and technical requirements.""" ;
+                skos:example """
+                    - RGB specification: :red_primary rdf:type arto:ColorValue ;
+                      arto:colorSpace "RGB" ; arto:colorValues (255,0,0) ;
+                    - HSV specification: :golden_yellow rdf:type arto:ColorValue ;
+                      arto:colorSpace "HSV" ; arto:colorValues (45,85,95) ;
+                    - CMYK print colors: :prussian_blue rdf:type arto:ColorValue ;
+                      arto:colorSpace "CMYK" ; arto:colorValue (100,85,0,25) ;
+                    - LAB color measurement: :skin_tone rdf:type arto:ColorValue ;
+                        arto:colorSpace "Lab" ; arto:colorValue (75,8,15) ;
+                    - Hexadecimal web colors: :web_crimson rdf:type arto:ColorValue ;
+                      arto:colorSpace "HEX" ; arto:colorValue ("#DC143C") ;
+                    """ .
+
 
 
 ###  http://w3id.org/arto#Composition
@@ -813,54 +1405,78 @@ arto:Composition rdf:type owl:Class ;
                  rdfs:subClassOf arto:VisualElement ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty dc:type ;
-                                   owl:allValuesFrom xsd:string;
-                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   owl:allValuesFrom xsd:string
                                  ] ;
-                #  skos:closeMatch aat:300056255 ;
-                 rdfs:comment "The arrangement and organization of visual elements." ;
+                 rdfs:comment "Represents the arrangement and organization of visual elements within artworks, fundamental to art historical analysis and aesthetic evaluation. This class captures compositional strategies, balance, and spatial relationships that structure artistic meaning. " ;
                  rdfs:label "Composition" .
 
 
 ###  http://w3id.org/arto#Connotation
 arto:Connotation rdf:type owl:Class ;
-                 rdfs:subClassOf crm:E28_Conceptual_Object ;
-                 rdfs:subClassOf [
-                  rdf:type owl:Restriction ;
-                    owl:onProperty arto:hasMetric ;
-                    owl:allValuesFrom arto:Metric
-                 ], [ rdf:type owl:Restriction ;
-                               owl:onProperty dc:type ;
-                               owl:allValuesFrom xsd:string;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                  ] ;
+                 rdfs:subClassOf crm:E28_Conceptual_Object ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty arto:hasMetric ;
+                                   owl:allValuesFrom arto:Metric
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty dc:type ;
+                                   owl:allValuesFrom xsd:string
+                                 ] ;
                  rdfs:comment """Represents the implied meanings of artwork, includeing themes, symbolic meanings, and
       emotions conveyed by an artwork.""" ;
-                 rdfs:label "Connotation" .
-
+                 rdfs:label "Connotation" ;
+                 skos:example """
+                     - Symbolic meaning: :dove_symbolism rdf:type arto:Symbolism .
+                     - Emotional content: :melancholy_mood rdf:type arto:Emotion ; arto:emotionPerspective "artwork"
+                     - Historical reference: :revolution_allegory rdf:type arto:Connotation ;
+                       dc:description "French Revolution political symbolism"
+                     """ .
 
 ###  http://w3id.org/arto#Emotion
 arto:Emotion rdf:type owl:Class ;
              rdfs:subClassOf arto:Connotation ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty dc:type ;
-                               owl:allValuesFrom skos:Concept;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ]  ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty arto:expresses ;
+                                owl:allValuesFrom mfoem:MFOEM_000001 
+                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty arto:emotionPerspective ;
                                owl:allValuesFrom [ rdf:type rdfs:Datatype ;
-                                                   owl:oneOf ( 
-                                                     "artist"^^xsd:string
-                                                     "artwork"^^xsd:string
-                                                     "viewer"^^xsd:string
-                                                   )
-                                                 ] ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
-                             ] ;  
-            #  skos:closeMatch aat:300055150 ;
-            #  skos:related plutchik: ;
-             rdfs:comment """Represents the emotional response or affective state evoked by an artwork in the
-      artist or viewers, such as joy, sadness, anger, or fear.""" ;
+                                                   owl:oneOf [ rdf:type rdf:List ;
+                                                               rdf:first "artist" ;
+                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                          rdf:first "artwork" ;
+                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                     rdf:first "viewer" ;
+                                                                                     rdf:rest rdf:nil
+                                                                                   ]
+                                                                        ]
+                                                             ]
+                                                 ]
+                             ] ;
+              rdfs:comment """Represents emotional content or affective responses in artworks.
+             Uses MFOEM emotion ontology types and the emotionPerspective property to distinguish 
+             between artist's intended emotion, artwork's emotional expression, and viewer's response.
+             Emotions are expressed using standardized MFOEM emotion types including basic emotions (happiness, sadness, anger, fear, surprise, disgust) and complex emotions (love, anxiety, hope, despair, serenity). """ ;
+             skos:example """
+# Artist's intended emotion
+:guernica_antiwar_anger  arto:Emotion ;
+    arto:expresses mfoem:MFOEM_000009 ;
+    arto:emotionPerspective "artist" ;
+    dc:description "Picasso's anger against the brutality of war" .
+
+# Artwork's emotional expression  
+:starry_night_turbulence rdf:type arto:Emotion ;
+    arto:expresses mfoem:MFOEM_000028 ;
+    arto:emotionPerspective "artwork" ;
+    dc:description "Anxiety expressed through swirling brushstrokes and dynamic composition" .
+
+# Viewer's emotional response
+:mona_lisa_mystery rdf:type  arto:Emotion ;
+    arto:expresses mfoem:MFOEM_000167 ;
+    arto:emotionPerspective "viewer" ;
+    dc:description "Viewer's curiosity evoked by the enigmatic smile" .
+""" ;
              rdfs:label "Emotion" .
 
 
@@ -875,60 +1491,65 @@ arto:EmotionIntensity rdf:type owl:Class ;
 arto:Event rdf:type owl:Class ;
            rdfs:subClassOf event:Event ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty event:agent ;
-                             owl:allValuesFrom arto:Agent;
-                              owl:minCardinality "1"^^xsd:nonNegativeInteger
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty dc:type ;
-                             owl:allValuesFrom xsd:string;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                             owl:onProperty arto:hasLocation ;
+                             owl:allValuesFrom arto:Location
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty arto:hasTime ;
-                             owl:allValuesFrom arto:Time;
-                             owl:minCardinality "1"^^xsd:nonNegativeInteger
-                           ],
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty arto:hasLocation ;
-                             owl:allValuesFrom arto:Location;
-                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                             owl:allValuesFrom arto:Time
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty arto:relatedToConnotation ;
                              owl:allValuesFrom arto:Connotation
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty event:agent ;
+                             owl:allValuesFrom arto:Agent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty dc:type ;
+                             owl:allValuesFrom xsd:string
                            ] ;
            rdfs:comment """
       An arbitrary classification of a space/time region, by a
       cognitive agent. An event may have actively participating agents,
-      passive factors, products, and a location in space/time.""" ;
+      passive factors, products, and a location in space/time. This class extends the Event Ontology's basic structure while maintaining close conceptual alignment with CIDOC-CRM's E5_Event for cultural heritage interoperability. Events range from artwork creation and exhibition to historical occurrences depicted in artworks, supporting both factual documentation and interpretive analysis of artistic references to historical, mythological, or contemporary events.""" ;
            rdfs:label "Event" .
-          #  skos:closeMatch crm:E5_Event .
+
+
+###  http://w3id.org/arto#GenreType
+arto:GenreType rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Class ;
+                                 owl:unionOf ( skos:Concept
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty skos:broaderTransitive ;
+                                                 owl:hasValue <http://vocab.getty.edu/aat/300056444>
+                                               ]
+                                             )
+                               ] ;
+               rdfs:comment "Represents the genre of an artwork, such as portrait, landscape, still life, etc. This class allows for the classification of artworks based on their thematic or stylistic content." ;
+               rdfs:label "GenreType" .
 
 
 ###  http://w3id.org/arto#Line
 arto:Line rdf:type owl:Class ;
           rdfs:subClassOf arto:VisualElement ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty sdo:width ;
-                            owl:allValuesFrom xsd:string;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                            owl:onProperty dc:type ;
+                            owl:allValuesFrom xsd:string
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty arto:direction ;
-                            owl:allValuesFrom xsd:string;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                            owl:allValuesFrom xsd:string
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty arto:length ;
-                            owl:allValuesFrom xsd:float;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                            owl:allValuesFrom xsd:float
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty dc:type ;
-                            owl:allValuesFrom xsd:string;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ; 
+                            owl:onProperty arto:width ;
+                            owl:allValuesFrom xsd:float
+                          ] ;
           rdfs:comment """Represents linear elements in artwork, including their characteristics and functions:
             - Types of lines (straight, curved, implied)
             - Line qualities (thick, thin, broken, continuous)
@@ -943,42 +1564,64 @@ arto:Line rdf:type owl:Class ;
 arto:Location rdf:type owl:Class ;
               rdfs:subClassOf crm:E53_Place ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty geo:asWKT ;
-                                owl:allValuesFrom geo:wktLiteral
-                              ],  
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty arto:hasTime ;
                                 owl:allValuesFrom arto:Time
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty geo:asWKT ;
+                                owl:allValuesFrom geo:wktLiteral
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty dc:type ;
-                                owl:allValuesFrom xsd:string;
-                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                owl:allValuesFrom xsd:string
                               ] ;
-              rdfs:comment "Represents a physical or virtual space associated with an artwork." ;
+              rdfs:comment "Represents physical or conceptual places associated with artwork creation, display, storage, or depicted content, supporting both precise geographical coordinates and general names. This class addresses the complex relationship between location and time in historical contexts, where political boundaries and place names evolve over centuries. The class integrates GeoSPARQL coordinates with flexible place type classifications, supporting the artwork's historical geographical analysis." ;
               rdfs:label "Location" .
-
 
 
 ###  http://w3id.org/arto#MainColor
 arto:MainColor rdf:type owl:Class ;
-                rdfs:subClassOf arto:Metric ;
-                rdfs:comment """Represents the dominant or most prominent color in an artwork, which can be
+               rdfs:subClassOf arto:Metric ;
+               rdfs:comment """Represents the dominant or most prominent color in an artwork, which can be
       determined through visual analysis or color quantization techniques.""" ;
-                rdfs:label "MainColor" .
+               rdfs:label "MainColor" .
 
 
-###  http://w3id.org/arto#Symbolism
-arto:Symbolism rdf:type owl:Class ;
-             rdfs:subClassOf arto:Connotation ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty arto:source ;
-                               owl:allValuesFrom xsd:string
-                             ] ;
+###  http://w3id.org/arto#MaterialType
+arto:MaterialType rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Class ;
+                                    owl:unionOf ( skos:Concept
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty skos:broaderTransitive ;
+                                                    owl:hasValue <http://vocab.getty.edu/aat/300264091>
+                                                  ]
+                                                )
+                                  ] ;
+                  rdfs:comment """Represents the material type of an object, such as wood,
+      metal, glass, or fabric. This class allows for the classification of objects based on the
+      materials used in their construction or representation.""" ;
+                  rdfs:label "MaterialType" ;
+                  skos:example """
+                  - :wood_material rdf:type arto:  .
+                  - :metal_material rdf:type arto:MaterialType .
+                  - :glass_material rdf:type arto:MaterialType .
+                      """.
 
-             rdfs:comment """Represents the symbolism conveyed by the object, scene or the visual elements.""" ;
-             rdfs:label "Symbolism" .
-            #  skos:closeMatch icon:Symbol . 
+
+
+
+###  http://w3id.org/arto#MediumType
+arto:MediumType rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Class ;
+                                  owl:unionOf ( skos:Concept
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty skos:broader ;
+                                                  owl:someValuesFrom <http://vocab.getty.edu/aat/300163343>
+                                                ]
+                                              )
+                                ] ;
+                rdfs:comment "Represents the medium of an artwork, such as oil on canvas, watercolor, etc. This class allows for the classification of artworks based on the materials and techniques used in their creation." ;
+                rdfs:label "MediumType" .
 
 
 ###  http://w3id.org/arto#Metric
@@ -994,57 +1637,43 @@ arto:Metric rdf:type owl:Class ;
 ###  http://w3id.org/arto#Object
 arto:Object rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:expresses ;
-                              owl:someValuesFrom arto:Symbolism
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:relatedToScene ;
-                              owl:allValuesFrom arto:Scene;
-                              owl:minCardinality "1"^^xsd:nonNegativeInteger
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:relatedTo ;
-                              owl:allValuesFrom arto:Object
+                              owl:onProperty arto:hasConnotation ;
+                              owl:someValuesFrom arto:Connotation
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:hasMetric ;
                               owl:allValuesFrom arto:Metric
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:state ;
-                              owl:allValuesFrom skos:Concept ;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ,
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty arto:material ;
-                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                  owl:unionOf ( 
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty skos:broaderTransitive ;
-                                      owl:hasValue aat:300264091 ]  # Materials under AAT Materials facet
-                                    skos:Concept  # Allow custom concepts
-                                  )
-                                ] ;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ,
-                            [
-                              rdf:type owl:Restriction ;
-                              owl:onProperty arto:coordinates ;
-                              owl:allValuesFrom xsd:string ;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                              owl:allValuesFrom arto:MaterialType
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:size ;
-                              owl:allValuesFrom xsd:string;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                              owl:onProperty arto:relatedTo ;
+                              owl:allValuesFrom arto:Object
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty arto:relatedToScene ;
+                              owl:allValuesFrom arto:Scene
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty arto:state ;
+                              owl:allValuesFrom skos:Concept
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty arto:descriptor ;
                               owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty arto:hasCoordinates ;
+                              owl:allValuesFrom qudt:Vector
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty arto:size ;
+                              owl:allValuesFrom xsd:string
                             ] ;
-            rdfs:comment "Represents the physical or conceptual object within an artwork." ;
+            rdfs:comment "Represents identifiable and meaningful entities depicted within artworks, composed of various visual elements. Objects serve as the primary content units for artwork analysis, with properties describing their physical state, material composition, and spatial relationships" ;
             rdfs:label "Object" .
-            # skos:relatedMatch icon:ArtisticMotif .
 
 
 ###  http://w3id.org/arto#Organization
@@ -1052,8 +1681,7 @@ arto:Organization rdf:type owl:Class ;
                   rdfs:subClassOf arto:Agent ,
                                   foaf:Organization ;
                   owl:disjointWith arto:Person ;
-                  rdfs:comment """The Organization class represents a kind of Agent corresponding to instititutions
-      such as galleries, museums etc.""" ;
+                  rdfs:comment "Represents institutional entities involved in artwork creation, curation, preservation, or display, including museums, galleries, art schools, cultural institutions, commercial art enterprises, etc." ;
                   rdfs:label "Organization" .
 
 
@@ -1069,13 +1697,13 @@ arto:Person rdf:type owl:Class ;
             rdfs:subClassOf arto:Agent ,
                             foaf:Person ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty dbp:residence ;
-                              owl:allValuesFrom arto:Location
-                            ],
-                            [ rdf:type owl:Restriction ;
                               owl:onProperty arto:knows ;
                               owl:allValuesFrom arto:Person
-                            ]  ;
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty dbp:residence ;
+                              owl:allValuesFrom arto:Location
+                            ] ;
             rdfs:comment "Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles." ;
             rdfs:label "Person" .
 
@@ -1102,44 +1730,40 @@ arto:Relevance rdf:type owl:Class ;
 
 ###  http://w3id.org/arto#Scene
 arto:Scene rdf:type owl:Class ;
-            rdfs:subClassOf 
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:containsObject ;
-                              owl:allValuesFrom arto:Object
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:containsScene ;
-                              owl:allValuesFrom arto:Scene
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:hasMetric ;
-                              owl:allValuesFrom arto:Metric
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:expresses ;
-                              owl:allValuesFrom arto:Connotation
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:coordinates ;
-                              owl:allValuesFrom xsd:string;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:size ;
-                              owl:allValuesFrom xsd:string;
-                              owl:cardinality "1"^^xsd:nonNegativeInteger
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:descriptor ;
-                              owl:allValuesFrom xsd:string;
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty arto:relatedToEvent ;
-                              owl:allValuesFrom arto:Event
-                            ] ;
-           rdfs:comment "Represents a distinct portion or area of an artwork that forms a coherent visual or narrative unit. " ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:containsObject ;
+                             owl:allValuesFrom arto:Object
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:containsScene ;
+                             owl:allValuesFrom arto:Scene
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:hasConnotation ;
+                             owl:allValuesFrom arto:Connotation
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:hasMetric ;
+                             owl:allValuesFrom arto:Metric
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:relatedToEvent ;
+                             owl:allValuesFrom arto:Event
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:descriptor ;
+                             owl:allValuesFrom xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:hasCoordinates ;
+                             owl:allValuesFrom qudt:Vector
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty arto:size ;
+                             owl:allValuesFrom xsd:string
+                           ] ;
+           rdfs:comment "Represents a coherent visual or narrative unit within an artwork that conveys specific meaning or sentiment. A scene aggregates objects and visual elements into meaningful compositions, supporting hierarchical structures where complex artworks contain multiple interconnected scenes. It's similar to ICON's image representations but with explicit support for scene nesting and relationships. Scenes can reference historical, mythological, or fictional events through relatedToEvent, enabling contextual artwork analysis." ;
            rdfs:label "Scene" .
-          #  skos:closeMatch icon:Image .
 
 
 ###  http://w3id.org/arto#Sculpture
@@ -1155,8 +1779,7 @@ arto:Series rdf:type owl:Class ;
             rdfs:subClassOf sdo:CreativeWorkSeries ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty dc:creator ;
-                              owl:allValuesFrom arto:Agent;
-                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              owl:allValuesFrom arto:Agent
                             ] ;
             rdfs:comment """A collection of related artworks that share common characteristics, themes, or purposes, including:
                 - Thematic series
@@ -1166,7 +1789,6 @@ arto:Series rdf:type owl:Class ;
                 - Experimental series
                 - Documentary series""" ;
             rdfs:label "Series" .
-            # skos:closeMatch crm:E78_Collection .
 
 
 ###  http://w3id.org/arto#Space
@@ -1176,7 +1798,7 @@ arto:Space rdf:type owl:Class ;
                              owl:onProperty dc:type ;
                              owl:allValuesFrom xsd:string
                            ] ;
-           rdfs:comment "Represents the spatial elements and relationships within an artwork." ;
+           rdfs:comment "Captures the representation of depth, and spatial organization within artworks. " ;
            rdfs:label "Space" .
 
 
@@ -1187,11 +1809,74 @@ arto:Sponsor rdf:type owl:Class ;
              rdfs:label "Sponsor" .
 
 
+###  http://w3id.org/arto#StyleType
+arto:StyleType rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Class ;
+                                 owl:unionOf ( skos:Concept
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty skos:broaderTransitive ;
+                                                 owl:hasValue <http://vocab.getty.edu/aat/300264088>
+                                               ]
+                                             )
+                               ] ;
+               rdfs:comment "Represents the style of an artwork, such as Impressionism, Cubism, etc. This class allows for the classification of artworks based on their stylistic characteristics." ;
+               rdfs:label "StyleType" .
+
+
+###  http://w3id.org/arto#Symbolism
+arto:Symbolism rdf:type owl:Class ;
+               rdfs:subClassOf arto:Connotation ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty arto:source ;
+                                 owl:allValuesFrom xsd:string
+                               ] ;
+               rdfs:comment "Captures the symbolic meanings and iconographic content embedded in artwork elements. It connects to ICON ontology's symbolic framework while providing source property for symbolic interpretations. Symbolism instances can relate to mythological, religious, cultural, or personal symbolic systems, enabling systematic iconographic analysis and cross-cultural symbolic comparison." ;
+               skos:example """
+    # Religious symbolism
+    :dove_peace_symbolism rdf:type arto:Symbolism ;
+        dc:description "The dove as a symbol of peace and the Holy Spirit" ;
+        arto:source "Christian tradition and Biblical references" ;
+        arto:isConnotationOf :dove_object .
+        
+    # Mythological symbolism
+    :apple_temptation_symbolism rdf:type arto:Symbolism ;
+        dc:description "Apple as symbol of temptation and forbidden knowledge" ;
+        arto:source "Biblical Genesis and Christian iconographic tradition" ;
+        arto:isConnotationOf :apple_object .
+        
+    # Cultural symbolism  
+    :lotus_purity_symbolism rdf:type arto:Symbolism ;
+        dc:description "Lotus flower symbolizing purity and spiritual awakening" ;
+        arto:source "Buddhist and Hindu religious traditions" ;
+        arto:isConnotationOf :lotus_flower_object .
+        
+    # Historical symbolism
+    :laurel_wreath_victory_symbolism rdf:type arto:Symbolism ;
+        dc:description "Laurel wreath as symbol of victory and honor" ;
+        arto:source "Ancient Greek and Roman ceremonial traditions" ;
+        arto:isConnotationOf :laurel_crown_object .
+""" ;
+               rdfs:label "Symbolism" .
+
+
+###  http://w3id.org/arto#TechniqueType
+arto:TechniqueType rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Class ;
+            owl:unionOf ( skos:Concept
+                  [ rdf:type owl:Restriction ;
+                  owl:onProperty skos:broaderTransitive ;
+                  owl:hasValue <http://vocab.getty.edu/aat/300053001>
+                  ]
+                )
+          ] ;
+  rdfs:comment "Represents the specific artistic techniques used in creating artwork, drawing from Getty AAT's technique hierarchy while supporting custom undefined techniques." ;
+  rdfs:label "TechniqueType" .
+
+
 ###  http://w3id.org/arto#Theme
 arto:Theme rdf:type owl:Class ;
            rdfs:subClassOf arto:Connotation ;
-           rdfs:comment """Represents a central idea, subject, or concept explored in an artwork, which can
-      be explicit or implicit, and may reflect broader cultural, social, or political issues.""" ;
+           rdfs:comment "Represents a central idea, subject, or concept explored in an artwork, which can be explicit or implicit, and may reflect broader cultural, social, or political issues." ;
            rdfs:label "Theme" .
 
 
@@ -1199,19 +1884,16 @@ arto:Theme rdf:type owl:Class ;
 arto:Time rdf:type owl:Class ;
           owl:equivalentClass <http://www.w3.org/2006/time#TemporalEntity> ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty dc:type ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
                             owl:onProperty sdo:endDate ;
-                            owl:allValuesFrom xsd:dateTime;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                            owl:allValuesFrom xsd:dateTime
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty sdo:startDate ;
-                            owl:allValuesFrom xsd:dateTime;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty dc:type ;
-                            owl:allValuesFrom xsd:string;
-                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                            owl:allValuesFrom xsd:dateTime
                           ] ;
           rdfs:comment """Represents temporal aspects related to artwork, including:
             - Creation periods
@@ -1220,39 +1902,37 @@ arto:Time rdf:type owl:Class ;
             - Conservation periods
             - Depicted time periods
             - Time-based elements
-            """;
-            skos:example """
+            """ ;
+          rdfs:label "Time" ;
+          skos:example """
             - :renaissance_period rdf:type arto:Time ;
                 sdo:startDate \"1400\" ;
                 sdo:endDate \"1600\" .
                 
-            """ ;
-          rdfs:label "Time" .
+            """ .
 
-###  http://w3id.org/arto#VisualElement 
+
+###  http://w3id.org/arto#VisualElement
 arto:VisualElement rdf:type owl:Class ;
                    rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                      owl:onProperty arto:hasMetric ;
-                                      owl:allValuesFrom arto:Metric;
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty arto:expresses ;
-                                      owl:allValuesFrom arto:Connotation
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty arto:descriptor ;
-                                      owl:allValuesFrom xsd:string
-                                    ] ;
-                  rdfs:comment "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc." ;
-                  rdfs:label "VisualElement" .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature
-crm:E26_Physical_Feature rdf:type owl:Class .
+                                     owl:onProperty arto:hasConnotation ;
+                                     owl:allValuesFrom arto:Connotation
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty arto:hasMetric ;
+                                     owl:allValuesFrom arto:Metric
+                                   ] ;
+                   rdfs:comment "Represents the fundamental visual components of an artwork, including: lines and shapes, colors and textures, forms and patterns, space and perspective, light and shadow, etc." ,
+                                "Represents the fundamental visual components of artworks, including colors, lines, shapes, textures, and compositional structures. This abstract class serves as the foundation for systematic visual analysis, bridging computational image processing with art historical methodology. Visual elements can express connotations and have measurable properties, supporting both quantitative analysis (color histograms, line density) and qualitative interpretation (symbolic color use, expressive line quality). " ;
+                   rdfs:label "VisualElement" .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object
 crm:E28_Conceptual_Object rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#wktLiteral
+geo:wktLiteral rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2006/time#TemporalEntity
@@ -1279,17 +1959,276 @@ sdo:CreativeWork rdf:type owl:Class .
 sdo:CreativeWorkSeries rdf:type owl:Class .
 
 
+###  https://schema.org/QuantitativeValue
+sdo:QuantitativeValue rdf:type owl:Class .
+
+
+###  https://w3id.org/MON/event.owl#Event
+event:Event rdf:type owl:Class .
+
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://w3id.org/arto
-<http://w3id.org/arto> rdf:type owl:NamedIndividual .
 
+###  http://purl.org/dc/terms/DCMIType
+dc:DCMIType rdf:type owl:NamedIndividual ,
+                     <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+            dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "DCMI Type Vocabulary"@en ;
+            rdfs:seeAlso <http://purl.org/dc/dcmitype/> .
+
+
+###  http://purl.org/dc/terms/DDC
+dc:DDC rdf:type owl:NamedIndividual ,
+                <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+       dc:issued "2000-07-11"^^xsd:date ;
+       rdfs:comment "The set of conceptual resources specified by the Dewey Decimal Classification."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "DDC"@en ;
+       rdfs:seeAlso <http://www.oclc.org/dewey/> .
+
+
+
+###  http://purl.org/dc/terms/IMT
+dc:IMT rdf:type owl:NamedIndividual ,
+                <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+       dc:issued "2000-07-11"^^xsd:date ;
+       rdfs:comment "The set of media types specified by the Internet Assigned Numbers Authority."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "IMT"@en ;
+       rdfs:seeAlso <http://www.iana.org/assignments/media-types/> .
+
+
+###  http://purl.org/dc/terms/ISO3166
+dc:ISO3166 rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/ISO639-2
+dc:ISO639-2 rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/ISO639-3
+dc:ISO639-3 rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/LCC
+dc:LCC rdf:type owl:NamedIndividual ,
+                <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+       dc:issued "2000-07-11"^^xsd:date ;
+       rdfs:comment "The set of conceptual resources specified by the Library of Congress Classification."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "LCC"@en ;
+       rdfs:seeAlso <http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html> .
+
+
+###  http://purl.org/dc/terms/LCSH
+dc:LCSH rdf:type owl:NamedIndividual ,
+                 <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+        dc:issued "2000-07-11"^^xsd:date ;
+        rdfs:comment "The set of labeled concepts specified by the Library of Congress Subject Headings."@en ;
+        rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+        rdfs:label "LCSH"@en .
+
+
+
+###  http://purl.org/dc/terms/MESH
+dc:MESH rdf:type owl:NamedIndividual ,
+                 <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+        dc:issued "2000-07-11"^^xsd:date ;
+        rdfs:comment "The set of labeled concepts specified by the Medical Subject Headings."@en ;
+        rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+        rdfs:label "MeSH"@en ;
+        rdfs:seeAlso <http://www.nlm.nih.gov/mesh/meshhome.html> .
+
+
+
+###  http://purl.org/dc/terms/NLM
+dc:NLM rdf:type owl:NamedIndividual ,
+                <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+       dc:issued "2005-06-13"^^xsd:date ;
+       rdfs:comment "The set of conceptual resources specified by the National Library of Medicine Classification."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "NLM"@en ;
+       rdfs:seeAlso <http://wwwcf.nlm.nih.gov/class/> .
+
+
+
+###  http://purl.org/dc/terms/RFC1766
+dc:RFC1766 rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/RFC3066
+dc:RFC3066 rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/RFC4646
+dc:RFC4646 rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/RFC5646
+dc:RFC5646 rdf:type owl:NamedIndividual .
+
+
+
+###  http://purl.org/dc/terms/TGN
+dc:TGN rdf:type owl:NamedIndividual ,
+                <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+       dc:issued "2000-07-11"^^xsd:date ;
+       rdfs:comment "The set of places specified by the Getty Thesaurus of Geographic Names."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "TGN"@en ;
+       rdfs:seeAlso <http://www.getty.edu/research/tools/vocabulary/tgn/index.html> .
+
+
+###  http://purl.org/dc/terms/UDC
+dc:UDC rdf:type owl:NamedIndividual ,
+                <http://purl.org/dc/dcam/VocabularyEncodingScheme> ;
+       dc:issued "2000-07-11"^^xsd:date ;
+       rdfs:comment "The set of conceptual resources specified by the Universal Decimal Classification."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "UDC"@en ;
+       rdfs:seeAlso <http://www.udcc.org/> .
+
+
+
+###  http://purl.org/dc/terms/instructionalMethod
+dc:instructionalMethod rdf:type owl:NamedIndividual ;
+                       <http://purl.org/dc/dcam/rangeIncludes> dc:MethodOfInstruction ;
+                       dc:description "Instructional Method typically includes ways of presenting instructional materials or conducting instructional activities, patterns of learner-to-learner and learner-to-instructor interactions, and mechanisms by which group and individual levels of learning are measured.  Instructional methods include all aspects of the instruction and learning processes from planning and implementation through evaluation and feedback."@en ;
+                       dc:issued "2005-06-13"^^xsd:date ;
+                       rdfs:comment "A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support."@en ;
+                       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                       rdfs:label "Instructional Method"@en .
+
+
+###  http://purl.org/dc/terms/provenance
+dc:provenance rdf:type owl:NamedIndividual ;
+              <http://purl.org/dc/dcam/rangeIncludes> dc:ProvenanceStatement ;
+              dc:description "The statement may include a description of any changes successive custodians made to the resource."@en ;
+              dc:issued "2004-09-20"^^xsd:date ;
+              rdfs:comment "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "Provenance"@en .
+
+
+
+###  http://purl.org/dc/terms/rightsHolder
+dc:rightsHolder rdf:type owl:NamedIndividual ;
+                <http://purl.org/dc/dcam/rangeIncludes> dc:Agent ;
+                dc:description "Recommended practice is to refer to the rights holder with a URI. If this is not possible or feasible, a literal value that identifies the rights holder may be provided."@en ;
+                dc:issued "2004-06-14"^^xsd:date ;
+                rdfs:comment "A person or organization owning or managing rights over the resource."@en ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                rdfs:label "Rights Holder"@en .
+
+
+
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
 
 [ owl:minCardinality "1"^^xsd:nonNegativeInteger
-] .
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "0"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "0"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "0"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
 
 [ owl:minCardinality "1"^^xsd:nonNegativeInteger
  ] .
@@ -1306,9 +2245,6 @@ sdo:CreativeWorkSeries rdf:type owl:Class .
 [ owl:cardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:cardinality "1"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:minCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
@@ -1320,5 +2256,674 @@ sdo:CreativeWorkSeries rdf:type owl:Class .
 
 [ owl:cardinality "1"^^xsd:nonNegativeInteger
  ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:cardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+dc:Agent dc:issued "2008-01-14"^^xsd:date ;
+          rdfs:comment "A resource that acts or has the power to act."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Agent"@en .
+
+
+dc:AgentClass dc:issued "2008-01-14"^^xsd:date ;
+              rdfs:comment "A group of agents."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "Agent Class"@en .
+
+
+dc:BibliographicResource dc:issued "2008-01-14"^^xsd:date ;
+                         rdfs:comment "A book, article, or other documentary resource."@en ;
+                         rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                         rdfs:label "Bibliographic Resource"@en .
+
+
+dc:Box dc:issued "2000-07-11"^^xsd:date ;
+       rdfs:comment "The set of regions in space defined by their geographic coordinates according to the DCMI Box Encoding Scheme."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "DCMI Box"@en ;
+       rdfs:seeAlso <https://www.dublincore.org/specifications/dublin-core/dcmi-box/> .
+
+
+dc:FileFormat dc:issued "2008-01-14"^^xsd:date ;
+              rdfs:comment "A digital resource format."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "File Format"@en .
+
+
+dc:Frequency dc:issued "2008-01-14"^^xsd:date ;
+             rdfs:comment "A rate at which something recurs."@en ;
+             rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+             rdfs:label "Frequency"@en .
+
+
+dc:ISO3166 dc:issued "2000-07-11"^^xsd:date ;
+           rdfs:comment "The set of codes listed in ISO 3166-1 for the representation of names of countries."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "ISO 3166"@en ;
+           rdfs:seeAlso <https://www.iso.org/obp/ui/#search> .
+
+
+dc:ISO639-2 dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "The three-letter alphabetic codes listed in ISO639-2 for the representation of names of languages."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "ISO 639-2"@en ;
+            rdfs:seeAlso <http://lcweb.loc.gov/standards/iso639-2/langhome.html> .
+
+
+dc:ISO639-3 dc:issued "2008-01-14"^^xsd:date ;
+            rdfs:comment "The set of three-letter codes listed in ISO 639-3 for the representation of names of languages."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "ISO 639-3"@en ;
+            rdfs:seeAlso <http://www.sil.org/iso639-3/> .
+
+
+dc:Jurisdiction dc:issued "2008-01-14"^^xsd:date ;
+                rdfs:comment "The extent or range of judicial, law enforcement, or other authority."@en ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                rdfs:label "Jurisdiction"@en .
+
+
+dc:LicenseDocument dc:issued "2008-01-14"^^xsd:date ;
+                   rdfs:comment "A legal document giving official permission to do something with a resource."@en ;
+                   rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                   rdfs:label "License Document"@en .
+
+
+dc:LinguisticSystem dc:description "Written, spoken, sign, and computer languages are linguistic systems."@en ;
+                    dc:issued "2008-01-14"^^xsd:date ;
+                    rdfs:comment "A system of signs, symbols, sounds, gestures, or rules used in communication."@en ;
+                    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                    rdfs:label "Linguistic System"@en .
+
+
+dc:Location dc:issued "2008-01-14"^^xsd:date ;
+            rdfs:comment "A spatial region or named place."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Location"@en .
+
+
+dc:LocationPeriodOrJurisdiction dc:issued "2008-01-14"^^xsd:date ;
+                                rdfs:comment "A location, period of time, or jurisdiction."@en ;
+                                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                                rdfs:label "Location, Period, or Jurisdiction"@en .
+
+
+dc:MediaType dc:issued "2008-01-14"^^xsd:date ;
+             rdfs:comment "A file format or physical medium."@en ;
+             rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+             rdfs:label "Media Type"@en .
+
+
+dc:MediaTypeOrExtent dc:issued "2008-01-14"^^xsd:date ;
+                     rdfs:comment "A media type or extent."@en ;
+                     rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                     rdfs:label "Media Type or Extent"@en .
+
+
+dc:MethodOfAccrual dc:issued "2008-01-14"^^xsd:date ;
+                   rdfs:comment "A method by which resources are added to a collection."@en ;
+                   rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                   rdfs:label "Method of Accrual"@en .
+
+
+dc:MethodOfInstruction dc:issued "2008-01-14"^^xsd:date ;
+                       rdfs:comment "A process that is used to engender knowledge, attitudes, and skills."@en ;
+                       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                       rdfs:label "Method of Instruction"@en .
+
+
+dc:Period dc:issued "2000-07-11"^^xsd:date ;
+          rdfs:comment "The set of time intervals defined by their limits according to the DCMI Period Encoding Scheme."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "DCMI Period"@en ;
+          rdfs:seeAlso <https://www.dublincore.org/specifications/dublin-core/dcmi-period/> .
+
+
+dc:PeriodOfTime dc:issued "2008-01-14"^^xsd:date ;
+                rdfs:comment "An interval of time that is named or defined by its start and end dates."@en ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                rdfs:label "Period of Time"@en .
+
+
+dc:PhysicalMedium dc:description "Examples include paper, canvas, or DVD."@en ;
+                  dc:issued "2008-01-14"^^xsd:date ;
+                  rdfs:comment "A physical material or carrier."@en ;
+                  rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                  rdfs:label "Physical Medium"@en .
+
+
+dc:PhysicalResource dc:issued "2008-01-14"^^xsd:date ;
+                    rdfs:comment "A material thing."@en ;
+                    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                    rdfs:label "Physical Resource"@en .
+
+
+dc:Point dc:issued "2000-07-11"^^xsd:date ;
+         rdfs:comment "The set of points in space defined by their geographic coordinates according to the DCMI Point Encoding Scheme."@en ;
+         rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+         rdfs:label "DCMI Point"@en ;
+         rdfs:seeAlso <https://www.dublincore.org/specifications/dublin-core/dcmi-point/> .
+
+
+dc:Policy dc:issued "2008-01-14"^^xsd:date ;
+          rdfs:comment "A plan or course of action by an authority, intended to influence and determine decisions, actions, and other matters."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Policy"@en .
+
+
+dc:ProvenanceStatement dc:issued "2008-01-14"^^xsd:date ;
+                       rdfs:comment "Any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
+                       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                       rdfs:label "Provenance Statement"@en .
+
+
+dc:RFC1766 dc:issued "2000-07-11"^^xsd:date ;
+           rdfs:comment "The set of tags, constructed according to RFC 1766, for the identification of languages."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "RFC 1766"@en ;
+           rdfs:seeAlso <http://www.ietf.org/rfc/rfc1766.txt> .
+
+
+dc:RFC3066 dc:description "RFC 3066 has been obsoleted by RFC 4646."@en ;
+           dc:issued "2002-07-13"^^xsd:date ;
+           rdfs:comment "The set of tags constructed according to RFC 3066 for the identification of languages."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "RFC 3066"@en ;
+           rdfs:seeAlso <http://www.ietf.org/rfc/rfc3066.txt> .
+
+
+dc:RFC4646 dc:description "RFC 4646 obsoletes RFC 3066."@en ;
+           dc:issued "2008-01-14"^^xsd:date ;
+           rdfs:comment "The set of tags constructed according to RFC 4646 for the identification of languages."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "RFC 4646"@en ;
+           rdfs:seeAlso <http://www.ietf.org/rfc/rfc4646.txt> .
+
+
+dc:RFC5646 dc:description "RFC 5646 obsoletes RFC 4646."@en ;
+           dc:issued "2010-10-11"^^xsd:date ;
+           rdfs:comment "The set of tags constructed according to RFC 5646 for the identification of languages."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "RFC 5646"@en ;
+           rdfs:seeAlso <http://www.ietf.org/rfc/rfc5646.txt> .
+
+
+dc:RightsStatement dc:issued "2008-01-14"^^xsd:date ;
+                   rdfs:comment "A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights."@en ;
+                   rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                   rdfs:label "Rights Statement"@en .
+
+
+dc:SizeOrDuration dc:description "Examples include a number of pages, a specification of length, width, and breadth, or a period in hours, minutes, and seconds."@en ;
+                  dc:issued "2008-01-14"^^xsd:date ;
+                  rdfs:comment "A dimension or extent, or a time taken to play or execute."@en ;
+                  rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                  rdfs:label "Size or Duration"@en .
+
+
+dc:Standard dc:issued "2008-01-14"^^xsd:date ;
+            rdfs:comment "A reference point against which other things can be evaluated or compared."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Standard"@en .
+
+
+dc:URI dc:issued "2000-07-11"^^xsd:date ;
+       rdfs:comment "The set of identifiers constructed according to the generic syntax for Uniform Resource Identifiers as specified by the Internet Engineering Task Force."@en ;
+       rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+       rdfs:label "URI"@en ;
+       rdfs:seeAlso <http://www.ietf.org/rfc/rfc3986.txt> .
+
+
+dc:W3CDTF dc:issued "2000-07-11"^^xsd:date ;
+          rdfs:comment "The set of dates and times constructed according to the W3C Date and Time Formats Specification."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "W3C-DTF"@en ;
+          rdfs:seeAlso <http://www.w3.org/TR/NOTE-datetime> .
+
+
+dc:abstract dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "A summary of the resource."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Abstract"@en .
+
+
+dc:accessRights <http://purl.org/dc/dcam/rangeIncludes> dc:RightsStatement ;
+                dc:description "Access Rights may include information regarding access or restrictions based on privacy, security, or other policies."@en ;
+                dc:issued "2003-02-15"^^xsd:date ;
+                rdfs:comment "Information about who access the resource or an indication of its security status."@en ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                rdfs:label "Access Rights"@en .
+
+
+dc:accrualMethod <http://purl.org/dc/dcam/rangeIncludes> dc:MethodOfAccrual ;
+                 dc:description "Recommended practice is to use a value from the Collection Description Accrual Method Vocabulary [[DCMI-ACCRUALMETHOD](https://dublincore.org/groups/collections/accrual-method/)]."@en ;
+                 dc:issued "2005-06-13"^^xsd:date ;
+                 rdfs:comment "The method by which items are added to a collection."@en ;
+                 rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                 rdfs:label "Accrual Method"@en .
+
+
+dc:accrualPeriodicity <http://purl.org/dc/dcam/rangeIncludes> dc:Frequency ;
+                      dc:description "Recommended practice is to use a value from the Collection Description Frequency Vocabulary [[DCMI-COLLFREQ](https://dublincore.org/groups/collections/frequency/)]."@en ;
+                      dc:issued "2005-06-13"^^xsd:date ;
+                      rdfs:comment "The frequency with which items are added to a collection."@en ;
+                      rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                      rdfs:label "Accrual Periodicity"@en .
+
+
+dc:accrualPolicy <http://purl.org/dc/dcam/rangeIncludes> dc:Policy ;
+                 dc:description "Recommended practice is to use a value from the Collection Description Accrual Policy Vocabulary [[DCMI-ACCRUALPOLICY](https://dublincore.org/groups/collections/accrual-policy/)]."@en ;
+                 dc:issued "2005-06-13"^^xsd:date ;
+                 rdfs:comment "The policy governing the addition of items to a collection."@en ;
+                 rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                 rdfs:label "Accrual Policy"@en .
+
+
+dc:alternative dc:description "The distinction between titles and alternative titles is application-specific."@en ;
+               dc:issued "2000-07-11"^^xsd:date ;
+               rdfs:comment "An alternative name for the resource."@en ;
+               rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+               rdfs:label "Alternative Title"@en .
+
+
+dc:audience <http://purl.org/dc/dcam/rangeIncludes> dc:AgentClass ;
+            dc:description "Recommended practice is to use this property with non-literal values from a vocabulary of audience types."@en ;
+            dc:issued "2001-05-21"^^xsd:date ;
+            rdfs:comment "A class of agents for whom the resource is intended or useful."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Audience"@en .
+
+
+dc:available dc:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+             dc:issued "2000-07-11"^^xsd:date ;
+             rdfs:comment "Date that the resource became or will become available."@en ;
+             rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+             rdfs:label "Date Available"@en .
+
+
+dc:bibliographicCitation dc:description "Recommended practice is to include sufficient bibliographic detail to identify the resource as unambiguously as possible."@en ;
+                         dc:issued "2003-02-15"^^xsd:date ;
+                         rdfs:comment "A bibliographic reference for the resource."@en ;
+                         rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                         rdfs:label "Bibliographic Citation"@en .
+
+
+dc:conformsTo <http://purl.org/dc/dcam/rangeIncludes> dc:Standard ;
+              dc:issued "2001-05-21"^^xsd:date ;
+              rdfs:comment "An established standard to which the described resource conforms."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "Conforms To"@en .
+
+
+dc:contributor <http://purl.org/dc/dcam/rangeIncludes> dc:Agent ;
+               dc:description "The guidelines for using names of persons or organizations as creators apply to contributors."@en ;
+               dc:issued "2008-01-14"^^xsd:date ;
+               rdfs:comment "An entity responsible for making contributions to the resource."@en ;
+               rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+               rdfs:label "Contributor"@en .
+
+
+dc:coverage <http://purl.org/dc/dcam/rangeIncludes> dc:Jurisdiction ,
+                                                    dc:Location ,
+                                                    dc:Period ;
+            dc:description "Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges.  Because coverage is so broadly defined, it is preferable to use the more specific subproperties Temporal Coverage and Spatial Coverage."@en ;
+            dc:issued "2008-01-14"^^xsd:date ;
+            rdfs:comment "The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Coverage"@en .
+
+
+dc:created dc:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+           dc:issued "2000-07-11"^^xsd:date ;
+           rdfs:comment "Date of creation of the resource."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "Date Created"@en .
+
+
+dc:creator <http://purl.org/dc/dcam/rangeIncludes> dc:Agent ;
+           dc:description "Recommended practice is to identify the creator with a URI.  If this is not possible or feasible, a literal value that identifies the creator may be provided."@en ;
+           dc:issued "2008-01-14"^^xsd:date ;
+           rdfs:comment "An entity responsible for making the resource."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "Creator"@en .
+
+
+dc:date dc:description "Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character.  Either the start or end date may be missing."@en ;
+        dc:issued "2008-01-14"^^xsd:date ;
+        rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
+        rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+        rdfs:label "Date"@en .
+
+
+dc:dateAccepted dc:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.  Examples of resources to which a date of acceptance may be relevant are a thesis (accepted by a university department) or an article (accepted by a journal)."@en ;
+                dc:issued "2002-07-13"^^xsd:date ;
+                rdfs:comment "Date of acceptance of the resource."@en ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                rdfs:label "Date Accepted"@en .
+
+
+dc:dateCopyrighted dc:description "Typically a year.  Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+                   dc:issued "2002-07-13"^^xsd:date ;
+                   rdfs:comment "Date of copyright of the resource."@en ;
+                   rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                   rdfs:label "Date Copyrighted"@en .
+
+
+dc:dateSubmitted dc:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.  Examples of resources to which a 'Date Submitted' may be relevant include a thesis (submitted to a university department) or an article (submitted to a journal)."@en ;
+                 dc:issued "2002-07-13"^^xsd:date ;
+                 rdfs:comment "Date of submission of the resource."@en ;
+                 rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                 rdfs:label "Date Submitted"@en .
+
+
+dc:description dc:description "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en ;
+               dc:issued "2008-01-14"^^xsd:date ;
+               rdfs:comment "An account of the resource."@en ;
+               rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+               rdfs:label "Description"@en .
+
+
+dc:educationLevel <http://purl.org/dc/dcam/rangeIncludes> dc:AgentClass ;
+                  dc:issued "2002-07-13"^^xsd:date ;
+                  rdfs:comment "A class of agents, defined in terms of progression through an educational or training context, for which the described resource is intended."@en ;
+                  rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                  rdfs:label "Audience Education Level"@en .
+
+
+dc:extent <http://purl.org/dc/dcam/rangeIncludes> dc:SizeOrDuration ;
+          dc:description "Recommended practice is to specify the file size in megabytes and duration in ISO 8601 format."@en ;
+          dc:issued "2000-07-11"^^xsd:date ;
+          rdfs:comment "The size or duration of the resource."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Extent"@en .
+
+
+dc:format <http://purl.org/dc/dcam/rangeIncludes> dc:Extent ,
+                                                  dc:MediaType ;
+          dc:description "Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of Internet Media Types [[MIME](https://www.iana.org/assignments/media-types/media-types.xhtml)].  Examples of dimensions include size and duration."@en ;
+          dc:issued "2008-01-14"^^xsd:date ;
+          rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Format"@en .
+
+
+dc:hasFormat dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Is Format Of."@en ;
+             dc:issued "2000-07-11"^^xsd:date ;
+             rdfs:comment "A related resource that is substantially the same as the pre-existing described resource, but in another format."@en ;
+             rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+             rdfs:label "Has Format"@en .
+
+
+dc:hasPart dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Is Part Of."@en ;
+           dc:issued "2000-07-11"^^xsd:date ;
+           rdfs:comment "A related resource that is included either physically or logically in the described resource."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "Has Part"@en .
+
+
+dc:hasVersion dc:description "Changes in version imply substantive changes in content rather than differences in format. This property is intended to be used with non-literal values. This property is an inverse property of Is Version Of."@en ;
+              dc:issued "2000-07-11"^^xsd:date ;
+              rdfs:comment "A related resource that is a version, edition, or adaptation of the described resource."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "Has Version"@en .
+
+
+dc:identifier dc:description "Recommended practice is to identify the resource by means of a string conforming to an identification system. Examples include International Standard Book Number (ISBN), Digital Object Identifier (DOI), and Uniform Resource Name (URN).  Persistent identifiers should be provided as HTTP URIs."@en ;
+              dc:issued "2008-01-14"^^xsd:date ;
+              rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "Identifier"@en .
+
+
+dc:isFormatOf dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Has Format."@en ;
+              dc:issued "2000-07-11"^^xsd:date ;
+              rdfs:comment "A pre-existing related resource that is substantially the same as the described resource, but in another format."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "Is Format Of"@en .
+
+
+dc:isPartOf dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Has Part."@en ;
+            dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "A related resource in which the described resource is physically or logically included."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Is Part Of"@en .
+
+
+dc:isReferencedBy dc:description "This property is intended to be used with non-literal values. This property is an inverse property of References."@en ;
+                  dc:issued "2000-07-11"^^xsd:date ;
+                  rdfs:comment "A related resource that references, cites, or otherwise points to the described resource."@en ;
+                  rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                  rdfs:label "Is Referenced By"@en .
+
+
+dc:isReplacedBy dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Replaces."@en ;
+                dc:issued "2000-07-11"^^xsd:date ;
+                rdfs:comment "A related resource that supplants, displaces, or supersedes the described resource."@en ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                rdfs:label "Is Replaced By"@en .
+
+
+dc:isRequiredBy dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Requires."@en ;
+                dc:issued "2000-07-11"^^xsd:date ;
+                rdfs:comment "A related resource that requires the described resource to support its function, delivery, or coherence."@en ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                rdfs:label "Is Required By"@en .
+
+
+dc:isVersionOf dc:description "Changes in version imply substantive changes in content rather than differences in format. This property is intended to be used with non-literal values. This property is an inverse property of Has Version."@en ;
+               dc:issued "2000-07-11"^^xsd:date ;
+               rdfs:comment "A related resource of which the described resource is a version, edition, or adaptation."@en ;
+               rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+               rdfs:label "Is Version Of"@en .
+
+
+dc:issued dc:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+          dc:issued "2000-07-11"^^xsd:date ;
+          rdfs:comment "Date of formal issuance of the resource."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Date Issued"@en .
+
+
+dc:language <http://purl.org/dc/dcam/rangeIncludes> dc:LinguisticSystem ;
+            dc:description "Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 [[IETF-BCP47](https://tools.ietf.org/html/bcp47)] language tag."@en ;
+            dc:issued "2008-01-14"^^xsd:date ;
+            rdfs:comment "A language of the resource."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Language"@en .
+
+
+dc:license <http://purl.org/dc/dcam/rangeIncludes> dc:LicenseDocument ;
+           dc:description "Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided."@en ;
+           dc:issued "2004-06-14"^^xsd:date ;
+           rdfs:comment "A legal document giving official permission to do something with the resource."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "License"@en .
+
+
+dc:mediator <http://purl.org/dc/dcam/rangeIncludes> dc:AgentClass ;
+            dc:description "In an educational context, a mediator might be a parent, teacher, teaching assistant, or care-giver."@en ;
+            dc:issued "2001-05-21"^^xsd:date ;
+            rdfs:comment "An entity that mediates access to the resource."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Mediator"@en .
+
+
+dc:medium <http://purl.org/dc/dcam/domainIncludes> dc:PhysicalResource ;
+          <http://purl.org/dc/dcam/rangeIncludes> dc:PhysicalMedium ;
+          dc:issued "2000-07-11"^^xsd:date ;
+          rdfs:comment "The material or physical carrier of the resource."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Medium"@en .
+
+
+dc:modified dc:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+            dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "Date on which the resource was changed."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Date Modified"@en .
+
+
+dc:publisher <http://purl.org/dc/dcam/rangeIncludes> dc:Agent ;
+             dc:issued "2008-01-14"^^xsd:date ;
+             rdfs:comment "An entity responsible for making the resource available."@en ;
+             rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+             rdfs:label "Publisher"@en .
+
+
+dc:references dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Is Referenced By."@en ;
+              dc:issued "2000-07-11"^^xsd:date ;
+              rdfs:comment "A related resource that is referenced, cited, or otherwise pointed to by the described resource."@en ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+              rdfs:label "References"@en .
+
+
+dc:relation dc:description "Recommended practice is to identify the related resource by means of a URI.  If this is not possible or feasible, a string conforming to a formal identification system may be provided."@en ;
+            dc:issued "2008-01-14"^^xsd:date ;
+            rdfs:comment "A related resource."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Relation"@en .
+
+
+dc:replaces dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Is Replaced By."@en ;
+            dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "A related resource that is supplanted, displaced, or superseded by the described resource."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Replaces"@en .
+
+
+dc:requires dc:description "This property is intended to be used with non-literal values. This property is an inverse property of Is Required By."@en ;
+            dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "A related resource that is required by the described resource to support its function, delivery, or coherence."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Requires"@en .
+
+
+dc:rights <http://purl.org/dc/dcam/rangeIncludes> dc:RightsStatement ;
+          dc:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.  Recommended practice is to refer to a rights statement with a URI.  If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en ;
+          dc:issued "2008-01-14"^^xsd:date ;
+          rdfs:comment "Information about rights held in and over the resource."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Rights"@en .
+
+
+dc:source dc:description "This property is intended to be used with non-literal values. The described resource may be derived from the related resource in whole or in part. Best practice is to identify the related resource by means of a URI or a string conforming to a formal identification system."@en ;
+          dc:issued "2008-01-14"^^xsd:date ;
+          rdfs:comment "A related resource from which the described resource is derived."@en ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+          rdfs:label "Source"@en .
+
+
+dc:spatial <http://purl.org/dc/dcam/rangeIncludes> dc:Location ;
+           dc:issued "2000-07-11"^^xsd:date ;
+           rdfs:comment "Spatial characteristics of the resource."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "Spatial Coverage"@en .
+
+
+dc:subject dc:description "Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary."@en ;
+           dc:issued "2008-01-14"^^xsd:date ;
+           rdfs:comment "A topic of the resource."@en ;
+           rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+           rdfs:label "Subject"@en .
+
+
+dc:tableOfContents dc:issued "2000-07-11"^^xsd:date ;
+                   rdfs:comment "A list of subunits of the resource."@en ;
+                   rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                   rdfs:label "Table Of Contents"@en .
+
+
+dc:temporal <http://purl.org/dc/dcam/rangeIncludes> dc:PeriodOfTime ;
+            dc:issued "2000-07-11"^^xsd:date ;
+            rdfs:comment "Temporal characteristics of the resource."@en ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+            rdfs:label "Temporal Coverage"@en .
+
+
+dc:title dc:issued "2008-01-14"^^xsd:date ;
+         rdfs:comment "A name given to the resource."@en ;
+         rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+         rdfs:label "Title"@en .
+
+
+dc:type dc:description "Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [[DCMI-TYPE](http://dublincore.org/documents/dcmi-type-vocabulary/)]. To describe the file format, physical medium, or dimensions of the resource, use the property Format."@en ;
+        dc:issued "2008-01-14"^^xsd:date ;
+        rdfs:comment "The nature or genre of the resource."@en ;
+        rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+        rdfs:label "Type"@en .
+
+
+dc:valid dc:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+         dc:issued "2000-07-11"^^xsd:date ;
+         rdfs:comment "Date (often a range) of validity of a resource."@en ;
+         rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+         rdfs:label "Date Valid"@en .
+
+
+arto:containsElement rdfs:comment "Specifies the visual elements (such as color, line, composition) contained within an object in the artwork." ;
+                     rdfs:label "containsElement" ;
+                     skos:example """
+                      - color elements: :sky_object arto:containsElement :blue_gradient_color
+                      - Line elements: :mountain_object arto:containsElement :diagonal_line
+                      - Compositional elements: :tree_object arto:containsElement :vertical_composition""" .
+
+
+arto:containsObject rdfs:comment "Indicates specific objects that are present within a scene of an artwork." ;
+                    rdfs:label "containsObject" ;
+                    skos:example """
+                      - Landscape scene: :garden_scene arto:containsObject :fountain, :bench, :flowers
+                      - Portrait scene: :interior_scene arto:containsObject :chair, :table, :book
+                      - Still life scene: :table_scene arto:containsObject :fruit_bowl, :wine_glass, :cloth""" .
+
+
+arto:containsScene rdfs:comment "Identifies distinct scenes within an artwork or within another scene, allowing for hierarchical scene composition." ;
+                   rdfs:label "containsScene" ;
+                   skos:example """
+                      - Nested scenes: :market_scene arto:containsScene :vendor_scene, :customer_scene
+                      - Background scenes: :landscape_painting arto:containsScene :mountain_scene, :valley_scene""" .
+
+
+arto:isElementOf rdfs:comment "Specifies the object that contains the visual element in the artwork." ;
+                 rdfs:label "isElementOf" ;
+                 skos:example """
+                  - color elements: :blue_gradient_color arto:isElementOf :sky_object
+                  - Line elements: :diagonal_line arto:isElementOf :mountain_object
+                  - Compositional elements: :vertical_composition arto:isElementOf :tree_object""" .
+
+
+arto:isObjectOf rdfs:comment "Indicates the scene that contains the object in the artwork." ;
+                rdfs:label "isObjectOf" ;
+                skos:example """
+                - Landscape scene: :fountain arto:isObjectOf :garden_scene
+                - Portrait scene: :chair arto:isObjectOf :interior_scene
+                - Still life scene: :fruit_bowl arto:isObjectOf :table_scene""" .
+
+
+arto:isSceneOf rdfs:comment "Specifies the artwork or scene that contains the scene in the artwork." ;
+               rdfs:label "isSceneOf" ;
+               skos:example """
+                - Nested scenes: :vendor_scene arto:isSceneOf :market_scene
+                - Background scenes: :mountain_scene arto:isSceneOf :landscape_painting""" .
+
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
