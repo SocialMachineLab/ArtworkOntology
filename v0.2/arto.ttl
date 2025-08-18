@@ -24,15 +24,16 @@
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @base <http://w3id.org/arto#> .
 
-<http://purl.org/dc/terms/> rdf:type owl:Ontology ;
+<http://w3id.org/arto> rdf:type owl:Ontology ;
                              owl:imports crm: ,
                                          <http://www.w3.org/2004/02/skos/core> ,
-                                         <http://xmlns.com/foaf/0.1/> ,
+                                         <http://xmlns.com/foaf/spec/> ,
                                          sdo: ;
                              cc:attributionURL <http://w3id.org/arto> ;
                              dc:description "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualising artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en ;
                              dc:issued "2024-04-10" ;
                              dc:license <https://github.com/SocialMachineLab/ArtworkOntology/blob/main/License> ;
+                             
                              dc:modified "2025-08-05" ;
                              dc:title "Artwork Object Ontology"@en ;
                              vann:preferredNamespacePrefix "arto" ;
@@ -484,6 +485,7 @@ qudt:vector rdf:type owl:ObjectProperty .
 
 ###  http://w3id.org/arto#containsElement
 arto:containsElement rdf:type owl:ObjectProperty ;
+                      owl:inverseOf arto:isElementOf ;
                      rdfs:domain [ rdf:type owl:Class ;
                                    owl:unionOf ( arto:Object
                                                  arto:Scene
@@ -745,6 +747,7 @@ arto:isConnotationOf rdf:type owl:ObjectProperty ;
 
 ###  http://w3id.org/arto#isElementOf
 arto:isElementOf rdf:type owl:ObjectProperty ;
+                 owl:inverseOf arto:containsElement ;
                  rdfs:domain arto:VisualElement ;
                  rdfs:range [ rdf:type owl:Class ;
                               owl:unionOf ( arto:Object
@@ -1111,9 +1114,21 @@ dc:valid rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf dc:date ;
          rdfs:range rdfs:Literal .
 
-
-###  http://w3id.org/arto#colourSpace
-arto:colourSpace rdf:type owl:DatatypeProperty .
+arto:colourSpace rdf:type owl:DatatypeProperty ;
+    rdfs:domain arto:ColourValue ;
+    rdfs:range [
+        rdf:type rdfs:Datatype ;
+        owl:oneOf (
+            "RGB"^^xsd:string
+            "HSV"^^xsd:string
+            "Lab"^^xsd:string
+            "CMYK"^^xsd:string
+            "XYZ"^^xsd:string
+            "Greyscale"^^xsd:string
+        )
+    ] ;
+    rdfs:comment "Colour space used by a ColourValue. Restricted to one of: RGB, HSV, Lab, CMYK, XYZ, Greyscale." ;
+    rdfs:label "colourSpace" .
 
 
 ###  http://w3id.org/arto#colourSystem
@@ -1700,7 +1715,7 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
               arto:hasTime :t_1937_Spring ; arto:hasLocation :ParisStudio ;
               dc:type "Sketching".
 
-          << :Guernica dcterms:creator :Picasso >> a arto:Event ;
+          << :Guernica dc:creator :Picasso >> a arto:Event ;
               arto:hasTime :t_1937 ; arto:hasLocation :ParisStudio ;
               dc:type "Creation".
           << :Georgia_OKeeffe arto:movedResidenceTo :Abiquiu_Home >> a arto:Event ;
@@ -2341,11 +2356,6 @@ dc:MediaType rdf:type owl:NamedIndividual ;
              dc:issued "2008-01-14"^^xsd:date .
 
 
-###  http://purl.org/dc/terms/MediaTypeOrExtent
-dc:MediaTypeOrExtent rdf:type owl:NamedIndividual ;
-                     dc:issued "2008-01-14"^^xsd:date .
-
-
 ###  http://purl.org/dc/terms/MethodOfAccrual
 dc:MethodOfAccrual rdf:type owl:NamedIndividual ;
                    dc:issued "2008-01-14"^^xsd:date .
@@ -2424,11 +2434,6 @@ dc:RFC5646 rdf:type owl:NamedIndividual ;
 ###  http://purl.org/dc/terms/RightsStatement
 dc:RightsStatement rdf:type owl:NamedIndividual ;
                    dc:issued "2008-01-14"^^xsd:date .
-
-
-###  http://purl.org/dc/terms/SizeOrDuration
-dc:SizeOrDuration rdf:type owl:NamedIndividual ;
-                  dc:issued "2008-01-14"^^xsd:date .
 
 
 ###  http://purl.org/dc/terms/Standard
