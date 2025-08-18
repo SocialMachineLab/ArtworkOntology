@@ -75,19 +75,19 @@
 :Sky rdf:type :Object ;
     :containsElement :WarmYellow .
 
-:Green rdf:type :Color ;
+:Green rdf:type :Colour ;
     :RGBValue "34,139,34" .
 
-:Brown rdf:type :Color ;
+:Brown rdf:type :CoColourlor ;
     :RGBValue "139,69,19" .
 
-:PaleWhite rdf:type :Color ;
+:PaleWhite rdf:type :Colour ;
     :RGBValue "255,250,240" .
 
-:DarkGreen rdf:type :Color ;
+:DarkGreen rdf:type :Colour ;
     :RGBValue "0,100,0" .
 
-:WarmYellow rdf:type :Color ;
+:WarmYellow rdf:type :Colour ;
     :RGBValue "255,198,73" .
 
 :rural_life_theme rdf:type :Theme ;

@@ -137,7 +137,7 @@
 
 # Iconographical subjects
 :troni_image a icon:Image ;
-    rdfs:label "Troni (Idealized character study)"@en ;
+    rdfs:label "Troni (Idealised character study)"@en ;
     icon:isIconographicallyRecognizedBy :iconographical_recognition1 ;
     icon:hasCharacter :exotic_character ;
     icon:hasRecAttribute :earring_motif, :turban_motif .

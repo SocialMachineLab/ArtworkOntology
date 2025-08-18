@@ -28,7 +28,7 @@ ex:swirls_motif rdf:type icon:ArtisticMotif ;
     rdfs:label "Swirling Sky Motif"@en ;
     icon:hasFactualMeaning ex:sky_natural_element ;
     icon:hasExpressionalMeaning ex:turbulence_quality ;
-    icon:associatedColor ex:blue_color .
+    icon:associatedColor ex:blue_colour .
 
 ex:village_composition rdf:type icon:Composition ;
     rdfs:label "Village Composition"@en ;
@@ -63,7 +63,7 @@ ex:cypress_natural_element rdf:type icon:NaturalElement ;
 ex:turbulence_quality rdf:type icon:ExpressionalQuality ;
     rdfs:label "Turbulence"@en .
 
-ex:blue_color rdf:type icon:Color ;
+ex:blue_colour rdf:type icon:Color ;
     rdfs:label "Blue"@en .
 
 ex:linear_structure rdf:type icon:CompositionalStructure ;

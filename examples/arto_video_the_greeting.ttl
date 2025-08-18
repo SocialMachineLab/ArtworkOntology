@@ -20,17 +20,25 @@ ex:TheGreeting rdf:type arto:Artwork ;
     dc:title "The Greeting"@en ;
     dc:created "1995"^^xsd:gYear ;
     dc:creator ex:BillViola ;
-    dc:description """Video/sound installation with color video projection on a large vertical screen mounted on wall in darkened space with amplified stereo sound. The 45-second scene is dramatically slowed down and extended to last 10 minutes and 22 seconds."""@en ;
-    dc:medium "Video installation"@en ;
-    sdo:genre "Video art"@en ;
-    sdo:height "2.8 m"^^xsd:string ;
-    sdo:width "2.4 m"^^xsd:string ;
+    dc:description """Video/sound installation with colour video projection on a large vertical screen mounted on wall in darkened space with amplified stereo sound. The 45-second scene is dramatically slowed down and extended to last 10 minutes and 22 seconds."""@en ;
+    arto:medium :Video_installation ;
+    arto:genre :Video_art ;
+    sdo:height [ a sdo:QuantitativeValue ; sdo:value "2.8"^^xsd:decimal ; sdo:unitCode "MTR" ] ;
+    sdo:width  [ a sdo:QuantitativeValue ; sdo:value "2.4"^^xsd:decimal ; sdo:unitCode "MTR" ] ;
     edm:isShownBy <https://www.billviola.com/images/the-greeting> ;
     arto:currentLocation ex:Guggenheim_Bilbao ;
-    arto:relatedToEvent ex:Venice_Biennale_1995 ;
+    arto:hasEvent ex:Venice_Biennale_1995 ;
     arto:containsScene ex:MainScene ;
     ex:duration "622"^^xsd:int ;  # 10 minutes and 22 seconds in seconds
     ex:originalFootage "45"^^xsd:int .
+
+:Video_installation rdf:type arto:MediumType ;
+    rdfs:label "Video installation"@en ;
+    arto:descriptor "A video work presented as an installation, typically involving projection and sound."@en .
+
+:Video_art rdf:type arto:GenreType ;
+    rdfs:label "Video art"@en ;
+    arto:descriptor "An art form that uses video technology as a medium for creative expression."@en .  
 
 # Artist
 ex:BillViola rdf:type arto:Artist ;
@@ -63,11 +71,20 @@ ex:TheVisitation rdf:type arto:Artwork ;
     dc:created "1528"^^xsd:gYear ;
     dc:creator ex:Pontormo ;
     dc:description """Oil on wood, 2.5 m x 1.7 m, Museo di San Michele in Bosco, Bologna, Italy."""@en ;
-    dc:medium "Oil on wood"@en ;
-    sdo:genre "Renaissance painting"@en ;
-    sdo:height "2.5 m"^^xsd:string ;
-    sdo:width "1.7 m"^^xsd:string ;
+    arto:medium :Oil_on_wood ;
+    arto:genre :Renaissance_painting ;
+    sdo:height [ a sdo:QuantitativeValue ; sdo:value "2.5"^^xsd:decimal ; sdo:unitCode "MTR" ] ;
+    sdo:width  [ a sdo:QuantitativeValue ; sdo:value "1.7"^^xsd:decimal ; sdo:unitCode "MTR" ] ;
     arto:currentLocation ex:Museo_di_San_Michele_in_Bosco .
+
+:Oil_on_wood rdf:type arto:MediumType ;
+    rdfs:label "Oil on wood"@en ;
+    arto:descriptor "A painting technique using oil paints applied to a wooden panel."@en .
+
+:Renaissance_painting rdf:type arto:GenreType ;
+    rdfs:label "Renaissance painting"@en ;
+    arto:descriptor "A style of painting that emerged during the Renaissance, characterized by realism, perspective, and human emotion."@en .
+
 
 # Artwork Location
 ex:Museo_di_San_Michele_in_Bosco rdf:type arto:Location ;
@@ -104,7 +121,7 @@ ex:ApproachScene rdf:type arto:Scene ;
     arto:containsObject ex:WomanTwo ;
     arto:containsObject ex:WomanThree ;
     arto:containsObject ex:IndustrialBuilding ;
-    arto:expresses ex:SurpriseEmotion .
+    arto:hasConnotation ex:SurpriseEmotion .
 
 # Scene 3 - Greeting Moment Scene
 ex:GreetingMomentScene rdf:type arto:Scene ;
@@ -118,7 +135,7 @@ ex:GreetingMomentScene rdf:type arto:Scene ;
     arto:containsObject ex:WomanTwo ;
     arto:containsObject ex:WomanThree ;
     arto:containsObject ex:IndustrialBuilding ;
-    arto:expresses ex:IntimacyEmotion .
+    arto:hasConnotation ex:IntimacyEmotion .
 
 # Scene 4 - Whispering Scene
 ex:WhisperingScene rdf:type arto:Scene ;
@@ -132,7 +149,7 @@ ex:WhisperingScene rdf:type arto:Scene ;
     arto:containsObject ex:WomanTwo ;
     arto:containsObject ex:WomanThree ;
     arto:containsObject ex:IndustrialBuilding ;
-    arto:expresses  ex:ExclusionEmotion .
+    arto:hasConnotation  ex:ExclusionEmotion .
 
 # Scene 5 - Introduction Scene
 ex:IntroductionScene rdf:type arto:Scene ;
@@ -144,7 +161,7 @@ ex:IntroductionScene rdf:type arto:Scene ;
     arto:containsObject ex:WomanTwo ;
     arto:containsObject ex:WomanThree ;
     arto:containsObject ex:IndustrialBuilding ;
-    arto:expresses ex:EmbarrassmentEmotion .
+    arto:hasConnotation ex:EmbarrassmentEmotion .
 
 
 ex:InitialConversationScene ex:precedesScene ex:ApproachScene .
@@ -251,10 +268,22 @@ arto:whisper rdfs:subPropertyOf arto:relatedTo .
 
 ex:IndustrialBuilding rdf:type arto:Object ;
     dc:description "Industrial buildings in strange perspective"@en ;
-    arto:containsElement ex:DustColor .
+    arto:containsElement ex:DustColour .
 
-ex:DustColor rdf:type arto:VisualElement ;
-    arto:RGBValue "B2996E" .
+ex:DustColour a arto:Colour ;
+    arto:isElementOf ex:IndustrialBuilding ;
+    arto:hasMetric ex:DustColour_RGB , ex:DustColour_HSV .   # 或 arto:hasValue
+
+# 用 ColourValue + qudt:vector 表达不同颜色空间的数值
+ex:DustColour_RGB a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(178,153,110)" ;
+    rdfs:label "Dust colour (RGB)"@en .
+
+ex:DustColour_HSV a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(35,38,70)"     ;
+    rdfs:label "Dust colour (HSV)"@en .
 
 # Relationships between objects
 ex:WomanThree arto:greets ex:WomanOne ;
@@ -281,21 +310,31 @@ ex:TriangularComposition rdf:type arto:VisualElement ;
 
 
 # Connotations
-ex:IntimacyEmotion rdf:type arto:Emotion ;
-    dc:type "Intimacy"@en .
+ex:IntimacyEmotion a arto:Emotion ;
+    skos:prefLabel "Intimacy (instance)"@en ;
+    arto:expresses mfoem:MFOEM_000048 ;        # ← 例：亲密
+    arto:emotionPerspective ex:Viewer .
 
-ex:ExclusionEmotion rdf:type arto:Emotion ;
-    dc:type "Exclusion"@en .
+ex:ExclusionEmotion a arto:Emotion ;
+    skos:prefLabel "Exclusion (instance)"@en ;
+    arto:expresses mfoem:IAO_8000010 ;        # ← 例：被排斥
+    arto:emotionPerspective ex:Viewer .
 
+ex:AnticipationEmotion a arto:Emotion ;
+    skos:prefLabel "Anticipation (instance)"@en ;
+    arto:expresses mfoem:MFOEM_000175 ;
+    arto:emotionPerspective ex:Viewer .
 
-ex:AnticipationEmotion rdf:type arto:Emotion ;
-    dc:type "Anticipation"@en .
+ex:SurpriseEmotion a arto:Emotion ;
+    skos:prefLabel "Surprise (instance)"@en ;
+    arto:expresses mfoem:MFOEM_000032 ;
+    arto:emotionPerspective ex:Viewer .
 
-ex:SurpriseEmotion  rdf:type arto:Emotion ;
-    dc:type "Surprise"@en .
+ex:EmbarrassmentEmotion a arto:Emotion ;
+    skos:prefLabel "Embarrassment (instance)"@en ;
+    arto:expresses mfoem:MFOEM_000054 ;
+    arto:emotionPerspective ex:Viewer .
 
-ex:EmbarrassmentEmotion rdf:type arto:Emotion ;
-    dc:type "Embarrassment"@en .
 
 # Events
 ex:Venice_Biennale_1995 rdf:type arto:Event ;

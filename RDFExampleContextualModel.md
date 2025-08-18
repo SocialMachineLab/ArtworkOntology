@@ -7,13 +7,13 @@
 <#TheShepherdess> <hasEvent> <#Creation> .
 
 # Creation event information
-<#Creation> <createdBy> <William-Adolphe Bouguereau> .
+<#Creation> <event:agent> <William-Adolphe Bouguereau> .
 <#Creation> <arto:hasTime> <1889> .
 
 # Artist information
-<William-Adolphe Bouguereau> <hasEvent> <#Birth> .
-<William-Adolphe Bouguereau> <hasEvent> <#Teaching> .
-<William-Adolphe Bouguereau> <hasEvent> <#MoveHouse> .
+<William-Adolphe Bouguereau> <arto:hasEvent> <#Birth> .
+<William-Adolphe Bouguereau> <arto:hasEvent> <#Teaching> .
+<William-Adolphe Bouguereau> <arto:hasEvent> <#MoveHouse> .
 
 # Birth event information
 <#Birth> <arto:hasLocation> <#LaRochelle> .
@@ -29,7 +29,7 @@
 <#MoveHouse> <arto:hasTime> <March 1846> .
 
 # Academic institution events
-<Académie Julian> <hasEvent> <#Creation> .
+<Académie Julian> <arto:hasEvent> <#Creation> .
 <#Creation> <arto:hasLocation> <#Paris> .
 <#Creation> <arto:hasTime> <1867> .
 ```

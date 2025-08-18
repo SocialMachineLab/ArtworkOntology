@@ -28,15 +28,31 @@
     arto:originalTitle "Il Cenacolo"@it ;
     dc:creator :LeonardoDaVinci ;
     dc:created :Time-1495-1498 ;
-    dc:medium "Tempera and oil on plaster"@en ;
-    ebucore:dimensions "460 x 880 cm" ;
-    dbp:style "Italian Renaissance" ;
-    sdo:genre "Religious painting", "Mural" ;
-    edm:currentLocation :SantaMariaDelleGrazie ;
+    arto:medium :Tempera_and_oil_on_plaster ;
+    sdo:height [ a sdo:QuantitativeValue ;
+        sdo:value "460"^^xsd:decimal ;
+        sdo:unitText "cm" ] ;
+    sdo:width  [ a sdo:QuantitativeValue ;
+        sdo:value "880"^^xsd:decimal ;
+        sdo:unitText "cm" ] ;
+    arto:style :Italian_Renaissance ;
+    arto:genre :Religious_painting, :Mural ;
+    arto:currentLocation :SantaMariaDelleGrazie ;
     edm:isShownBy <https://upload.wikimedia.org/wikipedia/commons/4/4b/%C3%9Altima_Cena_-_Da_Vinci_5.jpg> ;
     arto:hasEvent :LastSupperEvent, :RestorationEvent-1999, :RestorationEvent-1978, :DamageEvent-1943 ;
     arto:containsScene :MainScene, :BackgroundScene ;
     arto:hasConnotation :BetrayalTheme, :SacredMoment, :UnityTheme .
+
+:Tempera_and_oil_on_plaster rdf:type arto:MediumType ;
+    rdfs:label "Tempera and oil on plaster"@en .
+
+:Italian_Renaissance rdf:type arto:StyleType ;
+    rdfs:label "Italian Renaissance"@en .
+    
+
+:Religious_painting rdf:type arto:GenreType ;
+    rdfs:label "Religious painting"@en .
+    
 
 # Time periods
 :Time-1495-1498 rdf:type arto:Time ;
@@ -44,48 +60,56 @@
     sdo:endDate "1498"^^xsd:date .
 
 :BiblicalTime-33AD rdf:type arto:Time ;
-    arto:timeType "Depicted historical event" ;
+    dc:type "Depicted historical event" ;
     sdo:startDate "0033"^^xsd:date .
 
 # Location
 :SantaMariaDelleGrazie rdf:type arto:Location ;
-    arto:locationType "church" ;
-    geo:asWKT "POINT(9.1712 45.4655)" ;
-    arto:hasTime :Time-1495-Present .
+    dc:type "church" ;
+    geo:asWKT "POINT(9.1712 45.4655)" .
 
 # Events
 :LastSupperEvent rdf:type arto:Event ;
-    sem:eventType "Biblical event" ;
+    dc:type "Biblical event" ;
     arto:hasTime :BiblicalTime-33AD ;
     event:agent :Jesus, :Apostles ;
     arto:hasLocation :Jerusalem .
 
 :RestorationEvent-1999 rdf:type arto:Event ;
-    sem:eventType "Restoration" ;
+    dc:type "Restoration" ;
     arto:hasTime :Time-1999 ;
     dc:description "Major restoration completed by Pinin Brambilla Barcilon"@en .
 
 :RestorationEvent-1978 rdf:type arto:Event ;
-    sem:eventType "Restoration" ;
+    dc:type "Restoration" ;
     arto:hasTime :Time-1978 ;
-    dc:description "Restoration work to stabilize the painting"@en .
+    dc:description "Restoration work to stabilise the painting"@en .
 
 :DamageEvent-1943 rdf:type arto:Event ;
-    sem:eventType "Damage" ;
+    dc:type "Damage" ;
     arto:hasTime :Time-1943 ;
     dc:description "Damage from World War II bombing"@en .
 
 # Scenes
 :MainScene rdf:type arto:Scene ;
-    arto:coordinates "full" ;
+    arto:hasCoordinates :MainScene_Coordinates ;
     arto:containsObject :DiningTable, :Jesus, :TwelveApostles ;
-    arto:expresses :BetrayalTheme ;
+    arto:hasConnotation :BetrayalTheme ;
     arto:containsElement :CentralPerspective, :TriangularComposition .
 
+:MainScene_Coordinates a qudt:Vector ;
+    qudt:vectorValue "0.0 0.0 1.0 1.0" ;
+    qudt:unit unit:UNITLESS .
+
 :BackgroundScene rdf:type arto:Scene ;
-    arto:coordinates "background" ;
+    arto:hasCoordinates :BackgroundScene_Coordinates ;
     arto:containsObject :Windows, :LandscapeView ;
     arto:containsElement :EveningLight .
+
+
+:BackgroundScene_Coordinates a qudt:Vector ;
+    qudt:vectorValue "0.0 0.5 1.0 1.0" ;   
+    qudt:unit unit:UNITLESS .
 
 # Groups of Characters
 :TwelveApostles rdf:type arto:Object ;
@@ -96,77 +120,91 @@
 # Individual Characters
 :Jesus rdf:type arto:Character ;
     arto:state "seated" ;
-    arto:coordinates "center" ;
+    arto:hasCoordinates :Jesus_Coordinates ;
     arto:containsElement :CalmExpression, :RedRobe, :BlueCloak ;
-    arto:expresses :DivinePresence .
+    arto:hasConnotation :DivinePresence .
+
+:Jesus_Coordinates a qudt:Vector ;
+    qudt:vectorValue "0.5 0.5" ;  
+    qudt:unit unit:UNITLESS .
 
 :JudasIscariot rdf:type arto:Character ;
     arto:state "leaning back" ;
-    arto:coordinates "third from left" ;
+    arto:hasCoordinates :Judas_Coordinates ;
     arto:containsElement :DarkExpression, :GreenRobe, :MoneyBag ;
-    arto:expresses :Betrayal .
+    arto:hasConnotation :Betrayal .
+
+
+:Judas_Coordinates a qudt:Vector ;
+    qudt:vectorValue "0.25 0.5" ;  
+    qudt:unit unit:UNITLESS .
 
 :Peter rdf:type arto:Character ;
     arto:state "leaning forward" ;
-    arto:coordinates "fourth from left" ;
+    arto:hasCoordinates :Peter_Coordinates ;
     arto:containsElement :AngerExpression ;
     arto:relatedTo :John .
+
+:Peter_Coordinates a qudt:Vector ;
+    qudt:vectorValue "0.33 0.5" ; 
+    qudt:unit unit:UNITLESS .
+
 
 # Character Groupings
 :ApostleGroup1 rdf:type arto:Object ;
     arto:containsObject :Bartholomew, :James_Minor, :Andrew ;
-    arto:expresses :Surprise .
+    arto:hasConnotation :Surprise .
 
 :ApostleGroup2 rdf:type arto:Object ;
     arto:containsObject :Peter, :JudasIscariot, :John ;
-    arto:expresses :Tension .
+    arto:hasConnotation :Tension .
 
 :DiningTable rdf:type arto:Scene ;
-    arto:material "wood" ;
+    arto:material :Wood ;
     arto:state "set for meal" ;
     arto:containsObject :Bread, :Wine, :Plates, :Chalice, :Table ;
-    arto:expresses :Eucharist .
+    arto:hasConnotation :Eucharist .
 
 
 # Visual Elements
 :CentralPerspective rdf:type arto:Space ;
-    arto:spaceType "Linear perspective" ;
+    dc:type "Linear perspective" ;
     arto:containsElement :VanishingPoint .
 
 :TriangularComposition rdf:type arto:Composition ;
-    arto:compositionType "Triangular" ;
+    dc:type "Triangular" ;
     arto:hasMetric :BalanceScore .
 
 :ColourScheme rdf:type arto:Colour ;
-    arto:containsElement :WarmColors, :CoolColors .
+    arto:containsElement :WarmColours, :CoolColours .
 
 # Lighting Elements
 :EveningLight rdf:type arto:VisualElement ;
     arto:descriptor "warm, directional" ;
-    arto:expresses :DramaticMood .
+    arto:hasConnotation :DramaticMood .
 
 # Connotations
 :BetrayalTheme rdf:type arto:Theme ;
-    arto:expresses :DramaticTension ;
-    arto:relatedToEvent :BiblicalBetrayal .
+    arto:hasConnotation :DramaticTension ;
+    arto:hasEvent :BiblicalBetrayal .
 
 :UnityTheme rdf:type arto:Theme ;
-    arto:expresses :Communion ;
-    arto:relatedToEvent :LastSupperEvent .
+    arto:hasConnotation :Communion ;
+    arto:hasEvent :LastSupperEvent .
 
 :DivinePresence rdf:type arto:Meaning ;
     arto:source "Biblical" ;
-    arto:expresses :Spirituality .
+    arto:hasConnotation :Spirituality .
 
 # Metrics
 :BalanceScore rdf:type arto:BalanceOfComposition ;
-    arto:hasMetric "0.95"^^xsd:float .
+    arto:value "0.95"^^xsd:float .
 
 :EmotionalIntensity rdf:type arto:EmotionIntensity ;
-    arto:hasMetric "high" .
+    arto:value "high" .
 
 :ColourHarmony rdf:type arto:ColourHistogram ;
-    arto:hasMetric "balanced" .
+    arto:value "balanced" .
 
 # Creator and Historical Context
 :LeonardoDaVinci rdf:type arto:Artist ;
@@ -180,24 +218,29 @@
     dc:contributor :TheLastSupper .
 
 :Arches rdf:type arto:Object ;
-    arto:material "stone" ;
+    arto:material :Stone ;
     arto:containsElement :GeometricPattern .
 
 # Symbolic Objects
 :Chalice rdf:type arto:Object ;
-    arto:material "metal" ;
-    arto:coordinates "table center" ;
-    arto:expresses :HolyCup ;
+    arto:material :Metal ;
+    arto:hasCoordinates :Chalice_Coordinates ;
+    arto:hasConnotation :HolyCup ;
     arto:hasMetric :CentralRelevance .
+
+:Chalice_Coordinates a qudt:Vector ;
+    qudt:vectorValue "0.5 0.6" ;    
+    qudt:unit unit:UNITLESS .
+
 
 # Individual Apostle Details
 :John rdf:type arto:Character ;
     arto:state "leaning towards Peter" ;
     arto:containsElement :YouthfulAppearance ;
-    arto:expresses :Devotion .
+    arto:hasConnotation :Devotion .
 
 :Philip rdf:type arto:Character ;
     arto:state "standing" ;
     arto:containsElement :QuestioningGesture ;
-    arto:expresses :Doubt .
+    arto:hasConnotation :Doubt .
 

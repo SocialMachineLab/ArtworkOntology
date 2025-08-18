@@ -88,7 +88,7 @@ WHERE {
 
 ### 2. Visual Description Queries
 
-- **CQ2.1**: How are visual elements (color, line, composition) represented and queried in an artwork?
+- **CQ2.1**: How are visual elements (colour, line, composition) represented and queried in an artwork?
 ```sparql
 PREFIX arto: <http://w3id.org/arto#>
 
@@ -100,7 +100,7 @@ WHERE {
     ?object arto:containsElement ?element .
     ?element a ?elementType ;
              arto:descriptor ?descriptor .
-    FILTER (?elementType IN (arto:Color, arto:Line, arto:Composition))
+    FILTER (?elementType IN (arto:Colour, arto:Line, arto:Composition))
 }
 ```
 
@@ -167,7 +167,7 @@ PREFIX arto: <http://w3id.org/arto#>
 SELECT ?visualElement ?emotion ?intensity
 WHERE {
     ?artwork a arto:Artwork .
-    ?visualElement arto:expresses ?emotion .
+    ?visualElement arto:hasConnotation ?emotion .
     ?emotion a arto:Emotion ;
             arto:hasMetric ?metric .
     ?metric a arto:EmotionIntensity .
@@ -201,13 +201,13 @@ WHERE {
     OPTIONAL {
         ?artwork arto:containsScene ?scene .
         ?scene rdfs:label ?relatedScene ;
-               arto:expresses ?themeConnotation .
+               arto:hasConnotation ?themeConnotation .
         
         # Key objects in the scene
         OPTIONAL {
             ?scene arto:containsObject ?object .
             ?object rdfs:label ?sceneObject ;
-                    arto:expresses ?themeConnotation .
+                    arto:hasConnotation ?themeConnotation .
         }
     }
 }

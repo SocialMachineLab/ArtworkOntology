@@ -6,7 +6,7 @@ Our data workflow starts with identifying the appropriate data sources. From our
 
 Once the data was collected, we conducted a comprehensive analysis of the collected data, revealing important insights into aspects such as time representation, location, media categorisation, etc. During the analysis, we noticed some issues with the data and suggested further data cleaning.
 
-We aimed to identify and normalize these diverse time representations to achieve consistent date data, as proposed by Dorobat and Posea (2021),  who highlight the power of regular expressions in  recognizing dates and epochs. Locations also have varied formats. Location level differs - from country, cities to institutions. Ancient place names change over time, so linking data to a time period is important. The dataset has over 26,000 distinct medium categories. Consolidating similar mediums based on characteristics and art standards would simplify the data and reduce imbalance and complexity, although some information would be lost. We can mitigate this through hierarchical categorization, preserving fine-grained details when necessary.
+We aimed to identify and normalise these diverse time representations to achieve consistent date data, as proposed by Dorobat and Posea (2021),  who highlight the power of regular expressions in  recognizing dates and epochs. Locations also have varied formats. Location level differs - from country, cities to institutions. Ancient place names change over time, so linking data to a time period is important. The dataset has over 26,000 distinct medium categories. Consolidating similar mediums based on characteristics and art standards would simplify the data and reduce imbalance and complexity, although some information would be lost. We can mitigate this through hierarchical categorisation, preserving fine-grained details when necessary.
 
 
 ## Data Sources
@@ -90,7 +90,7 @@ for i in urls:
 ## Data Preprocessing
 
 
-1. Understand data scale, format, and summarize data types, missing values, and other basic information for each field
+1. Understand data scale, format, and summarise data types, missing values, and other basic information for each field
 
     - Use Python's Pandas library to read the data file and understand basic information such as the attribtues and the type of attributes.
 
@@ -105,11 +105,11 @@ for i in urls:
     - For numeric fields, use df.describe() to view statistics such as minimum, maximum, mean, and quantiles to determine if there are outliers outside the normal range
 
 
-4. Standardize names and values to ensure data consistency
+4. Standardise names and values to ensure data consistency
 
     - Check attribute names and convert them to lowercase, remove spaces, and ensure consistent naming style
 
-    - Standardize values in categorical fields, such as converting to lowercase and removing leading/trailing whitespace
+    - Standardise values in categorical fields, such as converting to lowercase and removing leading/trailing whitespace
 
 
     - Map different representations of the same meaning, such as mapping both 'creation date' and 'production date' to 'creation date'
@@ -117,7 +117,7 @@ for i in urls:
 ## Data Analysis
 
 
-- Analyze the distribution of key fields (e.g., artist nationality, art genre, creation year)
+- Analyse the distribution of key fields (e.g., artist nationality, art genre, creation year)
 
 - For categorical fields, use df['field'].value_counts() to view the frequency distribution of each value
 - For numeric fields, use df['field'].hist() to plot a histogram and observe the data distribution

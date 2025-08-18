@@ -15,15 +15,15 @@
     dc:title "The Thinker" ;
     dc:creator :auguste_rodin ;
     dc:description "A bronze sculpture representing a nude male figure sitting on a rock with his chin resting on his hand, in a profound state of contemplation" ;
-    sdo:height "186 cm" ;
-    sdo:width "98 cm" ;
-    sdo:depth "140 cm" ;  # Additional dimension for 3D
-    dc:medium "Bronze cast" ;
-    dbp:technique "Lost-wax casting" ;
+    sdo:height [ a sdo:QuantitativeValue ; sdo:value 186 ; sdo:unitCode "CMT" ] ;
+    sdo:width  [ a sdo:QuantitativeValue ; sdo:value 98  ; sdo:unitCode "CMT" ] ;
+    sdo:depth  [ a sdo:QuantitativeValue ; sdo:value 140 ; sdo:unitCode "CMT" ] ;
+    arto:medium aat:300010957 ;
+    arto:technique :lost_wax_casting ;
     arto:style :neoclassicism ;
-    sdo:genre "Portrait sculpture" ;
+    arto:genre :sculpture ;
     arto:currentLocation :rodin_museum_paris ;
-    arto:relatedToEvent :gates_of_hell_creation, :original_creation_event,:museum_acquisition_event ;
+    arto:hasEvent :gates_of_hell_creation, :original_creation_event,:museum_acquisition_event ;
     arto:containsScene :contemplation_scene .
 
 # Artist Information
@@ -31,7 +31,6 @@
     foaf:name "Auguste Rodin" ;
     foaf:firstName "Auguste" ;
     foaf:lastName "Rodin" ;
-    dc:creator "The Thinker" ;
     dbp:residence :paris_france_19th_century ;
     arto:knows :camille_claudel, :jules_dalou, :paul_cruet ;
     arto:hasTime :rodin_active_period .
@@ -42,7 +41,7 @@
     sdo:endDate "1917"^^xsd:dateTime .
 
 # Current Location
-:rodin_museum_paris a arto:Organization ;
+:rodin_museum_paris a arto:Organisation ;
     rdfs:label "Musée Rodin" ;
     arto:hasLocation :paris_location .
 
@@ -56,16 +55,22 @@
     rdfs:label "Neoclassicism" ;
     skos:definition "An art style that draws inspiration from classical antiquity" .
 
+:lost_wax_casting a arto:TechniqueType ;
+    rdfs:label "Lost-wax casting" .
+
 # Scene Description
 :contemplation_scene a arto:Scene ;
     arto:containsObject :male_figure ;
     arto:containsScene :figure_scene, :rock_scene ;
     arto:size "full sculpture" ;
-    arto:expresses :philosophical_contemplation_theme ;
-    arto:coordinates "0,0,0" ;
+    arto:hasConnotation :philosophical_contemplation_theme ;
+    arto:hasCoordinates :vector_2_3154_48_8555 ;
     arto:hasMetric  :spatial_tension_metric, :pose_balance_metric ;
-    arto:relatedToEvent :dante_contemplation_event .
+    arto:hasEvent :dante_contemplation_event .
 
+:vector_2_3154_48_8555 a arto:Vector ;
+    rdfs:label "Vector for The Thinker" ;
+    arto:hasCoordinates "2.3154, 48.8555" .
 
 :male_figure a arto:Object ;
     arto:relatedToScene :figure_scene ;
@@ -84,7 +89,7 @@
     arto:isSceneOf :figure_scene ;
     arto:containsObject :head, :hand ;
     arto:descriptor "The focal point of contemplation" ;
-    arto:expresses :deep_thought_emotion .
+    arto:hasConnotation :deep_thought_emotion .
 
 :head a arto:Object ;
     arto:isObjectOf :head_scene ;
@@ -101,7 +106,7 @@
     arto:isSceneOf :figure_scene ;
     arto:containsObject :chest, :back, :shoulders ;
     arto:descriptor "Muscular core showing tension and power" ;
-    arto:expresses :physical_strength_theme .
+    arto:hasConnotation :physical_strength_theme .
 
 :chest a arto:Object ;
     arto:isObjectOf :torso_scene ;
@@ -137,7 +142,7 @@ arto:restOn rdfs:subPropertyOf arto:relatedTo .
     arto:isObjectOf :limbs_scene ;
     arto:state "crossed, supporting" ;
     arto:descriptor "powerful", "tensed muscles" ;
-    arto:rest_on :rock_base .
+    arto:restOn :rock_base .
 
 
 :rock_scene a arto:Scene ;
@@ -174,24 +179,24 @@ arto:supports rdfs:subPropertyOf arto:relatedTo.
 :pose_balance_metric a arto:Metric ;
     rdfs:label "Pose Balance" ;
     rdfs:comment "Analyzes the precarious yet stable balance of the seated figure" ;
-    arto:isMetricOf :pose_scene .
+    arto:isMetricOf :contemplation_scene .
 
 # Connotations
 :philosophical_contemplation_theme a arto:Theme ;
-    arto:isExpressedBy :contemplation_scene, :the_thinker ;
+    arto:isConnotationOf :contemplation_scene, :the_thinker ;
     rdfs:label "Philosophical Contemplation" ;
     rdfs:comment "Theme of deep thought and meditation" .
 
 
 
 :deep_thought_emotion a arto:Emotion ;
-    arto:isExpressedBy :head_scene ;
+    arto:isConnotationOf :head_scene ;
     dc:type "contemplation" ;
     rdfs:label "Deep Thought" .
 
 
 :physical_strength_theme a arto:Theme ;
-    arto:isExpressedBy :torso_scene ;
+    arto:isConnotationOf :torso_scene ;
     rdfs:label "Physical Strength" .
 
 
@@ -232,7 +237,7 @@ arto:supports rdfs:subPropertyOf arto:relatedTo.
     sdo:endDate "1890"^^xsd:dateTime .
 
 
-:commission_committee a arto:Organization ;
+:commission_committee a arto:Organisation ;
     rdfs:label "Decorative Arts Museum Commission Committee" ;
     arto:hasLocation :paris_location .
 
@@ -252,7 +257,7 @@ arto:supports rdfs:subPropertyOf arto:relatedTo.
     sdo:startDate "1922"^^xsd:dateTime ;
     sdo:endDate "1922"^^xsd:dateTime .
 
-:rodin_museum_paris a arto:Organization ;
+:rodin_museum_paris a arto:Organisation ;
     rdfs:label "Musée Rodin" ;
     arto:hasLocation :rodin_museum_location .
 
@@ -261,11 +266,11 @@ arto:supports rdfs:subPropertyOf arto:relatedTo.
     dc:type "museum" ;
     geo:asWKT "POINT(2.3154 48.8555)" .
 
-:french_government a arto:Organization ;
+:french_government a arto:Organisation ;
     rdfs:label "French Government" ;
     dc:type "government" .
 
-:museum_curators a arto:Organization ;
+:museum_curators a arto:Organisation ;
     rdfs:label "Musée Rodin Curatorial Team" ;
     dc:type "museum staff" .
 

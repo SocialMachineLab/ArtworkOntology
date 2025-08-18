@@ -28,12 +28,32 @@
     arto:originalTitle "Meisje met de parel"@nl ;
     dc:created :creation_period ;
     dc:creator :vermeer ;
-    dc:medium "Oil on canvas" ;
-    dbp:style "Dutch Golden Age painting", "Baroque" ;
-    sdo:genre "Portrait", "Tronie" ;
-    ebucore:height "44.5 cm" ;
-    ebucore:width "39 cm" ;
-    :currentLocation :mauritshuis_museum .
+    arto:medium :Oil_on_canvas ;
+    arto:style :Dutch_Golden_Age_painting, :Baroque ;
+    arto:genre :Portrait, :Tronie ;
+    sdo:height "44.5 cm" ;
+    sdo:width "39 cm" ;
+    arto:currentLocation :mauritshuis_museum .
+
+:Oil_on_canvas rdf:type :MediumType ;
+    rdfs:label "Oil on canvas"@en ;
+    arto:description "A painting technique using oil-based pigments on a canvas surface."@en .
+
+:Baroque rdf:type :StyleType ;
+    rdfs:label "Baroque"@en ;
+    arto:description "An artistic style characterized by dramatic expression, rich detail, and grandeur."@en .  
+
+:Dutch_Golden_Age_painting rdf:type :StyleType ;
+    rdfs:label "Dutch Golden Age painting"@en ;
+    arto:description "A style of painting that flourished in the Netherlands during the 17th century, characterized by realism and attention to detail."@en .
+
+:Portrait rdf:type :GenreType ;
+    rdfs:label "Portrait"@en ;
+    arto:description "A representation of a person, typically focusing on the face and expression."@en .
+
+:Tronie rdf:type :GenreType ;
+    rdfs:label "Tronie"@en ;
+    arto:description "A type of painting that depicts a character or figure, often exaggerated or in costume, rather than a specific individual."@en .
 
 :vermeer rdf:type :Artist ;
     foaf:name "Johannes Vermeer" ;
@@ -43,11 +63,11 @@
 
 :mauritshuis_museum rdf:type :Location ;
     rdfs:label "Mauritshuis"@en ;
-    :locationType "museum" .
+    dc:type "museum" .
 
 :delft_netherlands rdf:type :Location ;
     rdfs:label "Delft"@en ;
-    :locationType "city" .
+    dc:type "city" .
 
 
 :creation_period rdf:type :Time ;
@@ -56,66 +76,94 @@
 
 
 :main_scene rdf:type :Scene ;
-    :containsObject :girl_figure, :pearl_earring, :turban, :blue_headscarf, :yellow_jacket ;
-    :coordinates "full_canvas" ;
-    :size "full" .
+    arto:containsObject :girl_figure, :pearl_earring, :turban, :blue_headscarf, :yellow_jacket ;
+    arto:hasCoordinates :main_coordinates ;
+    arto:size "full" .
 
 
-:girl_figure rdf:type :Character ;
+:girl_figure rdf:type arto:Character ;
     rdfs:label "Girl figure" ;
-    :state "turning" ;
-    :descriptor "young", "female" ;
-    :relatedToScene :main_scene .
+    arto:state "turning" ;
+    arto:descriptor "young", "female" ;
+    arto:relatedToScene :main_scene .
 
 :pearl_earring rdf:type :Object ;
     rdfs:label "Pearl earring" ;
-    :material "pearl" ;
-    :state "hanging" ;
-    :relatedTo :girl_figure .
+    arto:material :pearl_material ;
+    arto:state "hanging" ;
+    arto:relatedTo :girl_figure .
+
+:pearl_material rdf:type :MaterialType ;
+    rdfs:label "Pearl" ;
+    arto:description "A lustrous gemstone formed within the soft tissue of a mollusk." .
 
 :turban rdf:type :Object ;
-    :material "fabric" ;
-    :descriptor "exotic" ;
-    :containsElement :blue_color, :yellow_color .
+    arto:material :fabric_material ;
+    arto:descriptor "exotic" ;
+    arto:containsElement :blue_colour, :yellow_colour .
 
 :yellow_jacket rdf:type :Object ;
-    :material "fabric" ;
-    :descriptor "lustrous" ;
-    :containsElement :yellow_color .
+    arto:material :fabric_material ;
+    arto:descriptor "lustrous" ;
+    arto:containsElement :yellow_colour .
+
+:fabric_material rdf:type :MaterialType ;
+    rdfs:label "Fabric" ;
+    arto:description "A textile material used for clothing and other purposes." .
 
 :composition_balance rdf:type :BalanceOfComposition ;
-    :compositionType "asymmetrical" .
+    dc:type "asymmetrical" .
 
 :main_lighting rdf:type :VisualElement ;
-    :descriptor "chiaroscuro", "dramatic" .
+    arto:descriptor "chiaroscuro", "dramatic" .
 
-:blue_color rdf:type :Colour ;
-    :RGBValue "0,71,171" ;
-    :expresses :serenity_emotion .
+:blue_colour a arto:Colour ;
+    arto:hasValue :blue_colour_rgb, :blue_colour_hsv ;
+    arto:hasConnotation :serenity_emotion .
 
-:yellow_color rdf:type :Colour ;
-    :RGBValue "255,198,73" ;
-    :expresses :warmth_emotion .
+:blue_colour_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(0,71,171)" ;
+    rdfs:label "Blue (RGB)"@en .
+
+:blue_colour_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(215,100,67)" ;
+    rdfs:label "Blue (HSV)"@en .
+
+:yellow_colour a arto:Colour ;
+    arto:hasValue :yellow_colour_rgb, :yellow_colour_hsv ;
+    arto:hasConnotation :warmth_emotion .
+
+:yellow_colour_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(255,198,73)" ;
+    rdfs:label "Yellow (RGB)"@en .
+
+:yellow_colour_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(43,71,100)" ;
+    rdfs:label "Yellow (HSV)"@en .
 
 :restoration_1994 rdf:type :Event ;
-    sem:eventType "restoration" ;
-    :hasTime [
+    dc:type "restoration" ;
+    arto:hasTime [
         rdf:type :Time ;
         sdo:startDate "1994"^^xsd:date ;
         sdo:endDate "1994"^^xsd:date
     ] .
 
 :theft_attempt_2002 rdf:type :Event ;
-    sem:eventType "security incident" ;
-    :hasTime [
+    dc:type "security incident" ;
+    arto:hasTime [
         rdf:type :Time ;
         sdo:startDate "2002-04"^^xsd:date
     ] .
 
 :major_exhibition_2014 rdf:type :Event ;
-    sem:eventType "exhibition" ;
-    :hasLocation :louvre_museum ;
-    :hasTime [
+    dc:type "exhibition" ;
+    arto:hasLocation :louvre_museum ;
+    arto:hasTime [
         rdf:type :Time ;
         sdo:startDate "2014-02-22"^^xsd:date ;
         sdo:endDate "2014-05-22"^^xsd:date
@@ -127,11 +175,11 @@
 
 :mystery_meaning rdf:type :Meaning ;
     rdfs:label "Mystery and ambiguity" ;
-    :source "Girl's gaze and expression" .
+    arto:source "Girl's gaze and expression" .
 
 :gaze_emotion rdf:type :Emotion ;
-    :emotionType "intrigue" ;
-    :hasMetric [
+    dc:type "intrigue" ;
+    arto:hasMetric [
         rdf:type :EmotionIntensity ;
         rdfs:label "Strong"
     ] .

@@ -129,7 +129,7 @@
 
 :vermeer rdf:type l0:Agent, arco-cd:Author ;
     l0:name "Johannes Vermeer"@en, "Johannes Vermeer"@it ;
-    arco-cd:historicalBiographicalInformation """Johannes Vermeer (1632-1675) was a Dutch Baroque Period painter who specialized in domestic interior scenes of middle-class life. 
+    arco-cd:historicalBiographicalInformation """Johannes Vermeer (1632-1675) was a Dutch Baroque Period painter who specialised in domestic interior scenes of middle-class life. 
     He was moderately successful in his lifetime but was not wealthy, leaving his wife and children in debt at his death. Vermeer produced relatively few paintings, around 35 works are 
     confidently attributed to him today. During the 19th and early 20th centuries, Vermeer was rediscovered by art critics and historians."""@en ;
     arco-cd:birthDate "1632-10-31"^^xsd:date ;

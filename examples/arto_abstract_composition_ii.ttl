@@ -13,14 +13,15 @@
 :composition_ii a arto:Painting ;
     dc:title "Composition II in Red, Blue, and Yellow"@en ;
     dc:creator :mondrian ;
-    sdo:height "55 cm" ;
-    sdo:width "55 cm" ;
-    dc:medium "oil on canvas"@en ;
-    dc:description "A Neoplastic abstract work expressing universal harmony through vertical and horizontal black lines and combinations of primary colors and non-colors."@en ;
+    sdo:height [ a sdo:QuantitativeValue ; sdo:value "55"^^xsd:decimal ; sdo:unitText "cm" ] ;
+    sdo:width  [ a sdo:QuantitativeValue ; sdo:value "55"^^xsd:decimal ; sdo:unitText "cm" ] ;
+    arto:medium :oil_on_canvas ;
+    dc:description "A Neoplastic abstract work expressing universal harmony through vertical and horizontal black lines and combinations of primary colours and non-colours."@en ;
     arto:style :neoplasticism ;
-    sdo:genre "Abstract art"@en ;
+    arto:genre :abstract_art ;
     arto:currentLocation :moma ;
     arto:containsScene :main_scene ;
+    arto:hasEvent :creation_event ;
     dc:isPartOf :composition_series .
 
 # Artist
@@ -31,7 +32,6 @@
     dbp:residence :new_york_location ,
                   :paris_location ,
                   :netherlands_location ;
-    dc:creator :composition_ii ;
     arto:knows :theo_van_doesburg ,
               :georges_vantongerloo ,
               :bart_van_der_leck .
@@ -95,15 +95,18 @@
 # Scene
 :main_scene a arto:Scene ;
     arto:size "55x55cm" ;
-    arto:coordinates "0,0,55,55" ;
+    arto:hasCoordinates :vector_0_0_55_55  ;
     arto:containsObject :grid_structure ,
                        :red_rectangle ,
                        :blue_rectangle ,
                        :yellow_rectangle ,
                        :white_areas ;
-    arto:expresses :universal_balance ;
+    arto:hasConnotation :universal_balance ;
     arto:descriptor :geometric_composition ;
     arto:isSceneOf :composition_ii .
+
+:vector_0_0_55_55 a qudt:Vector ;
+    qudt:vector "(0,0,55,55)" .
 
 # Objects (with required inverse relationships)
 :grid_structure a arto:Object ;
@@ -112,38 +115,38 @@
     arto:descriptor :grid_lines ;
     arto:size "variable width" ;
     arto:containsElement :black_lines ;
-    arto:expresses :structural_order ;
+    arto:hasConnotation :structural_order ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene .
 
 :red_rectangle a arto:Object ;
     arto:state "upper right corner"@en ;
-    arto:containsElement :red_color ;
-    arto:expresses :energy_warmth ;
+    arto:containsElement :red_colour ;
+    arto:hasConnotation :energy_warmth ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
     arto:size "small" .
 
 :blue_rectangle a arto:Object ;
     arto:state "lower left corner"@en ;
-    arto:containsElement :blue_color ;
-    arto:expresses :calm_stability ;
+    arto:containsElement :blue_colour ;
+    arto:hasConnotation :calm_stability ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
     arto:size "medium" .
 
 :yellow_rectangle a arto:Object ;
     arto:state "lower right corner"@en ;
-    arto:containsElement :yellow_color ;
-    arto:expresses :joy_optimism ;
+    arto:containsElement :yellow_colour ;
+    arto:hasConnotation :joy_optimism ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
     arto:size "small" .
 
 :white_areas a arto:Object ;
-    arto:state "main background"@en ;
-    arto:containsElement :white_color ;
-    arto:expresses :purity_space ;
+    arto:state "main background"@en ;  
+    arto:containsElement :white_colour ;
+    arto:hasConnotation :purity_space ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
     arto:size "large" .
@@ -151,74 +154,119 @@
 # Visual Elements (with inverse relationships)
 :black_lines a arto:Line ;
     arto:direction "vertical and horizontal" ;
-    sdo:width "variable" ;
     dc:type "solid line" ;
-    arto:RGBValue "0,0,0" ;
     arto:length 55.0 ;
     arto:isElementOf :grid_structure .
 
-:red_color a arto:Color ;
-    arto:RGBValue "248,70,91" ;
-    arto:HSVValue "354,72,97" ;
+
+:red_colour a arto:Colour ;
+    arto:hasValue :red_colour_rgb , :red_colour_hsv ;
     arto:isElementOf :red_rectangle .
 
-:blue_color a arto:Color ;
-    arto:RGBValue "42,156,229" ;
-    arto:HSVValue "203,82,90" ;
+:red_colour_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(248,70,91)" ;
+    rdfs:label "Red (RGB)"@en .
+
+:red_colour_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(354,72,97)" ;
+    rdfs:label "Red (HSV)"@en .
+
+:blue_colour a arto:Colour ;
+    arto:hasValue :blue_colour_rgb , :blue_colour_hsv ;
     arto:isElementOf :blue_rectangle .
 
-:yellow_color a arto:Color ;
-    arto:RGBValue "255,230,60" ;
-    arto:HSVValue "52,76,100" ;
+:blue_colour_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(42,156,229)" ;
+    rdfs:label "Blue (RGB)"@en .
+
+:blue_colour_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(203,82,90)" ;
+    rdfs:label "Blue (HSV)"@en .
+
+
+
+:yellow_colour a arto:Colour ;
+    arto:hasValue :yellow_colour_rgb , :yellow_colour_hsv ;
     arto:isElementOf :yellow_rectangle .
 
-:white_color a arto:Color ;
-    arto:RGBValue "255,255,255" ;
-    arto:HSVValue "0,0,100" ;
+:yellow_colour_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(255,230,60)" ;
+    rdfs:label "Yellow (RGB)"@en .
+
+:yellow_colour_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(52,76,100)" ;
+    rdfs:label "Yellow (HSV)"@en .
+
+
+
+
+:white_colour a arto:Colour ;
+    arto:hasValue :white_colour_rgb , :white_colour_hsv ;
     arto:isElementOf :white_areas .
+
+:white_colour_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(255,255,255)" ;
+    rdfs:label "White (RGB)"@en .
+
+:white_colour_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(0,0,100)" ;
+    rdfs:label "White (HSV)"@en .
 
 
 # Metrics
 :emotional_intensity_high a arto:EmotionIntensity ;
-    rdfs:value "high" ;
-    arto:isMetricOf :universal_balance .
+  qudt:numericValue "0.8"^^xsd:decimal ;
+  dc:description "qualitative level: high"@en ;
+  arto:isMetricOf :universal_balance .
 
 # Connotations (with inverse relationships)
 :universal_balance a arto:Emotion ;
     dc:type "harmony"@en ;
     arto:hasMetric :emotional_intensity_high ;
-    arto:isExpressedBy :main_scene .
+    arto:isConnotationOf :main_scene .
 
 :structural_order a arto:Theme ;
-    arto:isExpressedBy :grid_structure .
+    arto:isConnotationOf :grid_structure .
 
 :energy_warmth a arto:Symbolism ;
-    arto:source "color theory" ;
-    arto:isExpressedBy :red_rectangle .
+    arto:source "colour theory" ;
+    arto:isConnotationOf :red_rectangle .
 
 :calm_stability a arto:Symbolism ;
-    arto:source "color psychology" ;
-    arto:isExpressedBy :blue_rectangle .
+    arto:source "colour psychology" ;
+    arto:isConnotationOf :blue_rectangle .
 
 :joy_optimism a arto:Symbolism ;
-    arto:isExpressedBy :yellow_rectangle .
+    arto:isConnotationOf :yellow_rectangle .
 
 :purity_space a arto:Symbolism ;
     arto:source "artistic convention" ;
-    arto:isExpressedBy :white_areas .
+    arto:isConnotationOf :white_areas .
 
 
-:neoplasticism a arto:ArtStyleType ;
-    foaf:name "Neoplasticism"@en .
+:neoplasticism a arto:StyleType ;
+    rdfs:label "Neoplasticism"@en .
+
+:oil_on_canvas a arto:MediumType ;
+    rdfs:label "Oil on canvas"@en .
+
+:abstract_art a arto:GenreType ;
+    rdfs:label "Abstract art"@en .
 
 # Additional Entities
-:de_stijl_group a arto:Organization ;
-    foaf:name "De Stijl"@en ;
-    event:agent :de_stijl_movement .
+:de_stijl_group a arto:Organisation ;
+    foaf:name "De Stijl"@en .
 
-:valentine_gallery a arto:Organization ;
-    foaf:name "Valentine Gallery"@en ;
-    event:agent :first_exhibition .
+:valentine_gallery a arto:Organisation ;
+    foaf:name "Valentine Gallery"@en .
 
 :theo_van_doesburg a arto:Artist ;
     foaf:name "Theo van Doesburg"@en .

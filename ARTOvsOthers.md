@@ -1,11 +1,18 @@
 # ARTO vs Other Artwork Ontologies: Comparison of Representational Capabilities
 
 
-This document demonstrates how ARTO (ARTwork Object Ontology) differs from existing artwork ontologies in representing artwork information. Through these examples, we show ARTO's enhanced capabilities in capturing visual details, emotional content, and multi-layered interpretations.
+This document demonstrates how ARTO (ARTwork Object Ontology) differs from existing artwork ontologies in representing artwork information. Through these examples, we show ARTO's enhanced capabilities in capturing visual details, emotional content, and multi-layered interpretations. For the complete RDF and RDF-star representations corresponding to the examples in this document (e.g., *Starry Night*), please see the [examples](./examples/) directory. Each artwork has its own `.ttl` file.
+
 
 ## Comparison with Major Ontologies
 
-For detailed information, please see [here](./examples/)
+
+
+> **About example properties used in this document:**  
+> Some triples below use illustrative, project-specific properties (e.g., `arto:next_to`, `arto:adjacent_to`) to highlight how ARTO can capture inter-object relations. These are **not** part of the ARTO core ontology (`arto.ttl`). In production, define such relations in a project extension or model them via coordinates/placements and spatial metrics (e.g., `hasCoordinates`, `hasMetric`).
+
+
+
 
 ### ARTO vs CIDOC-CRM
 
@@ -33,11 +40,11 @@ crm:P62_depicts ex:night_sky, ex:village, ex:cypress_tree, ex:church_spire ;
 ex:starry_night arto:containsScene ex:sky_scene, ex:village_scene ;
 
 ex:sky_scene arto:containsObject ex:stars, ex:moon, ex:swirls ;
-    arto:expresses ex:emotion_turmoil ;
+    arto:hasConnotation ex:emotion_turmoil ;
     arto:hasMetric ex:blue_dominance .
 
-ex:swirls arto:containsElement ex:blue_color, ex:curved_line ;
-    arto:expresses ex:emotion_turmoil .
+ex:swirls arto:containsElement ex:blue_colour, ex:curved_line ;
+    arto:hasConnotation ex:emotion_turmoil .
 ```
 
 
@@ -51,9 +58,12 @@ crm:P62_depicts ex:night_sky, ex:village, ex:cypress_tree, ex:church_spire ;
 # ARTO - Rich relationship network
 ex:houses arto:relatedTo ex:church ;
 ex:cypress arto:isObjectOf ex:village_scene ;
-ex:swirls arto:expresses ex:emotion_turmoil ;
+ex:swirls arto:hasConnotation ex:emotion_turmoil ;
 ex:stars arto:isObjectOf ex:sky_scene ;
 ```
+
+
+
 
 ### ARTO vs ICON Ontology
 
@@ -77,7 +87,7 @@ ARTO offers a sophisticated scene-object hierarchy that ICON cannot represent:
 # ARTO - Nested scene structure
 ex:starry_night arto:containsScene ex:sky_scene, ex:village_scene .
 ex:sky_scene arto:containsObject ex:stars, ex:moon, ex:swirls .
-ex:swirls arto:containsElement ex:blue_color, ex:curved_line .
+ex:swirls arto:containsElement ex:blue_colour, ex:curved_line .
 
 # ICON - Flat structure with limited relationships
 ex:village_composition icon:hasPart ex:church_motif, ex:houses_motif .
@@ -110,7 +120,7 @@ ARTO provides measurable properties for visual elements:
 ex:curved_line rdf:type arto:Line ;
     arto:direction "Curved" ;
     arto:length 20.0 ;
-    sdo:width "Medium" .
+    arto:width 2.0 .
 
 # ICON - No geometric properties available
 ```
@@ -125,7 +135,7 @@ ex:curved_line rdf:type arto:Line ;
 
 **ARTO Advantages:**
 - Dynamic element description (movement, direction)
-- Sensory details (material, color values)
+- Sensory details (material, colour values)
 - Comprehensive composition analysis
 
 #### Example
@@ -139,7 +149,7 @@ ARTO provides a clear three-level hierarchy: Artwork → Scene → Object → El
 # ARTO
 ex:starry_night arto:containsScene ex:sky_scene, ex:village_scene ;
 ex:sky_scene arto:containsObject ex:stars, ex:moon, ex:swirls ;
-ex:stars arto:containsElement ex:yellow_color, ex:circular_composition ;
+ex:stars arto:containsElement ex:yellow_colour, ex:circular_composition ;
 
 # VIR
 ex:starry_night_representation vir:K20_forms_part_of ex:sky_representation ;
@@ -157,7 +167,7 @@ ex:swirls rdf:type arto:Object ;
     arto:descriptor "Swirling" ;
     arto:coordinates "Upper region" ;
     arto:state "Dynamic motion" ;
-    arto:containsElement ex:blue_color, ex:curved_line ;
+    arto:containsElement ex:blue_colour, ex:curved_line ;
 ```
 
 
@@ -167,7 +177,7 @@ ARTO can express spatial and conceptual relationships between objects directly.
 
 **ARTO's Advantage:**
 ```turtle
-ex:cypress ex:next_to ex:church .
+ex:cypress arto:next_to ex:church .
 ex:houses arto:adjacent_to ex:church ;
 ```
 
@@ -175,7 +185,7 @@ ex:houses arto:adjacent_to ex:church ;
 ### ARTO vs ArCo
 
 **ArCo Focus:**
-- Italian cultural heritage cataloging  
+- Italian cultural heritage cataloguing  
 - Conservation status
 - Cultural-historical context
 
@@ -201,10 +211,10 @@ ex:sky_scene
     arto:containsObject ex:stars, ex:moon, ex:swirls ;
     arto:size "Large" ;
     arto:descriptor "Swirling" ;
-    arto:expresses ex:emotion_turmoil .
+    arto:hasConnotation ex:emotion_turmoil .
 
 ex:swirls 
-    arto:containsElement ex:blue_color, ex:curved_line, ex:spiral_composition ;
+    arto:containsElement ex:blue_colour, ex:curved_line, ex:spiral_composition ;
     arto:coordinates "Upper portion of canvas" .
 ```
 
@@ -217,12 +227,12 @@ ex:swirls
 # ARTO - Rich emotional and symbolic layers
 ex:emotion_turmoil rdf:type arto:Emotion ;
     dc:type "Emotional state" ;
-    arto:isExpressedBy ex:swirls, ex:sky_scene ;
+    arto:isConnotationOf ex:swirls, ex:sky_scene ;
     arto:hasMetric ex:emotion_intensity_high .
 
 ex:symbol_death rdf:type arto:Symbolism ;
     arto:source "Mediterranean symbolism" ;
-    arto:isExpressedBy ex:cypress .
+    arto:isConnotationOf ex:cypress .
 ```
 
 
@@ -235,8 +245,8 @@ ex:symbol_death rdf:type arto:Symbolism ;
 # ARTO - Rich inter-object relationships  
 ex:houses arto:relatedTo ex:church ;
 ex:cypress arto:isObjectOf ex:village_scene ;
-    arto:expresses ex:symbol_death ;
-    ex:adjacent_to ex:village .
+    arto:hasConnotation ex:symbol_death ;
+    arto:adjacent_to ex:village .
 ```
 
 
@@ -244,9 +254,9 @@ ex:cypress arto:isObjectOf ex:village_scene ;
 
 ### ARTO vs Linked Art
 
-ARTO and Linked Art represent complementary approaches to artwork representation, each addressing different aspects of cultural heritage documentation. ARTO focuses on the **visual content and interpretive layers** of artworks, providing hierarchical structures for scenes, objects, and visual elements (Color, Line, Composition), along with classes for emotional expression (Emotion) and symbolic meaning (Symbolism). Its strength lies in capturing what viewers see and experience, with detailed properties for visual characteristics like RGB values, line directions, and compositional types, making it ideal for **artwork captioning and content analysis**.
+ARTO and Linked Art represent complementary approaches to artwork representation, each addressing different aspects of cultural heritage documentation. ARTO focuses on the **visual content and interpretive layers** of artworks, providing hierarchical structures for scenes, objects, and visual elements (Colour, Line, Composition), along with classes for emotional expression (Emotion) and symbolic meaning (Symbolism). Its strength lies in capturing what viewers see and experience, with detailed properties for visual characteristics like RGB values, line directions, and compositional types, making it ideal for **artwork captioning and content analysis**.
 
-In contrast, Linked Art specializes in **administrative and digital management** aspects of cultural heritage. It introduces practical classes such as `la:Set` for collection management, `la:Payment` for financial transactions, `la:DigitalService` for online access platforms, and `la:Transfer` for ownership changes. Linked Art's new properties like `la:digitally_shows`, `la:digitally_available_via`, and `la:current_permanent_custodian` address modern museum needs for digital asset management and precise custody documentation. While ARTO excels at answering "What does this artwork show and mean?", Linked Art effectively handles "How is this object managed and accessed?", making them naturally complementary for comprehensive artwork documentation systems.
+In contrast, Linked Art specialises in **administrative and digital management** aspects of cultural heritage. It introduces practical classes such as `la:Set` for collection management, `la:Payment` for financial transactions, `la:DigitalService` for online access platforms, and `la:Transfer` for ownership changes. Linked Art's new properties like `la:digitally_shows`, `la:digitally_available_via`, and `la:current_permanent_custodian` address modern museum needs for digital asset management and precise custody documentation. While ARTO excels at answering "What does this artwork show and mean?", Linked Art effectively handles "How is this object managed and accessed?", making them naturally complementary for comprehensive artwork documentation systems.
 
 ## Key Differentiators
 | Feature                 | CIDOC-CRM | ICON    | VIR     | ArCo    | Linked Art | ARTO           |

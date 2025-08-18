@@ -1758,15 +1758,25 @@ arto:Location rdf:type owl:Class ;
                                 owl:onProperty dc:type ;
                                 owl:allValuesFrom xsd:string
                               ] ;
-              rdfs:comment "Represents physical or conceptual places associated with artwork creation, display, storage, or depicted content, supporting both precise geographical coordinates and general names. This class addresses the complex relationship between location and time in historical contexts, where political boundaries and place names evolve over centuries. The class integrates GeoSPARQL coordinates with flexible place type classifications, supporting the artwork's historical geographical analysis." ;
+              rdfs:comment "Represents locations associated with artworks (creation, display, storage, provenance, or depicted scenes). Location type is recorded as free text, e.g., studio, museum, gallery, exhibition venue, storage, auction house, private collection, findspot, city, region, country, fictional place, or depicted place. GeoSPARQL WKT may be provided when precise geometry is known; otherwise names alone are acceptable. Historical changes (renamings/boundaries) can be handled by creating distinct Location instances and linking them to events or times as needed." ;
               rdfs:label "Location" .
 
 
 ###  http://w3id.org/arto#MainColour
 arto:MainColour rdf:type owl:Class ;
                 rdfs:subClassOf arto:Metric ;
-                rdfs:comment """Represents the dominant or most prominent colour in an artwork, which can be
-      determined through visual analysis or colour quantisation techniques.""" ;
+                rdfs:comment """Represents the primary or most visually dominant colour of an artwork. 
+This value can be derived by computational methods such as colour quantisation, clustering, or histogram analysis. This metric links to a specific Colour instance, which may be described using colour values (RGB, HSV, Lab, etc.) """ ;
+                skos:example """
+                   - :starryNight_MainColour a arto:MainColour ;
+                        arto:hasColour :deepBlue_Colour .
+
+                   - :deepBlue_Colour a arto:Colour ;
+                        arto:hasColourValue [
+                           a arto:RGBValue ;
+                           qudt:vector (18,10,143) ;
+                        ] .
+                """ ;
                 rdfs:label "MainColour" .
 
 
@@ -1812,6 +1822,25 @@ arto:Metric rdf:type owl:Class ;
       intensity, balance of composition, and other visual elements, to facilitate structural
       analysis
       and comparison of artworks.""" ;
+            skos:example """
+               :guernica a arto:Artwork ;
+                 arto:hasMetric :guernica_MainColour .
+
+               :guernica_MainColour a arto:MainColour ;
+                 arto:hasColour :greyTone_Colour .
+
+               :starryNight a arto:Artwork ;
+                 arto:hasMetric :starryNight_Balance .
+
+               :starryNight_Balance a arto:BalanceOfComposition ;
+                 arto:value 0.72 .
+
+               :sunflowers a arto:Artwork ;
+                 arto:hasMetric :sunflowers_Emotion .
+
+               :sunflowers_Emotion a arto:EmotionIntensity ;
+                 arto:level "high" .
+            """ ;
             rdfs:label "Metric" .
 
 
@@ -1895,13 +1924,11 @@ arto:Photograph rdf:type owl:Class ;
 ###  http://w3id.org/arto#Relevance
 arto:Relevance rdf:type owl:Class ;
                rdfs:subClassOf arto:Metric ;
-               rdfs:comment """Measures and describes the significance or importance of elements within an artwork, including:
-                  - Thematic relevance
-                  - Visual importance
-                  - Symbolic significance
-                  - Narrative relevance
-                  - Historical relevance
-                  - Compositional importance""" ;
+               rdfs:comment """Measures and describes the significance or importance of elements within an artwork. Relevance may refer to thematic, visual, symbolic, narrative, historical, or compositional importance, and can be expressed by numeric scores, categorical levels, or references to related concepts.""" ;
+               skos:example """
+                   :lastSupper_RedCloakRelevance a arto:Relevance ;
+                     arto:value 0.85 .
+               """ ;
                rdfs:label "Relevance" .
 
 
@@ -1976,6 +2003,13 @@ arto:Space rdf:type owl:Class ;
                              owl:allValuesFrom xsd:string
                            ] ;
            rdfs:comment "Captures the representation of depth, and spatial organisation within artworks. " ;
+           skos:example """
+               :handscroll_Space a arto:Space ;
+               dc:type "isometric / axonometric" .
+                
+              :Field_Space a arto:Space ;
+                dc:type "flat / shallow space" .
+            """ ;
            rdfs:label "Space" .
 
 
@@ -2030,7 +2064,7 @@ arto:Symbolism rdf:type owl:Class ;
         
     # Historical symbolism
     :laurel_wreath_victory_symbolism rdf:type arto:Symbolism ;
-        dc:description \"Laurel wreath as symbol of victory and honor\" ;
+        dc:description \"Laurel wreath as symbol of victory and honour\" ;
         arto:source \"Ancient Greek and Roman ceremonial traditions\" ;
         arto:isConnotationOf :laurel_crown_object .
 """ .
@@ -2072,21 +2106,37 @@ arto:Time rdf:type owl:Class ;
                             owl:onProperty sdo:startDate ;
                             owl:allValuesFrom xsd:dateTime
                           ] ;
-          rdfs:comment """Represents temporal aspects related to artwork, including:
-            - Creation periods
-            - Historical periods
-            - Exhibition periods
-            - Conservation periods
-            - Depicted time periods
-            - Time-based elements
-            """ ;
+          rdfs:comment """Represents temporal aspects related to artworks and related events. 
+A Time instance may indicate exact dates, approximate or uncertain periods, broader intervals (decades, centuries), 
+or seasonal references as they appear in historical sources. The type may classify the temporal role, 
+such as creation, exhibition, depiction, historical period, or conservation.""" ;
           rdfs:label "Time" ;
-          skos:example """
-            - :renaissance_period rdf:type arto:Time ;
-                sdo:startDate \"1400\" ;
-                sdo:endDate \"1600\" .
-                
-            """ .
+                    skos:example """
+            :picassoBirth a arto:Time ;
+              dc:type "biographical" ;
+              sdo:startDate "1881-10-25T00:00:00"^^xsd:dateTime ;
+              sdo:endDate   "1881-10-25T23:59:59"^^xsd:dateTime .
+
+            :impressionismPeak a arto:Time ;
+              dc:type "historical-period" ;
+              sdo:startDate "1890-01-01T00:00:00"^^xsd:dateTime ;
+              sdo:endDate   "1899-12-31T23:59:59"^^xsd:dateTime .
+
+            :guernicaCreationPhase a arto:Time ;
+              dc:type "creation" ;
+              sdo:startDate "1937-03-01T00:00:00"^^xsd:dateTime ;
+              sdo:endDate   "1937-05-31T23:59:59"^^xsd:dateTime .
+
+            :earlyModernistPeriod a arto:Time ;
+              dc:type "historical-period" ;
+              sdo:startDate "1895-01-01T00:00:00"^^xsd:dateTime ;
+              sdo:endDate   "1905-12-31T23:59:59"^^xsd:dateTime .
+
+            :bluePeriod a arto:Time ;
+              dc:type "creation" ;
+              sdo:startDate "1901-01-01T00:00:00"^^xsd:dateTime ;
+              sdo:endDate   "1905-12-31T23:59:59"^^xsd:dateTime .
+          """ .
 
 
 ###  http://w3id.org/arto#VisualElement

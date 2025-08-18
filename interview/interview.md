@@ -2,7 +2,7 @@
 
 ## Important Note 
 
-It is important to recognize that the concept maps included in this document are based on an older version of Arto and do not accurately represent the current version. These maps were crafted prior to recent updates, which may have introduced significant changes. 
+It is important to recognise that the concept maps included in this document are based on an older version of Arto and do not accurately represent the current version. These maps were crafted prior to recent updates, which may have introduced significant changes. 
 
 
 ## Introduction
@@ -13,7 +13,7 @@ This document presents an analysis of interviews conducted with art experts to v
 
 ## Interview Process
 
-1. Participants will be asked to create captions for examples of four artworks and verbalize their thought processes.
+1. Participants will be asked to create captions for examples of four artworks and verbalise their thought processes.
 
 2. After writing the captions, participants will be presented with the definitions of different types of captions ('Descriptive', 'Contextual', or 'Interpretative') and asked to label each part of their captions accordingly.
 
@@ -38,4 +38,4 @@ The following key questions will be asked during the interviews to clarify the e
 
 ## Interview Results Summary
 
-The interviews with art experts provide valuable insights into the process of creating captions for artworks. The findings reveal that experts consider various aspects of artwork captioning, such as the artist's background, the artwork's context, visual content, and interpretations. The importance and order of these aspects vary among experts. Most agree that subjectivity in interpretations is hard to avoid and could be minimized through understanding the artist's intentions and context. Challenges in caption creation include maintaining a professional perspective, comprehending the artist's true intentions, and knowing relevant background facts. Our ontology was generally well-received, with a focus on including rich backgrounds and visual content. For a more detailed analysis of the interview results, please refer to the file [Interview results](/interview/interview%20results.xlsx).
+The interviews with art experts provide valuable insights into the process of creating captions for artworks. The findings reveal that experts consider various aspects of artwork captioning, such as the artist's background, the artwork's context, visual content, and interpretations. The importance and order of these aspects vary among experts. Most agree that subjectivity in interpretations is hard to avoid and could be minimised through understanding the artist's intentions and context. Challenges in caption creation include maintaining a professional perspective, comprehending the artist's true intentions, and knowing relevant background facts. Our ontology was generally well-received, with a focus on including rich backgrounds and visual content. For a more detailed analysis of the interview results, please refer to the file [Interview results](/interview/interview%20results.xlsx).

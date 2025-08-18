@@ -5,15 +5,26 @@
 @prefix sdo: <https://schema.org/> .
 @prefix ex: <http://example.org/> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
 
 ex:starry_night rdf:type arto:Painting ;
     dc:title "The Starry Night"@en ;
     dc:creator ex:vincent_van_gogh ;
-    sdo:genre "Landscape"@en ;
-    dc:medium "Oil on canvas"@en ;
-    sdo:height "73.7 cm" ;
-    sdo:width "92.1 cm" ;
+    arto:genre ex:Landscape ;
+    arto:medium ex:OilOnCanvas ;
+    sdo:height [
+        a sdo:QuantitativeValue ;
+        sdo:value "73.7"^^xsd:decimal ;
+        sdo:unitCode unit:CentiM
+    ] ;
+    sdo:width [
+        a sdo:QuantitativeValue ;
+        sdo:value "92.1"^^xsd:decimal ;
+        sdo:unitCode unit:CentiM
+    ] ;
     dc:description "A night scene showing a swirling sky, a crescent moon, stars, a small village with a church, and a large cypress tree in the foreground."@en ;
     arto:style ex:post_impressionism ;
     edm:isShownBy <https://www.moma.org/collection/works/79802> ;
@@ -29,7 +40,10 @@ ex:moma rdf:type arto:Location ;
     dc:type "Museum" .
 
 
-ex:post_impressionism rdf:type arto:ArtStyleType ;
+ex:Landscape a arto:GenreType ; rdfs:label "Landscape"@en .
+ex:OilOnCanvas a arto:MediumType ; rdfs:label "Oil on canvas"@en .
+
+ex:post_impressionism rdf:type arto:StyleType ;
     rdfs:label "Post-Impressionism" .
 
 # scenes
@@ -37,7 +51,7 @@ ex:sky_scene rdf:type arto:Scene ;
     rdfs:label "Sky Scene" ;
     arto:size "Large" ;
     arto:descriptor "Swirling" ;
-    arto:expresses ex:emotion_turmoil ;
+    arto:hasConnotation ex:emotion_turmoil ;
     arto:containsObject ex:stars, ex:moon, ex:swirls ;
     arto:hasMetric ex:blue_dominance .
 
@@ -46,35 +60,35 @@ ex:village_scene rdf:type arto:Scene ;
     arto:size "Medium" ;
     arto:descriptor "Peaceful" ;
     arto:containsObject ex:church, ex:houses, ex:cypress ;
-    arto:expresses ex:symbol_quietude .
+    arto:hasConnotation ex:symbol_quietude .
 
 # objects
 ex:stars rdf:type arto:Object ;
     rdfs:label "Stars" ;
     arto:size "Small" ;
     arto:isObjectOf ex:sky_scene ;
-    arto:containsElement ex:yellow_color, ex:circular_composition ;
-    arto:expresses ex:symbol_divinity .
+    arto:containsElement ex:yellow_colour, ex:circular_composition ;
+    arto:hasConnotation ex:symbol_divinity .
 
 ex:moon rdf:type arto:Object ;
     rdfs:label "Crescent Moon" ;
     arto:size "Medium" ;
     arto:isObjectOf ex:sky_scene ;
-    arto:containsElement ex:yellow_color, ex:curved_line .
+    arto:containsElement ex:yellow_colour, ex:curved_line .
 
 ex:swirls rdf:type arto:Object ;
     rdfs:label "Sky Swirls" ;
     arto:size "Large" ;
     arto:isObjectOf ex:sky_scene ;
-    arto:containsElement ex:blue_color, ex:curved_line, ex:spiral_composition ;
-    arto:expresses ex:emotion_turmoil .
+    arto:containsElement ex:blue_colour, ex:curved_line, ex:spiral_composition ;
+    arto:hasConnotation ex:emotion_turmoil .
 
 ex:cypress rdf:type arto:Object ;
     rdfs:label "Cypress Tree" ;
     arto:size "Large" ;
     arto:isObjectOf ex:village_scene ;
-    arto:containsElement ex:dark_green_color, ex:vertical_composition ;
-    arto:expresses ex:symbol_death ;
+    arto:containsElement ex:dark_green_colour, ex:vertical_composition ;
+    arto:hasConnotation ex:symbol_death ;
     arto:next_to ex:church .
 
 ex:church rdf:type arto:Object ;
@@ -82,7 +96,7 @@ ex:church rdf:type arto:Object ;
     arto:size "Medium" ;
     arto:isObjectOf ex:village_scene ;
     arto:containsElement ex:vertical_composition ;
-    arto:expresses ex:symbol_faith .
+    arto:hasConnotation ex:symbol_faith .
 
 ex:houses rdf:type arto:Object ;
     rdfs:label "Houses" ;
@@ -91,30 +105,53 @@ ex:houses rdf:type arto:Object ;
     arto:adjacent_to ex:church .
 
 # visual elements
-ex:blue_color rdf:type arto:Color ;
-    rdfs:label "Blue Color" ;
-    arto:RGBValue "25,25,112" ;
-    arto:HSVValue "240,78,44" ;
+ex:blue_colour a arto:Colour ;
+    rdfs:label "Blue Colour"@en ;
+    arto:hasValue ex:blue_rgb, ex:blue_hsv ;
     arto:isElementOf ex:swirls .
 
-ex:yellow_color rdf:type arto:Color ;
-    rdfs:label "Yellow Color" ;
-    arto:RGBValue "255,255,0" ;
-    arto:HSVValue "60,100,100" ;
+ex:blue_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(25 25 112)"^^qudt:Vector .
+
+ex:blue_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(240 78 44)"^^qudt:Vector .
+
+# ---- Yellow ----
+ex:yellow_colour a arto:Colour ;
+    rdfs:label "Yellow Colour"@en ;
+    arto:hasValue ex:yellow_rgb, ex:yellow_hsv ;
     arto:isElementOf ex:stars, ex:moon .
 
-ex:dark_green_color rdf:type arto:Color ;
-    rdfs:label "Dark Green Color" ;
-    arto:RGBValue "0,100,0" ;
-    arto:HSVValue "120,100,39" ;
+ex:yellow_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(255 255 0)"^^qudt:Vector .
+
+ex:yellow_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(60 100 100)"^^qudt:Vector .
+
+# ---- Dark Green ----
+ex:dark_green_colour a arto:Colour ;
+    rdfs:label "Dark Green Colour"@en ;
+    arto:hasValue ex:dark_green_rgb, ex:dark_green_hsv ;
     arto:isElementOf ex:cypress .
+
+ex:dark_green_rgb a arto:ColourValue ;
+    arto:colourSystem "RGB" ;
+    qudt:vector "(0 100 0)"^^qudt:Vector .
+
+ex:dark_green_hsv a arto:ColourValue ;
+    arto:colourSystem "HSV" ;
+    qudt:vector "(120 100 39)"^^qudt:Vector .
 
 ex:curved_line rdf:type arto:Line ;
     rdfs:label "Curved Line" ;
     arto:direction "Curved" ;
     dc:type "Flowing" ;
     arto:length 20.0 ;
-    sdo:width "Medium" ;
+    arto:width 2.0 ;
     arto:isElementOf ex:swirls, ex:moon .
 
 ex:vertical_composition rdf:type arto:Composition ;
@@ -136,19 +173,22 @@ ex:circular_composition rdf:type arto:Composition ;
 ex:emotion_turmoil rdf:type arto:Emotion ;
     rdfs:label "Turmoil" ;
     dc:type "Emotional state" ;
-    arto:isExpressedBy ex:swirls, ex:sky_scene ;
+    arto:isConnotationOf ex:swirls, ex:sky_scene ;
     arto:hasMetric ex:emotion_intensity_high .
 
 ex:symbol_death rdf:type arto:Symbolism ;
     rdfs:label "Death" ;
     arto:source "Mediterranean symbolism" ;
-    arto:isExpressedBy ex:cypress .
+    arto:isConnotationOf ex:cypress .
 
-ex:blue_dominance rdf:type arto:MainColor ;
-    rdfs:label "Blue Dominance" ;
-    arto:isMetricOf ex:sky_scene .
 
-ex:emotion_intensity_high rdf:type arto:EmotionIntensity ;
-    rdfs:label "High Emotional Intensity" ;
-    arto:isMetricOf ex:emotion_turmoil .
+ex:blue_dominance a arto:MainColour ;
+    rdfs:label "Blue Dominance"@en ;
+    arto:isMetricOf ex:sky_scene ;            
+    arto:colourValue ex:blue_rgb ;           
+    qudt:numericValue "0.72"^^xsd:decimal .   
 
+ex:emotion_intensity_high a arto:EmotionIntensity ;
+    rdfs:label "High Emotional Intensity"@en ;
+    arto:isMetricOf ex:emotion_turmoil ;
+    qudt:numericValue "0.85"^^xsd:decimal .
