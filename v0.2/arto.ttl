@@ -601,7 +601,7 @@ arto:hasColourValue rdf:type owl:ObjectProperty ;
                         :c_vermilion a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "RGB" ;
+                            arto:colourSystem "RGB" ;
                             qudt:vector (227 66 52)      # R,G,B in 0–255
                           ] .
 
@@ -609,7 +609,7 @@ arto:hasColourValue rdf:type owl:ObjectProperty ;
                         :c_skyBlue a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "HSV" ;
+                            arto:colourSystem "HSV" ;
                             qudt:vector (197 0.76 1.00)  # H in degrees; S,V in 0–1
                           ] .
 
@@ -617,7 +617,7 @@ arto:hasColourValue rdf:type owl:ObjectProperty ;
                         :c_cadmiumYellow a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "CMYK" ;
+                            arto:colourSystem "CMYK" ;
                             qudt:vector (0.00 0.09 0.90 0.00)  # C,M,Y,K in 0–1
                           ] .
 
@@ -625,7 +625,7 @@ arto:hasColourValue rdf:type owl:ObjectProperty ;
                         :c_ultramarine a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "Lab" ;
+                            arto:colourSystem "Lab" ;
                             qudt:vector (32.4 14.8 -38.1) ;
                             arto:whitePoint arto:D65
                           ] .
@@ -1114,23 +1114,6 @@ dc:valid rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf dc:date ;
          rdfs:range rdfs:Literal .
 
-arto:colourSpace rdf:type owl:DatatypeProperty ;
-    rdfs:domain arto:ColourValue ;
-    rdfs:range [
-        rdf:type rdfs:Datatype ;
-        owl:oneOf (
-            "RGB"^^xsd:string
-            "HSV"^^xsd:string
-            "Lab"^^xsd:string
-            "CMYK"^^xsd:string
-            "XYZ"^^xsd:string
-            "Greyscale"^^xsd:string
-        )
-    ] ;
-    rdfs:comment "Colour space used by a ColourValue. Restricted to one of: RGB, HSV, Lab, CMYK, XYZ, Greyscale." ;
-    rdfs:label "colourSpace" .
-
-
 ###  http://w3id.org/arto#colourSystem
 arto:colourSystem rdf:type owl:DatatypeProperty ;
                   rdfs:domain arto:ColourValue ;
@@ -1495,7 +1478,7 @@ arto:Colour rdf:type owl:Class ;
               arto:hasColourTerm <http://vocab.getty.edu/aat/300266400> ;  # vermilion
               arto:hasColourValue [
                 a arto:ColourValue ;
-                arto:colourSpace "RGB" ;
+                arto:colourSystem "RGB" ;
                 qudt:vector (227,66,52)  ] .
 
 
@@ -1503,7 +1486,7 @@ arto:Colour rdf:type owl:Class ;
               arto:hasColourTerm <http://vocab.getty.edu/aat/300129361> ;  # blue
               arto:hasColourValue [
                 a arto:ColourValue ;
-                arto:colourSpace "HSV" ;
+                arto:colourSystem "HSV" ;
                 qudt:vector (197,76,100)
               ] ;
             """ ;
@@ -1552,7 +1535,7 @@ arto:ColourValue rdf:type owl:Class ;
                                    owl:allValuesFrom qudt:Vector
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty arto:colourSpace ;
+                                   owl:onProperty arto:colourSystem ;
                                    owl:allValuesFrom [ rdf:type rdfs:Datatype ;
                                                        owl:oneOf [ rdf:type rdf:List ;
                                                                    rdf:first "CMYK" ;
@@ -1579,13 +1562,13 @@ arto:ColourValue rdf:type owl:Class ;
                  rdfs:label "colourValue" ;
                  skos:example """
                     - RGB specification: :red_primary rdf:type arto:ColourValue ;
-                      arto:colourSpace \"RGB\" ; qudt:vector (255,0,0) ;
+                      arto:colourSystem \"RGB\" ; qudt:vector (255,0,0) ;
                     - HSV specification: :golden_yellow rdf:type arto:ColourValue ;
-                      arto:colourSpace \"HSV\" ; qudt:vector (45,85,95) ;
+                      arto:colourSystem \"HSV\" ; qudt:vector (45,85,95) ;
                     - CMYK print colours: :prussian_blue rdf:type arto:ColourValue ;
-                      arto:colourSpace \"CMYK\" ; qudt:vector (100,85,0,25) ;
+                      arto:colourSystem \"CMYK\" ; qudt:vector (100,85,0,25) ;
                     - LAB colour measurement: :skin_tone rdf:type arto:ColourValue ;
-                        arto:colourSpace \"Lab\" ; qudt:vector (75,8,15) ;
+                        arto:colourSystem \"Lab\" ; qudt:vector (75,8,15) ;
                     """ .
 
 
