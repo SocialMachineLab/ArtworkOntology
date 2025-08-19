@@ -3,27 +3,24 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:sdo="https://schema.org/"
     xmlns:aat="http://vocab.getty.edu/aat/"
-    xmlns:gn="https://www.geonames.org/ontology#"
     xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/"
     xmlns:event="https://w3id.org/MON/event.owl#"
     xmlns:foaf="http://xmlns.com/foaf/spec/"
     xmlns:edm="http://www.europeana.eu/schemas/edm/"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:dc="http://purl.org/dc/terms/"
-    xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
     xmlns:mfoem="http://purl.obolibrary.org/obo/"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-    xmlns:dbp="https://dbpedia.org/property/"
     xmlns:j.0="http://purl.org/dc/dcam/"
     xmlns:geo="http://www.opengis.net/ont/geosparql#"
-    xmlns:vann="http://purl.org/vocab/vann/"
     xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:vann="http://purl.org/vocab/vann/"
     xmlns:arto="http://w3id.org/arto#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:icon="https://w3id.org/icon/ontology/" > 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
   <rdf:Description rdf:nodeID="A0">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/W3CDTF">
     <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/NOTE-datetime"/>
@@ -35,16 +32,32 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A1">
-    <rdf:rest rdf:nodeID="A2"/>
-    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Object"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A3">
+    <owl:unionOf rdf:nodeID="A4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Artist"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
     <rdf:first rdf:resource="http://w3id.org/arto#VisualElement"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <rdf:rest rdf:nodeID="A5"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <owl:unionOf rdf:nodeID="A9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/tableOfContents">
     <rdfs:label xml:lang="en">Table Of Contents</rdfs:label>
@@ -68,14 +81,13 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/format"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://schema.org/endDate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <owl:onClass rdf:resource="http://w3id.org/arto#Location"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#currentLocation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://creativecommons.org/ns#attributionURL">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
@@ -86,10 +98,13 @@
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Person"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Location"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasLocation"/>
+  <rdf:Description rdf:nodeID="A11">
+    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Time"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/abstract">
     <rdfs:label xml:lang="en">Abstract</rdfs:label>
@@ -100,6 +115,9 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/description"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/description"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://vocab.getty.edu/aat/300053001">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -112,7 +130,7 @@
     <rdfs:label>relatedToEvent</rdfs:label>
     <rdfs:comment>Connects an artwork or its scene to historical, mythological, or contemporary events depicted or referenced in the work.</rdfs:comment>
     <rdfs:range rdf:resource="http://w3id.org/arto#Event"/>
-    <rdfs:domain rdf:nodeID="A8"/>
+    <rdfs:domain rdf:nodeID="A14"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#relatedTo">
@@ -159,14 +177,18 @@
 </skos:example>
     <rdfs:label>Symbolism</rdfs:label>
     <rdfs:comment>Captures the symbolic meanings and iconographic content embedded in artwork elements. It connects to ICON ontology's symbolic framework while providing source property for symbolic interpretations. Symbolism instances can relate to mythological, religious, cultural, or personal symbolic systems, enabling systematic iconographic analysis and cross-cultural symbolic comparison.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A9"/>
+    <rdfs:subClassOf rdf:nodeID="A15"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Connotation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300056444"/>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300131647"/>
     <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <owl:unionOf rdf:nodeID="A18"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#ColourHistogram">
     <rdfs:label>ColourHistogram</rdfs:label>
@@ -183,18 +205,11 @@
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2005-06-13</dc:issued>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A11">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A12"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Painting">
     <rdfs:label>Painting</rdfs:label>
     <rdfs:comment>A specific type of artwork created using paint or similar media. </rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Artwork"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A13">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/valid">
     <rdfs:label xml:lang="en">Date Valid</rdfs:label>
@@ -219,15 +234,38 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#width">
     <rdfs:label>width</rdfs:label>
-    <rdfs:comment>The width of the line.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <skos:example>
+                # Bold expressive brushstroke
+                :bold_outline arto:width [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "8.2" ;
+                    sdo:unitCode "PX" ;
+                    rdfs:comment "Thick contour line emphasizing main subject"
+                ] .
+
+                # Fine detail line - traditional drawing
+                :detail_line arto:width [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "0.3" ;
+                    sdo:unitCode "MM" ;
+                    rdfs:comment "Fine pen line for intricate details in etching"
+                ] .</skos:example>
+    <rdfs:comment>Defines the thickness, breadth, or cross-sectional dimension of a linear element perpendicular to its length direction. Width is fundamental for analyzing artistic technique, emotional expression, and visual hierarchy. Thick lines often convey strength, boldness, or proximity, while thin lines suggest delicacy, precision, or distance. In traditional media, width reflects brush size, pen nib, or drawing tool characteristics. </rdfs:comment>
+    <rdfs:range rdf:resource="https://schema.org/QuantitativeValue"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Line"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A14">
-    <rdf:rest rdf:nodeID="A15"/>
-    <rdf:first>Lab</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:rest rdf:nodeID="A20"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <owl:allValuesFrom rdf:nodeID="A23"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#emotionPerspective"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/format">
     <rdfs:label xml:lang="en">Format</rdfs:label>
@@ -241,23 +279,27 @@
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/format"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#cardinality">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <owl:allValuesFrom rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Agent">
     <rdfs:label>Agent</rdfs:label>
     <rdfs:comment>Represents individuals or organisations involved in artwork creation, curation, or related activities. This class extends foaf:Agent with art-specific roles and relationships. Agents can be artists, curators, collectors, institutions, or other entities. </rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A16"/>
+    <rdfs:subClassOf rdf:nodeID="A26"/>
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/spec/Agent"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A15">
-    <rdf:rest rdf:nodeID="A17"/>
-    <rdf:first>RGB</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A18">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#hasMetric">
     <skos:example>
@@ -267,13 +309,12 @@
     <rdfs:label>hasMetric</rdfs:label>
     <rdfs:comment>Associates artwork components with quantifiable measurements supporting computational analysis and comparative studies. This property enables integration of statistical colour analysis, compositional balance metrics, emotional intensity measures, and other quantitative assessments with qualitative art historical analysis. The relationship supports both automated artwork analysis and structured comparison studies while maintaining connection to interpretive content.</rdfs:comment>
     <rdfs:range rdf:resource="http://w3id.org/arto#Metric"/>
-    <rdfs:domain rdf:nodeID="A19"/>
+    <rdfs:domain rdf:nodeID="A28"/>
     <owl:inverseOf rdf:resource="http://w3id.org/arto#isMetricOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A20">
-    <rdf:rest rdf:nodeID="A21"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  <rdf:Description rdf:nodeID="A29">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/PhysicalMedium">
     <rdfs:label xml:lang="en">Physical Medium</rdfs:label>
@@ -294,10 +335,7 @@
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Metric"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A22">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A23">
+  <rdf:Description rdf:nodeID="A30">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/Period">
@@ -308,6 +346,9 @@
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</dc:issued>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/dcam/rangeIncludes">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
@@ -334,16 +375,13 @@ supporting cultural heritage interoperability. Event instances may cover artisti
 as well as historical or mythological occurrences referenced in artworks. Event categories
 can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
 </rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A24"/>
-    <rdfs:subClassOf rdf:nodeID="A25"/>
-    <rdfs:subClassOf rdf:nodeID="A26"/>
-    <rdfs:subClassOf rdf:nodeID="A27"/>
-    <rdfs:subClassOf rdf:nodeID="A7"/>
+    <rdfs:subClassOf rdf:nodeID="A10"/>
+    <rdfs:subClassOf rdf:nodeID="A32"/>
+    <rdfs:subClassOf rdf:nodeID="A33"/>
+    <rdfs:subClassOf rdf:nodeID="A11"/>
+    <rdfs:subClassOf rdf:nodeID="A34"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/MON/event.owl#Event"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A28">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/medium">
     <rdfs:label xml:lang="en">Medium</rdfs:label>
@@ -357,14 +395,23 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/format"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A29">
-    <owl:unionOf rdf:nodeID="A1"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A35">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A36"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A30">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+  <rdf:Description rdf:nodeID="A37">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>viewer</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Agent"/>
+    <owl:onProperty rdf:resource="https://w3id.org/MON/event.owl#agent"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Event"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/RFC4646">
     <rdfs:seeAlso rdf:resource="http://www.ietf.org/rfc/rfc4646.txt"/>
@@ -379,9 +426,9 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
   <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A31">
+  <rdf:Description rdf:nodeID="A39">
     <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#size"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#containsScene">
@@ -391,67 +438,60 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:label>containsScene</rdfs:label>
     <rdfs:comment>Identifies distinct scenes within an artwork or within another scene, allowing for hierarchical scene composition.</rdfs:comment>
     <rdfs:range rdf:resource="http://w3id.org/arto#Scene"/>
-    <rdfs:domain rdf:nodeID="A32"/>
+    <rdfs:domain rdf:nodeID="A40"/>
     <owl:inverseOf rdf:resource="http://w3id.org/arto#isSceneOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A33">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>XYZ</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  <rdf:Description rdf:nodeID="A41">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Scene"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#containsScene"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A34">
-    <owl:oneOf rdf:nodeID="A35"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A36">
-    <rdf:rest rdf:nodeID="A37"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Agent"/>
+  <rdf:Description rdf:nodeID="A42">
+    <rdf:rest rdf:nodeID="A43"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <owl:oneOf rdf:nodeID="A44"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#VisualElement">
     <rdfs:label>VisualElement</rdfs:label>
     <rdfs:comment>Represents the fundamental visual components of artworks, including colours, lines, shapes, textures, and compositional structures. This abstract class serves as the foundation for systematic visual analysis, bridging computational image processing with art historical methodology. Visual elements can express connotations and have measurable properties, supporting both quantitative analysis (colour histograms, line density) and qualitative interpretation (symbolic colour use, expressive line quality). </rdfs:comment>
     <rdfs:comment>Represents the fundamental visual components of an artwork, including: lines and shapes, colours and textures, forms and patterns, space and perspective, light and shadow, etc.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A38"/>
-    <rdfs:subClassOf rdf:nodeID="A39"/>
+    <rdfs:subClassOf rdf:nodeID="A45"/>
+    <rdfs:subClassOf rdf:nodeID="A46"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A40">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Person"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#knows"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A41">
+  <rdf:Description rdf:nodeID="A47">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A42">
-    <owl:allValuesFrom rdf:resource="http://qudt.org/schema/qudt/Vector"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasCoordinates"/>
+  <rdf:Description rdf:nodeID="A48">
+    <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#expresses"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A43">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Object"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#containsObject"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A49">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#ColourValue">
     <skos:example>
                     - RGB specification: :red_primary rdf:type arto:ColourValue ;
-                      arto:colourSpace "RGB" ; qudt:vector (255,0,0) ;
+                      arto:colourSystem "RGB" ; qudt:vector (255,0,0) ;
                     - HSV specification: :golden_yellow rdf:type arto:ColourValue ;
-                      arto:colourSpace "HSV" ; qudt:vector (45,85,95) ;
+                      arto:colourSystem "HSV" ; qudt:vector (45,85,95) ;
                     - CMYK print colours: :prussian_blue rdf:type arto:ColourValue ;
-                      arto:colourSpace "CMYK" ; qudt:vector (100,85,0,25) ;
+                      arto:colourSystem "CMYK" ; qudt:vector (100,85,0,25) ;
                     - LAB colour measurement: :skin_tone rdf:type arto:ColourValue ;
-                        arto:colourSpace "Lab" ; qudt:vector (75,8,15) ;
+                        arto:colourSystem "Lab" ; qudt:vector (75,8,15) ;
                     </skos:example>
     <rdfs:label>colourValue</rdfs:label>
     <rdfs:comment>Represents the precise numeric specification of colours using various colour models and measurement systems. This class captures quantitative colour data for digital analysis, colour matching and reproduction studies. Colour values enable objective colour comparison, automated colour analysis, and integration with digital image processing workflows. The class supports multiple colour spaces to accommodate different analytical needs and technical requirements.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A44"/>
-    <rdfs:subClassOf rdf:nodeID="A45"/>
+    <rdfs:subClassOf rdf:nodeID="A50"/>
+    <rdfs:subClassOf rdf:nodeID="A51"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#style">
@@ -479,21 +519,24 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:label>hasLocation</rdfs:label>
     <rdfs:comment>Specifies the physical location of an agent or event related to the artwork.</rdfs:comment>
     <rdfs:range rdf:resource="http://w3id.org/arto#Location"/>
-    <rdfs:domain rdf:nodeID="A46"/>
+    <rdfs:domain rdf:nodeID="A52"/>
     <owl:inverseOf rdf:resource="http://w3id.org/arto#isLocationOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A47">
-    <owl:onClass rdf:resource="https://schema.org/QuantitativeValue"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-    <owl:onProperty rdf:resource="https://schema.org/height"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A53">
+    <owl:unionOf rdf:nodeID="A54"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/">
     <dc:publisher rdf:resource="http://purl.org/dc/aboutdcmi#DCMI"/>
     <dc:title xml:lang="en">DCMI Metadata Terms - other</dc:title>
     <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-06-14</dc:modified>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#qualifiedCardinality">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
@@ -509,46 +552,48 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A48">
-    <rdf:rest rdf:nodeID="A49"/>
-    <rdf:first>HSV</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  <rdf:Description rdf:nodeID="A14">
+    <owl:unionOf rdf:nodeID="A56"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#colourSystem">
     <rdfs:label>colourSystem</rdfs:label>
+    <skos:example>
+                      :vermilion_rgb a arto:ColourValue ;
+                      arto:colourSystem "RGB" . 
+                      
+                      sky_blue_hsv a arto:ColourValue ;
+                      arto:colourSystem "HSV" .
+                      </skos:example>
     <rdfs:comment>The colour system of the ColourValue, indicating the model used for its representation. This property supports various colour models such as RGB, HSV, Lab, and CMYK, allowing for flexible colour representation and analysis in artworks. The use of a restricted set of values ensures consistency and interoperability across different systems and applications.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A50"/>
+    <rdfs:range rdf:nodeID="A58"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#ColourValue"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A51">
-    <owl:allValuesFrom rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
-    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
+  <rdf:Description rdf:nodeID="A59">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Scene"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#containsScene"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A46">
-    <owl:unionOf rdf:nodeID="A52"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A60">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A61"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A53">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A54">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#direction"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A55">
-    <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#expresses"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A62">
+    <rdf:rest rdf:nodeID="A63"/>
+    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Composition">
     <rdfs:label>Composition</rdfs:label>
     <rdfs:comment>Represents the arrangement and organisation of visual elements within artworks, fundamental to art historical analysis and aesthetic evaluation. This class captures compositional strategies, balance, and spatial relationships that structure artistic meaning.
                  Currently ARTO includes common compositions types: symmetry, asymmetry, radial balance, rule of thirds, golden ratio, and dynamic composition.
                  </rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A56"/>
+    <rdfs:subClassOf rdf:nodeID="A64"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#VisualElement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
@@ -558,8 +603,22 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
   <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <rdf:rest rdf:nodeID="A19"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A66">
+    <owl:onClass rdf:resource="https://schema.org/QuantitativeValue"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://schema.org/height"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#source">
     <rdfs:label>source</rdfs:label>
+    <skos:example>
+              # Religious and biblical sources
+              :dove_peace_symbolism arto:source "Biblical Genesis 8:11 - Noah's dove with olive branch" ;
+                </skos:example>
     <rdfs:comment>Identifies the cultural, historical, or textual origins of symbolic meanings, enabling traceability of iconographic interpretations and cross-cultural symbolic analysis. Sources can include mythological traditions, religious texts, historical events, literary works, or folk traditions that inform symbolic interpretation.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Symbolism"/>
@@ -576,21 +635,24 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://dbpedia.org/property/residence">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A57">
-    <rdf:rest rdf:nodeID="A58"/>
-    <rdf:first>CMYK</rdf:first>
+  <rdf:Description rdf:nodeID="A67">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/subject">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A68">
+    <owl:unionOf rdf:nodeID="A69"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
     <rdfs:label xml:lang="en">Contributor</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     <rdfs:comment xml:lang="en">An entity responsible for making contributions to the resource.</rdfs:comment>
-    <dc:description xml:lang="en">The guidelines for using names of persons or organizations as creators apply to contributors.</dc:description>
+    <dc:description xml:lang="en">The guidelines for using names of persons or organ tions as creators apply to contributors.</dc:description>
     <dc:description xml:lang="en">The guidelines for using names of persons or organisations as creators apply to contributors.</dc:description>
     <j.0:rangeIncludes rdf:resource="http://purl.org/dc/terms/Agent"/>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</dc:issued>
@@ -607,13 +669,10 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A59">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A60">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#VisualElement"/>
+  <rdf:Description rdf:nodeID="A71">
+    <rdf:rest rdf:nodeID="A72"/>
+    <rdf:first>Greyscale</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Relevance">
     <rdfs:label>Relevance</rdfs:label>
@@ -625,21 +684,16 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Metric"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A61">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A62">
-    <rdf:rest rdf:nodeID="A33"/>
-    <rdf:first>RGB</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  <rdf:Description rdf:nodeID="A73">
+    <rdf:rest rdf:nodeID="A74"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://qudt.org/schema/qudt/vector">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A63">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A75">
+    <owl:unionOf rdf:nodeID="A76"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/replaces">
     <rdfs:label xml:lang="en">Replaces</rdfs:label>
@@ -651,6 +705,14 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A77">
+    <rdf:rest rdf:nodeID="A78"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <owl:unionOf rdf:nodeID="A80"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/spatial">
     <rdfs:label xml:lang="en">Spatial Coverage</rdfs:label>
@@ -676,10 +738,8 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A64">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:onProperty rdf:resource="https://schema.org/endDate"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A81">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Colour">
     <rdfs:label>Colour</rdfs:label>
@@ -688,7 +748,7 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
               arto:hasColourTerm &lt;http://vocab.getty.edu/aat/300266400&gt; ;  # vermilion
               arto:hasColourValue [
                 a arto:ColourValue ;
-                arto:colourSpace "RGB" ;
+                arto:colourSystem "RGB" ;
                 qudt:vector (227,66,52)  ] .
 
 
@@ -696,24 +756,29 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
               arto:hasColourTerm &lt;http://vocab.getty.edu/aat/300129361&gt; ;  # blue
               arto:hasColourValue [
                 a arto:ColourValue ;
-                arto:colourSpace "HSV" ;
+                arto:colourSystem "HSV" ;
                 qudt:vector (197,76,100)
               ] ;
             </skos:example>
     <rdfs:comment>Represents colour usage in artworks with precise technical specifications and art historical context. This class provides both computational colour analysis (RGB, HSV values) and art theoretical foundations, aligning with Getty AAT's colour concepts while maintaining specific properties for digital analysis. Colour instances can express symbolic meanings and emotional content, supporting both technical image processing and interpretive art analysis.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A65"/>
-    <rdfs:subClassOf rdf:nodeID="A66"/>
+    <rdfs:subClassOf rdf:nodeID="A82"/>
+    <rdfs:subClassOf rdf:nodeID="A83"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#VisualElement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#GenreType">
     <rdfs:label>GenreType</rdfs:label>
     <rdfs:comment>Represents the genre of an artwork, such as portrait, landscape, still life, etc. This class allows for the classification of artworks based on their thematic or stylistic content.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A67"/>
+    <rdfs:subClassOf rdf:nodeID="A85"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A68">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A86">
+    <owl:allValuesFrom rdf:resource="http://qudt.org/schema/qudt/Vector"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasCoordinates"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#descriptor">
     <skos:example>
@@ -722,39 +787,22 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:label>descriptor</rdfs:label>
     <rdfs:comment>Provides extensible descriptive framework for capturing object and scene characteristics not covered by specific properties, enabling domain-specific extensions through subproperties. This design addresses the infinite variety of artistic content while maintaining semantic structure. Examples include clothing descriptions for figures, or environmental conditions for scene.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:nodeID="A69"/>
+    <rdfs:domain rdf:nodeID="A87"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A70">
-    <owl:unionOf rdf:nodeID="A71"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A4">
+    <rdf:rest rdf:nodeID="A88"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Connotation"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A72">
-    <owl:unionOf rdf:nodeID="A73"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A74">
-    <rdf:rest rdf:nodeID="A75"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A76">
-    <rdf:rest rdf:nodeID="A77"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A78">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#GenreType"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#genre"/>
+  <rdf:Description rdf:nodeID="A89">
+    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300053001"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A79">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+  <rdf:Description rdf:nodeID="A90">
+    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300264088"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A80">
-    <rdf:rest rdf:nodeID="A81"/>
-    <rdf:first>CMYK</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/Frequency">
     <rdfs:label xml:lang="en">Frequency</rdfs:label>
@@ -764,11 +812,56 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A91">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://www.europeana.eu/schemas/edm/isShownBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A93">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A94">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A82">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+  <rdf:Description rdf:nodeID="A26">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Location"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A95"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A96">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>XYZ</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <rdf:rest rdf:nodeID="A97"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A98">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <owl:someValuesFrom rdf:resource="http://vocab.getty.edu/aat/300163343"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/issued">
     <rdfs:label xml:lang="en">Date Issued</rdfs:label>
@@ -783,17 +876,36 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A44">
-    <owl:allValuesFrom rdf:nodeID="A83"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#colourSpace"/>
+  <rdf:Description rdf:nodeID="A99">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#length">
     <rdfs:label>length</rdfs:label>
-    <rdfs:comment>The length of the line.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <skos:example>
+                # Digital artwork analysis - precise pixel measurement
+                :horizon_line arto:length [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "847" ;
+                    sdo:unitCode "PX" ;
+                    rdfs:comment "Horizontal line spanning across landscape painting"
+                ] .
+
+                # Traditional painting - centimeter measurement  
+                :brushstroke_line arto:length [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "12.5" ;
+                    sdo:unitCode "CM" ;
+                    rdfs:comment "Single expressive brushstroke in oil painting"
+                ] .</skos:example>
+    <rdfs:comment>Specifies the measurable extent of a linear element within an artwork, representing the distance from one end to the other. In digital analysis, length can be measured in pixels, while in physical artworks it may be expressed in centimeters, inches, or relative proportional units. Length measurement is crucial for compositional analysis, understanding artistic technique, and comparing linear elements across different scales and media. For curved or irregular lines, length represents the total path distance.</rdfs:comment>
+    <rdfs:range rdf:resource="https://schema.org/QuantitativeValue"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Line"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/Jurisdiction">
     <rdfs:label xml:lang="en">Jurisdiction</rdfs:label>
@@ -803,13 +915,6 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/LocationPeriodOrJurisdiction"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A84">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A85">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#genre">
     <skos:example>
@@ -825,6 +930,9 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:domain rdf:resource="http://w3id.org/arto#Artwork"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A101">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/DDC">
     <rdfs:seeAlso rdf:resource="http://www.oclc.org/dewey/"/>
     <rdfs:label xml:lang="en">DDC</rdfs:label>
@@ -834,20 +942,20 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A39">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isSceneOf">
     <skos:example>
                 - Nested scenes: :vendor_scene arto:isSceneOf :market_scene
                 - Background scenes: :mountain_scene arto:isSceneOf :landscape_painting</skos:example>
     <rdfs:label>isSceneOf</rdfs:label>
     <rdfs:comment>Specifies the artwork or scene that contains the scene in the artwork.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A86"/>
+    <rdfs:range rdf:nodeID="A102"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Scene"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A103">
+    <rdf:rest rdf:nodeID="A104"/>
+    <rdf:first>Artist</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/LocationPeriodOrJurisdiction">
     <rdfs:label xml:lang="en">Location, Period, or Jurisdiction</rdfs:label>
@@ -860,9 +968,6 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
   <rdf:Description rdf:about="http://www.europeana.eu/schemas/edm/isShownBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A87">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
     <rdfs:label xml:lang="en">Is Part Of</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -874,9 +979,6 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A88">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/MediaType">
     <rdfs:label xml:lang="en">Media Type</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -887,6 +989,28 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/dcam/VocabularyEncodingScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <rdf:rest rdf:nodeID="A106"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A107">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#VisualElement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A108">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Event"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedToEvent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A109">
+    <rdf:rest rdf:nodeID="A110"/>
+    <rdf:first>Lab</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A111">
+    <owl:unionOf rdf:nodeID="A112"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/temporal">
@@ -903,8 +1027,14 @@ can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
   <rdf:Description rdf:about="http://xmlns.com/foaf/spec/Person">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A89">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A113">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#MaterialType"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#material"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#VisualElement"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/Point">
     <rdfs:seeAlso rdf:resource="https://www.dublincore.org/specifications/dublin-core/dcmi-point/"/>
@@ -924,11 +1054,6 @@ Values may be expressed on different scales, for example:
 This flexibility allows projects to choose the scale best suited to their analytical or interpretive framework.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Metric"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A90">
-    <rdf:rest rdf:nodeID="A14"/>
-    <rdf:first>HSV</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/BibliographicResource">
     <rdfs:label xml:lang="en">Bibliographic Resource</rdfs:label>
@@ -975,15 +1100,6 @@ This flexibility allows projects to choose the scale best suited to their analyt
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A91">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A73">
-    <rdf:rest rdf:nodeID="A92"/>
-    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/UDC">
     <rdfs:seeAlso rdf:resource="http://www.udcc.org/"/>
     <rdfs:label xml:lang="en">UDC</rdfs:label>
@@ -992,10 +1108,6 @@ This flexibility allows projects to choose the scale best suited to their analyt
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</dc:issued>
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A93">
-    <rdf:rest rdf:nodeID="A57"/>
-    <rdf:first>Lab</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Series">
     <rdfs:label>Series</rdfs:label>
@@ -1006,7 +1118,7 @@ This flexibility allows projects to choose the scale best suited to their analyt
                 - Subject-based series
                 - Experimental series
                 - Documentary series</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A94"/>
+    <rdfs:subClassOf rdf:nodeID="A114"/>
     <rdfs:subClassOf rdf:resource="https://schema.org/CreativeWorkSeries"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
@@ -1019,12 +1131,8 @@ This flexibility allows projects to choose the scale best suited to their analyt
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A50">
-    <owl:oneOf rdf:nodeID="A95"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A96">
-    <owl:unionOf rdf:nodeID="A97"/>
+  <rdf:Description rdf:nodeID="A115">
+    <owl:unionOf rdf:nodeID="A116"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/hasVersion">
@@ -1038,10 +1146,14 @@ This flexibility allows projects to choose the scale best suited to their analyt
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A98">
-    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300053001"/>
-    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A117">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A118">
+    <rdf:rest rdf:nodeID="A119"/>
+    <rdf:first>RGB</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/ProvenanceStatement">
     <rdfs:label xml:lang="en">Provenance Statement</rdfs:label>
@@ -1051,14 +1163,8 @@ This flexibility allows projects to choose the scale best suited to their analyt
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A99">
-    <rdf:rest rdf:nodeID="A100"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A101">
-    <rdf:rest rdf:nodeID="A102"/>
-    <rdf:first>artwork</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  <rdf:Description rdf:nodeID="A120">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/Policy">
     <rdfs:label xml:lang="en">Policy</rdfs:label>
@@ -1090,9 +1196,6 @@ This flexibility allows projects to choose the scale best suited to their analyt
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A103">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/accrualPolicy">
     <rdfs:label xml:lang="en">Accrual Policy</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -1104,9 +1207,16 @@ This flexibility allows projects to choose the scale best suited to their analyt
     <rdfs:domain rdf:resource="http://purl.org/dc/dcmitype/Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A65">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#ColourValue"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasColourValue"/>
+  <rdf:Description rdf:nodeID="A121">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A122">
+    <owl:unionOf rdf:nodeID="A123"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A124">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Person"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#knows"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/hasFormat">
@@ -1119,13 +1229,6 @@ This flexibility allows projects to choose the scale best suited to their analyt
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A104">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A35">
-    <rdf:rest rdf:nodeID="A105"/>
-    <rdf:first>RGB</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Time">
     <skos:example>
@@ -1159,11 +1262,16 @@ This flexibility allows projects to choose the scale best suited to their analyt
 A Time instance may indicate exact dates, approximate or uncertain periods, broader intervals (decades, centuries), 
 or seasonal references as they appear in historical sources. The type may classify the temporal role, 
 such as creation, exhibition, depiction, historical period, or conservation.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A106"/>
-    <rdfs:subClassOf rdf:nodeID="A64"/>
-    <rdfs:subClassOf rdf:nodeID="A107"/>
+    <rdfs:subClassOf rdf:nodeID="A125"/>
+    <rdfs:subClassOf rdf:nodeID="A126"/>
+    <rdfs:subClassOf rdf:nodeID="A127"/>
     <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A128">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#size"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/language">
     <rdfs:label xml:lang="en">Language</rdfs:label>
@@ -1179,30 +1287,11 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   <rdf:Description rdf:about="http://w3id.org/arto#MediumType">
     <rdfs:label>MediumType</rdfs:label>
     <rdfs:comment>Represents the medium of an artwork, such as oil on canvas, watercolour, etc. This class allows for the classification of artworks based on the materials and techniques used in their creation.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A96"/>
+    <rdfs:subClassOf rdf:nodeID="A75"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/format">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A95">
-    <rdf:rest rdf:nodeID="A108"/>
-    <rdf:first>CMYK</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A109">
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A110">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A111">
-    <owl:unionOf rdf:nodeID="A112"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A100">
-    <rdf:rest rdf:nodeID="A60"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Sculpture">
     <rdfs:label>Sculpture</rdfs:label>
@@ -1210,11 +1299,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
       modelling, or casting.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Artwork"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A113">
-    <owl:allValuesFrom rdf:resource="http://qudt.org/schema/qudt/Vector"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasCoordinates"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isConnotationOf">
     <skos:example>
@@ -1224,9 +1308,13 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                     - Artwork meaning: :anti_war_theme arto:isConnotationOf :guernica</skos:example>
     <rdfs:label>isConnotationOf</rdfs:label>
     <rdfs:comment>Associates a connotation with the visual elements, objects, scenes or artwork that express it.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A114"/>
+    <rdfs:range rdf:nodeID="A111"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Connotation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A129">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/license">
     <rdfs:label xml:lang="en">License</rdfs:label>
@@ -1240,16 +1328,33 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/rights"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A130">
+    <rdf:rest rdf:nodeID="A131"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/publisher">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A114">
-    <owl:unionOf rdf:nodeID="A115"/>
+  <rdf:Description rdf:nodeID="A76">
+    <rdf:rest rdf:nodeID="A35"/>
+    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A119">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>XYZ</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A112">
+    <rdf:rest rdf:nodeID="A42"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A132">
+    <owl:unionOf rdf:nodeID="A73"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A83">
-    <owl:oneOf rdf:nodeID="A80"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  <rdf:Description rdf:nodeID="A52">
+    <owl:unionOf rdf:nodeID="A77"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/date">
     <rdfs:label xml:lang="en">Date</rdfs:label>
@@ -1263,8 +1368,10 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A116">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A45">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/subject">
     <rdfs:label xml:lang="en">Subject</rdfs:label>
@@ -1275,18 +1382,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/subject"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A117">
-    <rdf:rest rdf:nodeID="A118"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A119">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A45">
-    <owl:allValuesFrom rdf:resource="http://qudt.org/schema/qudt/Vector"/>
-    <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/vector"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#material">
     <rdfs:label>material</rdfs:label>
@@ -1300,8 +1395,14 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:domain rdf:resource="http://w3id.org/arto#Object"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A120">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A44">
+    <rdf:rest rdf:nodeID="A133"/>
+    <rdf:first>artist</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A134">
+    <rdf:rest rdf:nodeID="A65"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Connotation"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isTimeOf">
     <skos:example>
@@ -1324,14 +1425,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A121">
-    <owl:unionOf rdf:nodeID="A122"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A123">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/SizeOrDuration">
     <rdfs:label xml:lang="en">Size or Duration</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -1350,17 +1443,9 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A124">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A86">
-    <owl:unionOf rdf:nodeID="A20"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A24">
+  <rdf:Description rdf:nodeID="A135">
     <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#descriptor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Organisation">
@@ -1392,16 +1477,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:domain rdf:resource="http://w3id.org/arto#Object"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A125">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Object"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedTo"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A126">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#MediumType"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#medium"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/accrualPeriodicity">
     <rdfs:label xml:lang="en">Accrual Periodicity</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -1421,20 +1496,31 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:label>containsElement</rdfs:label>
     <rdfs:comment>Specifies the visual elements (such as colour, line, composition) contained within an object in the artwork.</rdfs:comment>
     <rdfs:range rdf:resource="http://w3id.org/arto#VisualElement"/>
-    <rdfs:domain rdf:nodeID="A127"/>
+    <rdfs:domain rdf:nodeID="A136"/>
     <owl:inverseOf rdf:resource="http://w3id.org/arto#isElementOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A128">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A137">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A138">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A106">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Person">
     <rdfs:label>Person</rdfs:label>
     <rdfs:comment>Individual human beings involved with artwork may include artists, curators, critics, collectors, conservators, researchers, and other roles.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A40"/>
+    <rdfs:subClassOf rdf:nodeID="A124"/>
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/spec/Person"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Agent"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A139">
+    <rdf:rest rdf:nodeID="A6"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/isRequiredBy">
     <rdfs:label xml:lang="en">Is Required By</rdfs:label>
@@ -1449,24 +1535,33 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#direction">
     <rdfs:label>direction</rdfs:label>
+    <skos:example>
+                :horizon_line arto:direction "horizontal" ;
+
+
+                :dynamic_slash arto:direction "diagonal" ;
+
+
+                :gesture_stroke arto:direction "sweeping left to right" ;
+                </skos:example>
     <rdfs:comment>Describes the orientation of linear elements in an artwork.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Line"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#source"/>
+  <rdf:Description rdf:nodeID="A140">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#state"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A129">
-    <rdf:rest rdf:nodeID="A130"/>
-    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A131">
-    <owl:allValuesFrom rdf:nodeID="A132"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#emotionPerspective"/>
+  <rdf:Description rdf:nodeID="A141">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Object"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#containsObject"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A142">
+    <rdf:rest rdf:nodeID="A27"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#hasCoordinates">
     <skos:example>
@@ -1478,23 +1573,27 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:label>hasCoordinates</rdfs:label>
     <rdfs:comment>Specifies the spatial location of objects and scenes within the artwork's coordinate system. This property supports spatial analysis, object relationship studies, compositional balance analysis, and digital humanities research requiring precise object localisation.</rdfs:comment>
     <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Vector"/>
-    <rdfs:domain rdf:nodeID="A121"/>
+    <rdfs:domain rdf:nodeID="A143"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A133">
-    <rdf:rest rdf:nodeID="A101"/>
-    <rdf:first>artist</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://schema.org/startDate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A134">
+  <rdf:Description rdf:nodeID="A144">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A69">
-    <owl:unionOf rdf:nodeID="A135"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A145">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A126">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="https://schema.org/endDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A146">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#currentLocation">
     <skos:example>
@@ -1509,10 +1608,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://www.europeana.eu/schemas/edm/currentLocation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A21">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isMetricOf">
     <skos:example>
                 - Colour metrics: :blue_intensity_75_percent arto:isMetricOf :sky_area
@@ -1520,7 +1615,7 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                 - Emotional intensity: :fear_intensity_high arto:isMetricOf :expression_scene</skos:example>
     <rdfs:label>isMetricOf</rdfs:label>
     <rdfs:comment>Associates a metric with the component of an artwork that it is related to.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A136"/>
+    <rdfs:range rdf:nodeID="A3"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Metric"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
@@ -1534,18 +1629,22 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:comment>Represents the material type of an object, such as wood,
       metal, glass, or fabric. This class allows for the classification of objects based on the
       materials used in their construction or representation.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A29"/>
+    <rdfs:subClassOf rdf:nodeID="A147"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A137">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A136">
-    <owl:unionOf rdf:nodeID="A138"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A148">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A89"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://schema.org/height">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A149">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A85">
+    <owl:unionOf rdf:nodeID="A62"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isObjectOf">
     <skos:example>
@@ -1567,9 +1666,29 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:label>hasConnotation</rdfs:label>
     <rdfs:comment>Links visual elements, objects, scenes, or artworks to their symbolic meanings or emotional connotations.The relationship enables multiple interpretation levels while maintaining clear connections between visible elements and their cultural, symbolic, or emotional significance. Similar to ICON's recognizedConcept but with broader domain coverage.</rdfs:comment>
     <rdfs:range rdf:resource="http://w3id.org/arto#Connotation"/>
-    <rdfs:domain rdf:nodeID="A139"/>
+    <rdfs:domain rdf:nodeID="A79"/>
     <owl:inverseOf rdf:resource="http://w3id.org/arto#isConnotationOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A150">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#direction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A151">
+    <owl:onClass rdf:resource="http://w3id.org/arto#Location"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#currentLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A152">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A153">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A154">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#ColourTerm">
     <skos:example>
@@ -1588,7 +1707,7 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                    </skos:example>
     <rdfs:label>ColourTerm</rdfs:label>
     <rdfs:comment>Represents standardised colour terminology from controlled vocabularies, art historical literature, and established colour naming systems. This class provides semantic interoperability by linking colour instances to authoritative colour classifications, enabling consistent colour identification across institutions and research projects. Colour terms encompass basic colour names, specific pigment designations, cultural colour concepts, and technical colour classifications. The class primarily aligns with Getty AAT's colour hierarchy while supporting additional colour vocabularies and historical colour terminology.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A140"/>
+    <rdfs:subClassOf rdf:nodeID="A8"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/provenance">
@@ -1599,11 +1718,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <j.0:rangeIncludes rdf:resource="http://purl.org/dc/terms/ProvenanceStatement"/>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2004-09-20</dc:issued>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A12">
-    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300131647"/>
-    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#expresses">
     <skos:example>
@@ -1618,11 +1732,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:domain rdf:resource="http://w3id.org/arto#Emotion"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A141">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#length"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/relation">
     <rdfs:label xml:lang="en">Relation</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -1632,11 +1741,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A106">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:onProperty rdf:resource="https://schema.org/startDate"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/type">
     <rdfs:label xml:lang="en">Type</rdfs:label>
@@ -1659,13 +1763,14 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/creator"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A142">
-    <rdf:rest rdf:nodeID="A11"/>
-    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A75">
+  <rdf:Description rdf:nodeID="A155">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#VisualElement"/>
+    <rdf:first rdf:nodeID="A16"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A156">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#StyleType"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#style"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/requires">
     <rdfs:label xml:lang="en">Requires</rdfs:label>
@@ -1677,17 +1782,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A143">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A144">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A145">
-    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300264091"/>
-    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://schema.org/CreativeWorkSeries">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1708,25 +1802,16 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/identifier">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A146">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A147"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A77">
+  <rdf:Description rdf:nodeID="A74">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
     <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A148">
+  <rdf:Description rdf:nodeID="A157">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A131">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
     <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A149">
-    <rdf:rest rdf:nodeID="A150"/>
-    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A118">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#VisualElement"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/ISO639-2">
     <rdfs:seeAlso rdf:resource="http://lcweb.loc.gov/standards/iso639-2/langhome.html"/>
@@ -1737,6 +1822,10 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A97">
+    <rdf:rest rdf:nodeID="A139"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/ISO639-3">
     <rdfs:seeAlso rdf:resource="http://www.sil.org/iso639-3/"/>
     <rdfs:label xml:lang="en">ISO 639-3</rdfs:label>
@@ -1746,27 +1835,38 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A151">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#descriptor"/>
+  <rdf:Description rdf:nodeID="A51">
+    <owl:allValuesFrom rdf:resource="http://qudt.org/schema/qudt/Vector"/>
+    <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/vector"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A158">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#TechniqueType">
     <rdfs:label>TechniqueType</rdfs:label>
     <rdfs:comment>Represents the specific artistic techniques used in creating artwork, drawing from Getty AAT's technique hierarchy while supporting custom undefined techniques.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A152"/>
+    <rdfs:subClassOf rdf:nodeID="A53"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A153">
+  <rdf:Description rdf:nodeID="A159">
+    <owl:allValuesFrom rdf:resource="https://schema.org/QuantitativeValue"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#length"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A160">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#descriptor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A161">
     <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Event"/>
     <owl:onProperty rdf:resource="http://w3id.org/arto#relatedToEvent"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A154">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A155">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+  <rdf:Description rdf:nodeID="A162">
+    <rdf:rest rdf:nodeID="A129"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/references">
     <rdfs:label xml:lang="en">References</rdfs:label>
@@ -1778,6 +1878,11 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/relation"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A127">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/title">
     <rdfs:label xml:lang="en">Title</rdfs:label>
@@ -1798,11 +1903,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/LocationPeriodOrJurisdiction"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A107">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/PeriodOfTime">
     <rdfs:label xml:lang="en">Period of Time</rdfs:label>
@@ -1861,9 +1961,19 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A130">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A98"/>
+  <rdf:Description rdf:nodeID="A72">
+    <rdf:rest rdf:nodeID="A109"/>
+    <rdf:first>HSV</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <owl:unionOf rdf:nodeID="A163"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A164">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#MediumType"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#medium"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/accessRights">
     <rdfs:label xml:lang="en">Access Rights</rdfs:label>
@@ -1876,6 +1986,11 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/rights"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/rights"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A165">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/accrualMethod">
     <rdfs:label xml:lang="en">Accrual Method</rdfs:label>
@@ -1904,19 +2019,11 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <owl:imports rdf:resource="http://www.cidoc-crm.org/cidoc-crm/"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A156">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Theme">
     <rdfs:label>Theme</rdfs:label>
     <rdfs:comment>Represents a central idea, subject, or concept explored in an artwork, which can be explicit or implicit, and may reflect broader cultural, social, or political issues.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Connotation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A102">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>viewer</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Character">
     <rdfs:label>Character</rdfs:label>
@@ -1924,14 +2031,19 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Person"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A71">
-    <rdf:rest rdf:nodeID="A157"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  <rdf:Description rdf:nodeID="A110">
+    <rdf:rest rdf:nodeID="A96"/>
+    <rdf:first>RGB</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A56">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A166">
+    <owl:oneOf rdf:nodeID="A167"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A168">
+    <rdf:rest rdf:nodeID="A169"/>
+    <rdf:first>HSV</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
     <rdfs:label xml:lang="en">Date Modified</rdfs:label>
@@ -1946,18 +2058,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A58">
-    <rdf:rest rdf:nodeID="A158"/>
-    <rdf:first>XYZ</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A159">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A160">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/MethodOfAccrual">
     <rdfs:label xml:lang="en">Method of Accrual</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -1966,22 +2066,16 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A161">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+  <rdf:Description rdf:nodeID="A170">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A158">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>Greyscale</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/coverage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A162">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A171">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/Agent">
     <rdfs:label xml:lang="en">Agent</rdfs:label>
@@ -1998,6 +2092,9 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#minCardinality">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A172">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isEventOf">
     <skos:example>
                 - Historical event: :french_revolution_1830 arto:isEventOf :liberty_leading_the_people
@@ -2005,30 +2102,24 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                 </skos:example>
     <rdfs:label>isEventOf</rdfs:label>
     <rdfs:comment>Associates an event with the artwork or scene that it is related to.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A70"/>
+    <rdfs:range rdf:nodeID="A132"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Event"/>
     <owl:inverseOf rdf:resource="http://w3id.org/arto#relatedToEvent"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A163">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Scene"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedToScene"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A69">
+    <rdf:rest rdf:nodeID="A173"/>
+    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <owl:unionOf rdf:nodeID="A4"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A88">
+    <rdf:rest rdf:nodeID="A174"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/source">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/relation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A27">
-    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Time"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/URI">
     <rdfs:seeAlso rdf:resource="http://www.ietf.org/rfc/rfc3986.txt"/>
@@ -2039,38 +2130,21 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A150">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A10"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://schema.org/width">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A94">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Agent"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A164">
-    <owl:unionOf rdf:nodeID="A36"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A165">
+  <rdf:Description rdf:nodeID="A175">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A166">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A176">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#VisualElement"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A115">
-    <rdf:rest rdf:nodeID="A167"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  <rdf:Description rdf:nodeID="A177">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/MON/event.owl#Event">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A168">
-    <rdf:rest rdf:nodeID="A124"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/alternative">
     <rdfs:label xml:lang="en">Alternative Title</rdfs:label>
@@ -2096,13 +2170,16 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:domain rdf:resource="http://w3id.org/arto#Event"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A174">
+    <rdf:rest rdf:nodeID="A176"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/MON/event.owl#agent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A169">
-    <rdf:rest rdf:nodeID="A170"/>
-    <rdf:first>Artwork</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  <rdf:Description rdf:nodeID="A58">
+    <owl:oneOf rdf:nodeID="A178"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isElementOf">
     <skos:example>
@@ -2111,55 +2188,52 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                   - Compositional elements: :vertical_composition arto:isElementOf :tree_object</skos:example>
     <rdfs:label>isElementOf</rdfs:label>
     <rdfs:comment>Specifies the object or scene that contains the visual element in the artwork.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A171"/>
+    <rdfs:range rdf:nodeID="A122"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#VisualElement"/>
     <owl:inverseOf rdf:resource="http://w3id.org/arto#containsElement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A19">
-    <owl:unionOf rdf:nodeID="A172"/>
+  <rdf:Description rdf:nodeID="A102">
+    <owl:unionOf rdf:nodeID="A105"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A179">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#maxCardinality">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A32">
-    <owl:unionOf rdf:nodeID="A168"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A173">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A81">
-    <rdf:rest rdf:nodeID="A90"/>
-    <rdf:first>Greyscale</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/arto#colourSpace">
-    <rdfs:label>colourSpace</rdfs:label>
-    <rdfs:comment>Colour space used by a ColourValue. Restricted to one of: RGB, HSV, Lab, CMYK, XYZ, Greyscale.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A34"/>
-    <rdfs:domain rdf:resource="http://w3id.org/arto#ColourValue"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  <rdf:Description rdf:nodeID="A180">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/language">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A140">
-    <owl:unionOf rdf:nodeID="A142"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A163">
+    <rdf:rest rdf:nodeID="A117"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A174">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#size"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A133">
+    <rdf:rest rdf:nodeID="A37"/>
+    <rdf:first>artwork</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A175">
+  <rdf:Description rdf:nodeID="A181">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A176">
-    <owl:oneOf rdf:nodeID="A177"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  <rdf:Description rdf:nodeID="A173">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="A90"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A116">
+    <rdf:rest rdf:nodeID="A38"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A182">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#GenreType"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#genre"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#hasTime">
     <skos:example>
@@ -2179,16 +2253,15 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <owl:inverseOf rdf:resource="http://w3id.org/arto#isTimeOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A178">
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-    <owl:onProperty rdf:resource="http://www.europeana.eu/schemas/edm/isShownBy"/>
+  <rdf:Description rdf:nodeID="A183">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A179">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Series"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/isPartOf"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A169">
+    <rdf:rest rdf:nodeID="A118"/>
+    <rdf:first>Lab</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/bibliographicCitation">
     <rdfs:label xml:lang="en">Bibliographic Citation</rdfs:label>
@@ -2203,6 +2276,10 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <rdf:rest rdf:nodeID="A179"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/dateSubmitted">
     <rdfs:label xml:lang="en">Date Submitted</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -2216,15 +2293,18 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A180">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A171">
-    <owl:unionOf rdf:nodeID="A76"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A184">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#size"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/contributor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300264091"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/ISO3166">
     <rdfs:seeAlso rdf:resource="https://www.iso.org/obp/ui/#search"/>
@@ -2247,35 +2327,32 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A67">
-    <owl:unionOf rdf:nodeID="A149"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A34">
+    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Location"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasLocation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Artwork">
     <rdfs:label>Artwork</rdfs:label>
     <rdfs:comment>Represents a created object intended to be aesthetically pleasing or convey artistic meaning. This class encompasses various art forms including paintings, sculptures, photographs, and digital art. Unlike CIDOC-CRM's E22_Human-Made_Object which covers all manufactured items, arto:Artwork specifically focuses on objects created with artistic intent. The class inherits essential properties from schema:CreativeWork (creator, dateCreated, description) while adding art-specific constraints such as mandatory visual representation (edm:isShownBy) and current location tracking. Each artwork must contain at least one scene and have defined dimensions, supporting both traditional and contemporary art analysis.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A178"/>
-    <rdfs:subClassOf rdf:nodeID="A181"/>
+    <rdfs:subClassOf rdf:nodeID="A92"/>
+    <rdfs:subClassOf rdf:nodeID="A93"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="https://schema.org/CreativeWork"/>
-    <rdfs:subClassOf rdf:nodeID="A182"/>
-    <rdfs:subClassOf rdf:nodeID="A183"/>
-    <rdfs:subClassOf rdf:nodeID="A179"/>
-    <rdfs:subClassOf rdf:nodeID="A184"/>
-    <rdfs:subClassOf rdf:nodeID="A78"/>
-    <rdfs:subClassOf rdf:nodeID="A160"/>
-    <rdfs:subClassOf rdf:nodeID="A126"/>
     <rdfs:subClassOf rdf:nodeID="A185"/>
+    <rdfs:subClassOf rdf:nodeID="A5"/>
     <rdfs:subClassOf rdf:nodeID="A186"/>
-    <rdfs:subClassOf rdf:nodeID="A187"/>
-    <rdfs:subClassOf rdf:nodeID="A6"/>
-    <rdfs:subClassOf rdf:nodeID="A47"/>
-    <rdfs:subClassOf rdf:nodeID="A188"/>
+    <rdfs:subClassOf rdf:nodeID="A59"/>
+    <rdfs:subClassOf rdf:nodeID="A182"/>
+    <rdfs:subClassOf rdf:nodeID="A170"/>
+    <rdfs:subClassOf rdf:nodeID="A164"/>
     <rdfs:subClassOf rdf:nodeID="A161"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A92">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A189"/>
+    <rdfs:subClassOf rdf:nodeID="A156"/>
+    <rdfs:subClassOf rdf:nodeID="A187"/>
+    <rdfs:subClassOf rdf:nodeID="A151"/>
+    <rdfs:subClassOf rdf:nodeID="A66"/>
+    <rdfs:subClassOf rdf:nodeID="A188"/>
+    <rdfs:subClassOf rdf:nodeID="A100"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#emotionPerspective">
     <skos:example>
@@ -2285,13 +2362,25 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                           </skos:example>
     <rdfs:label xml:lang="en">emotionPerspective</rdfs:label>
     <rdfs:comment>Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'artist' (artist's intended emotion), 'artwork' (emotion expressed by the artwork's formal elements), and 'viewer' (viewer's emotional response).</rdfs:comment>
-    <rdfs:range rdf:nodeID="A176"/>
+    <rdfs:range rdf:nodeID="A189"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Emotion"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A52">
-    <rdf:rest rdf:nodeID="A190"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Agent"/>
+  <rdf:Description rdf:nodeID="A190">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A191">
+    <owl:allValuesFrom rdf:resource="https://schema.org/QuantitativeValue"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#width"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:rest rdf:nodeID="A0"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <owl:unionOf rdf:nodeID="A134"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/RFC3066">
     <rdfs:seeAlso rdf:resource="http://www.ietf.org/rfc/rfc3066.txt"/>
@@ -2306,29 +2395,39 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   <rdf:Description rdf:about="http://w3id.org/arto#Scene">
     <rdfs:label>Scene</rdfs:label>
     <rdfs:comment>Represents a coherent visual or narrative unit within an artwork that conveys specific meaning or sentiment. A scene aggregates objects and visual elements into meaningful compositions, supporting hierarchical structures where complex artworks contain multiple interconnected scenes. It's similar to ICON's image representations but with explicit support for scene nesting and relationships. Scenes can reference historical, mythological, or fictional events through relatedToEvent, enabling contextual artwork analysis.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A31"/>
-    <rdfs:subClassOf rdf:nodeID="A191"/>
-    <rdfs:subClassOf rdf:nodeID="A153"/>
+    <rdfs:subClassOf rdf:nodeID="A128"/>
+    <rdfs:subClassOf rdf:nodeID="A160"/>
+    <rdfs:subClassOf rdf:nodeID="A108"/>
     <rdfs:subClassOf rdf:nodeID="A192"/>
-    <rdfs:subClassOf rdf:nodeID="A42"/>
-    <rdfs:subClassOf rdf:nodeID="A91"/>
+    <rdfs:subClassOf rdf:nodeID="A86"/>
     <rdfs:subClassOf rdf:nodeID="A193"/>
-    <rdfs:subClassOf rdf:nodeID="A43"/>
+    <rdfs:subClassOf rdf:nodeID="A41"/>
+    <rdfs:subClassOf rdf:nodeID="A141"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Object">
     <rdfs:label>Object</rdfs:label>
     <rdfs:comment>Represents identifiable and meaningful entities depicted within artworks, composed of various visual elements. Objects serve as the primary content units for artwork analysis, with properties describing their physical state, material composition, and spatial relationships</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A174"/>
-    <rdfs:subClassOf rdf:nodeID="A151"/>
+    <rdfs:subClassOf rdf:nodeID="A184"/>
+    <rdfs:subClassOf rdf:nodeID="A135"/>
+    <rdfs:subClassOf rdf:nodeID="A140"/>
     <rdfs:subClassOf rdf:nodeID="A194"/>
-    <rdfs:subClassOf rdf:nodeID="A163"/>
-    <rdfs:subClassOf rdf:nodeID="A125"/>
-    <rdfs:subClassOf rdf:nodeID="A195"/>
-    <rdfs:subClassOf rdf:nodeID="A196"/>
+    <rdfs:subClassOf rdf:nodeID="A1"/>
     <rdfs:subClassOf rdf:nodeID="A113"/>
-    <rdfs:subClassOf rdf:nodeID="A197"/>
+    <rdfs:subClassOf rdf:nodeID="A183"/>
+    <rdfs:subClassOf rdf:nodeID="A195"/>
+    <rdfs:subClassOf rdf:nodeID="A55"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A187">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#TechniqueType"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#technique"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A125">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="https://schema.org/startDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
@@ -2339,14 +2438,14 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Artwork"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A145"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A182">
+  <rdf:Description rdf:nodeID="A185">
     <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Agent"/>
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/contributor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A123">
+    <rdf:rest rdf:nodeID="A196"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#hasColourValue">
     <rdfs:label>hasColourValue</rdfs:label>
@@ -2355,7 +2454,7 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                         :c_vermilion a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "RGB" ;
+                            arto:colourSystem "RGB" ;
                             qudt:vector (227 66 52)      # R,G,B in 0–255
                           ] .
 
@@ -2363,7 +2462,7 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                         :c_skyBlue a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "HSV" ;
+                            arto:colourSystem "HSV" ;
                             qudt:vector (197 0.76 1.00)  # H in degrees; S,V in 0–1
                           ] .
 
@@ -2371,7 +2470,7 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                         :c_cadmiumYellow a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "CMYK" ;
+                            arto:colourSystem "CMYK" ;
                             qudt:vector (0.00 0.09 0.90 0.00)  # C,M,Y,K in 0–1
                           ] .
 
@@ -2379,7 +2478,7 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                         :c_ultramarine a arto:Colour ;
                           arto:hasColourValue [
                             a arto:ColourValue ;
-                            arto:colourSpace "Lab" ;
+                            arto:colourSystem "Lab" ;
                             qudt:vector (32.4 14.8 -38.1) ;
                             arto:whitePoint arto:D65
                           ] .
@@ -2392,8 +2491,8 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   <rdf:Description rdf:about="http://w3id.org/arto#Location">
     <rdfs:label>Location</rdfs:label>
     <rdfs:comment>Represents locations associated with artworks (creation, display, storage, provenance, or depicted scenes). Location type is recorded as free text, e.g., studio, museum, gallery, exhibition venue, storage, auction house, private collection, findspot, city, region, country, fictional place, or depicted place. GeoSPARQL WKT may be provided when precise geometry is known; otherwise names alone are acceptable. Historical changes (renamings/boundaries) can be handled by creating distinct Location instances and linking them to events or times as needed.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A79"/>
-    <rdfs:subClassOf rdf:nodeID="A51"/>
+    <rdfs:subClassOf rdf:nodeID="A39"/>
+    <rdfs:subClassOf rdf:nodeID="A25"/>
     <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
@@ -2405,33 +2504,27 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A177">
-    <rdf:rest rdf:nodeID="A169"/>
-    <rdf:first>Artist</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#StyleType">
     <rdfs:label>StyleType</rdfs:label>
     <rdfs:comment>Represents the style of an artwork, such as Impressionism, Cubism, etc. This class allows for the classification of artworks based on their stylistic characteristics.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A72"/>
+    <rdfs:subClassOf rdf:nodeID="A68"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A193">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Scene"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#containsScene"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A178">
+    <rdf:rest rdf:nodeID="A71"/>
+    <rdf:first>CMYK</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
+  <rdf:Description rdf:nodeID="A147">
+    <owl:unionOf rdf:nodeID="A197"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A167">
-    <rdf:rest rdf:nodeID="A117"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
+  <rdf:Description rdf:nodeID="A198">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A194">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#state"/>
+  <rdf:Description rdf:nodeID="A95">
+    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300056444"/>
+    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/LicenseDocument">
@@ -2443,12 +2536,18 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/RightsStatement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A132">
-    <owl:oneOf rdf:nodeID="A133"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#source"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://schema.org/CreativeWork">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A83">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#ColourTerm"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasColourTerm"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/LCC">
     <rdfs:seeAlso rdf:resource="http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html"/>
@@ -2459,6 +2558,11 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A193">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#isLocationOf">
     <skos:example>
                 - Museum address: :met_nyc_location arto:isLocationOf :metropolitan_museum
@@ -2467,13 +2571,13 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                 - Exhibition event: :venice_giardini arto:isLocationOf :venice_biennale_2024</skos:example>
     <rdfs:label>isLocationOf</rdfs:label>
     <rdfs:comment>Associates a location with the agent or event that it is related to.</rdfs:comment>
-    <rdfs:range rdf:nodeID="A164"/>
+    <rdfs:range rdf:nodeID="A115"/>
     <rdfs:domain rdf:resource="http://w3id.org/arto#Location"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A157">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
+  <rdf:Description rdf:nodeID="A136">
+    <owl:unionOf rdf:nodeID="A162"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/Box">
     <rdfs:seeAlso rdf:resource="https://www.dublincore.org/specifications/dublin-core/dcmi-box/"/>
@@ -2487,10 +2591,23 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/rights">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A189">
-    <owl:hasValue rdf:resource="http://vocab.getty.edu/aat/300264088"/>
-    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+  <rdf:Description rdf:nodeID="A82">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#ColourValue"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasColourValue"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A195">
+    <owl:allValuesFrom rdf:resource="http://qudt.org/schema/qudt/Vector"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasCoordinates"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A199">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/LCSH">
     <rdfs:label xml:lang="en">LCSH</rdfs:label>
@@ -2500,14 +2617,10 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A38">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
+  <rdf:Description rdf:nodeID="A50">
+    <owl:allValuesFrom rdf:nodeID="A166"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#colourSystem"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A190">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Event"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Connotation">
     <skos:example>
@@ -2519,13 +2632,9 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:label>Connotation</rdfs:label>
     <rdfs:comment>Represents the implied meanings of artwork, includeing themes, symbolic meanings, and
       emotions conveyed by an artwork.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A162"/>
+    <rdfs:subClassOf rdf:nodeID="A146"/>
     <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A198">
-    <rdf:rest rdf:nodeID="A123"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Metric">
     <rdfs:label>Metric</rdfs:label>
@@ -2555,6 +2664,14 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
       and comparison of artworks.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A200">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A104">
+    <rdf:rest rdf:nodeID="A201"/>
+    <rdf:first>Artwork</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Space">
     <rdfs:label>Space</rdfs:label>
     <skos:example>
@@ -2565,27 +2682,20 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
                 dc:type "flat / shallow space" .
             </skos:example>
     <rdfs:comment>Captures the representation of depth, and spatial organisation within artworks. </rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A30"/>
+    <rdfs:subClassOf rdf:nodeID="A57"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#VisualElement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A188">
-    <owl:onClass rdf:resource="https://schema.org/QuantitativeValue"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-    <owl:onProperty rdf:resource="https://schema.org/width"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A197">
+    <rdf:rest rdf:nodeID="A60"/>
+    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A105">
-    <rdf:rest rdf:nodeID="A93"/>
-    <rdf:first>HSV</rdf:first>
+  <rdf:Description rdf:nodeID="A202">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A25">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedToConnotation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A199">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  <rdf:Description rdf:nodeID="A87">
+    <owl:unionOf rdf:nodeID="A130"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/MESH">
     <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/mesh/meshhome.html"/>
@@ -2596,30 +2706,15 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A185">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Event"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedToEvent"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Line">
     <rdfs:label>Line</rdfs:label>
     <rdfs:comment>Represents linear visual elements in artworks. Typical line types may include straight, curved, broken, contour, gestural, structural, implied, and hatching or cross-hatching. These categories are indicative and may be aligned with controlled vocabularies such as Getty AAT where applicable.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A200"/>
-    <rdfs:subClassOf rdf:nodeID="A141"/>
-    <rdfs:subClassOf rdf:nodeID="A54"/>
-    <rdfs:subClassOf rdf:nodeID="A61"/>
+    <rdfs:subClassOf rdf:nodeID="A191"/>
+    <rdfs:subClassOf rdf:nodeID="A159"/>
+    <rdfs:subClassOf rdf:nodeID="A150"/>
+    <rdfs:subClassOf rdf:nodeID="A165"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#VisualElement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A26">
-    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Agent"/>
-    <owl:onProperty rdf:resource="https://w3id.org/MON/event.owl#agent"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A197">
-    <owl:someValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasConnotation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/isReferencedBy">
     <rdfs:label xml:lang="en">Is Referenced By</rdfs:label>
@@ -2643,32 +2738,21 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#size">
     <rdfs:label>size</rdfs:label>
-    <rdfs:comment>Indicates the relative or absolute dimensions of objects and scenes within artwork composition. Size often correlate with narrative importance, symbolic significance, or perspectival organisation in artistic composition.</rdfs:comment>
+    <skos:example>
+            :tree_object arto:size "large" ;
+            :small_bird_object arto:size "marginal" ;
+            :central_figure_object arto:size "primary" ;
+            :background_building_object arto:size "secondary" .
+            </skos:example>
+    <rdfs:comment>Describes the relative or perceived dimensions of objects and scenes within artwork composition. Size often correlates with narrative importance, symbolic significance, perspectival organisation, and visual hierarchy. This property captures how large something appears or functions compositionally (e.g., dominant, secondary, marginal), not a physical or pixel measurement.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:nodeID="A111"/>
+    <rdfs:domain rdf:nodeID="A17"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A97">
-    <rdf:rest rdf:nodeID="A146"/>
-    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A192">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
+  <rdf:Description rdf:nodeID="A194">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Scene"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedToScene"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A201">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A202">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A203">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A204">
-    <rdf:rest rdf:nodeID="A205"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/dateCopyrighted">
     <rdfs:label xml:lang="en">Date Copyrighted</rdfs:label>
@@ -2683,9 +2767,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A206">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/LinguisticSystem">
     <rdfs:label xml:lang="en">Linguistic System</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -2694,6 +2775,24 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</dc:issued>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A188">
+    <owl:onClass rdf:resource="https://schema.org/QuantitativeValue"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://schema.org/width"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A78">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A196">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <rdf:rest rdf:nodeID="A107"/>
+    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#MainColour">
     <rdfs:label>MainColour</rdfs:label>
@@ -2710,10 +2809,6 @@ such as creation, exhibition, depiction, historical period, or conservation.</rd
     <rdfs:comment>Represents the primary or most visually dominant colour of an artwork. 
 This value can be derived by computational methods such as colour quantisation, clustering, or histogram analysis. This metric links to a specific Colour instance, which may be described using colour values (RGB, HSV, Lab, etc.) </rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Metric"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A127">
-    <owl:unionOf rdf:nodeID="A198"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Emotion">
@@ -2741,8 +2836,8 @@ This value can be derived by computational methods such as colour quantisation, 
              Uses MFOEM emotion ontology types and the emotionPerspective property to distinguish 
              between artist's intended emotion, artwork's emotional expression, and viewer's response.
              Emotions are expressed using standardised MFOEM emotion types including basic emotions (happiness, sadness, anger, fear, surprise, disgust) and complex emotions (love, anxiety, hope, despair, serenity). </rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A131"/>
-    <rdfs:subClassOf rdf:nodeID="A55"/>
+    <rdfs:subClassOf rdf:nodeID="A22"/>
+    <rdfs:subClassOf rdf:nodeID="A48"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Connotation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
@@ -2758,17 +2853,9 @@ This value can be derived by computational methods such as colour quantisation, 
     <owl:inverseOf rdf:resource="http://w3id.org/arto#isObjectOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A207">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A147">
-    <owl:someValuesFrom rdf:resource="http://vocab.getty.edu/aat/300163343"/>
-    <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A208">
-    <rdf:rest rdf:nodeID="A74"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
+  <rdf:Description rdf:nodeID="A9">
+    <rdf:rest rdf:nodeID="A155"/>
+    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
     <rdfs:label xml:lang="en">Rights</rdfs:label>
@@ -2781,11 +2868,11 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/rights"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A209">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000001">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A203">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/mediator">
     <rdfs:label xml:lang="en">Mediator</rdfs:label>
@@ -2801,33 +2888,14 @@ This value can be derived by computational methods such as colour quantisation, 
   <rdf:Description rdf:about="https://schema.org/QuantitativeValue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A195">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#MaterialType"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#material"/>
+  <rdf:Description rdf:nodeID="A186">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Series"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/isPartOf"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A210">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A196">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A16">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Location"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasLocation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A170">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>Viewer</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A181">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A143">
+    <owl:unionOf rdf:nodeID="A142"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#knows">
     <skos:example>
@@ -2840,6 +2908,9 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdfs:domain rdf:resource="http://w3id.org/arto#Person"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A204">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/NLM">
     <rdfs:seeAlso rdf:resource="http://wwwcf.nlm.nih.gov/class/"/>
     <rdfs:label xml:lang="en">NLM</rdfs:label>
@@ -2849,18 +2920,10 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdf:type rdf:resource="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A17">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>XYZ</rdf:first>
+  <rdf:Description rdf:nodeID="A205">
+    <rdf:rest rdf:nodeID="A168"/>
+    <rdf:first>Greyscale</rdf:first>
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A183">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Artist"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A211">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://vocab.getty.edu/aat/300131647">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -2878,11 +2941,6 @@ This value can be derived by computational methods such as colour quantisation, 
   <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#maxQualifiedCardinality">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A66">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#ColourTerm"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#hasColourTerm"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/isReplacedBy">
     <rdfs:label xml:lang="en">Is Replaced By</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -2894,25 +2952,32 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/relation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A212">
+  <rdf:Description rdf:nodeID="A189">
+    <owl:oneOf rdf:nodeID="A103"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <rdf:rest rdf:nodeID="A148"/>
+    <rdf:first rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A192">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Metric"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#hasMetric"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A206">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A213">
+  <rdf:Description rdf:nodeID="A32">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Connotation"/>
+    <owl:onProperty rdf:resource="http://w3id.org/arto#relatedToConnotation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A207">
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A214">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A172">
-    <rdf:rest rdf:nodeID="A99"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Connotation"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A215">
-    <rdf:rest rdf:nodeID="A208"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Artwork"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.europeana.eu/schemas/edm/currentLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -2920,9 +2985,10 @@ This value can be derived by computational methods such as colour quantisation, 
   <rdf:Description rdf:about="http://purl.org/dc/dcam/domainIncludes">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A139">
-    <owl:unionOf rdf:nodeID="A215"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A201">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Viewer</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/type">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
@@ -2930,27 +2996,8 @@ This value can be derived by computational methods such as colour quantisation, 
   <rdf:Description rdf:about="http://vocab.getty.edu/aat/300163343">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A49">
-    <rdf:rest rdf:nodeID="A62"/>
-    <rdf:first>Lab</rdf:first>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A187">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#TechniqueType"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#technique"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A122">
-    <rdf:rest rdf:nodeID="A148"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A152">
-    <owl:unionOf rdf:nodeID="A129"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A138">
-    <rdf:rest rdf:nodeID="A204"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Connotation"/>
+  <rdf:Description rdf:nodeID="A208">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/dateAccepted">
     <rdfs:label xml:lang="en">Date Accepted</rdfs:label>
@@ -2967,10 +3014,6 @@ This value can be derived by computational methods such as colour quantisation, 
   </rdf:Description>
   <rdf:Description rdf:about="http://vocab.getty.edu/aat/300264088">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A37">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Event"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/created">
     <rdfs:label xml:lang="en">Date Created</rdfs:label>
@@ -2994,20 +3037,13 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A216">
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  <rdf:Description rdf:nodeID="A114">
+    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Agent"/>
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vocab.getty.edu/aat/300264091">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A200">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#width"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A112">
-    <rdf:rest rdf:nodeID="A59"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/source">
     <rdfs:label xml:lang="en">Source</rdfs:label>
@@ -3020,20 +3056,14 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/source"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A184">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#Scene"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#containsScene"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/arto#Sponsor">
     <rdfs:label>Sponsor</rdfs:label>
     <rdfs:comment>The person or group who sponsor the artwork.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://w3id.org/arto#Person"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A135">
-    <rdf:rest rdf:nodeID="A84"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Object"/>
+  <rdf:Description rdf:nodeID="A209">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/isFormatOf">
     <rdfs:label xml:lang="en">Is Format Of</rdfs:label>
@@ -3053,15 +3083,6 @@ This value can be derived by computational methods such as colour quantisation, 
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2008-01-14</dc:issued>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A205">
-    <rdf:rest rdf:nodeID="A3"/>
-    <rdf:first rdf:resource="http://w3id.org/arto#Scene"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A191">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#descriptor"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/FileFormat">
     <rdfs:label xml:lang="en">File Format</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -3071,9 +3092,9 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/MediaType"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A108">
-    <rdf:rest rdf:nodeID="A48"/>
-    <rdf:first>Greyscale</rdf:first>
+  <rdf:Description rdf:nodeID="A167">
+    <rdf:rest rdf:nodeID="A205"/>
+    <rdf:first>CMYK</rdf:first>
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://xmlns.com/foaf/spec/Organization">
@@ -3088,11 +3109,6 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/audience"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A186">
-    <owl:allValuesFrom rdf:resource="http://w3id.org/arto#StyleType"/>
-    <owl:onProperty rdf:resource="http://w3id.org/arto#style"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/MethodOfInstruction">
     <rdfs:label xml:lang="en">Method of Instruction</rdfs:label>
@@ -3110,7 +3126,7 @@ This value can be derived by computational methods such as colour quantisation, 
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A217">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A210">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
 </rdf:RDF>

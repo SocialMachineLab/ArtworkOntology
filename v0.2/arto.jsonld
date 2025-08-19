@@ -834,7 +834,7 @@
                 "@id": "arto:Metric"
             },
             "rdfs:domain": {
-                "@id": "_:b200"
+                "@id": "_:b193"
             },
             "owl:inverseOf": {
                 "@id": "arto:isMetricOf"
@@ -875,7 +875,7 @@
                 "@id": "arto:Connotation"
             },
             "rdfs:domain": {
-                "@id": "_:b211"
+                "@id": "_:b204"
             },
             "owl:inverseOf": {
                 "@id": "arto:isConnotationOf"
@@ -1042,6 +1042,7 @@
         {
             "@id": "arto:source",
             "rdfs:label": "source",
+            "skos:example": "\n              # Religious and biblical sources\n              :dove_peace_symbolism arto:source \"Biblical Genesis 8:11 - Noah's dove with olive branch\" ;\n                ",
             "rdfs:comment": "Identifies the cultural, historical, or textual origins of symbolic meanings, enabling traceability of iconographic interpretations and cross-cultural symbolic analysis. Sources can include mythological traditions, religious texts, historical events, literary works, or folk traditions that inform symbolic interpretation.",
             "rdfs:range": {
                 "@id": "xsd:string"
@@ -1303,7 +1304,8 @@
         {
             "@id": "arto:size",
             "rdfs:label": "size",
-            "rdfs:comment": "Indicates the relative or absolute dimensions of objects and scenes within artwork composition. Size often correlate with narrative importance, symbolic significance, or perspectival organisation in artistic composition.",
+            "skos:example": "\n            :tree_object arto:size \"large\" ;\n            :small_bird_object arto:size \"marginal\" ;\n            :central_figure_object arto:size \"primary\" ;\n            :background_building_object arto:size \"secondary\" .\n            ",
+            "rdfs:comment": "Describes the relative or perceived dimensions of objects and scenes within artwork composition. Size often correlates with narrative importance, symbolic significance, perspectival organisation, and visual hierarchy. This property captures how large something appears or functions compositionally (e.g., dominant, secondary, marginal), not a physical or pixel measurement.",
             "rdfs:range": {
                 "@id": "xsd:string"
             },
@@ -1381,7 +1383,7 @@
                 "@id": "arto:Event"
             },
             "rdfs:domain": {
-                "@id": "_:b173"
+                "@id": "_:b166"
             },
             "@type": "owl:ObjectProperty"
         },
@@ -1418,7 +1420,7 @@
                 "@id": "qudt:Vector"
             },
             "rdfs:domain": {
-                "@id": "_:b206"
+                "@id": "_:b199"
             },
             "@type": "owl:ObjectProperty"
         },
@@ -1483,7 +1485,7 @@
                 "@id": "arto:Scene"
             },
             "rdfs:domain": {
-                "@id": "_:b214"
+                "@id": "_:b207"
             },
             "owl:inverseOf": {
                 "@id": "arto:isSceneOf"
@@ -1886,7 +1888,7 @@
         {
             "@id": "_:b94",
             "owl:allValuesFrom": {
-                "@id": "xsd:float"
+                "@id": "sdo:QuantitativeValue"
             },
             "owl:onProperty": {
                 "@id": "arto:width"
@@ -1896,19 +1898,20 @@
         {
             "@id": "arto:width",
             "rdfs:label": "width",
-            "rdfs:comment": "The width of the line.",
+            "skos:example": "\n                # Bold expressive brushstroke\n                :bold_outline arto:width [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"8.2\" ;\n                    sdo:unitCode \"PX\" ;\n                    rdfs:comment \"Thick contour line emphasizing main subject\"\n                ] .\n\n                # Fine detail line - traditional drawing\n                :detail_line arto:width [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"0.3\" ;\n                    sdo:unitCode \"MM\" ;\n                    rdfs:comment \"Fine pen line for intricate details in etching\"\n                ] .",
+            "rdfs:comment": "Defines the thickness, breadth, or cross-sectional dimension of a linear element perpendicular to its length direction. Width is fundamental for analyzing artistic technique, emotional expression, and visual hierarchy. Thick lines often convey strength, boldness, or proximity, while thin lines suggest delicacy, precision, or distance. In traditional media, width reflects brush size, pen nib, or drawing tool characteristics. ",
             "rdfs:range": {
-                "@id": "xsd:float"
+                "@id": "sdo:QuantitativeValue"
             },
             "rdfs:domain": {
                 "@id": "arto:Line"
             },
-            "@type": "owl:DatatypeProperty"
+            "@type": "owl:ObjectProperty"
         },
         {
             "@id": "_:b95",
             "owl:allValuesFrom": {
-                "@id": "xsd:float"
+                "@id": "sdo:QuantitativeValue"
             },
             "owl:onProperty": {
                 "@id": "arto:length"
@@ -1918,14 +1921,15 @@
         {
             "@id": "arto:length",
             "rdfs:label": "length",
-            "rdfs:comment": "The length of the line.",
+            "skos:example": "\n                # Digital artwork analysis - precise pixel measurement\n                :horizon_line arto:length [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"847\" ;\n                    sdo:unitCode \"PX\" ;\n                    rdfs:comment \"Horizontal line spanning across landscape painting\"\n                ] .\n\n                # Traditional painting - centimeter measurement  \n                :brushstroke_line arto:length [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"12.5\" ;\n                    sdo:unitCode \"CM\" ;\n                    rdfs:comment \"Single expressive brushstroke in oil painting\"\n                ] .",
+            "rdfs:comment": "Specifies the measurable extent of a linear element within an artwork, representing the distance from one end to the other. In digital analysis, length can be measured in pixels, while in physical artworks it may be expressed in centimeters, inches, or relative proportional units. Length measurement is crucial for compositional analysis, understanding artistic technique, and comparing linear elements across different scales and media. For curved or irregular lines, length represents the total path distance.",
             "rdfs:range": {
-                "@id": "xsd:float"
+                "@id": "sdo:QuantitativeValue"
             },
             "rdfs:domain": {
                 "@id": "arto:Line"
             },
-            "@type": "owl:DatatypeProperty"
+            "@type": "owl:ObjectProperty"
         },
         {
             "@id": "_:b96",
@@ -1940,6 +1944,7 @@
         {
             "@id": "arto:direction",
             "rdfs:label": "direction",
+            "skos:example": "\n                :horizon_line arto:direction \"horizontal\" ;\n\n\n                :dynamic_slash arto:direction \"diagonal\" ;\n\n\n                :gesture_stroke arto:direction \"sweeping left to right\" ;\n                ",
             "rdfs:comment": "Describes the orientation of linear elements in an artwork.",
             "rdfs:range": {
                 "@id": "xsd:string"
@@ -2107,7 +2112,7 @@
                 "@id": "arto:Location"
             },
             "rdfs:domain": {
-                "@id": "_:b203"
+                "@id": "_:b196"
             },
             "owl:inverseOf": {
                 "@id": "arto:isLocationOf"
@@ -2259,16 +2264,17 @@
                 "@id": "_:b121"
             },
             "owl:onProperty": {
-                "@id": "arto:colourSpace"
+                "@id": "arto:colourSystem"
             },
             "@type": "owl:Restriction"
         },
         {
-            "@id": "arto:colourSpace",
-            "rdfs:label": "colourSpace",
-            "rdfs:comment": "Colour space used by a ColourValue. Restricted to one of: RGB, HSV, Lab, CMYK, XYZ, Greyscale.",
+            "@id": "arto:colourSystem",
+            "rdfs:label": "colourSystem",
+            "skos:example": "\n                      :vermilion_rgb a arto:ColourValue ;\n                      arto:colourSystem \"RGB\" . \n                      \n                      sky_blue_hsv a arto:ColourValue ;\n                      arto:colourSystem \"HSV\" .\n                      ",
+            "rdfs:comment": "The colour system of the ColourValue, indicating the model used for its representation. This property supports various colour models such as RGB, HSV, Lab, and CMYK, allowing for flexible colour representation and analysis in artworks. The use of a restricted set of values ensures consistency and interoperability across different systems and applications.",
             "rdfs:range": {
-                "@id": "_:b170"
+                "@id": "_:b163"
             },
             "rdfs:domain": {
                 "@id": "arto:ColourValue"
@@ -2291,7 +2297,7 @@
         },
         {
             "@id": "arto:ColourValue",
-            "skos:example": "\n                    - RGB specification: :red_primary rdf:type arto:ColourValue ;\n                      arto:colourSpace \"RGB\" ; qudt:vector (255,0,0) ;\n                    - HSV specification: :golden_yellow rdf:type arto:ColourValue ;\n                      arto:colourSpace \"HSV\" ; qudt:vector (45,85,95) ;\n                    - CMYK print colours: :prussian_blue rdf:type arto:ColourValue ;\n                      arto:colourSpace \"CMYK\" ; qudt:vector (100,85,0,25) ;\n                    - LAB colour measurement: :skin_tone rdf:type arto:ColourValue ;\n                        arto:colourSpace \"Lab\" ; qudt:vector (75,8,15) ;\n                    ",
+            "skos:example": "\n                    - RGB specification: :red_primary rdf:type arto:ColourValue ;\n                      arto:colourSystem \"RGB\" ; qudt:vector (255,0,0) ;\n                    - HSV specification: :golden_yellow rdf:type arto:ColourValue ;\n                      arto:colourSystem \"HSV\" ; qudt:vector (45,85,95) ;\n                    - CMYK print colours: :prussian_blue rdf:type arto:ColourValue ;\n                      arto:colourSystem \"CMYK\" ; qudt:vector (100,85,0,25) ;\n                    - LAB colour measurement: :skin_tone rdf:type arto:ColourValue ;\n                        arto:colourSystem \"Lab\" ; qudt:vector (75,8,15) ;\n                    ",
             "rdfs:label": "colourValue",
             "rdfs:comment": "Represents the precise numeric specification of colours using various colour models and measurement systems. This class captures quantitative colour data for digital analysis, colour matching and reproduction studies. Colour values enable objective colour comparison, automated colour analysis, and integration with digital image processing workflows. The class supports multiple colour spaces to accommodate different analytical needs and technical requirements.",
             "rdfs:subClassOf": [
@@ -2360,7 +2366,7 @@
         {
             "@id": "arto:hasColourValue",
             "rdfs:label": "hasColourValue",
-            "skos:example": "\n                      - RGB value:\n                        :c_vermilion a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSpace \"RGB\" ;\n                            qudt:vector (227 66 52)      # R,G,B in 0–255\n                          ] .\n\n                      - HSV value:\n                        :c_skyBlue a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSpace \"HSV\" ;\n                            qudt:vector (197 0.76 1.00)  # H in degrees; S,V in 0–1\n                          ] .\n\n                      - CMYK value:\n                        :c_cadmiumYellow a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSpace \"CMYK\" ;\n                            qudt:vector (0.00 0.09 0.90 0.00)  # C,M,Y,K in 0–1\n                          ] .\n\n                      - CIE Lab value with white point:\n                        :c_ultramarine a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSpace \"Lab\" ;\n                            qudt:vector (32.4 14.8 -38.1) ;\n                            arto:whitePoint arto:D65\n                          ] .\n                      ",
+            "skos:example": "\n                      - RGB value:\n                        :c_vermilion a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSystem \"RGB\" ;\n                            qudt:vector (227 66 52)      # R,G,B in 0–255\n                          ] .\n\n                      - HSV value:\n                        :c_skyBlue a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSystem \"HSV\" ;\n                            qudt:vector (197 0.76 1.00)  # H in degrees; S,V in 0–1\n                          ] .\n\n                      - CMYK value:\n                        :c_cadmiumYellow a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSystem \"CMYK\" ;\n                            qudt:vector (0.00 0.09 0.90 0.00)  # C,M,Y,K in 0–1\n                          ] .\n\n                      - CIE Lab value with white point:\n                        :c_ultramarine a arto:Colour ;\n                          arto:hasColourValue [\n                            a arto:ColourValue ;\n                            arto:colourSystem \"Lab\" ;\n                            qudt:vector (32.4 14.8 -38.1) ;\n                            arto:whitePoint arto:D65\n                          ] .\n                      ",
             "rdfs:comment": "Associates a colour with its value, allowing for flexible representation of colour information in artworks. This property supports different colour spaces for example RGB and HSV formats, enabling detailed colour analysis and representation.",
             "rdfs:range": {
                 "@id": "arto:ColourValue"
@@ -2396,7 +2402,7 @@
         {
             "@id": "arto:Colour",
             "rdfs:label": "Colour",
-            "skos:example": "\n            :c_vermilion a arto:Colour ;\n              arto:hasColourTerm <http://vocab.getty.edu/aat/300266400> ;  # vermilion\n              arto:hasColourValue [\n                a arto:ColourValue ;\n                arto:colourSpace \"RGB\" ;\n                qudt:vector (227,66,52)  ] .\n\n\n            :c_bluePeace a arto:Colour ;\n              arto:hasColourTerm <http://vocab.getty.edu/aat/300129361> ;  # blue\n              arto:hasColourValue [\n                a arto:ColourValue ;\n                arto:colourSpace \"HSV\" ;\n                qudt:vector (197,76,100)\n              ] ;\n            ",
+            "skos:example": "\n            :c_vermilion a arto:Colour ;\n              arto:hasColourTerm <http://vocab.getty.edu/aat/300266400> ;  # vermilion\n              arto:hasColourValue [\n                a arto:ColourValue ;\n                arto:colourSystem \"RGB\" ;\n                qudt:vector (227,66,52)  ] .\n\n\n            :c_bluePeace a arto:Colour ;\n              arto:hasColourTerm <http://vocab.getty.edu/aat/300129361> ;  # blue\n              arto:hasColourValue [\n                a arto:ColourValue ;\n                arto:colourSystem \"HSV\" ;\n                qudt:vector (197,76,100)\n              ] ;\n            ",
             "rdfs:comment": "Represents colour usage in artworks with precise technical specifications and art historical context. This class provides both computational colour analysis (RGB, HSV values) and art theoretical foundations, aligning with Getty AAT's colour concepts while maintaining specific properties for digital analysis. Colour instances can express symbolic meanings and emotional content, supporting both technical image processing and interpretive art analysis.",
             "rdfs:subClassOf": [
                 {
@@ -2803,7 +2809,7 @@
             "dc:description": [
                 {
                     "@language": "en",
-                    "@value": "The guidelines for using names of persons or organizations as creators apply to contributors."
+                    "@value": "The guidelines for using names of persons or organ tions as creators apply to contributors."
                 },
                 {
                     "@language": "en",
@@ -3337,41 +3343,11 @@
             "@type": "rdfs:Datatype"
         },
         {
-            "@id": "arto:colourSystem",
-            "rdfs:label": "colourSystem",
-            "rdfs:comment": "The colour system of the ColourValue, indicating the model used for its representation. This property supports various colour models such as RGB, HSV, Lab, and CMYK, allowing for flexible colour representation and analysis in artworks. The use of a restricted set of values ensures consistency and interoperability across different systems and applications.",
-            "rdfs:range": {
-                "@id": "_:b163"
-            },
-            "rdfs:domain": {
-                "@id": "arto:ColourValue"
-            },
-            "@type": "owl:DatatypeProperty"
-        },
-        {
-            "@id": "_:b170",
-            "owl:oneOf": {
-                "@list": [
-                    "RGB",
-                    "HSV",
-                    "Lab",
-                    "CMYK",
-                    "XYZ",
-                    "Greyscale"
-                ]
-            },
-            "@type": "rdfs:Datatype"
-        },
-        {
-            "@id": "dbp:residence",
-            "@type": "owl:ObjectProperty"
-        },
-        {
             "@id": "edm:currentLocation",
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b173",
+            "@id": "_:b166",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3398,7 +3374,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b176",
+            "@id": "_:b169",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3417,7 +3393,7 @@
             "rdfs:label": "isSceneOf",
             "rdfs:comment": "Specifies the artwork or scene that contains the scene in the artwork.",
             "rdfs:range": {
-                "@id": "_:b176"
+                "@id": "_:b169"
             },
             "rdfs:domain": {
                 "@id": "arto:Scene"
@@ -3438,7 +3414,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b181",
+            "@id": "_:b174",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3463,7 +3439,7 @@
             "rdfs:label": "isMetricOf",
             "rdfs:comment": "Associates a metric with the component of an artwork that it is related to.",
             "rdfs:range": {
-                "@id": "_:b181"
+                "@id": "_:b174"
             },
             "rdfs:domain": {
                 "@id": "arto:Metric"
@@ -3471,7 +3447,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b184",
+            "@id": "_:b177",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3490,7 +3466,7 @@
             "rdfs:label": "isLocationOf",
             "rdfs:comment": "Associates a location with the agent or event that it is related to.",
             "rdfs:range": {
-                "@id": "_:b184"
+                "@id": "_:b177"
             },
             "rdfs:domain": {
                 "@id": "arto:Location"
@@ -3498,7 +3474,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b187",
+            "@id": "_:b180",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3517,7 +3493,7 @@
             "rdfs:label": "isEventOf",
             "rdfs:comment": "Associates an event with the artwork or scene that it is related to.",
             "rdfs:range": {
-                "@id": "_:b187"
+                "@id": "_:b180"
             },
             "rdfs:domain": {
                 "@id": "arto:Event"
@@ -3528,7 +3504,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b190",
+            "@id": "_:b183",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3547,7 +3523,7 @@
             "rdfs:label": "isElementOf",
             "rdfs:comment": "Specifies the object or scene that contains the visual element in the artwork.",
             "rdfs:range": {
-                "@id": "_:b190"
+                "@id": "_:b183"
             },
             "rdfs:domain": {
                 "@id": "arto:VisualElement"
@@ -3566,7 +3542,7 @@
                 "@id": "arto:VisualElement"
             },
             "rdfs:domain": {
-                "@id": "_:b217"
+                "@id": "_:b210"
             },
             "owl:inverseOf": {
                 "@id": "arto:isElementOf"
@@ -3574,7 +3550,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b195",
+            "@id": "_:b188",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3599,7 +3575,7 @@
             "rdfs:label": "isConnotationOf",
             "rdfs:comment": "Associates a connotation with the visual elements, objects, scenes or artwork that express it.",
             "rdfs:range": {
-                "@id": "_:b195"
+                "@id": "_:b188"
             },
             "rdfs:domain": {
                 "@id": "arto:Connotation"
@@ -3607,7 +3583,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b200",
+            "@id": "_:b193",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3627,7 +3603,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b203",
+            "@id": "_:b196",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3641,7 +3617,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b206",
+            "@id": "_:b199",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3655,7 +3631,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b211",
+            "@id": "_:b204",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3675,7 +3651,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b214",
+            "@id": "_:b207",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3689,7 +3665,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b217",
+            "@id": "_:b210",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -5716,27 +5692,23 @@
         }
     ],
     "@context": {
+        "cc": "http://creativecommons.org/ns#",
         "arto": "http://w3id.org/arto#",
         "qudt": "http://qudt.org/schema/qudt/",
         "owl": "http://www.w3.org/2002/07/owl#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "icon": "https://w3id.org/icon/ontology/",
         "skos": "http://www.w3.org/2004/02/skos/core#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "mfoem": "http://purl.obolibrary.org/obo/",
+        "edm": "http://www.europeana.eu/schemas/edm/",
         "geo": "http://www.opengis.net/ont/geosparql#",
         "aat": "http://vocab.getty.edu/aat/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "xml": "http://www.w3.org/XML/1998/namespace",
         "vann": "http://purl.org/vocab/vann/",
         "event": "https://w3id.org/MON/event.owl#",
         "foaf": "http://xmlns.com/foaf/spec/",
         "crm": "http://www.cidoc-crm.org/cidoc-crm/",
-        "cc": "http://creativecommons.org/ns#",
-        "gn": "https://www.geonames.org/ontology#",
-        "mfoem": "http://purl.obolibrary.org/obo/",
-        "edm": "http://www.europeana.eu/schemas/edm/",
-        "dbp": "https://dbpedia.org/property/",
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#",
         "dc": "http://purl.org/dc/terms/",
         "sdo": "https://schema.org/",
         "@vocab": "http://w3id.org/arto#"
