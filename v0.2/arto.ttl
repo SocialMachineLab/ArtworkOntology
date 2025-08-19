@@ -1011,6 +1011,51 @@ arto:technique rdf:type owl:ObjectProperty ;
                 """ ;
                rdfs:label "technique" .
 
+###  http://w3id.org/arto#length
+arto:length rdf:type owl:ObjectProperty ;
+            rdfs:domain arto:Line ;
+            rdfs:range sdo:QuantitativeValue ;
+            rdfs:comment "Specifies the measurable extent of a linear element within an artwork, representing the distance from one end to the other. In digital analysis, length can be measured in pixels, while in physical artworks it may be expressed in centimeters, inches, or relative proportional units. Length measurement is crucial for compositional analysis, understanding artistic technique, and comparing linear elements across different scales and media. For curved or irregular lines, length represents the total path distance." ;
+             skos:example """
+                # Digital artwork analysis - precise pixel measurement
+                :horizon_line arto:length [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "847" ;
+                    sdo:unitCode "PX" ;
+                    rdfs:comment "Horizontal line spanning across landscape painting"
+                ] .
+
+                # Traditional painting - centimeter measurement  
+                :brushstroke_line arto:length [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "12.5" ;
+                    sdo:unitCode "CM" ;
+                    rdfs:comment "Single expressive brushstroke in oil painting"
+                ] .""";
+            rdfs:label "length" .
+
+###  http://w3id.org/arto#width
+arto:width rdf:type owl:ObjectProperty ;
+            rdfs:domain arto:Line ;
+            rdfs:range sdo:QuantitativeValue ;
+            rdfs:comment """Defines the thickness, breadth, or cross-sectional dimension of a linear element perpendicular to its length direction. Width is fundamental for analyzing artistic technique, emotional expression, and visual hierarchy. Thick lines often convey strength, boldness, or proximity, while thin lines suggest delicacy, precision, or distance. In traditional media, width reflects brush size, pen nib, or drawing tool characteristics. """ ;
+             skos:example """
+                # Bold expressive brushstroke
+                :bold_outline arto:width [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "8.2" ;
+                    sdo:unitCode "PX" ;
+                    rdfs:comment "Thick contour line emphasizing main subject"
+                ] .
+
+                # Fine detail line - traditional drawing
+                :detail_line arto:width [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "0.3" ;
+                    sdo:unitCode "MM" ;
+                    rdfs:comment "Fine pen line for intricate details in etching"
+                ] .""";
+            rdfs:label "width" .
 
 ###  http://www.europeana.eu/schemas/edm/currentLocation
 edm:currentLocation rdf:type owl:ObjectProperty .
@@ -1139,6 +1184,13 @@ arto:colourSystem rdf:type owl:DatatypeProperty ;
                                          ]
                              ] ;
                   rdfs:comment "The colour system of the ColourValue, indicating the model used for its representation. This property supports various colour models such as RGB, HSV, Lab, and CMYK, allowing for flexible colour representation and analysis in artworks. The use of a restricted set of values ensures consistency and interoperability across different systems and applications." ;
+                   skos:example """
+                      :vermilion_rgb a arto:ColourValue ;
+                      arto:colourSystem "RGB" . 
+                      
+                      sky_blue_hsv a arto:ColourValue ;
+                      arto:colourSystem "HSV" .
+                      """;
                   rdfs:label "colourSystem" .
 
 
@@ -1162,6 +1214,15 @@ arto:direction rdf:type owl:DatatypeProperty ;
                rdfs:domain arto:Line ;
                rdfs:range xsd:string ;
                rdfs:comment "Describes the orientation of linear elements in an artwork." ;
+               skos:example """
+                :horizon_line arto:direction "horizontal" ;
+
+
+                :dynamic_slash arto:direction "diagonal" ;
+
+
+                :gesture_stroke arto:direction "sweeping left to right" ;
+                """;
                rdfs:label "direction" .
 
 
@@ -1189,14 +1250,6 @@ arto:emotionPerspective rdf:type owl:DatatypeProperty ;
                           """ .
 
 
-###  http://w3id.org/arto#length
-arto:length rdf:type owl:DatatypeProperty ;
-            rdfs:domain arto:Line ;
-            rdfs:range xsd:float ;
-            rdfs:comment "The length of the line." ;
-            rdfs:label "length" .
-
-
 ###  http://w3id.org/arto#size
 arto:size rdf:type owl:DatatypeProperty ;
           rdfs:domain [ rdf:type owl:Class ;
@@ -1205,24 +1258,29 @@ arto:size rdf:type owl:DatatypeProperty ;
                                     )
                       ] ;
           rdfs:range xsd:string ;
-          rdfs:comment "Indicates the relative or absolute dimensions of objects and scenes within artwork composition. Size often correlate with narrative importance, symbolic significance, or perspectival organisation in artistic composition." ;
+          rdfs:comment "Describes the relative or perceived dimensions of objects and scenes within artwork composition. Size often correlates with narrative importance, symbolic significance, perspectival organisation, and visual hierarchy. This property captures how large something appears or functions compositionally (e.g., dominant, secondary, marginal), not a physical or pixel measurement." ;
+          skos:example """
+            :tree_object arto:size "large" ;
+            :small_bird_object arto:size "marginal" ;
+            :central_figure_object arto:size "primary" ;
+            :background_building_object arto:size "secondary" .
+            """ ;
           rdfs:label "size" .
 
 
-###  http://w3id.org/arto#source
-arto:source rdf:type owl:DatatypeProperty ;
-            rdfs:domain arto:Symbolism ;
-            rdfs:range xsd:string ;
-            rdfs:comment "Identifies the cultural, historical, or textual origins of symbolic meanings, enabling traceability of iconographic interpretations and cross-cultural symbolic analysis. Sources can include mythological traditions, religious texts, historical events, literary works, or folk traditions that inform symbolic interpretation." ;
-            rdfs:label "source" .
+  ###  http://w3id.org/arto#source
+  arto:source rdf:type owl:DatatypeProperty ;
+              rdfs:domain arto:Symbolism ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Identifies the cultural, historical, or textual origins of symbolic meanings, enabling traceability of iconographic interpretations and cross-cultural symbolic analysis. Sources can include mythological traditions, religious texts, historical events, literary works, or folk traditions that inform symbolic interpretation." ;
+              skos:example """
+              # Religious and biblical sources
+              :dove_peace_symbolism arto:source "Biblical Genesis 8:11 - Noah's dove with olive branch" ;
+                """ ;
+              rdfs:label "source" .
 
 
-###  http://w3id.org/arto#width
-arto:width rdf:type owl:DatatypeProperty ;
-            rdfs:domain arto:Line ;
-            rdfs:range xsd:float ;
-            rdfs:comment "The width of the line." ;
-            rdfs:label "width" .
+
 
 
 ###  http://www.europeana.eu/schemas/edm/isShownBy
@@ -1735,11 +1793,11 @@ arto:Line rdf:type owl:Class ;
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty arto:length ;
-                            owl:allValuesFrom xsd:float
+                            owl:allValuesFrom sdo:QuantitativeValue
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty arto:width ;
-                            owl:allValuesFrom xsd:float
+                            owl:allValuesFrom sdo:QuantitativeValue
                           ] ;
           rdfs:comment "Represents linear visual elements in artworks. Typical line types may include straight, curved, broken, contour, gestural, structural, implied, and hatching or cross-hatching. These categories are indicative and may be aligned with controlled vocabularies such as Getty AAT where applicable." ;
           rdfs:label "Line" .
@@ -3217,7 +3275,7 @@ dc:conformsTo <http://purl.org/dc/dcam/rangeIncludes> dc:Standard ;
 
 dc:contributor <http://purl.org/dc/dcam/rangeIncludes> dc:Agent ;
                dc:description "The guidelines for using names of persons or organisations as creators apply to contributors."@en ,
-                              "The guidelines for using names of persons or organizations as creators apply to contributors."@en ;
+                              "The guidelines for using names of persons or organ tions as creators apply to contributors."@en ;
                dc:issued "2008-01-14"^^xsd:date ;
                rdfs:comment "An entity responsible for making contributions to the resource."@en ;
                rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
