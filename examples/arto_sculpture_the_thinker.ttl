@@ -62,7 +62,7 @@
 :contemplation_scene a arto:Scene ;
     arto:containsObject :male_figure ;
     arto:containsScene :figure_scene, :rock_scene ;
-    arto:size "full sculpture" ;
+    arto:size "Dominant" ;
     arto:hasConnotation :philosophical_contemplation_theme ;
     arto:hasCoordinates :vector_2_3154_48_8555 ;
     arto:hasMetric  :spatial_tension_metric, :pose_balance_metric ;

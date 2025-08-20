@@ -1249,14 +1249,32 @@ arto:size rdf:type owl:DatatypeProperty ;
                                       arto:Scene
                                     )
                       ] ;
-          rdfs:range xsd:string ;
-          rdfs:comment "Describes the relative or perceived dimensions of objects and scenes within artwork composition. Size often correlates with narrative importance, symbolic significance, perspectival organisation, and visual hierarchy. This property captures how large something appears or functions compositionally (e.g., dominant, secondary, marginal), not a physical or pixel measurement." ;
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                   owl:oneOf [ rdf:type rdf:List ;
+                        rdf:first "Dominant" ;
+                        rdf:rest [ rdf:type rdf:List ;
+                             rdf:first "Large" ;
+                             rdf:rest [ rdf:type rdf:List ;
+                                rdf:first "Medium" ;
+                                rdf:rest [ rdf:type rdf:List ;
+                                     rdf:first "Small" ;
+                                     rdf:rest [ rdf:type rdf:List ;
+                                          rdf:first "Marginal" ;
+                                          rdf:rest rdf:nil
+                                        ]
+                                     ]
+                                ]
+                           ]
+                      ] 
+                 ] ;
+          rdfs:comment "Describes the relative or perceived dimensions of objects and scenes within artwork composition. Size often correlates with narrative importance, symbolic significance, perspectival organisation, and visual hierarchy. This property captures how large something appears or functions compositionally (e.g., dominant, medium, marginal), not a physical or pixel measurement." ;
           skos:example """
-            :tree_object arto:size "large" ;
-            :small_bird_object arto:size "marginal" ;
-            :central_figure_object arto:size "primary" ;
-            :background_building_object arto:size "secondary" .
-            """ ;
+            :sky_scene arto:size "Dominant" .
+            :central_figure arto:size "Large" .
+            :house_group   arto:size "Medium" .
+            :small_bird    arto:size "Small" .
+            :distant_stars arto:size "Marginal" .
+          """ ;
           rdfs:label "size" .
 
 

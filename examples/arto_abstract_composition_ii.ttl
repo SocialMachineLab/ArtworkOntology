@@ -94,7 +94,7 @@
 
 # Scene
 :main_scene a arto:Scene ;
-    arto:size "55x55cm" ;
+    arto:size "Dominant" ;
     arto:hasCoordinates :vector_0_0_55_55  ;
     arto:containsObject :grid_structure ,
                        :red_rectangle ,
@@ -113,7 +113,7 @@
     arto:material "paint"@en ;
     arto:state "vertical and horizontal intersection"@en ;
     arto:descriptor :grid_lines ;
-    arto:size "variable width" ;
+    arto:size "Dominant" ;
     arto:containsElement :black_lines ;
     arto:hasConnotation :structural_order ;
     arto:relatedToScene :main_scene ;
@@ -125,7 +125,7 @@
     arto:hasConnotation :energy_warmth ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
-    arto:size "small" .
+    arto:size "Small" .
 
 :blue_rectangle a arto:Object ;
     arto:state "lower left corner"@en ;
@@ -133,7 +133,7 @@
     arto:hasConnotation :calm_stability ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
-    arto:size "medium" .
+    arto:size "Medium" .
 
 :yellow_rectangle a arto:Object ;
     arto:state "lower right corner"@en ;
@@ -141,7 +141,7 @@
     arto:hasConnotation :joy_optimism ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
-    arto:size "small" .
+    arto:size "Small" .
 
 :white_areas a arto:Object ;
     arto:state "main background"@en ;  
@@ -149,7 +149,7 @@
     arto:hasConnotation :purity_space ;
     arto:relatedToScene :main_scene ;
     arto:isObjectOf :main_scene ;
-    arto:size "large" .
+    arto:size "Large" .
 
 # Visual Elements (with inverse relationships)
 :black_lines a arto:Line ;

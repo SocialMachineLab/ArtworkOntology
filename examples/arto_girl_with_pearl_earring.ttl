@@ -78,7 +78,7 @@
 :main_scene rdf:type :Scene ;
     arto:containsObject :girl_figure, :pearl_earring, :turban, :blue_headscarf, :yellow_jacket ;
     arto:hasCoordinates :main_coordinates ;
-    arto:size "full" .
+    arto:size "Dominant" .
 
 
 :girl_figure rdf:type arto:Character ;
