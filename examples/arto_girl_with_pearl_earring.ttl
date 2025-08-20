@@ -41,11 +41,11 @@
 
 :Baroque rdf:type :StyleType ;
     rdfs:label "Baroque"@en ;
-    arto:description "An artistic style characterized by dramatic expression, rich detail, and grandeur."@en .  
+    arto:description "An artistic style characterised by dramatic expression, rich detail, and grandeur."@en .  
 
 :Dutch_Golden_Age_painting rdf:type :StyleType ;
     rdfs:label "Dutch Golden Age painting"@en ;
-    arto:description "A style of painting that flourished in the Netherlands during the 17th century, characterized by realism and attention to detail."@en .
+    arto:description "A style of painting that flourished in the Netherlands during the 17th century, characterised by realism and attention to detail."@en .
 
 :Portrait rdf:type :GenreType ;
     rdfs:label "Portrait"@en ;

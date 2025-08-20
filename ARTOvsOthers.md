@@ -119,8 +119,16 @@ ARTO provides measurable properties for visual elements:
 # ARTO - Specific measurements
 ex:curved_line rdf:type arto:Line ;
     arto:direction "Curved" ;
-    arto:length 20.0 ;
-    arto:width 2.0 .
+    arto:length [
+        a sdo:QuantitativeValue ;
+        sdo:value "20.0"^^xsd:decimal ;
+        sdo:unitCode unit:CentiM
+    ] ;
+    arto:width [
+        a sdo:QuantitativeValue ;
+        sdo:value "2.0"^^xsd:decimal ;
+        sdo:unitCode unit:CentiM
+    ] .
 
 # ICON - No geometric properties available
 ```

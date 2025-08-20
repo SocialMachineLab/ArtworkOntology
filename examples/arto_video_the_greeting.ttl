@@ -83,7 +83,7 @@ ex:TheVisitation rdf:type arto:Artwork ;
 
 :Renaissance_painting rdf:type arto:GenreType ;
     rdfs:label "Renaissance painting"@en ;
-    arto:descriptor "A style of painting that emerged during the Renaissance, characterized by realism, perspective, and human emotion."@en .
+    arto:descriptor "A style of painting that emerged during the Renaissance, characterised by realism, perspective, and human emotion."@en .
 
 
 # Artwork Location

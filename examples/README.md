@@ -48,7 +48,7 @@ The complete RDF-star and RDF representations of these examples are available as
     dc:title "Composition II in Red, Blue, and Yellow"@en ;
     dc:creator :mondrian ;
     arto:style :neoplasticism ;
-    arto:genre :abstract_art ;
+    arto:genre :Abstract_art ;
     arto:containsScene :main_scene .
 
 :main_scene a arto:Scene ;
@@ -83,8 +83,8 @@ The complete RDF-star and RDF representations of these examples are available as
     dc:title "The Thinker"@en ;
     dc:creator :auguste_rodin ;
     arto:medium aat:300010957 ;         # Bronze
-    arto:technique :lost_wax_casting ;
-    arto:style :neoclassicism ;
+    arto:technique :Lost-wax_casting ;
+    arto:style :Neoclassicism ;
     arto:containsScene :contemplation_scene .
 
 :contemplation_scene a arto:Scene ;
