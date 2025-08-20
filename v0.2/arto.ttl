@@ -1233,12 +1233,12 @@ arto:emotionPerspective rdf:type owl:DatatypeProperty ;
                                                           ]
                                                ]
                                    ] ;
-                        rdfs:comment "Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'artist' (artist's intended emotion), 'artwork' (emotion expressed by the artwork's formal elements), and 'viewer' (viewer's emotional response)." ;
+                        rdfs:comment "Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'Artist' (artist's intended emotion), 'Artwork' (emotion expressed by the artwork's formal elements), and 'Viewer' (viewer's emotional response)." ;
                         rdfs:label "emotionPerspective"@en ;
                         skos:example """
-                          ex:melancholy_emotion arto:emotionPerspective \"artist\"^^xsd:string ;
-                          ex:serenity_emotion arto:emotionPerspective \"artwork\"^^xsd:string ;
-                          ex:excitement_emotion arto:emotionPerspective \"viewer\"^^xsd:string .
+                          ex:melancholy_emotion arto:emotionPerspective \"Artist\"^^xsd:string ;
+                          ex:serenity_emotion arto:emotionPerspective \"Artwork\"^^xsd:string ;
+                          ex:excitement_emotion arto:emotionPerspective \"Viewer\"^^xsd:string .
                           """ .
 
 
