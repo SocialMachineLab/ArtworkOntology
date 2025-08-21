@@ -24,7 +24,7 @@
                              owl:imports crm: ,
                                          <http://www.w3.org/2004/02/skos/core> ,
                                          <http://xmlns.com/foaf/spec/> ,
-                                         sdo: ;
+                                         <https://schema.org/> ;
                              cc:attributionURL <http://w3id.org/arto> ;
                              dc:description "The Artwork Object Ontology (ARTO) is a comprehensive ontology designed for describing and contextualising artworks. It consists of two main components: the Artwork Descriptive Model and the Artwork Contextual Model. ARTO aims to provide a structured and detailed representation of artworks, facilitating tasks such as artwork captioning and information retrieval."@en ;
                              dc:issued "2024-04-10" ;
@@ -1030,29 +1030,6 @@ arto:length rdf:type owl:ObjectProperty ;
                 ] .""";
             rdfs:label "length" .
 
-###  http://w3id.org/arto#width
-arto:width rdf:type owl:ObjectProperty ;
-            rdfs:domain arto:Line ;
-            rdfs:range sdo:QuantitativeValue ;
-            rdfs:comment """Defines the thickness, breadth, or cross-sectional dimension of a linear element perpendicular to its length direction. Width is fundamental for analyzing artistic technique, emotional expression, and visual hierarchy. Thick lines often convey strength, boldness, or proximity, while thin lines suggest delicacy, precision, or distance. In traditional media, width reflects brush size, pen nib, or drawing tool characteristics. """ ;
-             skos:example """
-                # Bold expressive brushstroke
-                :bold_outline arto:width [
-                    a sdo:QuantitativeValue ;
-                    sdo:value "8.2" ;
-                    sdo:unitCode "PX" ;
-                    rdfs:comment "Thick contour line emphasizing main subject"
-                ] .
-
-                # Fine detail line - traditional drawing
-                :detail_line arto:width [
-                    a sdo:QuantitativeValue ;
-                    sdo:value "0.3" ;
-                    sdo:unitCode "MM" ;
-                    rdfs:comment "Fine pen line for intricate details in etching"
-                ] .""";
-            rdfs:label "width" .
-
 ###  http://www.europeana.eu/schemas/edm/currentLocation
 edm:currentLocation rdf:type owl:ObjectProperty .
 
@@ -1759,7 +1736,7 @@ This class extends the Event Ontology and aligns conceptually with CIDOC CRM’s
 supporting cultural heritage interoperability. Event instances may cover artistic activities
 (creation, sketching, exhibition), artist life events (residence changes, collaborations),
 as well as historical or mythological occurrences referenced in artworks. Event categories
-can be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).
+can be expressed using dc:type (e.g., Creation, Exhibition, ResidenceMove).
 """ ;
       skos:example """
           << :Guernica arto:sketchedBy :Picasso >> a arto:Event ;
@@ -1806,10 +1783,24 @@ arto:Line rdf:type owl:Class ;
                             owl:allValuesFrom sdo:QuantitativeValue
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty arto:width ;
+                            owl:onProperty sdo:width ;
                             owl:allValuesFrom sdo:QuantitativeValue
                           ] ;
           rdfs:comment "Represents linear visual elements in artworks. Typical line types may include straight, curved, broken, contour, gestural, structural, implied, and hatching or cross-hatching. These categories are indicative and may be aligned with controlled vocabularies such as Getty AAT where applicable." ;
+          skos:example """
+            :portrait_outline a arto:Line ;
+                dc:type "contour" ;
+                arto:direction "curved" ;
+                arto:length [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "156" ;
+                    sdo:unitCode "PX"
+                ] ;
+                arto:width [
+                    a sdo:QuantitativeValue ;
+                    sdo:value "2.1" ;
+                    sdo:unitCode "PX"
+                ] . """ ;
           rdfs:label "Line" .
 
 
@@ -1825,6 +1816,26 @@ arto:Location rdf:type owl:Class ;
                                 owl:allValuesFrom xsd:string
                               ] ;
               rdfs:comment "Represents locations associated with artworks (creation, display, storage, provenance, or depicted scenes). Location type is recorded as free text, e.g., studio, museum, gallery, exhibition venue, storage, auction house, private collection, findspot, city, region, country, fictional place, or depicted place. GeoSPARQL WKT may be provided when precise geometry is known; otherwise names alone are acceptable. Historical changes (renamings/boundaries) can be handled by creating distinct Location instances and linking them to events or times as needed." ;
+              skos:example """
+                # Museum location
+                :louvre_museum a arto:Location ;
+                    dc:type "museum" ;
+                    rdfs:label "Louvre Museum, Paris, France" ;
+                    geo:asWKT "POINT(2.3376 48.8606)"^^geo:wktLiteral .
+
+                # Fictional/depicted place
+                :garden_of_eden a arto:Location ;
+                    dc:type "fictional place" ;
+                    rdfs:label "Garden of Eden" ;
+                    dc:description "Biblical paradise frequently depicted in medieval and Renaissance art" .
+
+                # City with historical name change
+                :leningrad_city a arto:Location ;
+                    dc:type "city" ;
+                    rdfs:label "Leningrad (1924-1991)" ;
+                    geo:asWKT "POINT(30.3351 59.9311)"^^geo:wktLiteral ;
+                    dc:description "Former name of St. Petersburg during Soviet period" .
+                """ ;
               rdfs:label "Location" .
 
 
@@ -1861,7 +1872,7 @@ arto:MaterialType rdf:type owl:Class ;
       materials used in their construction or representation.""" ;
                   rdfs:label "MaterialType" ;
                   skos:example """
-                  - :wood_material rdf:type arto:  .
+                  - :wood_material rdf:type arto:MaterialType  .
                   - :metal_material rdf:type arto:MaterialType .
                   - :glass_material rdf:type arto:MaterialType .
                       """ .
@@ -1949,6 +1960,35 @@ arto:Object rdf:type owl:Class ;
                               owl:allValuesFrom xsd:string
                             ] ;
             rdfs:comment "Represents identifiable and meaningful entities depicted within artworks, composed of various visual elements. Objects serve as the primary content units for artwork analysis, with properties describing their physical state, material composition, and spatial relationships" ;
+            skos:example """
+              # Figure in a portrait painting
+              :mona_lisa_figure a arto:Object ;
+                  rdfs:label "Woman in Portrait" ;
+                  arto:size "Large" ;
+                  arto:descriptor "seated figure with enigmatic smile" ;
+                  arto:state :sitting_state ;
+                  arto:hasCoordinates [
+                      a qudt:Vector ;
+                      qudt:vector (400, 250, 180, 320) # x, y, width, height in pixels
+                  ] ;
+                  arto:hasConnotation :mystery_emotion ;
+                  arto:relatedToScene :portrait_scene .
+
+              # Vase in a still life
+              :ceramic_vase a arto:Object ;
+                  rdfs:label "Blue Ceramic Vase" ;
+                  arto:material aat:ceramic ;
+                  arto:size "Medium" ;
+                  arto:descriptor "decorative vessel with floral pattern" ;
+                  arto:state :intact_state ;
+                  arto:hasCoordinates [
+                      a qudt:Vector ;
+                      qudt:vector (150, 180)  # center position
+                  ] ;
+                  arto:relatedTo :flower_bouquet ;
+                  arto:relatedToScene :table_scene ;
+                  arto:hasConnotation :abundance_symbolism .
+              """ ;
             rdfs:label "Object" .
 
 
@@ -2033,6 +2073,37 @@ arto:Scene rdf:type owl:Class ;
                              owl:allValuesFrom xsd:string
                            ] ;
            rdfs:comment "Represents a coherent visual or narrative unit within an artwork that conveys specific meaning or sentiment. A scene aggregates objects and visual elements into meaningful compositions, supporting hierarchical structures where complex artworks contain multiple interconnected scenes. It's similar to ICON's image representations but with explicit support for scene nesting and relationships. Scenes can reference historical, mythological, or fictional events through relatedToEvent, enabling contextual artwork analysis." ;
+           skos:example """
+            # Main scene in "The Last Supper" 
+            :last_supper_main_scene a arto:Scene ;
+                rdfs:label "The Last Supper Main Scene" ;
+                arto:size "Dominant" ;
+                arto:descriptor "Indoor dining scene with Jesus and twelve apostles" ;
+                arto:hasCoordinates [
+                    a qudt:Vector ;
+                    qudt:vector (0, 0, 800, 400)  # full painting dimensions
+                ] ;
+                arto:containsObject :jesus_figure, :judas_figure, :john_figure ;
+                arto:containsScene :central_table_scene, :background_architecture_scene ;
+                arto:relatedToEvent :biblical_last_supper_event ;
+                arto:hasConnotation :betrayal_theme, :sacrifice_symbolism ;
+                arto:hasMetric :compositional_balance_metric .
+
+            # Mythological scene
+            :birth_of_venus_scene a arto:Scene ;
+                rdfs:label "Birth of Venus Scene" ;
+                arto:size "Dominant" ;
+                arto:descriptor "Goddess emerging from sea foam on shell" ;
+                arto:hasCoordinates [
+                    a qudt:Vector ;
+                    qudt:vector (200, 100, 800, 600)
+                ] ;
+                arto:containsObject :venus_figure, :scallop_shell, :sea_waves ;
+                arto:containsScene :wind_gods_scene, :shore_reception_scene ;
+                arto:relatedToEvent :venus_birth_myth ;
+                arto:hasConnotation :divine_beauty_theme, :love_symbolism ;
+                arto:hasMetric :golden_ratio_composition .
+            """ ;
            rdfs:label "Scene" .
 
 

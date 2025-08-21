@@ -834,7 +834,7 @@
                 "@id": "arto:Metric"
             },
             "rdfs:domain": {
-                "@id": "_:b193"
+                "@id": "_:b199"
             },
             "owl:inverseOf": {
                 "@id": "arto:isMetricOf"
@@ -875,7 +875,7 @@
                 "@id": "arto:Connotation"
             },
             "rdfs:domain": {
-                "@id": "_:b204"
+                "@id": "_:b210"
             },
             "owl:inverseOf": {
                 "@id": "arto:isConnotationOf"
@@ -1304,13 +1304,13 @@
         {
             "@id": "arto:size",
             "rdfs:label": "size",
-            "skos:example": "\n            :tree_object arto:size \"large\" ;\n            :small_bird_object arto:size \"marginal\" ;\n            :central_figure_object arto:size \"primary\" ;\n            :background_building_object arto:size \"secondary\" .\n            ",
-            "rdfs:comment": "Describes the relative or perceived dimensions of objects and scenes within artwork composition. Size often correlates with narrative importance, symbolic significance, perspectival organisation, and visual hierarchy. This property captures how large something appears or functions compositionally (e.g., dominant, secondary, marginal), not a physical or pixel measurement.",
+            "skos:example": "\n            :sky_scene arto:size \"Dominant\" .\n            :central_figure arto:size \"Large\" .\n            :house_group   arto:size \"Medium\" .\n            :small_bird    arto:size \"Small\" .\n            :distant_stars arto:size \"Marginal\" .\n          ",
+            "rdfs:comment": "Describes the relative or perceived dimensions of objects and scenes within artwork composition. Size often correlates with narrative importance, symbolic significance, perspectival organisation, and visual hierarchy. This property captures how large something appears or functions compositionally (e.g., dominant, medium, marginal), not a physical or pixel measurement.",
             "rdfs:range": {
-                "@id": "xsd:string"
+                "@id": "_:b152"
             },
             "rdfs:domain": {
-                "@id": "_:b149"
+                "@id": "_:b155"
             },
             "@type": "owl:DatatypeProperty"
         },
@@ -1333,7 +1333,7 @@
                 "@id": "xsd:string"
             },
             "rdfs:domain": {
-                "@id": "_:b156"
+                "@id": "_:b162"
             },
             "@type": "owl:DatatypeProperty"
         },
@@ -1351,7 +1351,7 @@
             "@id": "arto:Event",
             "rdfs:label": "Event",
             "skos:example": "\n          << :Guernica arto:sketchedBy :Picasso >> a arto:Event ;\n              arto:hasTime :t_1937_Spring ; arto:hasLocation :ParisStudio ;\n              dc:type \"Sketching\".\n\n          << :Guernica dc:creator :Picasso >> a arto:Event ;\n              arto:hasTime :t_1937 ; arto:hasLocation :ParisStudio ;\n              dc:type \"Creation\".\n          << :Georgia_OKeeffe arto:movedResidenceTo :Abiquiu_Home >> a arto:Event ;\n            arto:hasTime :t_1949 ; arto:hasLocation :Abiquiu_NewMexico ;\n            dc:type \"ResidenceMove\".\n          ",
-            "rdfs:comment": "\nRepresents a temporally and spatially situated occurrence involving agents and locations.\nThis class extends the Event Ontology and aligns conceptually with CIDOC CRM’s E5_Event,\nsupporting cultural heritage interoperability. Event instances may cover artistic activities\n(creation, sketching, exhibition), artist life events (residence changes, collaborations),\nas well as historical or mythological occurrences referenced in artworks. Event categories\ncan be expressed using rdf:type (e.g., Creation, Exhibition, ResidenceMove).\n",
+            "rdfs:comment": "\nRepresents a temporally and spatially situated occurrence involving agents and locations.\nThis class extends the Event Ontology and aligns conceptually with CIDOC CRM’s E5_Event,\nsupporting cultural heritage interoperability. Event instances may cover artistic activities\n(creation, sketching, exhibition), artist life events (residence changes, collaborations),\nas well as historical or mythological occurrences referenced in artworks. Event categories\ncan be expressed using dc:type (e.g., Creation, Exhibition, ResidenceMove).\n",
             "rdfs:subClassOf": [
                 {
                     "@id": "_:b102"
@@ -1383,7 +1383,7 @@
                 "@id": "arto:Event"
             },
             "rdfs:domain": {
-                "@id": "_:b166"
+                "@id": "_:b172"
             },
             "@type": "owl:ObjectProperty"
         },
@@ -1420,7 +1420,7 @@
                 "@id": "qudt:Vector"
             },
             "rdfs:domain": {
-                "@id": "_:b199"
+                "@id": "_:b205"
             },
             "@type": "owl:ObjectProperty"
         },
@@ -1447,6 +1447,7 @@
         {
             "@id": "arto:Scene",
             "rdfs:label": "Scene",
+            "skos:example": "\n            # Main scene in \"The Last Supper\" \n            :last_supper_main_scene a arto:Scene ;\n                rdfs:label \"The Last Supper Main Scene\" ;\n                arto:size \"Dominant\" ;\n                arto:descriptor \"Indoor dining scene with Jesus and twelve apostles\" ;\n                arto:hasCoordinates [\n                    a qudt:Vector ;\n                    qudt:vector (0, 0, 800, 400)  # full painting dimensions\n                ] ;\n                arto:containsObject :jesus_figure, :judas_figure, :john_figure ;\n                arto:containsScene :central_table_scene, :background_architecture_scene ;\n                arto:relatedToEvent :biblical_last_supper_event ;\n                arto:hasConnotation :betrayal_theme, :sacrifice_symbolism ;\n                arto:hasMetric :compositional_balance_metric .\n\n            # Mythological scene\n            :birth_of_venus_scene a arto:Scene ;\n                rdfs:label \"Birth of Venus Scene\" ;\n                arto:size \"Dominant\" ;\n                arto:descriptor \"Goddess emerging from sea foam on shell\" ;\n                arto:hasCoordinates [\n                    a qudt:Vector ;\n                    qudt:vector (200, 100, 800, 600)\n                ] ;\n                arto:containsObject :venus_figure, :scallop_shell, :sea_waves ;\n                arto:containsScene :wind_gods_scene, :shore_reception_scene ;\n                arto:relatedToEvent :venus_birth_myth ;\n                arto:hasConnotation :divine_beauty_theme, :love_symbolism ;\n                arto:hasMetric :golden_ratio_composition .\n            ",
             "rdfs:comment": "Represents a coherent visual or narrative unit within an artwork that conveys specific meaning or sentiment. A scene aggregates objects and visual elements into meaningful compositions, supporting hierarchical structures where complex artworks contain multiple interconnected scenes. It's similar to ICON's image representations but with explicit support for scene nesting and relationships. Scenes can reference historical, mythological, or fictional events through relatedToEvent, enabling contextual artwork analysis.",
             "rdfs:subClassOf": [
                 {
@@ -1485,7 +1486,7 @@
                 "@id": "arto:Scene"
             },
             "rdfs:domain": {
-                "@id": "_:b207"
+                "@id": "_:b213"
             },
             "owl:inverseOf": {
                 "@id": "arto:isSceneOf"
@@ -1505,6 +1506,7 @@
         {
             "@id": "arto:Object",
             "rdfs:label": "Object",
+            "skos:example": "\n              # Figure in a portrait painting\n              :mona_lisa_figure a arto:Object ;\n                  rdfs:label \"Woman in Portrait\" ;\n                  arto:size \"Large\" ;\n                  arto:descriptor \"seated figure with enigmatic smile\" ;\n                  arto:state :sitting_state ;\n                  arto:hasCoordinates [\n                      a qudt:Vector ;\n                      qudt:vector (400, 250, 180, 320) # x, y, width, height in pixels\n                  ] ;\n                  arto:hasConnotation :mystery_emotion ;\n                  arto:relatedToScene :portrait_scene .\n\n              # Vase in a still life\n              :ceramic_vase a arto:Object ;\n                  rdfs:label \"Blue Ceramic Vase\" ;\n                  arto:material aat:ceramic ;\n                  arto:size \"Medium\" ;\n                  arto:descriptor \"decorative vessel with floral pattern\" ;\n                  arto:state :intact_state ;\n                  arto:hasCoordinates [\n                      a qudt:Vector ;\n                      qudt:vector (150, 180)  # center position\n                  ] ;\n                  arto:relatedTo :flower_bouquet ;\n                  arto:relatedToScene :table_scene ;\n                  arto:hasConnotation :abundance_symbolism .\n              ",
             "rdfs:comment": "Represents identifiable and meaningful entities depicted within artworks, composed of various visual elements. Objects serve as the primary content units for artwork analysis, with properties describing their physical state, material composition, and spatial relationships",
             "rdfs:subClassOf": [
                 {
@@ -1722,7 +1724,7 @@
         },
         {
             "@id": "arto:MaterialType",
-            "skos:example": "\n                  - :wood_material rdf:type arto:  .\n                  - :metal_material rdf:type arto:MaterialType .\n                  - :glass_material rdf:type arto:MaterialType .\n                      ",
+            "skos:example": "\n                  - :wood_material rdf:type arto:MaterialType  .\n                  - :metal_material rdf:type arto:MaterialType .\n                  - :glass_material rdf:type arto:MaterialType .\n                      ",
             "rdfs:label": "MaterialType",
             "rdfs:comment": "Represents the material type of an object, such as wood,\n      metal, glass, or fabric. This class allows for the classification of objects based on the\n      materials used in their construction or representation.",
             "rdfs:subClassOf": {
@@ -1871,6 +1873,7 @@
         {
             "@id": "arto:Location",
             "rdfs:label": "Location",
+            "skos:example": "\n                # Museum location\n                :louvre_museum a arto:Location ;\n                    dc:type \"museum\" ;\n                    rdfs:label \"Louvre Museum, Paris, France\" ;\n                    geo:asWKT \"POINT(2.3376 48.8606)\"^^geo:wktLiteral .\n\n                # Fictional/depicted place\n                :garden_of_eden a arto:Location ;\n                    dc:type \"fictional place\" ;\n                    rdfs:label \"Garden of Eden\" ;\n                    dc:description \"Biblical paradise frequently depicted in medieval and Renaissance art\" .\n\n                # City with historical name change\n                :leningrad_city a arto:Location ;\n                    dc:type \"city\" ;\n                    rdfs:label \"Leningrad (1924-1991)\" ;\n                    geo:asWKT \"POINT(30.3351 59.9311)\"^^geo:wktLiteral ;\n                    dc:description \"Former name of St. Petersburg during Soviet period\" .\n                ",
             "rdfs:comment": "Represents locations associated with artworks (creation, display, storage, provenance, or depicted scenes). Location type is recorded as free text, e.g., studio, museum, gallery, exhibition venue, storage, auction house, private collection, findspot, city, region, country, fictional place, or depicted place. GeoSPARQL WKT may be provided when precise geometry is known; otherwise names alone are acceptable. Historical changes (renamings/boundaries) can be handled by creating distinct Location instances and linking them to events or times as needed.",
             "rdfs:subClassOf": [
                 {
@@ -1891,21 +1894,12 @@
                 "@id": "sdo:QuantitativeValue"
             },
             "owl:onProperty": {
-                "@id": "arto:width"
+                "@id": "sdo:width"
             },
             "@type": "owl:Restriction"
         },
         {
-            "@id": "arto:width",
-            "rdfs:label": "width",
-            "skos:example": "\n                # Bold expressive brushstroke\n                :bold_outline arto:width [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"8.2\" ;\n                    sdo:unitCode \"PX\" ;\n                    rdfs:comment \"Thick contour line emphasizing main subject\"\n                ] .\n\n                # Fine detail line - traditional drawing\n                :detail_line arto:width [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"0.3\" ;\n                    sdo:unitCode \"MM\" ;\n                    rdfs:comment \"Fine pen line for intricate details in etching\"\n                ] .",
-            "rdfs:comment": "Defines the thickness, breadth, or cross-sectional dimension of a linear element perpendicular to its length direction. Width is fundamental for analyzing artistic technique, emotional expression, and visual hierarchy. Thick lines often convey strength, boldness, or proximity, while thin lines suggest delicacy, precision, or distance. In traditional media, width reflects brush size, pen nib, or drawing tool characteristics. ",
-            "rdfs:range": {
-                "@id": "sdo:QuantitativeValue"
-            },
-            "rdfs:domain": {
-                "@id": "arto:Line"
-            },
+            "@id": "sdo:width",
             "@type": "owl:ObjectProperty"
         },
         {
@@ -1967,6 +1961,7 @@
         {
             "@id": "arto:Line",
             "rdfs:label": "Line",
+            "skos:example": "\n            :portrait_outline a arto:Line ;\n                dc:type \"contour\" ;\n                arto:direction \"curved\" ;\n                arto:length [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"156\" ;\n                    sdo:unitCode \"PX\"\n                ] ;\n                arto:width [\n                    a sdo:QuantitativeValue ;\n                    sdo:value \"2.1\" ;\n                    sdo:unitCode \"PX\"\n                ] . ",
             "rdfs:comment": "Represents linear visual elements in artworks. Typical line types may include straight, curved, broken, contour, gestural, structural, implied, and hatching or cross-hatching. These categories are indicative and may be aligned with controlled vocabularies such as Getty AAT where applicable.",
             "rdfs:subClassOf": [
                 {
@@ -2112,7 +2107,7 @@
                 "@id": "arto:Location"
             },
             "rdfs:domain": {
-                "@id": "_:b196"
+                "@id": "_:b202"
             },
             "owl:inverseOf": {
                 "@id": "arto:isLocationOf"
@@ -2151,14 +2146,14 @@
         },
         {
             "@id": "arto:emotionPerspective",
-            "skos:example": "\n                          ex:melancholy_emotion arto:emotionPerspective \"artist\"^^xsd:string ;\n                          ex:serenity_emotion arto:emotionPerspective \"artwork\"^^xsd:string ;\n                          ex:excitement_emotion arto:emotionPerspective \"viewer\"^^xsd:string .\n                          ",
+            "skos:example": "\n                          ex:melancholy_emotion arto:emotionPerspective \"Artist\"^^xsd:string ;\n                          ex:serenity_emotion arto:emotionPerspective \"Artwork\"^^xsd:string ;\n                          ex:excitement_emotion arto:emotionPerspective \"Viewer\"^^xsd:string .\n                          ",
             "rdfs:label": {
                 "@language": "en",
                 "@value": "emotionPerspective"
             },
-            "rdfs:comment": "Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'artist' (artist's intended emotion), 'artwork' (emotion expressed by the artwork's formal elements), and 'viewer' (viewer's emotional response).",
+            "rdfs:comment": "Specifies the perspective or viewpoint from which an emotion is interpreted in relation to an artwork. This property distinguishes between emotions intended by the artist, emotions expressed by the artwork itself, emotions experienced by viewers. Values are restricted to: 'Artist' (Artist's intended emotion), 'Artwork' (emotion expressed by the Artwork's formal elements), and 'Viewer' (Viewer's emotional response).",
             "rdfs:range": {
-                "@id": "_:b153"
+                "@id": "_:b159"
             },
             "rdfs:domain": {
                 "@id": "arto:Emotion"
@@ -2274,7 +2269,7 @@
             "skos:example": "\n                      :vermilion_rgb a arto:ColourValue ;\n                      arto:colourSystem \"RGB\" . \n                      \n                      sky_blue_hsv a arto:ColourValue ;\n                      arto:colourSystem \"HSV\" .\n                      ",
             "rdfs:comment": "The colour system of the ColourValue, indicating the model used for its representation. This property supports various colour models such as RGB, HSV, Lab, and CMYK, allowing for flexible colour representation and analysis in artworks. The use of a restricted set of values ensures consistency and interoperability across different systems and applications.",
             "rdfs:range": {
-                "@id": "_:b163"
+                "@id": "_:b169"
             },
             "rdfs:domain": {
                 "@id": "arto:ColourValue"
@@ -2541,10 +2536,6 @@
                 "@id": "sdo:width"
             },
             "@type": "owl:Restriction"
-        },
-        {
-            "@id": "sdo:width",
-            "@type": "owl:ObjectProperty"
         },
         {
             "@id": "_:b134",
@@ -3290,7 +3281,20 @@
             }
         },
         {
-            "@id": "_:b149",
+            "@id": "_:b152",
+            "owl:oneOf": {
+                "@list": [
+                    "Dominant",
+                    "Large",
+                    "Medium",
+                    "Small",
+                    "Marginal"
+                ]
+            },
+            "@type": "rdfs:Datatype"
+        },
+        {
+            "@id": "_:b155",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3304,7 +3308,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b153",
+            "@id": "_:b159",
             "owl:oneOf": {
                 "@list": [
                     "Artist",
@@ -3315,7 +3319,7 @@
             "@type": "rdfs:Datatype"
         },
         {
-            "@id": "_:b156",
+            "@id": "_:b162",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3329,7 +3333,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b163",
+            "@id": "_:b169",
             "owl:oneOf": {
                 "@list": [
                     "CMYK",
@@ -3347,7 +3351,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b166",
+            "@id": "_:b172",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3374,7 +3378,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b169",
+            "@id": "_:b175",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3393,7 +3397,7 @@
             "rdfs:label": "isSceneOf",
             "rdfs:comment": "Specifies the artwork or scene that contains the scene in the artwork.",
             "rdfs:range": {
-                "@id": "_:b169"
+                "@id": "_:b175"
             },
             "rdfs:domain": {
                 "@id": "arto:Scene"
@@ -3414,7 +3418,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b174",
+            "@id": "_:b180",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3439,7 +3443,7 @@
             "rdfs:label": "isMetricOf",
             "rdfs:comment": "Associates a metric with the component of an artwork that it is related to.",
             "rdfs:range": {
-                "@id": "_:b174"
+                "@id": "_:b180"
             },
             "rdfs:domain": {
                 "@id": "arto:Metric"
@@ -3447,7 +3451,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b177",
+            "@id": "_:b183",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3466,7 +3470,7 @@
             "rdfs:label": "isLocationOf",
             "rdfs:comment": "Associates a location with the agent or event that it is related to.",
             "rdfs:range": {
-                "@id": "_:b177"
+                "@id": "_:b183"
             },
             "rdfs:domain": {
                 "@id": "arto:Location"
@@ -3474,7 +3478,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b180",
+            "@id": "_:b186",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3493,7 +3497,7 @@
             "rdfs:label": "isEventOf",
             "rdfs:comment": "Associates an event with the artwork or scene that it is related to.",
             "rdfs:range": {
-                "@id": "_:b180"
+                "@id": "_:b186"
             },
             "rdfs:domain": {
                 "@id": "arto:Event"
@@ -3504,7 +3508,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b183",
+            "@id": "_:b189",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3523,7 +3527,7 @@
             "rdfs:label": "isElementOf",
             "rdfs:comment": "Specifies the object or scene that contains the visual element in the artwork.",
             "rdfs:range": {
-                "@id": "_:b183"
+                "@id": "_:b189"
             },
             "rdfs:domain": {
                 "@id": "arto:VisualElement"
@@ -3542,7 +3546,7 @@
                 "@id": "arto:VisualElement"
             },
             "rdfs:domain": {
-                "@id": "_:b210"
+                "@id": "_:b216"
             },
             "owl:inverseOf": {
                 "@id": "arto:isElementOf"
@@ -3550,7 +3554,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b188",
+            "@id": "_:b194",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3575,7 +3579,7 @@
             "rdfs:label": "isConnotationOf",
             "rdfs:comment": "Associates a connotation with the visual elements, objects, scenes or artwork that express it.",
             "rdfs:range": {
-                "@id": "_:b188"
+                "@id": "_:b194"
             },
             "rdfs:domain": {
                 "@id": "arto:Connotation"
@@ -3583,7 +3587,7 @@
             "@type": "owl:ObjectProperty"
         },
         {
-            "@id": "_:b193",
+            "@id": "_:b199",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3603,7 +3607,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b196",
+            "@id": "_:b202",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3617,7 +3621,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b199",
+            "@id": "_:b205",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3631,7 +3635,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b204",
+            "@id": "_:b210",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3651,7 +3655,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b207",
+            "@id": "_:b213",
             "owl:unionOf": {
                 "@list": [
                     {
@@ -3665,7 +3669,7 @@
             "@type": "owl:Class"
         },
         {
-            "@id": "_:b210",
+            "@id": "_:b216",
             "owl:unionOf": {
                 "@list": [
                     {
