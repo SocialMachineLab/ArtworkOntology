@@ -102,7 +102,7 @@ for i in urls:
 
 3. Identify and handle outliers, such as values with incorrect format or outside a reasonable range
 
-    - For numeric fields, use df.describe() to view statistics such as minimum, maximum, mean, and quantiles to determine if there are outliers outside the normal range
+    - For numeric fields, use `df.describe()` to view statistics such as minimum, maximum, mean, and quantiles to determine if there are outliers outside the normal range
 
 
 4. Standardise names and values to ensure data consistency
@@ -119,8 +119,8 @@ for i in urls:
 
 - Analyse the distribution of key fields (e.g., artist nationality, art genre, creation year)
 
-- For categorical fields, use df['field'].value_counts() to view the frequency distribution of each value
-- For numeric fields, use df['field'].hist() to plot a histogram and observe the data distribution
+- For categorical fields, use `df['field'].value_counts()` to view the frequency distribution of each value
+- For numeric fields, use `df['field'].hist()` to plot a histogram and observe the data distribution
 
 
 

@@ -1604,7 +1604,7 @@ arto:ColourValue rdf:type owl:Class ;
                                                      ]
                                  ] ;
                  rdfs:comment "Represents the precise numeric specification of colours using various colour models and measurement systems. This class captures quantitative colour data for digital analysis, colour matching and reproduction studies. Colour values enable objective colour comparison, automated colour analysis, and integration with digital image processing workflows. The class supports multiple colour spaces to accommodate different analytical needs and technical requirements." ;
-                 rdfs:label "colourValue" ;
+                 rdfs:label "ColourValue" ;
                  skos:example """
                     - RGB specification: :red_primary rdf:type arto:ColourValue ;
                       arto:colourSystem \"RGB\" ; qudt:vector (255,0,0) ;

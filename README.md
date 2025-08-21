@@ -46,6 +46,7 @@ The *Artwork Contextual Model* complements the descriptive aspects by incorporat
 ## An example of using ARTO to represent "The Shepherdess" artwork
 
 ![The picture of the artwork "The Shepherdess"](images/example.jpg)
+
 *Figure 4. The picture of the artwork "The Shepherdess"*
 
 To demonstrate the application of the ARTO models, consider Figure 4, the artwork “[The Shepherdess](https://www.wikiart.org/en/william-adolphe-bouguereau/shepherdess-1889)” by William-Adolphe Bouguereau (see more examples [here](examples/README.md)).
