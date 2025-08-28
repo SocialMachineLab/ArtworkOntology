@@ -1,6 +1,6 @@
 # Artwork Object Ontology (ARTO)
 
-In this repo, you will find an [overview](#overview) of ARTO and its contextual and descriptive models, followed by an [example](#an-example-of-using-arto-to-represent-the-shepherdess-artwork) using RDF and RDF-star to demonstrate how ARTO can be used to represent artworks. A set of [queries and competency questions](./CompetencyQuestions.md) are also provided to support the use of ARTO.
+This repository presents an [overview](#overview) of ARTO and its contextual and descriptive models, followed by an [example](#an-example-of-using-arto-to-represent-the-shepherdess-artwork) using RDF and RDF-star to demonstrate how ARTO can be used to represent artworks. A set of [queries and competency questions](./CompetencyQuestions.md) are also provided to support the use of ARTO.
 
 We further explore the [literature](#unique-contributions-of-arto-in-relation-to-the-literature) to highlight ARTO’s unique aspects and compare it with major ontologies used to meta-represent artworks. Finally, we present how ARTO was [evaluated](#interview-arto-conceptual-evaluation).
 
@@ -131,13 +131,13 @@ Integrating KG with artwork image captioning requires a systematic and clearly d
     Given the vast and varied size of collected data, the Data Processing step is essential. It deals with inconsistencies, duplicates, and errors in the data, and standardises the data format for the knowledge graph. This process ensures that only high-quality, reliable data is used for building the knowledge graph.
 
   - **Data Analysis**:  
-    It's essential to conduct exploratory analysis in the data processing phase to identify errors and outliers within the data. Once the data is processed and cleaned, we then proceed with a descriptive analysis. This helps us understand the distribution, trends, and other characteristics of various attributes in the data, providing crucial insights to inform our ontology design decisions.
+    We conducted exploratory analysis in the data processing phase to identify errors and outliers within the data. Once the data is processed and cleaned, we then proceed with a descriptive analysis. This helps us understand the distribution, trends, and other characteristics of various attributes in the data, providing crucial insights to inform our ontology design decisions.
 
 - **Ontology Design**:  
   According to the results of the data analysis, we collaborated with domain experts to define the main entities (e.g., people, places, and events) and establish a structured model that captures the relationships and hierarchies of these entities.
 
 - **Knowledge Graph**:  
-  In the knowledge graph construction phase, we process the cleaned data to identify and extract meaningful entities and their relationships, guided by our designed ontology. Our dataset primarily consists of metadata, which can be directly mapped, and text data, which necessitates the use of NLP techniques for entity extraction. Given the diverse origins of our data, inconsistencies often emerge, such as overlaps, contradictions, or varied representations of similar facts. To address these challenges and enrich our KG, we integrated trusted external resources like [Wikidata](https://www.wikidata.org) and [DBpedia](https://www.dbpedia.org). With these additions, we aligned with different sources, extended the information, and merged them to build a unified knowledge graph.
+  In the knowledge graph construction phase, we processed the cleaned data to identify and extract meaningful entities and their relationships, guided by our designed ontology. Our dataset primarily consists of metadata, which can be directly mapped, and text data, which necessitates the use of NLP techniques for entity extraction. Given the diverse origins of our data, inconsistencies often emerge, such as overlaps, contradictions, or varied representations of similar facts. To address these challenges and enrich our KG, we integrated trusted external resources like [Wikidata](https://www.wikidata.org) and [DBpedia](https://www.dbpedia.org). With these additions, we aligned with different sources, extended the information, and merged them to build a unified knowledge graph.
 
 - **Knowledge Graphs work with LLMs**:  
   The combination of LLMs and KG provides a promising solution. LLMs could generate human-like text, while KGs offer structured knowledge about artworks. Together, they can generate captions that are coherent, contextual, and accurate.
